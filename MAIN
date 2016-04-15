@@ -30,12 +30,13 @@
 
     \subsection{Homotopy Type}
         \begin{enumerate}[(1)]
-            \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not describe what a homotopy $G$ relative to a subset implies. Specifically, this means that for each $a \in A$, $G(a,t) = a$. pg 104. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 
-                \begin{proof} Indeed: Let $f:A \rightarrow X$ be the inclusion map and $g: X \rightarrow A$ be defined by $g(x) = G(x,1)$. We have previously shown that $f$ and $g$ are continuous. It is only left to show that $f \circ g \simeq_U 1_X$ and $g \circ f \simeq_V 1_A$:
+            \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not do a good job of defining a deformation retract. We use the following definition. "Strong" deformation retract: $A$ is a 'strong' deformation retract of $X$ iff there exists a map $D:X \times I \rightarrow X$ such that $D(a,t)=a$ for every $a \in A$, $D(x,0)=x$ and $D(x,1) \in A$ for all $x \in X$. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 
+                \begin{proof} Indeed: Let $f:A \rightarrow X$ be the inclusion map and $g: X \rightarrow A$ be defined by $g(x) = G(x,1)$. We have previously shown that $f$ and $g$ are continuous. It is only left to show that $f \circ g \simeq 1_X$ and $g \circ f \simeq 1_A$:
                 \par Direct computation shows that 
                     \begin{align*}
-                        asdfasdf
+                        (g \circ f)(a) & = g(f(a)) = g(a) = G(a,1) = a,
                     \end{align*}
+                while $f \circ g \simeq_G 1_X$. This completes the proof. 
 
                 \end{proof}
             \item We show that any non-empty convex subset, $X$, of a euclidean space is homotopy equivalent to a point: 

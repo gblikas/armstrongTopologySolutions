@@ -1,12 +1,18 @@
-\documentclass{amsbook}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts, amsthm, amsmath, amssymb, mathrsfs,mathabx}
+\usepackage{enumerate}
+\usepackage{hyperref}
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \newenvironment{Lemma}[1][Lemma]
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
+\DeclareMathOperator*{\E}{\mathbb{E}}
+%creates a bijection arrow
+\newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} 
+
 
 
 \title{Armstrong Topology Solutions}
@@ -16,9 +22,28 @@
 \begin{document}
 
 \maketitle
+
 \tableofcontents
 
+\newpage
 \section{Extra Proofs and Lemmas}
 
+    \subsection{Homotopy Type}
+        \begin{enumerate}[(1)]
+            \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not describe what a homotopy $G$ relative to a subset implies. Specifically, this means that for each $a \in A$, $G(a,t) = a$. pg 104. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 
+                \begin{proof} Indeed: Let $f:A \rightarrow X$ be the inclusion map and $g: X \rightarrow A$ be defined by $g(x) = G(x,1)$. We have previously shown that $f$ and $g$ are continuous. It is only left to show that $f \circ g \simeq_U 1_X$ and $g \circ f \simeq_V 1_A$:
+                \par Direct computation shows that 
+                    \begin{align*}
+                        asdfasdf
+                    \end{align*}
 
+                \end{proof}
+            \item We show that any non-empty convex subset, $X$, of a euclidean space is homotopy equivalent to a point: 
+                \begin{proof} 
+                Without loss of generality, we assume that $X \subset \E^n$. We first show the existence of a deformation retract, $G: X \times I \hookrightarrow \{x\}$, where $x \in X$ is fixed:
+                \par Let $G$ be defined as $G(y,t) = (1-t)y + tx$, for all $y \in X$. Then, clearly $G(y,0) = y$, and $G(y,1) = x \in \{x\}$ for all $y \in X$. So, $G$ is deformation retract. By the above, $X$ and $A$ are of the same homotopy type: null-homotopic. 
+                \end{proof}
+ 
+        \end{enumerate}
+        
 \end{document}

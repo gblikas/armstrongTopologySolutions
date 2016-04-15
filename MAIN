@@ -1,0 +1,24 @@
+\documentclass{amsbook}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts, amsthm, amsmath, amssymb, mathrsfs,mathabx}
+
+%defined functions and such
+\DeclareMathOperator*{\Rcal}{\mathcal{R}}
+\newenvironment{Lemma}[1][Lemma]
+  {\proof[#1]\leftskip=1cm\rightskip=1cm}
+  {\endproof} %this make a lemma indented in proof
+
+
+\title{Armstrong Topology Solutions}
+\author{George Blikas}
+\date{April 2016}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Extra Proofs and Lemmas}
+
+
+\end{document}

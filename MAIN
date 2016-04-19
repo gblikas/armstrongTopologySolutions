@@ -58,7 +58,7 @@
     \begin{enumerate}[(1)]
         \item If $X \simeq Y$ and $X' \simeq Y'$, we show that $X \times X' \simeq Y \times Y'$: 
             \begin{proof} We are given maps $f: X \rightarrow Y$, $g: Y \rightarrow X$, $f':X' \rightarrow Y'$ and $g': Y' \rightarrow X'$, such that $g \circ f \simeq_{\gamma'} 1_X$, $f \circ g \simeq_{\gamma} 1_Y$, $g' \circ f' \simeq_{\delta '} 1_{X'}$ and $f' \circ g' \simeq_{\delta} 1_{Y'}$. 
-            \par From the component-wise definition of the product topology, $F: X \times X' \rightarrow Y \times Y'$, defined by $F(x,x') = (f(x), f'(x'))$, and $G: Y \times Y' \rightarrow X \times X'$, defined by $G(y,y') = (g(y), g'(y'))$ are continuous. Further, $F \circ G \simeq 1_{Y \times Y'}$, and $G \circ F \simeq 1_{X \times X'}$, via the cannonical maps, component-wise defined: $\mathcal{F}:(X \times X') \times I \rightarrow X \times X'$, $\mathcal{F} \equiv (\gamma', \delta')$, and $\mathcal{G}:(Y \times Y') \times I \rightarrow Y \times Y'$, $\mathcal{G} \equiv (\gamma, \delta)$, respectively. 
+            \par From the component-wise definition of the product topology, $F: X \times X' \rightarrow Y \times Y'$, defined by $F(x,x') = (f(x), f'(x'))$, and $G: Y \times Y' \rightarrow X \times X'$, defined by $G(y,y') = (g(y), g'(y'))$ are continuous. Further, $F \circ G \simeq 1_{Y \times Y'}$, and $G \circ F \simeq 1_{X \times X'}$, via the canonical maps, component-wise defined: $\mathcal{F}:(X \times X') \times I \rightarrow X \times X'$, $\mathcal{F} \equiv (\gamma', \delta')$, and $\mathcal{G}:(Y \times Y') \times I \rightarrow Y \times Y'$, $\mathcal{G} \equiv (\gamma, \delta)$, respectively. 
             \par Thus, $X \times X' \simeq Y \times Y'$.
             \end{proof}
             
@@ -71,7 +71,29 @@
             Now, if $\Ocal_{CX} \in \tau_{CX}$, then $H^{-1}(\Ocal_{CX}) = (\Ocal_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
             \end{proof}
     
-        \item 
+        \item We show that the punctured torus deformation retracts onto the one-point union of two circles. 
+        
+        \item For each of the following cases, we choose as base point in $C$ and describe the generators for the fundamental groups of $C$ and $S$. Further, we write down the homomorphism, in terms of these generators, the fundamental groups induced by the inclusion of $C$ in $S$. 
+        \par Consider the following examples of a circle $C$ embedded in a surface $S$: 
+            \begin{enumerate}
+                \item $S = \text{M{\"o}bius Strip}$ and $C = \partial S$: 
+                \item $S = S^1 \times S^1 = T^1$ and $C = \{(x.y) \in T^1 : x = y\}$:
+                \item $S = S^1 \times I$ and $C = S^1 \times 1$:
+            \end{enumerate}
+            
+        \item Suppose that $f,g: S^1 \rightarrow X$ are homotopic maps. We prove that the spaces formed from $X$ by attaching a disc, using $f$ and using $g$ are homotopy equivalent; in other words, we prove that $X \cup_f D \simeq X \cup_g D$: 
+        
+        \item We use the previous problem, and the third example of homotopy given in section $5.1$, to show that the 'dunce hat' has the homotopy type of a disc, and is therefore contractible: 
+        
+        \item We show that the 'house with two rooms' is contractible: 
+        
+        \item We give a detailed proof to show that the cylinder and the M{\"o}bius strip have the homotopy type of the circle: 
+        
+        \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p$. 
+        
+        \item \textit{FTA}: We prove the fundamental theorem of algebra: 
+        
+        
     \end{enumerate}
         
 \end{document}

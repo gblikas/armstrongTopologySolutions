@@ -14,6 +14,8 @@
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} %creates a bijection arrow
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
+\newcommand*\productop{\mathbin{\Pi}} %disjoint union 
+
 
 
 
@@ -107,17 +109,30 @@
                     We have previously shown that the map $f:S^n \rightarrow S^n$, given by $f(x) = -x$ is a homeomorphism.
                     \end{proof}
                     
-                \item The Torus: $T^1 = S^1 \times S^1$ does not exhibt the fixed point propert. 
+                \item The Torus: $T^1 = S^1 \times S^1$ does not exhibit the fixed point property. 
                     \begin{proof}
                     As $T^1 = S^1 \times S^1$, and the antipodal map, $f$, on $S^1$ is a homeomorphism, we have that $F: T^1 \rightarrow T^1$, defined by $F((x,y)) = (f(x),f(y))$, is continuous and doesn't exhibit the fixed point property. 
                     \end{proof}
                     
                 \item The interior of the unit disc: $\text{Int}D^1$ does not exhibit the fixed point property: 
-                    \begin{proof}
+                    \begin{proof} Note that the interior of the unit disc is homeomorphic to the euclidean plane by a homeomorphism $h: \text{Int}D^1 \rightarrow \mathbb{E}^2$. We define a function $g$ from the euclidean plane to the euclidean plane by $g((x,y))=(x+1,y)$. Then, $h^{-1}\circ g\circ h$ is a continuous function from the disc to itself that has no fixed point.
                     \end{proof}
                     
-                \item The one point union of two circles: $S^1 \vee S^1$
+                \item The one point union of two circles: $X \vee Y = \nicefrac{ X  \amalg Y }{\{p\}}$ does not exhibit the fixed point property: 
+                    \begin{proof} Define a function $f$ as follows: If $x\in X$ then we map $e^{ix}$ to $e^{i(x+\pi)}$. Also if $y \in Y$, we map $y$ to $f(p)=e^{\nicefrac{i\pi}{2}}$. This function $f$, as defined on the one point union, leaves no points fixed.
+                    \end{proof}
             \end{enumerate}
+            
+        \item Suppose $X$ and $Y$ are of the same homotopy type and $X$ has the fixed-point property. We prove that $Y$ does not necessarily have the fixed point property: 
+            \begin{proof} Let $Y$ be the subspace $(0,1) \subset \E^n$, and let $X = \{1/2\}$. Note that $Y$ is homotopic to $X$ by the straight line homotopy, and every map from $X$ to itself has a fixed point. Yet, the function $f: Y \rightarrow Y$, defined by $f(y)=y^2$ has no fixed point. 
+            \end{proof}
+            
+        \item Suppose that $X$ retracts onto the subspace $A \subset X$, and that $A$ has the fixed point property. We show that $X$ may not exhibit the fixed point propert: 
+            \begin{proof} Take $X$ and $Y$, as above. The straight-line homotopy proves 
+            \end{proof}
+        
+        
+        ? If X retracts onto the subspace A, and A has the fixed-point property, need X also have it?
     \end{enumerate}
         
 \end{document}

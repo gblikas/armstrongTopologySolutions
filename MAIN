@@ -3,6 +3,8 @@
 \usepackage{amsfonts, amsthm, amsmath, amssymb, mathrsfs,mathabx}
 \usepackage{enumerate}
 \usepackage{hyperref}
+\usepackage{units}
+
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
@@ -10,8 +12,10 @@
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
 \DeclareMathOperator*{\E}{\mathbb{E}}
-%creates a bijection arrow
-\newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} 
+\newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} %creates a bijection arrow
+\DeclareMathOperator*{\Ocal}{\mathcal{O}}
+
+
 
 
 
@@ -57,6 +61,17 @@
             \par From the component-wise definition of the product topology, $F: X \times X' \rightarrow Y \times Y'$, defined by $F(x,x') = (f(x), f'(x'))$, and $G: Y \times Y' \rightarrow X \times X'$, defined by $G(y,y') = (g(y), g'(y'))$ are continuous. Further, $F \circ G \simeq 1_{Y \times Y'}$, and $G \circ F \simeq 1_{X \times X'}$, via the cannonical maps, component-wise defined: $\mathcal{F}:(X \times X') \times I \rightarrow X \times X'$, $\mathcal{F} \equiv (\gamma', \delta')$, and $\mathcal{G}:(Y \times Y') \times I \rightarrow Y \times Y'$, $\mathcal{G} \equiv (\gamma, \delta)$, respectively. 
             \par Thus, $X \times X' \simeq Y \times Y'$.
             \end{proof}
+            
+        \item We show that the cone, $CX$, is contractible for any space $(X, \tau_X)$:
+            \begin{proof} By definition, we have $CX = \nicefrac{X \times I}{X\times \{1\}}$. Define ${H}: CX \times I \rightarrow CX$ by $${H}((x,t),s) = (x, t(1-s))$$ Then, we have 
+                \begin{align*}
+                    {H}((x,t), 0) & = (x,t) = 1_{CX} \\
+                    {H}((x,t),1) & = (x,0) 
+                \end{align*}
+            Now, if $\Ocal_{CX} \in \tau_{CX}$, then $H^{-1}(\Ocal_{CX}) = (\Ocal_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
+            \end{proof}
+    
+        \item 
     \end{enumerate}
         
 \end{document}

@@ -92,8 +92,32 @@
         \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p$. 
         
         \item \textit{FTA}: We prove the fundamental theorem of algebra: 
-        
-        
+    \end{enumerate}
+    
+
+\newpage
+\section{Brouwer Fixed-Point Theorem}
+\par Throughout, we say a topological space $(X, \tau_X)$ has the fixed-point property if every continuous function from $X$ to itself has a fixed point. 
+
+    \begin{enumerate}[(1)]
+        \item We determine which of the following have the fixed point property: 
+            \begin{enumerate}
+                \item The $2$-Sphere: $S^2$ does not exhibit the fixed point property. 
+                    \begin{proof}
+                    We have previously shown that the map $f:S^n \rightarrow S^n$, given by $f(x) = -x$ is a homeomorphism.
+                    \end{proof}
+                    
+                \item The Torus: $T^1 = S^1 \times S^1$ does not exhibt the fixed point propert. 
+                    \begin{proof}
+                    As $T^1 = S^1 \times S^1$, and the antipodal map, $f$, on $S^1$ is a homeomorphism, we have that $F: T^1 \rightarrow T^1$, defined by $F((x,y)) = (f(x),f(y))$, is continuous and doesn't exhibit the fixed point property. 
+                    \end{proof}
+                    
+                \item The interior of the unit disc: $\text{Int}D^1$ does not exhibit the fixed point property: 
+                    \begin{proof}
+                    \end{proof}
+                    
+                \item The one point union of two circles: $S^1 \vee S^1$
+            \end{enumerate}
     \end{enumerate}
         
 \end{document}

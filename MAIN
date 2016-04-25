@@ -34,6 +34,63 @@
 \newpage
 \section{Extra Proofs and Lemmas}
 
+    \subsection{Limit Points, Closure and Density}
+    \begin{enumerate}[(1)]
+    
+        \item Let $(X, \tau)$ be a topological space, and $A \subset X$. We show that $\bar{A} = A \cup L_A$, where $L_A$ is the set of all accumulation points of $A$:
+            \begin{proof} If $\bar{A} = A$, then by Theorem $2.2$, pg. $29$, $L_A \subset A$ and we are done. So, suppose that $A$ is not closed. Then, $A$ does not contain all of its limit points; consequently, $L_A \neq \emptyset$. Further, the set $B = A \cup L_A$ is closed by Theorem $2.2$, pg. $29$. 
+            \par To conclude the proof, we show that any closed set $C$ containing $A$, contains $B$. Indeed; Let $C \subset X$ be closed, such that $A \subset C$. Now, for $a \in L_A$ and open set $O_a$ containing $a$, we have that $A \cap (O_a - \{a\}) \neq \emptyset$. But, as $A \subset C$, we have $C \cap (O_a - \{a\}) \neq \emptyset$. Therefore, $a \subset C$. So, $L_A \subset C$, implying $A \cup L_A \subset C$. By Theorem $2.3$, pg. $30$, $\bar{A} = B = A \cup L_A$.
+            \end{proof}
+            
+        \item Let $(X, \tau)$ be a topological space, and $A \subset X$. We prove that $L_A$, defined above, contains all limit points of sequences contained in $A$:\footnote{This assumes the general definition of limit points of a set}
+            \begin{proof} Let $\{a_n\}_{n=1}^\infty \subset A$, such that $a_n \rightarrow a$. Then, $a \in L_{\{a_n: n \in \mathbb{N}\}}$ and every neighbourhood of $a$ contains a point of $\{a_n: n \in \mathbb{N}\} - \{a\} = B$. As $\{a_n: n \in \mathbb{N}\} \subset A$, every neighbourhood of $a$ has a point in $A - \{a\}$; $a \in L_A$. 
+            \end{proof}
+            
+        \item Let $(X, \tau)$ be a topological space, and $A \subset X$ such that $\bar{A} = X$. We prove that $A \cap O \neq \emptyset$, for all $O \neq \emptyset$, $O \in \tau$: 
+            \begin{proof} Suppose that for some $O \in \tau$, $O \neq \emptyset$, $A \cap O = \emptyset$. By a previous lemma, we have $\bar{A} = (L_A - A) \cup O^c$, implying $O^c = A$. But then we have $X = O^c = \bar{O^c} = \bar{A}$, as $O$ is open. But, contrarily, this implies that $(O^c)^c = O = X^c = \emptyset$.  
+            \end{proof}
+            
+        \item We prove that the intersection of a closed set and a compact set is always compact: 
+            \begin{proof} Let $(X, \tau)$ be a topological space. Let $H,K \subset X$, such that $H$ is closed and $K$ is compact. Consider $H \cap K$. Now, if $\{O_{\alpha}\}_{\alpha}$ is an open cover of $H \cap K$, then $K \subset \bigcup_{\alpha \in N} O_\alpha \cup (X - H)$. But, since $H$ is closed, $X - H$ is open. In conclusion, as 
+            $$H \cap K \subset \bigcup_{\alpha \in N} O_\alpha \cup (X - H)$$
+            such a finite subcover of $H \cap K$ exists. 
+            \end{proof}
+            
+    \end{enumerate}
+    
+    
+    \subsection{Separation}
+    \begin{enumerate}[(1)]
+    
+        \item We show that a compact $T_2$ space $T_3$. Consequently, we show that it is $T_4$: 
+            \begin{proof} Let $X$ be the compact $T_2$ space. We first show that $X$ is $T_3$: 
+            \par Let $A \subset X$, such that $A$ is closed. Then $A$ is compact. Further, let $b \in X$ such that $b \notin A$. Now, for each $a \in A$, there exists an open set $O_a$, and some open set $O_b^a$, such that $O_a \cap O_b^a = \emptyset$. It follows that $A \subset \bigcup_{a \in N} O_a \subset \bigcup_a O_a$ and that $\bigcup_{a \in N} O_a = O_A$ is open. Further, $b \in \bigcap_{a \in N} O_b^a = O_b$, is open. And by construction, we have $O_A \cap O_b = \emptyset$. So, $X$ is $T_3$. 
+            \par To show that $X$ is $T_4$, let $A, B \subset X$, be disjoint and closed. Then, arguing as above, we have two disjoint open subsets $O_B \in \tau$, $O_A \in \tau$ with $O_A \cap O_B = \emptyset$. 
+            \end{proof}
+            
+    \end{enumerate}
+    
+    \subsection{Compactness}
+    \begin{enumerate}[(1)]
+    
+        \item We show that a homeomorphism between locally compact $T_2$ spaces, $X$, $Y$, extends to a homeomorphism between the Alexandroff compactifications; in other-words, locally compact homeomorphic $T_2$ spaces have homeomorphic one point compactifications. 
+            \begin{proof} Suppose that $f: X \rightarrow Y$ is the homeomorphism. Define $g: X \cup \{\infty_1\} \rightarrow Y \cup \{\infty_2\}$ as follows: 
+                $$ g(x) = 
+                \begin{cases} 
+                    f(x) & x \neq \infty_1 \\
+                    \infty_2 & x = \infty_1
+                \end{cases}
+                $$
+            It is clear that as $f$ is a bijection, so is $g$. We show that $g$ is a homeomorphism: 
+            \par Suppose that $U$ is open in $Y$. Then, $g^{-1}[U] = f^{-1}[U]$, which is open in $X \cup \{\infty_1\}$. 
+            \end{proof}
+    \end{enumerate}
+    
+    
+    
+    
+    
+    
     \subsection{Homotopy Type}
         \begin{enumerate}[(1)]
             \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not do a good job of defining a deformation retract. We use the following definition. "Strong" deformation retract: $A$ is a 'strong' deformation retract of $X$ iff there exists a map $D:X \times I \rightarrow X$ such that $D(a,t)=a$ for every $a \in A$, $D(x,0)=x$ and $D(x,1) \in A$ for all $x \in X$. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 
@@ -136,3 +193,4 @@
     \end{enumerate}
         
 \end{document}
+1

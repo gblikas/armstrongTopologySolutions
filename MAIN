@@ -219,6 +219,18 @@
             \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
             \end{proof}
             
+        \item We show that the one-point union of $X$ and $Y$, $X \vee Y$, has the fixed-point property if, and only if, both $X$ and $Y$ have it:
+            \begin{proof} 
+            $ $\newline
+                \begin{itemize}
+                    \item[] ($\implies$): Suppose that the one point union $X\vee Y$ has the fixed-point-property. Let $f:X\rightarrow X$ be a map, and let $p$ be the point glued together in the one point union. Then, define $g:X\vee Y\rightarrow X\vee Y$, as $g(x)=f(x)$, if $x\in X$, and $g(x)=f(p)$, if $x \in Y$. By the gluing lemma, $g$ is a continuous map and so, by hypothesis, has a fixed point $x_0$. Note that $g$ is a map into $X$. Thus the fixed point must be in $X$. Hence, by construction, $x_0=g(x_0)=f(x_0)$, so that $f$ has a fixed point. Similarly, any continuous function from $Y$ to itself has a fixed point.
+                    \item[] ($\impliedby$): Suppose $X$ and $Y$ have the fixed point property and let $f:X\vee Y\rightarrow X\vee Y$ be a map. Then, suppose $f(p)\in X$, and define a map $g:X\rightarrow X$ such that $g(x)=f(x)$, if $f(x)\in X$, and $g(x)=p$, if $f(x)\notin X$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $x = g(x) = f(x)$. Thus, $f$ has a fixed point. Next, suppose $f(p)\in Y$, and define a map $g:Y\rightarrow Y$ such that $g(y)=f(y)$, if $f(y)\in Y$, and $g(y)=p$, if $f(y)\notin Y$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $y=g(y)=f(y)$. Consequently, $f$ has a fixed point.
+                \end{itemize}
+            \end{proof}
+        
+        \item 
+            
+            
     \end{enumerate}
         
 \end{document}

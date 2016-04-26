@@ -189,9 +189,28 @@
             \end{proof}
         
         
-        \item We show that if $X$ retracts onto the subspace $A$, and $A$ has the fixed-point property, that $X$ also has it: 
-            \begin{proof} As $X$ retracts onto $A$, there exists a map $g: X \rightarrow A$, such that $g|_A \equiv 1_A$. Considering the map $f \equiv 1_A : A \rightarrow X$, we have $f \circ g:X \rightarrow X$ is a map. Further, $f \circ g$ has a fixed point: for any $a \in A \subset X$, we have $(f \circ g)(a) = f(g(a)) = f(a) = a$. 
+        \item We show that if $X$ retracts onto the subspace $A$, and $X$ has the fixed-point property, then $A$ also has it: 
+            \begin{proof} Let $f:A\rightarrow X$ be a continuous function. Since $X$ retracts onto $A$, there exists a map $g:X\rightarrow A$ such that $g \restriction{A} \equiv 1_A$. Then, $f \circ g$ is a continuous function from $X$ to $X$, and so has a fixed point. Hence, there exists an $a\in A$ such that $f(g(a))=f(a)=a$. This completes the proof. 
             \end{proof}
+            
+        \item We deduce that the fixed-point property holds for the 'house with two rooms', $X$: 
+            \begin{proof} Let $f:X \rightarrow X$ be a map. By exercise $29$, pg. $109$, we know that $X$ is contractible. By an extra lemma\footnote{reference this.}, we have that $X$ retracts onto a point $p \in X$. Thus, there exists a map $g:X \rightarrow X$, such that $g\restriction{\{p\}} \equiv 1_p$. Further, $f,g$ are homotopy equivalent. Thus, there exists a map $H: X \times I \rightarrow X$, such that $H(x,0) = f(x)$, and $H(x,1) = g(x)$. So, $H(p,1) = p$. Consequently, $f(p) = f(H(p,1)) = H(p,0) = H^{-1}(p,1) = $
+            \end{proof}
+            
+        \item Let $f$ be a fixed-point-free map from a compact metric space $(X,d)$ to itself. We prove there is a positive number $\epsilon$ such that $d(x,f(x)) > \epsilon$, $\forall x\in X$: 
+            \begin{proof} We show the contrapositive; Suppose that for all $\epsilon>0$ there exists an element $x \in X$ such that $d(x,f(x)) \leq \epsilon$. Pick $x_1\in X$ such that $d(x_1,f(x)) \leq \frac{1}{2} < 1$.
+            \par It follows that there exists a set, $\{x_1,...,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
+            \par Now, let 
+            $$\epsilon_0 = \dfrac{1}{2}\min \{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\}$$
+            Then there exists an element $x\in X$ such that $d(x,f(x))\leq\epsilon_0$. Pick $x\in X$ that satisfies this property, and call this $x_{n+1}$. Note here that $d(x_n,f(x_n)) < d(x_{n+1},f(x_{n+1}))$ by construction. So that for all $i<n+1$, $d(x_i,f(x_i))\leq d(x_n,f(x_n))< d(x_{n+1},f(x_{n+1}))$. Thus by induction, we have created an infinite sequence $\{x_n\}_{n = 1}^\infty$ of distinct points such that $d(x_k,f(x_k))<\nicefrac{1}{k}$ for each positive integer $k$. And, $\{d(x_n,f(x_n))\}_n$ is a monotone decreasing sequence.
+            \par Since $X$ is compact, every infinite subset has a limit point. Therefore $\{x_n\}_{n=1}^\infty $ has a limit point $x \in X$. 
+            \par Let $\epsilon > 0$ be given. Since $f$ is continuous at $x$, then there exists a $\delta >0$ such that $d(x,a)<\delta\implies d(f(x),f(a)<\nicefrac{\epsilon}{3}$ for all $a\in X$. By the Archimedian Property, we can find a positive integer $k$, such that 
+            $$\frac{1}{k}<\frac{\epsilon}{3}$$
+            Set $r= \min\{\dfrac{\epsilon}{3},\delta\}$. Then, since $x$ is a limit point of $\{x_n\}_{n = 1}^\infty$, there are infinitely many points of the sequence, such that $d(x_N,x)<r$. Thus, there exists a point $x_N$ such that $N>k$ and $d(x_N,x)<r$. Since $d(x_N,x)<\delta$, then $d(f(x_N),f(x))<\nicefrac{\epsilon}{3}$. Since $N>k$,  $$d(x_N,f(x_N)) < d(x_k,f(x_k)) < \nicefrac{1}{k} < \frac{\epsilon}{3}$$
+            Therefore $$d(x,f(x))\leq d(x,x_N)+d(x_N,f(x_N))+d(f(x_N),f(x))<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$$
+            \par Thus, for all $\epsilon>0$, we have that $d(x,f(x))<\epsilon$. Thus, $d(x,f(x)) \leq 0$, and hence $d(x,f(x))=0$. Consequently, $f(x)=x$, and so $f$ is not a fixed-point-free map.
+            \end{proof}
+            
     \end{enumerate}
         
 \end{document}

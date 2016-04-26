@@ -201,7 +201,7 @@
             \begin{proof} We show the contrapositive; Suppose that for all $\epsilon>0$ there exists an element $x \in X$ such that $d(x,f(x)) \leq \epsilon$. Pick $x_1\in X$ such that $d(x_1,f(x)) \leq \frac{1}{2} < 1$.
             \par It follows that there exists a set, $\{x_1,...,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
             \par Now, let 
-            $$\epsilon_0 = \dfrac{1}{2}\min \big\{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\big\}$$
+            $$\epsilon_0 = \dfrac{1}{2}\min \Big\{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\Big\}$$
             Then there exists an element $x\in X$ such that $d(x,f(x))\leq\epsilon_0$. Pick $x\in X$ that satisfies this property, and call this $x_{n+1}$. Note here that $d(x_n,f(x_n)) < d(x_{n+1},f(x_{n+1}))$ by construction. So that for all $i<n+1$, $d(x_i,f(x_i))\leq d(x_n,f(x_n))< d(x_{n+1},f(x_{n+1}))$. Thus by induction, we have created an infinite sequence $\{x_n\}_{n = 1}^\infty$ of distinct points such that $d(x_k,f(x_k))<\nicefrac{1}{k}$ for each positive integer $k$. And, $\{d(x_n,f(x_n))\}_n$ is a monotone decreasing sequence.
             \par Since $X$ is compact, every infinite subset has a limit point. Therefore $\{x_n\}_{n=1}^\infty $ has a limit point $x \in X$. 
             \par Let $\epsilon > 0$ be given. Since $f$ is continuous at $x$, then there exists a $\delta >0$ such that $d(x,a)<\delta\implies d(f(x),f(a)<\nicefrac{\epsilon}{3}$ for all $a\in X$. By the Archimedian Property, we can find a positive integer $k$, such that 

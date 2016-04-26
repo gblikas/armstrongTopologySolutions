@@ -211,6 +211,14 @@
             \par Thus, for all $\epsilon>0$, we have that $d(x,f(x))<\epsilon$. Thus, $d(x,f(x)) \leq 0$, and hence $d(x,f(x))=0$. Consequently, $f(x)=x$, and so $f$ is not a fixed-point-free map.
             \end{proof}
             
+        \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,...,0)$ removed does not exhibit the fixed point property: 
+            \begin{proof} Let $p=(1,...,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
+            \par Let $\Ocal$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}(\Ocal)$. Then $f(x) \in \Ocal$, and since $\Ocal$ is open there exists an $r>0$ such that $B_r(f(x))\subset \Ocal$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
+            $$|f(x)-f(y)|=|\frac{x+p}{2}-\frac{y+p}{2}|=\frac{1}{2}|x-y|<r$$
+            Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}(\Ocal)$. Thus, $B_{2r}(x)\subset f^{-1}(\Ocal)$. Therefore, $f^{-1}(\Ocal)$ is open and $f$ is continuous.
+            \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
+            \end{proof}
+            
     \end{enumerate}
         
 \end{document}

@@ -184,12 +184,14 @@
             \begin{proof} Let $Y$ be the subspace $(0,1) \subset \E^n$, and let $X = \{1/2\}$. Note that $Y$ is homotopic to $X$ by the straight line homotopy, and every map from $X$ to itself has a fixed point. Yet, the function $f: Y \rightarrow Y$, defined by $f(y)=y^2$ has no fixed point. 
             \end{proof}
             
-        \item Suppose that $X$ retracts onto the subspace $A \subset X$, and that $A$ has the fixed point property. We show that $X$ may not exhibit the fixed point propert: 
-            \begin{proof} Take $X$ and $Y$, as above. The straight-line homotopy proves 
+        \item Suppose that $X$ retracts onto the subspace $A \subset X$, and that $A$ has the fixed point property. We show that $X$ may not exhibit the fixed point property: 
+            \begin{proof} Take $X$ and $Y$, as above. The straight-line homotopy proves the assertion. 
             \end{proof}
         
         
-        ? If X retracts onto the subspace A, and A has the fixed-point property, need X also have it?
+        \item We show that if $X$ retracts onto the subspace $A$, and $A$ has the fixed-point property, that $X$ also has it: 
+            \begin{proof} As $X$ retracts onto $A$, there exists a map $g: X \rightarrow A$, such that $g|_A \equiv 1_A$. Considering the map $f \equiv 1_A : A \rightarrow X$, we have $f \circ g:X \rightarrow X$ is a map. Further, $f \circ g$ has a fixed point: for any $a \in A \subset X$, we have $(f \circ g)(a) = f(g(a)) = f(a) = a$. 
+            \end{proof}
     \end{enumerate}
         
 \end{document}

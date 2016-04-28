@@ -87,6 +87,11 @@
             which is open in $X \cup \{\infty_1\}$. 
             \par Consequently, as $g$ is one-to-one and onto, since $f$ is, $g$ is a homeomorphism by Theorem $3.7$, pg. $48$.
             \end{proof}
+            
+        \item We show that if $(X, \tau)$ is a topological space, and $S \subset X$ is compact, then if $W$ is a neighbourhood of $S$, there exists another neighbourhood $G$, such that 
+        $$S \subset G \subset W$$
+            \begin{proof} By exercise $21$, section $3$ pg. $55$, and the fact that $X \cup \{y\} \cong X$, the result follows.  
+            \end{proof}
     \end{enumerate}
     
     

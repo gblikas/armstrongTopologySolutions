@@ -34,6 +34,8 @@
 \newpage
 \section{Extra Proofs and Lemmas}
 
+
+
     \subsection{Limit Points, Closure and Density}
     \begin{enumerate}[(1)]
     
@@ -56,7 +58,17 @@
             such a finite subcover of $H \cap K$ exists. 
             \end{proof}
             
+        \item We prove that if $(X, d)$ is a metric space with the induced topology, then $C \subset X$ is closed if, and only if, whenever $\{a_n\}_{n=1}^\infty$ is a sequence in $C$, with $\{a_n\} \rightarrow L$, we have $L \in C$: 
+            \begin{proof} 
+                \begin{enumerate}
+                $ $\newline
+                    \item[] ($\implies$): Suppose, to the contrary, that $\bar{C} = C$, but $L \notin C$. Thus, there exists some $\epsilon > 0$, such that $B_\epsilon(L) \cap C = \emptyset$, as $L$ is not a limit point of $C$. But then, $a_n \notin B_\epsilon(L)$, for all $n \geq N$, $N \in \mathbb{N}$ is sufficiently large; A contradiction. 
+                    \item[] ($\impliedby$): Suppose, to the contrary, that $\bar{C} \neq C$. Then, by extra lemma\footnote{reference this}, there is some $l \in L_C$, such that $L \notin C$. Thus, for each $n \in \mathbb{N}$, we pick $a_n \in B_{\nicefrac{1}{n}}(L) \cap C \neq \emptyset$. Consequently, $\{a_n\}_{n=1}^\infty$ is a sequence in $C$ such that $a_n \rightarrow L \in C$, by hypothesis; A contradiction.
+                \end{enumerate}
+            \end{proof}
+            
     \end{enumerate}
+    
     
     
     \subsection{Separation}
@@ -69,6 +81,8 @@
             \end{proof}
             
     \end{enumerate}
+    
+    
     
     \subsection{Compactness}
     \begin{enumerate}[(1)]
@@ -92,10 +106,17 @@
         $$S \subset G \subset W$$
             \begin{proof} By exercise $21$, section $3$ pg. $55$, and the fact that $X \cup \{y\} \cong X$, the result follows.  
             \end{proof}
+    
     \end{enumerate}
     
     
-    
+    \subsection{Quotient Maps}
+        \begin{enumerate}[(1)]
+            \item We show that if $q: X \rightarrow Y$ is a quotient map\footnote{Armstrong does not do a good job describing what the topology on $Y$ is. A simple exercise shows that by letting $\Ocal$ be open in $Y$ whenever $q^{-1}[\Ocal]$ is open in $X$, we have a topology on $Y$; call this $\tau_{Y}$. Further, Armstrong does not do an adequate job describing what a quotient map is: $q: X \rightarrow Y$ is a quotient map if it is onto, continuous with respect to $\tau_Y$, and such that $g^{-1}[\Ocal]$ is open in $X$ implies $\Ocal$ open in $Y$. We can summarize by saying that $q$ is onto, and such that $\Ocal$ is open in $Y$ iff $g^{-1}[\Ocal]$ is open in $X$.}, then the topology of $Y$ is the largest which makes $q$ continuous: 
+                \begin{proof} Suppose that $\tau$ was some other topology on $Y$, such that $q$ was continuous. We conclude by showing that $\tau \subset \tau_Y$:
+                \par Indeed; if $\Ocal \in \tau$, then $q^{-1}[\Ocal]$ is open in $X$. But then, $q[q^{-1}[\Ocal]] = \Ocal \in \tau_Y$. Thus, $\tau \subset \tau_Y$. 
+                \end{proof}
+        \end{enumerate}
     
     
     

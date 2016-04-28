@@ -82,7 +82,10 @@
                 \end{cases}
                 $$
             It is clear that as $f$ is a bijection, so is $g$. We show that $g$ is a homeomorphism: 
-            \par Suppose that $U$ is open in $Y$. Then, $g^{-1}[U] = f^{-1}[U]$, which is open in $X \cup \{\infty_1\}$. 
+            \par Suppose that $U$ is open in $Y$. Then, $g^{-1}[U] = f^{-1}[U]$, which is open in $X \cup \{\infty_1\}$. Now, if $\Ocal$ is open in $Y \cup \{\infty_2\}$, we have $\Ocal = K \cup \{\infty_2\}$, where $K \subset Y$ is compact. Then, 
+            $$g^{-1}[\Ocal] = g^{-1}[K \cup \{\infty_2\}] = g^{-1}[K] \cup g^{-1}[\{\infty_2\}] =g^{-1}[K] \cup \{\infty_1\}$$
+            which is open in $X \cup \{\infty_1\}$. 
+            \par Consequently, as $g$ is one-to-one and onto, since $f$ is, $g$ is a homeomorphism by Theorem $3.7$, pg. $48$.
             \end{proof}
     \end{enumerate}
     
@@ -228,7 +231,8 @@
                 \end{itemize}
             \end{proof}
         
-        \item 
+        \item How does changing 'continuous function' to 'homeomorphism' in the definition of the fixed-point property affect problem $33$, $37$?
+            
             
             
     \end{enumerate}

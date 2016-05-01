@@ -8,6 +8,7 @@
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
+\DeclareMathOperator*{\R}{\mathbb{R}}
 \newenvironment{Lemma}[1][Lemma]
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
@@ -143,9 +144,9 @@
         \end{enumerate}
     
     
-    
     \subsection{Topological Groups}
         \begin{enumerate}[(1)]
+        
             \item Suppose that $(G, \tau, *)$ is a topological group. Fixing $x \in G$, we show that $x\Ocal\in \tau$ if, and only if, $\Ocal \in \tau$: 
                 \begin{proof} 
                 $ $\newline
@@ -153,6 +154,17 @@
                         \item [] ($\implies$): Suppose that $x\Ocal \in \tau$. It follows from pg. $75$, that $L_{x^{-1}}: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_{x^{-1}}[\Ocal] \in \tau$.
                         \item [] ($\impliedby$): Suppose that $\Ocal \in \tau$. Then, as noted on pg. $75$, $L_x: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_x[\Ocal] = x\Ocal \in \tau$.  
                     \end{itemize}
+                \end{proof}
+                
+            \item Suppose that $(G, \tau, *)$ is a topological group. We show that $\Ocal$ is a neighbourhood of $x \in G$, if, and only if, $x^{-1}\Ocal$ is a neighbourhood of $e$: 
+                \begin{proof} Suppose that $x \in G$, and without loss of generality, $\Ocal$ is an open set containing $x$. Then, by a previous lemma\footnote{reference this}, $L_{x^{-1}}[\Ocal] = x^{-1}\Ocal \in \tau$, and contains $x^{-1}x = e$.
+                \par By considering $L_x$, similar logic shows the reverse implication. 
+                \end{proof}
+                
+            \item We show that $\R$, with the Euclidean topology and addition is a topological group: 
+                \begin{proof} The fact that $(\R, +)$ is a group is clear. To conclude, we show that $+ \equiv m:\R \rightarrow \R$, and $-1 \equiv i: \R \rightarrow \R$ are continuous:
+                \par Now, $i(x) = -x$, which is polynomial, and so continuous. And, as $m(x,y) = x + y = P_1(x,y) + P_2(x,y)$, where $P_i$ is the projection mapping from $\R^{2}$, $m$ is continuous; it is the sum of two continuous functions. 
+                \par A similar argument show that $(\R^{n}, \tau, +)$ is a topological group.
                 \end{proof}
                 
             

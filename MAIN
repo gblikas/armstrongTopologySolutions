@@ -9,6 +9,9 @@
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\Aut}{\text{Aut}}
+
+
 \newenvironment{Lemma}[1][Lemma]
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
@@ -167,6 +170,12 @@
                 \par A similar argument show that $(\R^{n}, \tau, +)$ is a topological group.
                 \end{proof}
                 
+            \item Let $(G, \tau, m)$ be a topological group. We show that the topological automorphisms of $(G, \tau, m)$, for a subgroup of $\text(Aut)(G)$. We denote the set of all topological automorphism of $G$ by $\Aut_\tau (G)$. 
+                \begin{proof} It is well known that $(\Aut (G), \circ)$ is a group. We show that $(\Aut_\tau (G), \circ)$ is a group: 
+                \par As the composition of automorphism/homeomorphisms is another automorphism/homeomorphism, the fact that $(\Aut_\tau (G), \circ )$ is closed is clear. To conclude, as $f \in \Aut_\tau(G)$ is a homeomorphism, $f^{-1} \in \Aut_\tau(G)$. Furthermore, $e: (G, \tau) \rightarrow (G, \tau)$ given by $e(x) = x$ is a homeomorphism. So, $e \in \Aut_\tau(G)$. 
+                \par By the subgroup test, 
+                $$\Aut_\tau(G) \leq \Aut(G)$$
+                \end{proof}
             
         \end{enumerate}
     

@@ -126,6 +126,20 @@
                     \end{enumerate}
                 \end{proof}
                 
+            \item We show that projective real n-space, $\mathbb{P}^n$, is Hausdorff\footnote{Credit for the initial idea of the proof goes to Brain M. Scott. In addtion, we use the notation $B(z,z')$ for the open ball of radius $z'$, centered at $z$.}: 
+                \begin{proof} Let $q:S^n \rightarrow \mathbb{P}^n$ be the quotient map, and suppose that $u,v \in \mathbb{P}^n$, $u \neq v$; there are such $x,y \in S^n$, such that $q^{-1}[\{u\}] = \{x, -x\}$, and $q^{-1}[\{v\}] = \{y, -y\}$. We exhibit an $\epsilon \in \mathbb{R}$ such that the open neighbourhoods of radius $\epsilon$, centered at $u,v$ are disjoint: 
+                \par Let $$\epsilon = \frac{1}{2} \min\{ ||x - y ||, ||x +y||\},$$ and set $U = B(x,\epsilon)$, and $V = B(y, \epsilon)$. It follows form the construction of $U,V$, that $U,V,-U,-V$ are pairwise disjoint, and open neighbourhoods of $x,y,-x,-y \in S^n$. Moreover, as noted above, $q^{-1}(q[U]) = U \cup -U$, and $q^{-1}(q[V]) = V \cup -V$. To conclude, we show that $q[U] \cap q[V]$ are disjoint neighbourhoods for $u,v \in \mathbb{P}^n$. 
+                \par Indeed; 
+                    \begin{align*}
+                        q[U] \cap q[V] & = q[B(x, \epsilon) \cap S^n] \cap q[B(y, \epsilon) \cap S^n] \\
+                        & = q[B(x, \epsilon)] \cap q[B(y, \epsilon)] \cap \mathbb{P}^n \\
+                        & = B(u, q(\epsilon)) \cap B(v, q(\epsilon)) \cap \mathbb{P}^n \\
+                        & = B_1 \cap B_2 \cap \mathbb{P}^n 
+                    \end{align*}
+                Now, if $B_1 \cap B_2 \neq \emptyset$, then we would have $q^{-1}[B_1 \cap B_2] = U \cap V \neq \emptyset$, contary to assumption. Thus, 
+                $$q[U] \cap q[V] = \emptyset \cap \mathbb{P}^n = \emptyset$$
+                \end{proof}
+                
         \end{enumerate}
     
     
@@ -141,9 +155,7 @@
                     \end{itemize}
                 \end{proof}
                 
-            \item We show that projective real n-space, $\mathbb{P}^n$, is Hausdorff\footnote{Credit for the initial idea of the proof goes to Brain M. Scott.}: 
-                \begin{proof}
-                \end{proof}
+            
         \end{enumerate}
     
     

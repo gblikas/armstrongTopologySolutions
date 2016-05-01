@@ -177,26 +177,55 @@
                 $$\Aut_\tau(G) \leq \Aut(G)$$
                 \end{proof}
             
+            \item Suppose that $(G, \tau, m)$ is a $T_2$, finite, topological group. We claim $\tau = \mathcal{P}(G)$: 
+                \begin{proof} As $G$ is $T_2$, $\{x\}$ is open for each $x \in G$. Thus, as the union of open sets is open, it follows that $\tau = \mathcal{P}(G)$. 
+                \end{proof}
+                
+            \item We claim that all topological groups of order $2$ are topologically isomorphic. 
+                \begin{proof} Let $(G, \tau_G, m)$ be the topological group of order $2$. Consider the topological group $(Z_2, \tau_{Z_2}, +)$ and the map $\phi: G \rightarrow Z_2$, given by $\phi(e_G) = 0$, and $\phi(g) = 1$. The fact that $\phi$ is a group isomorphism is well-known. Further, $\phi$ is 1-1 and onto, and $\phi^{-1}$ is continuous, as $\tau_G = \mathcal{P}(G)$ and $\tau_{Z_2} = \mathcal{P}(Z_2)$. This concludes the proof. 
+                \end{proof}
         \end{enumerate}
     
     
     \subsection{Homotopy Type}
         \begin{enumerate}[(1)]
+        
             \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not do a good job of defining a deformation retract. We use the following definition. "Strong" deformation retract: $A$ is a 'strong' deformation retract of $X$ iff there exists a map $D:X \times I \rightarrow X$ such that $D(a,t)=a$ for every $a \in A$, $D(x,0)=x$ and $D(x,1) \in A$ for all $x \in X$. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 
                 \begin{proof} Indeed: Let $f:A \rightarrow X$ be the inclusion map and $g: X \rightarrow A$ be defined by $g(x) = G(x,1)$. We have previously shown that $f$ and $g$ are continuous. It is only left to show that $f \circ g \simeq 1_X$ and $g \circ f \simeq 1_A$:
                 \par Direct computation shows that 
                     \begin{align*}
                         (g \circ f)(a) & = g(f(a)) = g(a) = G(a,1) = a,
                     \end{align*}
-                while $f \circ g \simeq_G 1_X$. This completes the proof. 
-
+                while $f \circ g \simeq_G 1_X$. This completes the proof.
                 \end{proof}
+                
             \item We show that any non-empty convex subset, $X$, of a euclidean space is homotopy equivalent to a point: 
                 \begin{proof} 
                 Without loss of generality, we assume that $X \subset \E^n$. We first show the existence of a deformation retract, $G: X \times I \hookrightarrow \{x\}$, where $x \in X$ is fixed:
                 \par Let $G$ be defined as $G(y,t) = (1-t)y + tx$, for all $y \in X$. Then, clearly $G(y,0) = y$, and $G(y,1) = x \in \{x\}$ for all $y \in X$. So, $G$ is deformation retract. By the above, $X$ and $A$ are of the same homotopy type: null-homotopic. 
                 \end{proof}
  
+            \item We show  that $(X, \tau)$ is contractible\footnote{A space $(X, \tau)$ is contractible (to a point $x_0 \in X$) provided that there exists a map $F: X \times I \rightarrow X$ such that $F(x, 0) = x$ and $F(x,1) = x_0$.} if, and only if, every map $f:X \rightarrow Y$, $(Y, \tau_Y)$ a topological space, is null-homotopic: 
+                \begin{proof}
+                $ $\newline
+                    \begin{itemize}
+                        \item[] ($\implies$): Suppose that $(X, \tau)$ is contractible to $x_0 \in X$. Let $F$ be the contraction, and $f: X \rightarrow Y$ any map. The claim is that $f \circ F: X\times I \rightarrow Y$ is a homotopy between $f$, and $f(x_0)$. 
+                        \par Indeed; We note that the composition of two continuous functions is continuous and 
+                        $$(f \circ F)(x,0) = f(F(x,0)) = f(x)$$ As well as,  
+                        $$(f \circ F)(x,1) = f(F(x,1)) = f(x_0)$$
+                        
+                        \item[] ($\impliedby$): Suppose that every map $f:X \rightarrow Y$ is null-homotopic. Then, in particular, $i:X \rightarrow X$ is null-homotopic. Thus, there exists a map $F:X \times I \rightarrow X$, such that $F(x,0) = x =i(x)$, and $F(x,1) = x_0 = i(x_0)$.
+                    \end{itemize}
+                \end{proof}
+                
+            \item Let $(X, \tau)$ be a topological space. We show that the cone on $X$, $CX$ is contractible. We consider the "cone tip" as $X \times \{0\}$:     \begin{proof} Consider the function $\bar{H}: (X \times I) \times I \rightarrow X \times I$, given by $\bar{H}((x,v),s) = (x,v(1-s))$. By the     product topology, it follows that $\bar{H}$ is continuous. \footnote{For every $t \in I$, we can associate $\pi(\bar{H}((x,v),t))$ with           $(c,v(1-t),t)$, showing that the product topology of $CX \times I$ agrees with that of $(X \times I) \times I$.} Let $\pi:X \times I            \rightarrow CX = \nicefrac{X \times I}{X \times \{0\}}$ be the canonical map. The claim is that $\pi \circ \bar{H}: (X \times I) \times I     \rightarrow CX$ is the desired homotopy.
+                \par Direct computation shows that, for all $x \in X$, $v \in V$,
+                $$\pi(\bar{H}( (x,v),0)) = \pi((x,v)) = (x,v),$$
+                and 
+                $$\pi(\bar{H}( (x,v),1)) = \pi((x,0)) = (x,0)$$
+                Thus, $H \equiv \pi \circ \bar{H}$ is the desired homotopy. 
+                \end{proof}
+                
         \end{enumerate}
         
         

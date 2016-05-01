@@ -130,6 +130,23 @@
     
     
     
+    \subsection{Topological Groups}
+        \begin{enumerate}[(1)]
+            \item Suppose that $(G, \tau, *)$ is a topological group. Fixing $x \in G$, we show that $x\Ocal\in \tau$ if, and only if, $\Ocal \in \tau$: 
+                \begin{proof} 
+                $ $\newline
+                    \begin{itemize}
+                        \item [] ($\implies$): Suppose that $x\Ocal \in \tau$. It follows from pg. $75$, that $L_{x^{-1}}: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_{x^{-1}}[\Ocal] \in \tau$.
+                        \item [] ($\impliedby$): Suppose that $\Ocal \in \tau$. Then, as noted on pg. $75$, $L_x: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_x[\Ocal] = x\Ocal \in \tau$.  
+                    \end{itemize}
+                \end{proof}
+                
+            \item We show that projective real n-space, $\mathbb{P}^n$, is Hausdorff\footnote{Credit for the initial idea of the proof goes to Brain M. Scott.}: 
+                \begin{proof}
+                \end{proof}
+        \end{enumerate}
+    
+    
     \subsection{Homotopy Type}
         \begin{enumerate}[(1)]
             \item We prove that if $A$ is a subspace of a topological space $X$ and  $G: X \times I \rightarrow X$ is deformation retract relative to $A$, then $X$ and $A$ have the same homotopy type\footnote{Armstrong does not do a good job of defining a deformation retract. We use the following definition. "Strong" deformation retract: $A$ is a 'strong' deformation retract of $X$ iff there exists a map $D:X \times I \rightarrow X$ such that $D(a,t)=a$ for every $a \in A$, $D(x,0)=x$ and $D(x,1) \in A$ for all $x \in X$. See \href{http://math.stackexchange.com/questions/488527/deformation-retract-and-homotopy-equivalence}{this post on SE.}}: 

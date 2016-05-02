@@ -270,8 +270,18 @@
             And the result follows. 
             \end{proof}
             
-        \item We deduce that there are only $5$ regular polyhedra. 
-            \begin{proof}
+        \item We deduce that there are only $5$ regular (convex) polyhedra. 
+            \begin{proof} If $P$ is a polyhedra, it must satisfy the above criterion.Further, we assume that $p \geq 3$, since if not, we cannot construct a polygon. We use Shl{\"u}t notation. By checking routinley, for values up to $p,q \leq 5$ we have the following set of polyhedra: 
+            $$\{ \{3,3\}, \{3,5\}, \{5,3\}, \{3,4\} , \{4,3\}\}$$
+            \par Now, if $p \geq 6$, then we must have
+            $$ \frac{1}{6} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e}$$
+            Further, as $0 \leq \nicefrac{1}{q} \leq \nicefrac{1}{5}$, we have 
+                \begin{align*}
+                    \frac{1}{6} + \frac{1}{q} & = \frac{q+6}{6q} \\
+                    & < \frac{12}{6q} = \frac{2}{q} \\
+                    & < \frac{1}{2} + \frac{1}{e}
+                \end{align*}
+            A contradiction. 
             \end{proof}
             
         \item This is left to the reader as an exercise. 

@@ -10,6 +10,7 @@
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \DeclareMathOperator*{\R}{\mathbb{R}}
 \DeclareMathOperator*{\Aut}{\text{Aut}}
+\DeclareMathOperator*{\Int}{\text{Int}}
 
 
 \newenvironment{Lemma}[1][Lemma]
@@ -227,7 +228,94 @@
                 \end{proof}
                 
         \end{enumerate}
+
+\newpage 
+\section{Introduction}
+    \subsection{Topological Invariants}
+    \begin{enumerate}
+        \item We prove that $v(T) - e(T) = 1$ for any tree $T$: 
+            \begin{proof}
+            \end{proof}
         
+        \item We prove that $v(\Gamma) - e(\Gamma) \leq 1$ for any graph $\Gamma$, with equality, precisely when $\Gamma$ is a tree: 
+            \begin{proof} 
+            \end{proof}
+            
+        \item We show that inside any graph we can always find a tree which contains all the vertices: 
+            \begin{proof}
+            \end{proof}
+            
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise. 
+        
+        \item Let $P$ be a regular polyhedron in which each face has $p$ edges and for which $q$ faces meet at each vertex. We use Euler's formula to prove that,
+        $$ \frac{1}{p} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e} $$
+            \begin{proof}
+            \end{proof}
+            
+        \item We deduce that there are only $5$ regular polyhedra. 
+            \begin{proof}
+            \end{proof}
+            
+        \item This is left to the reader as an exercise. 
+        
+        \item This is left to the reader as an exercise. 
+        
+        \item We find a homeomorphism from the real line to the open interval $(0,1)$, and show that any two open intervals are homeomorphic: 
+            \begin{proof}
+            \end{proof}
+        
+        \item This is left to the reader as an exercise.
+        
+        \item We find a homeomorphism from $S^2$ to $\E^2$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $x,y \in S^2$. We find a homeomorphism from $S^2$ to $S^2$ which takes $x$ to $y$. We do the same for the plane, and torus: 
+            \begin{proof}
+            \end{proof}
+            
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item Define $f:[0,1) \rightarrow C$, by $f(x) = e^{2\pi i x}$. We prove that $f$ is a continuous bijection. In addition, we find a point $x \in [0,1)$ and a neighbourhood $N$, of $x$ in $[0,1)$, such that $f[N]$ is not a neighbourhood of $f(x)$ in $C$; consequently, this means $f$ is not a homeomorphism. 
+            \begin{proof}
+            \end{proof}
+            
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item We prove that the radial projection of the tetrahedron to the sphere is a homeomorphism: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $\partial D = S^1 \subset \mathbb{C}$. Given two points $x,y \in \Int{D}$, we find a homeomorphism from $D$ to $D$ which interchanges $x$ and $y$ and leaves all the points of $C$ fixed:
+            \begin{proof}
+            \end{proof}
+            
+        \item See accompanying solution. 
+        
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+            
+    \end{enumerate}
+    
+\newpage
+\section{Continuity}
+
+    
         
 \newpage 
 \section{Homotopy Type}

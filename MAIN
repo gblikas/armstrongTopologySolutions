@@ -265,7 +265,9 @@
         
         \item Let $P$ be a regular polyhedron in which each face has $p$ edges and for which $q$ faces meet at each vertex. We use Euler's formula to prove that,
         $$ \frac{1}{p} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e} $$
-            \begin{proof} 
+            \begin{proof} We count the number of faces of $P$ as follows: Since each face of $P$ has $p$ edges, $pf = 2e$. We count the number of vertexes as follows: Since each vertex has $q$ faces which meet on it, $qv = 2e$. In all, $f = \nicefrac{2e}{p}$, and $v = \nicefrac{2e}{q}$. Assuming that Euler's formula holds for $P$, we have 
+            $$v - e + f = \frac{2e}{q} - e + \frac{2e}{p} = 2$$
+            And the result follows. 
             \end{proof}
             
         \item We deduce that there are only $5$ regular polyhedra. 

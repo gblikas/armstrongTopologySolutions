@@ -11,12 +11,13 @@
 \DeclareMathOperator*{\R}{\mathbb{R}}
 \DeclareMathOperator*{\Aut}{\text{Aut}}
 \DeclareMathOperator*{\Int}{\text{Int}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
 
 
 \newenvironment{Lemma}[1][Lemma]
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
-\DeclareMathOperator*{\E}{\mathbb{E}}
 \newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} %creates a bijection arrow
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
 \newcommand*\productop{\mathbin{\Pi}} %disjoint union 
@@ -233,16 +234,29 @@
 \section{Introduction}
     \subsection{Topological Invariants}
     \begin{enumerate}
+    
         \item We prove that $v(T) - e(T) = 1$ for any tree $T$: 
-            \begin{proof}
+            \begin{proof} We proceed by induction on the number of edges in $T$: 
+                \begin{itemize}
+                    \item Basis: If $e(T) =1$, then $v(T) = 2$, and so,  $v(T) - e(T) = 1$.
+                    \item Hypothesis: Suppose that  $v(T) - e(T) = 1$ for any tree $T$, such that $e(T) = n$, for some $n \in \N$.
+                    \item Step: Suppose that $T$ is a tree, such that $e(T) = n+1$. Now, removing any edge will disconnect the tree, since by definition, $T$ contains no loops. Say that we remove and edge $e_0 \in T$, breaking up $T$ into $T_1$, $T_2$. Now, clearly, $v(T) = v(T_1) + v(T_1)$, and $e(T) = n+1 = e(T_1) +e(T_2) +1$. Thus, by the inductive hypothesis,
+                        \begin{align*}
+                        v(T) - e(T) & = v(T_1) + v(T_2) - e(T_1) - e(T_2) - 1 \\
+                        & = 1 + 1 - 1 \\
+                        & = 1
+                        \end{align*}
+                \end{itemize}
+            \end{proof}
+        
+         \item We show that inside any graph we can always find a tree which contains all the vertexes: 
+            \begin{proof} Let $G$ be a finite graph. If $G$ is already a tree, we are done. So, suppose that $G$ is not a tree. Then, by the comments on pg. $3$, $G$ contains a (without loss of generality, minimal) loop, $L$. Now, we remove some edge $e_L \in L$. Now, as $L$ is a loop, $e_L$ does not disconnect $L$, and so $L - e_L$ is a tree. We continue in this way, as long as the new graph formed by removing an edge is not a tree.
+            \par To conclude, we note that this process must stop at some loop, because $e(G) < \infty$; further, we have not removed any vertexes. 
             \end{proof}
         
         \item We prove that $v(\Gamma) - e(\Gamma) \leq 1$ for any graph $\Gamma$, with equality, precisely when $\Gamma$ is a tree: 
-            \begin{proof} 
-            \end{proof}
-            
-        \item We show that inside any graph we can always find a tree which contains all the vertices: 
-            \begin{proof}
+            \begin{proof} We have previously shown the equality condition. Using the above proof, we select a subtree, with the same vertexes as $\Gamma$. Call this tree $\Gamma'$. Then, $v(\Gamma') - e(\Gamma') = 1$. As $\Gamma'$ was created by removing edges, and not vertexes, we have $v(\Gamma) = v(\Gamma')$, and $e(\Gamma) \leq e(\Gamma')$. So, 
+            $$e(\Gamma) - e(\Gamma) \leq v(\Gamma') - e(\Gamma') = 1$$
             \end{proof}
             
         \item This is left to the reader as an exercise.
@@ -251,7 +265,7 @@
         
         \item Let $P$ be a regular polyhedron in which each face has $p$ edges and for which $q$ faces meet at each vertex. We use Euler's formula to prove that,
         $$ \frac{1}{p} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e} $$
-            \begin{proof}
+            \begin{proof} 
             \end{proof}
             
         \item We deduce that there are only $5$ regular polyhedra. 

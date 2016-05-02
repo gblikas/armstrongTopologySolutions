@@ -429,7 +429,8 @@
             \end{proof}
             
         \item We deduce that the fixed-point property holds for the 'house with two rooms', $X$: 
-            \begin{proof} Let $f:X \rightarrow X$ be a map. By exercise $29$, pg. $109$, we know that $X$ is contractible. By an extra lemma\footnote{reference this.}, we have that $X$ retracts onto a point $p \in X$. Thus, there exists a map $g:X \rightarrow X$, such that $g\restriction{\{p\}} \equiv 1_p$. Further, $f,g$ are homotopy equivalent. Thus, there exists a map $H: X \times I \rightarrow X$, such that $H(x,0) = f(x)$, and $H(x,1) = g(x)$. So, $H(p,1) = p$. Consequently, $f(p) = f(H(p,1)) = H(p,0) = H^{-1}(p,1) = $
+            \begin{proof} As was previously show, $X$ is contractible to some $x_0$. Thus, there exists some map $F: X \times I \rightarrow X$ such that $F(x,0) = x$, and $F(x,1) = x_0$. Thus, by extra lemma \footnote{include this}, every map $f:X \rightarrow Y$ is null-homotopic. In particular, this includes that maps $g: X \rightarrow X$. Thus, $X$ has the fixed point property\footnote{If this is not totally clear, see extra lemma.}. 
+            \par To use the previous problems hints, we could think about starting with the unit cylinder, and pushing in the areas from the top and bottom. However, this method is not rigorous. 
             \end{proof}
             
         \item Let $f$ be a fixed-point-free map from a compact metric space $(X,d)$ to itself. We prove there is a positive number $\epsilon$ such that $d(x,f(x)) > \epsilon$, $\forall x\in X$: 
@@ -464,6 +465,24 @@
             \end{proof}
         
         \item How does changing 'continuous function' to 'homeomorphism' in the definition of the fixed-point property affect problem $33$, $37$?
+            \begin{proof} We first examine problem $33$: 
+                \begin{itemize}
+                    \item[] $S^2$: This topological space would not exhibit the fixed point property. We know that the antipodal map is a homeomorphism which leaves no points fixed. 
+                    \item[] $S^1 \times S^1$: Likewise, the antipodal map on each component, $S^1$, provides another counter example.
+                    \item[] $\Int{D}$: Neither does this space have the homeomorphic fixed point property. To see this, we note that $\Int{D} \simeq \E$, and the map $g: \E \rightarrow \E$, given by $g(x) = x+1$ is a homeomorphism which leaves no points fixed.
+                    \item[] $X \bigvee Y$: First, consider the map $E_1: X \bigvee Y \rightarrow X \bigvee Y$, given by $E_1(x) = x$, if $x \in X -\{p\}$. And, $E_2(y) = e^{yi\nicefrac{\pi}{2}}$. Then, $E_1$ is a homeomorphism, which leaves $X$ fixed, except for $p$. Similarly, define $E_2$ for $Y$. Then, it follows that $E_2 \circ E_1:X \bigvee Y \rightarrow X \bigvee Y$ is a homeomorphism that leaves no points of $X \bigvee Y$ fixed. Thus, $X \bigvee Y$ does not exhibit the fixed point property\footnote{We make use of the previous proof; that is $X \bigvee Y$ has the fixed point propert iff $X$ and $Y$ both have it.}. 
+                \end{itemize}
+                \par Now, we examine problem $37$:
+                \par This shape does not exhibit the homeomorphic fixed point property. Consider $\partial B^n = S^{n-1}$, and let $p = (1,0,...,0)$. Then, $B^n - \{p\} = \Int{B^n} \cup S^{n-1} - \{p\}$. Furthermore, without loss of generality, $S^{n-1} -\{p\} \simeq \{-p\}$.\footnote{See previous exercises.} It follows that $\Int{B^n} \cup S^{n-1} - \{p\} \simeq \Int{B^n} \cup \{-p\}$. To conclude, we exhibit a homeomorphism on $\Int{B^n} \cup \{-p\}$  which does not have a fixed point: 
+                \par Consider $f: \Int{B^n} \cup \{-p\} \rightarrow \Int{B^n} \cup \{-p\}$ defined by 
+                \[ f(x) = 
+                    \begin{cases}
+                    -x & x \notin \{-p, 0\} \\
+                    0 & x = -p \\
+                    -p & x = 0 
+                    \end{cases}\]
+                The fact that $f$ is 1-1 and onto is clear by construction. Further, $f$ is continuous, by the Gluing Lemma\footnote{Armstrong, pg. $69$.}. It follows that $f$ is a homeomorphism, as $f^{-1} \equiv -f$. However, $f$ clearly leaves no points fixed. 
+            \end{proof}
             
             
             

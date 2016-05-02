@@ -288,8 +288,11 @@
         
         \item This is left to the reader as an exercise. 
         
-        \item We find a homeomorphism from the real line to the open interval $(0,1)$, and show that any two open intervals are homeomorphic: 
-            \begin{proof}
+        \item We find a homeomorphism from the real line to the open interval $(0,1)$, and show that any two open intervals are homeomorphic:
+            \begin{proof} We show that the real line, $\R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.This amount to showing that $arctan: \R \rightarrow (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$ is continuous, 1-1, onto and that $tan \equiv arctan^{-1}$ is continuous. Thus, $\R \simeq (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.  
+            \par To conclude the proof, we show that any open subset, $(a,b) \subset \R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$, $a \neq b$:
+            \par Indeed, under the mapping $f(x) = (b-a)(\frac{x}{\pi} +\frac{1}{2}) +a$, we have 
+            $$(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2}) \rightarrow (a,b)$$
             \end{proof}
         
         \item This is left to the reader as an exercise.

@@ -14,6 +14,7 @@
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
+\DeclareMathOperator*{\Ft}{\text{Front}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -380,6 +381,84 @@
     
 \newpage
 \section{Continuity}
+    \subsection{Open and Closed Sets}
+    \begin{enumerate}[(1)]
+    
+        \item This is left to the reader as an exercise.
+        
+        \item This is left to the reader as an exercise.
+        
+        \item We specify the interior, closure and frontier of the following subsets. 
+            \setcounter{equation}{0}
+            \begin{align} \
+                & \{(x,y): 1 < x^2+y^2 \leq 2\} \\
+                & {\E}^2 - \{(0,t), (t,0): t\in \R \} \\
+                & {\E}^2 - \{(x, sin(1/x): x>0\}
+            \end{align} 
+            
+            \begin{itemize}
+                \item $\{(x,y): 1 < x^2+y^2 \leq 2\} = A$: 
+                    \begin{align*}
+                        \Ft A & = \bar{A} \cap  \overline{(\E - A)} \\
+                        & = \bar{A} \cap  \big\{ \{(x,y): 0 \leq x^2+y^2 \leq 1\} \cup \{(x,y): 2 \leq x^2+y^2\} \big\}\\
+                        & = \{(x,y): x^2+y^2 = 1 \lor x^2+y^2 = 2 \}
+                    \end{align*}
+                    The rest are left to the reader. 
+
+                \item ${\E}^2 - \{(0,t), (t,0): t\in \R \} = B$: 
+                    \par From the fact that $\overline{{\E}^2 - B} = \E^2$, we have 
+                    \[\Ft B = B\]
+                    The rest are left to the reader. 
+                
+                \item ${\E}^2 - \{(x, sin(1/x): x>0\} = C$: 
+                    \par From the fact that $\overline{{\E}^2 - C} = \E^2$, we have 
+                    \[\Ft C = C\]
+                    The rest are left to the reader as an exercise. 
+            \end{itemize}
+            
+        \item This is left to the reader as an exercise.
+        
+        \item We show that if $A$ is a dense subset of a space $(X, \tau)$, and if $\Ocal \in \tau$, that $\Ocal \subset \overline{A \cap \Ocal}$:
+            \begin{proof}
+            \end{proof}
+            
+            
+        \item This is left to the reader as an exercise.
+        
+        \item Suppose that $Y$ is a subspace of $(X, \tau)$. We show taht a subset of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. Further, we show that we get the same result if we take the closer in $Y$ or $X$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $Y$ be a subspace of $(X, \tau)$. Given $A \subset Y$, we show that $A_X^\circ \subset A_Y^\circ$, and give an example when the two may not be equal: 
+            \begin{proof}
+            \end{proof}
+            
+        \item This is left to the reader as an exercise. However, here is a counter example to this exercise: 
+        
+        \item We show that the frontier of a set always contains the frontier of its interior, and descirbe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
+            \begin{proof} 
+            \end{proof}
+            
+        \item This main part of this exercise is left to the reader. However, we do show that this topology does not have a countable base: 
+            \begin{proof} 
+            \end{proof}
+            
+        \item We show that if a topological space $(X, \tau)$ has a countable base for its topology, then $X$ contains a countable dense subset. I.e. A second countable space is separable: 
+            \begin{proof}
+            \end{proof}
+        
+    
+    \subsection{Continuous Functions}
+    
+    \subsection{Space-Filling Curves}
+    
+    \subsection{The Tietze Extension Theorem}
+    
+
+\newpage
+\section{Compactness and Connectedness}
+    
+    \end{enumerate}
 
     
         

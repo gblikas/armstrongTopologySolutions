@@ -477,7 +477,19 @@
         
     
     \subsection{Continuous Functions}
-    
+        \begin{itemize}[(1)]
+            \item We show that if $f: \R \rightarrow \R$ is a map, then the set of points left fixed by $f$ is closed. Further, the kernel of $f$ is closed.
+                \begin{proof} Define $f_0(x) = f(x) - x$. The rest is left to the reader. 
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+            
+            \item Let $f: \E \rightarrow \R$ be a map and define $\Gamma_f: \E \rightarrow \E^2$ by $\Gamma_f (x) = (x, f(x))$. Whe show that $\Gamma _f$ is continuous and that its image, with the induced topology, is homeomorphic to $\E$: 
+                \begin{proof} 
+                \end{proof}
+                
+                
+        \end{itemize}
     \subsection{Space-Filling Curves}
     
     \subsection{The Tietze Extension Theorem}

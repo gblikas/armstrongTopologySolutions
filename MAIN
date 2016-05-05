@@ -502,7 +502,7 @@
             \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
             
             \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
-                \begin{proof} To see that $f$ is continuous, let 
+                \begin{proof} To see that $f$ is continuous, let $\Ocal \in CO$. Then, $X - \Ocal = \R - \Ocal$ is finite. But then, $f^{-1}[\Ocal] = \Ocal$, and $\Ocal^c$ is finite in $\E$. This implies that $\Ocal = \bar{\Ocal}$. Thus, $\Ocal^c = \Ocal$ is open in $\E$. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise.

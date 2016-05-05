@@ -14,7 +14,7 @@
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
-\DeclareMathOperator*{\Ft}{\text{Front}}
+\DeclareMathOperator*{\Ft}{\text{Fr}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -420,7 +420,7 @@
         
         \item We show that if $A$ is a dense subset of a space $(X, \tau)$, and if $\Ocal \in \tau$, that $\Ocal \subset \overline{A \cap \Ocal}$:
             \begin{proof} Suppose, to the contrary, that $\Ocal \not\subset \overline{A \cap \Ocal}$. Then, there exist some $x \in \Ocal$, such that $x \notin \overline{A \cap \Ocal}$.
-            \par As $\overline{A \cap \Ocal}$ is closed, there exists some $\Ocal_x \in \tau$ such that $x \in \Ocal_x$, and 
+            \par As $\overline{A \cap \Ocal}$ is closed, $x \in (\overline{A \cap \Ocal})^c$ and so,  there exists some $\Ocal_x \in \tau$ such that $x \in \Ocal_x$, and 
             \[\overline{A \cap \Ocal} \cap (\underset{x}\Ocal - \{x\}) = \emptyset \]
             But, as $x \notin \overline{A \cap \Ocal}$, we have 
             \[ \overline{A \cap \Ocal} \cap \Ocal_x = \emptyset \]
@@ -434,16 +434,25 @@
             \begin{proof} If $A \subset Y$ is closed in $Y$, then $Y - A$ is open in $Y$. But then, by the definition of subspace topology, $Y - A = Y \cap \Ocal_y$, for some open $\Ocal_y \in X$. Consequently, we have 
                 \begin{align*}
                     A & = Y - (Y \cap \Ocal_y) \\
+                    & = Y \cap (Y \cap \Ocal_y)^c \\
+                    & = Y \cap (X - \Ocal_y)
                 \end{align*}
+            And, as $X - \Ocal_y$ is closed in $X$, this proves the result. We note that a similar case holds in the case where $A$ is open.
+            \par Letting $\bar{A_y}$ and $\bar{A_x}$ denote the closure of $A \subset Y$ in $Y$ and $X$ respectively, we show that  $\bar{A_y} = \bar{A_x}$: 
+            \newline \par  From the previous part of this proof, we have that $\bar{A_y} = Y \cap C$, where $C$ is closed in $X$. Now, since $C$ is a closed set in $X$ containing $A$, we have $\bar{A_x} \subset C$, and so $Y \cap \bar{A_x} \subset \bar{A_y} = Y \cap C$. 
+            \par Again by the first problem, we have $Y \cap \bar{A_x}$ is closed in $Y$ and contains $A$. So, 
+            \[ \bar{A_y} \subset Y \cap \bar{A_x} \subset \bar{A_x}\]
+            Thus, $\bar{A_y} = \bar{A_x}$. 
             \end{proof}
             
         \item Let $Y$ be a subspace of $(X, \tau)$. Given $A \subset Y$, we show that $A_X^\circ \subset A_Y^\circ$, and give an example when the two may not be equal: 
-            \begin{proof}
+            \begin{proof} Let $x \in A_x^\circ$. Then, there exists and open $\Ocal_x \subset X$, with $x \in \Ocal_x$ and $\Ocal_x \subset A$. Now, since $\Ocal_x \subset A \subset Y$, $x \in \Ocal_x \cap Y \subset A$ and, $\Ocal_x \cap Y$ is open in $Y$, by definition. Thus, $x \in A_y^\circ$. 
+            \par An example when they might not be equal is in the following case: Let $X = \R$, $Y = \mathbb{Z}$, and $A = \{0\}$. Then, $A_x^\circ = \emptyset$. But, every point of $\mathbb{Z}$ is open in the subspace topology, and so $A_y^\circ = \{ 0\}$. 
             \end{proof}
             
         \item This is left to the reader as an exercise. However, here is a counter example to this exercise: 
         
-        \item We show that the frontier of a set always contains the frontier of its interior, and descirbe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
+        \item We show that the frontier of a set always contains the frontier of its interior, and describe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
             \begin{proof} 
             \end{proof}
             

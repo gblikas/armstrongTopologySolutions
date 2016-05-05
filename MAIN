@@ -15,6 +15,7 @@
 \DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
 \DeclareMathOperator*{\Ft}{\text{Fr}}
+\DeclareMathOperator*{\Image}{\text{Im}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -477,7 +478,7 @@
         
     
     \subsection{Continuous Functions}
-        \begin{itemize}[(1)]
+        \begin{enumerate}[(1)]
             \item We show that if $f: \R \rightarrow \R$ is a map, then the set of points left fixed by $f$ is closed. Further, the kernel of $f$ is closed.
                 \begin{proof} Define $f_0(x) = f(x) - x$. The rest is left to the reader. 
                 \end{proof}
@@ -485,11 +486,36 @@
             \item This is left to the reader as an exercise.
             
             \item Let $f: \E \rightarrow \R$ be a map and define $\Gamma_f: \E \rightarrow \E^2$ by $\Gamma_f (x) = (x, f(x))$. Whe show that $\Gamma _f$ is continuous and that its image, with the induced topology, is homeomorphic to $\E$: 
-                \begin{proof} 
+                \begin{proof} We show that $\Gamma_f$ is continuous. To do this, we use the sequential criterion for continuity in $\E^n$. Let $\{x_n\}_n$ be a sequence in $\E$, such that $x_n \rightarrow x \in \E$. Then $\Gamma_f$ is clearly continuous by the fact that $f$ is, and component wise comparison.  That is, 
+                \[  \Gamma_f (x_n) = (x_n, f(x_n)) \rightarrow (x, f(x)) = \Gamma_f (x) \]
+                Next, we show that $\Image \Gamma_f$ is homeomorphic to $\E$:
+                \par We claim that the function $p_1: \Image \Gamma_f \rightarrow \E$, defined by $p_1((x, f(x)) = x$ is the desired homeomorphism. 
+                    \begin{itemize}
+                        \item[] Continuity: We have previously shown that the projection map is continuous.
+                        \item[] 1-1: This is true, by construction. 
+                        \item[] Onto: This is clear, as $f$ a map from $\E$ to $\E$. 
+                        \item[] Cont. Inverse: This is clear, as $p_1^{-1} \equiv \Gamma_f$, and we have shown $\Gamma_f$ is continuous. 
+                    \end{itemize}
+                This proves the result.\footnote{A similar argument applies to $\E^n$.} 
                 \end{proof}
                 
+            \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
+            
+            \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
+                \begin{proof} To see that $f$ is continuous, let 
+                \end{proof}
                 
-        \end{itemize}
+            \item This is left to the reader as an exercise.
+            
+            \item Let $(X, \tau)$ be a topological space, $A \subset X$, and $\chi_A$ its characteristic function. We describe the frontier of $A$ in terms of $\chi$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+            
+            \item See section section 1. 
+            
+        \end{enumerate}
     \subsection{Space-Filling Curves}
     
     \subsection{The Tietze Extension Theorem}

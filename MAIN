@@ -13,17 +13,17 @@
 \DeclareMathOperator*{\Int}{\text{Int}}
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \DeclareMathOperator*{\N}{\mathbb{N}}
+\DeclareMathOperator*{\Ocal}{\mathcal{O}}
 
-
+%new commands
 \newenvironment{Lemma}[1][Lemma]
   {\proof[#1]\leftskip=1cm\rightskip=1cm}
   {\endproof} %this make a lemma indented in proof
 \newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} %creates a bijection arrow
-\DeclareMathOperator*{\Ocal}{\mathcal{O}}
 \newcommand*\productop{\mathbin{\Pi}} %disjoint union 
 
-
-
+%counters and reformating: 
+\setcounter{section}{-1}
 
 
 
@@ -288,21 +288,44 @@
         
         \item This is left to the reader as an exercise. 
         
-        \item We find a homeomorphism from the real line to the open interval $(0,1)$, and show that any two open intervals are homeomorphic:
+        \item We find a homeomorphism from the real xline to the open interval $(0,1)$, and show that any two open intervals are homeomorphic:
             \begin{proof} We show that the real line, $\R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.This amount to showing that $arctan: \R \rightarrow (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$ is continuous, 1-1, onto and that $tan \equiv arctan^{-1}$ is continuous. Thus, $\R \simeq (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.  
             \par To conclude the proof, we show that any open subset, $(a,b) \subset \R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$, $a \neq b$:
             \par Indeed, under the mapping $f(x) = (b-a)(\frac{x}{\pi} +\frac{1}{2}) +a$, we have 
             $$(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2}) \rightarrow (a,b)$$
+            As $f$ is a degree $1$ polynomial in $\R$, it follows that it is 1-1, onto and continuous with a continuous inverse. 
             \end{proof}
         
         \item This is left to the reader as an exercise.
         
-        \item We find a homeomorphism from $S^2$ to $\E^2$: 
-            \begin{proof}
+        \item We find a homeomorphism from $S^2 - N = S^2 - \{(0,0,1)\}$ to $\E^2$: 
+            \begin{proof} As pointed out in Armstrong, we find a formula for stereographic projection. From the fact that $S^2 = \{x \in \R^3: ||x||_2 =1\}$, and rules of calculus, any line passing through $v = (x,y,z) \in S^2 - N$ and $N$ is of the following form: 
+                \begin{equation}
+                p(t) = (0,0,1) + t(x,y,z) \equiv <tx,ty,1-t(1-x)>    
+                \end{equation}
+            For $t \in [0, \infty)$. As the $z$ component of $p$ is zero exactly when $t_0 = \nicefrac{1}{1-z}$, we substitute $t_0$ back in $(1)$ to obtain our formula for stereographic projection: 
+            \[\Pi (x,y,z) = \big(\frac{x}{1-z},\frac{y}{1-z} \big) \]
+            It is left to show that $\Pi$ is 1-1, onto, continuous, with a continuous inverse. 
+                \begin{itemize}
+                    \item[] 1-1: By component wise comparison, the result follows. 
+                    \item[] Onto: Given $(x_0,y_0) \in \R^2$, we have, after some simple algebra, 
+                            \[ \Pi \Big(\frac{x_0}{r}, \frac{y_0}{r}, \frac{x_0^2 + y_0^2}{r}\Big) = (x_0,y_0),\]
+                            where $r = 1+x_0^2 +y_0^2$.  
+                    \item[] Continuity: As $\Pi$ is a linear transformation in $\R^2$, we know that from rules of calculus/real analysis that it is continuous.
+                    \item[] Cont. Inverse: $\Pi^{-1}$ is as outline above in the derivation of onto. For the same reasons the function is continuous. 
+                \end{itemize}
             \end{proof}
             
         \item Let $x,y \in S^2$. We find a homeomorphism from $S^2$ to $S^2$ which takes $x$ to $y$. We do the same for the plane, and torus: 
-            \begin{proof}
+            \begin{proof} We assume that results about matrix groups are applicable. 
+                \begin{itemize}
+                    \item $S^2$: Consider $S^2$ and $SO(3)$. Let $x \in S^2$. Then, by the Gram-Schmidt Orthogonalization process, there exists $X \in SO(3)$ for which $x$ is the first column of $X$. Likewise for $y$, its corresponding matrix $Y$. Then, $YX^{-1} \in SO(3)$ and maps $x$ to $y$. As $SO(3)$ is a group, $(YX^{-1})^{-1} \in SO(3)$. Thus, $YX^{-1}$ is a homeomorphism which takes $x$ to $y$.
+                    
+                    \item $\E^2$: Fix $(x,y),(z,w) \in \R^2$. Then, the function, $f$ that sends $(a,b) \in \R^2$ to \[((x+z)-a, (y+w)-b)\]
+                    sends  $(x,y)$ to $(z,w)$. As $f$ is linear, it is continuous. Likewise, its inverse is continuous. 
+                    
+                    \item Torus: Consider the torus as $S^1 \times S^1$. Then component wise examination shows that the example above proves the result. 
+                \end{itemize}
             \end{proof}
             
         \item This is left to the reader as an exercise.
@@ -312,7 +335,19 @@
         \item This is left to the reader as an exercise.
         
         \item Define $f:[0,1) \rightarrow C$, by $f(x) = e^{2\pi i x}$. We prove that $f$ is a continuous bijection. In addition, we find a point $x \in [0,1)$ and a neighbourhood $N$, of $x$ in $[0,1)$, such that $f[N]$ is not a neighbourhood of $f(x)$ in $C$; consequently, this means $f$ is not a homeomorphism. 
-            \begin{proof}
+            \begin{proof} We first show that $f$ is a continuous bijection: 
+            \par Via Euler's formula,
+            \[ e^{2\pi i x} = cos(2\pi x) + i sin(2\pi x), \quad \forall x \in \R \]
+            Using this fact, we show that $f$ is 1-1 and onto. 
+                \begin{itemize}
+                    \item 1-1: Suppose that $cos(2\pi x) + i sin(2\pi x) = cos(2\pi y) + i sin(2\pi y)$ for some $x, y \in [0,1)$. Then, by component-wise comparison of complex numbers we have $cos(2\pi y) = cos(2\pi x)$, iff, $2 \pi y = 2\pi x$, iff $x = y$, as $x,y \in [0,1)$; likewise for $sin$. Thus, $f$ is 1-1. 
+                    
+                    \item Onto: Let $y \in C$. Then, $y = cos(2\pi y_0) + i sin(2\pi y_1)$ for some $(y_0, y_1) \in \R^2$. But as $f: [0,1) \rightarrow C$, we have $0 \leq 2 \pi y_0, 2\pi y_1 \leq 2\pi$. Consequently, $f$ is onto.
+                    
+                    \item Continuity: By the definition of continuity in $\mathbb{C}$, and the fact that $cos$, $sin$ are continuous, we have that $f$ is continuous. 
+                \end{itemize}
+            
+            Next, consider $[0, 1/2) \subset [0,1)$. This is a open neighbourhood in $[0,1)$, by definition. But, $f[[0,1/2)]$ is $C$ intersected with the upper half of the plane minus $z = -1$. Which is not a neighbourhood of $z =1 \in C$, because any open ball centered around $z =1$ must contain the lower plane. Therefore, $f$ is not a homeomorphism. 
             \end{proof}
             
         \item This is left to the reader as an exercise.
@@ -320,12 +355,14 @@
         \item This is left to the reader as an exercise.
         
         \item We prove that the radial projection of the tetrahedron to the sphere is a homeomorphism: 
-            \begin{proof}
+            \begin{proof} A solid proof of this relies on the fact that a circumscribed polygon with center of mass $0$ is homeomorphic to $S^n$ via radial projection. The result of which are shown in chapter $5$. 
             \end{proof}
             
-        \item Let $\partial D = S^1 \subset \mathbb{C}$. Given two points $x,y \in \Int{D}$, we find a homeomorphism from $D$ to $D$ which interchanges $x$ and $y$ and leaves all the points of $C$ fixed:
-            \begin{proof}
-            \end{proof}
+        \item See accompanying solution.  
+        
+        %Let $\partial D = S^1 \subset \mathbb{C}$. Given two points $x,y \in \Int{D}$, we find a homeomorphism from $D$ to $D$ which interchanges $x$ and $y$ and leaves all the points of $C$ fixed:
+            %\begin{proof} 
+            %\end{proof}
             
         \item See accompanying solution. 
         
@@ -356,7 +393,7 @@
             \par Thus, $X \times X' \simeq Y \times Y'$.
             \end{proof}
             
-        \item We show that the cone, $CX$, is contractible for any space $(X, \tau_X)$:
+        \item We show that the cone, $CX$, is contractible for any space $(X, \tau_X)$:\footnote{We proved another proof for this. The first of which is in the extra lemmas section.}
             \begin{proof} By definition, we have $CX = \nicefrac{X \times I}{X\times \{1\}}$. Define ${H}: CX \times I \rightarrow CX$ by $${H}((x,t),s) = (x, t(1-s))$$ Then, we have 
                 \begin{align*}
                     {H}((x,t), 0) & = (x,t) = 1_{CX} \\
@@ -366,6 +403,24 @@
             \end{proof}
     
         \item We show that the punctured torus deformation retracts onto the one-point union of two circles. 
+            \begin{proof} We consider the torus as the identification space of a square, $X$, bounded by the box whose edge points are $(-1,-1),(-1,1),(1,1),(1,-1)$. Assume, without loss of generality, that the point $(0,0)$ is removed. 
+            \par We show that $F:T \times I \rightarrow T$ defined by 
+            $$F(x,t) = (1-t)x + t\frac{x}{||x||}$$
+            is a deformation retract onto the one point union of two circles: 
+            \par As
+                \begin{align*}
+                    F(x,0) & = x \\
+                    F(x,1) & = \frac{x}{||x||} 
+                \end{align*}
+            $F$ is a deformation retract onto $\partial X$. The function $f: \partial X \rightarrow S_1^1 \bigvee S_2^1$, given by 
+            \[f(x) = 
+                \begin{cases}
+                    g(x) & x \in (-1,\pm1)t + (1,\pm1)(1-t) \\
+                    s(x) & x \in (\pm1,1)t + (\pm,-1)(1-t)
+                \end{cases}
+                \]
+            for all $t \in I$, where $g,s$ are the guaranteed homeomorphisms from $[a,b]$ to $S^1$, is a homeomorphism by the Gluing Lemma. 
+            \end{proof}
         
         \item For each of the following cases, we choose as base point in $C$ and describe the generators for the fundamental groups of $C$ and $S$. Further, we write down the homomorphism, in terms of these generators, the fundamental groups induced by the inclusion of $C$ in $S$. 
         \par Consider the following examples of a circle $C$ embedded in a surface $S$: 
@@ -376,6 +431,24 @@
             \end{enumerate}
             
         \item Suppose that $f,g: S^1 \rightarrow X$ are homotopic maps. We prove that the spaces formed from $X$ by attaching a disc, using $f$ and using $g$ are homotopy equivalent; in other words, we prove that $X \cup_f D \simeq X \cup_g D$: 
+            \begin{proof} We aim to find maps $r,s'$, such that $r: X \cup_f D \rightarrow X \cup_g D$, $s: X \cup_g D \rightarrow X \cup_f D$, $s \circ r \simeq 1_{X \cup_f D}$ and  $r \circ s \simeq 1_{X \cup_g D}$. We note that 
+            $$\nicefrac{X \sqcup D}{f(A) \sim A} = X \cup_f D, \quad  \nicefrac{X \sqcup D}{g(A) \sim A} =X \cup_g D $$
+            \par As $f \simeq_F g$, $F$ is a map such that $F:S^1 \times I \rightarrow X$, and $F(x,0) = f(x)$, as well as, $F(x,1) = g(x)$. Using $F$, we construct the function $r:X \cup_f D \rightarrow X \cup_g D$ as follows: 
+            \[ r(x) = 
+                \begin{cases}
+                    \{x, F(x,1)\} & x \in \{x, f(x)\} \\ 
+                    x & \text{otherwise}\\
+                \end{cases}
+            \]
+            Similarly, define $s: X \cup_g D \rightarrow X \cup_f D$ by
+            \[ r(x) = 
+                \begin{cases}
+                    \{x, F(x,0)\} & x \in \{x, f(x)\} \\ 
+                    x & \text{otherwise}\\
+                \end{cases}
+            \]
+            
+            \end{proof}
         
         \item We use the previous problem, and the third example of homotopy given in section $5.1$, to show that the 'dunce hat' has the homotopy type of a disc, and is therefore contractible: 
         
@@ -484,8 +557,11 @@
                 The fact that $f$ is 1-1 and onto is clear by construction. Further, $f$ is continuous, by the Gluing Lemma\footnote{Armstrong, pg. $69$.}. It follows that $f$ is a homeomorphism, as $f^{-1} \equiv -f$. However, $f$ clearly leaves no points fixed. 
             \end{proof}
             
-            
-            
     \end{enumerate}
+    
+    
+\newpage 
+\section{Separation of the Plane}
+
         
 \end{document}

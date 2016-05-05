@@ -502,13 +502,19 @@
             \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
             
             \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
-                \begin{proof} To see that $f$ is continuous, let $\Ocal \in CO$. Then, $X - \Ocal = \R - \Ocal$ is finite. But then, $f^{-1}[\Ocal] = \Ocal$, and $\Ocal^c$ is finite in $\E$. This implies that $\Ocal = \bar{\Ocal}$. Thus, $\Ocal^c = \Ocal$ is open in $\E$. 
+                \begin{proof} To see that $f$ is continuous, let $\Ocal \in CO$. Then, $X - \Ocal = \R - \Ocal$ is finite. But then, $f^{-1}[\Ocal] = \Ocal$, and $\Ocal^c$ is finite in $\E$. This implies that $\Ocal = \bar{\Ocal}$. Thus, $\Ocal^c = \Ocal$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
+                \par Consider the inverse function of $f$. Note that $(a,b)$, $a < b$ is open in $\E$. But, $f^{-1}[(a,b)] = (a,b) = f[(a,b)]$, which is not open in $X$. Thus, $f^{-1}$ is not continuous.
                 \end{proof}
                 
             \item This is left to the reader as an exercise.
             
             \item Let $(X, \tau)$ be a topological space, $A \subset X$, and $\chi_A$ its characteristic function. We describe the frontier of $A$ in terms of $\chi$: 
-                \begin{proof}
+                \begin{proof} We note that if $\overline{(X -A)} \cap \bar{A} \neq \emptyset$, then there exists $a \in \overline{(X -A)}$, $a \in \bar{A}$. With this in mind, we claim that $\chi_A$ is continuous at $a \in X$ if, and only if, $a \notin \Ft A$. 
+                \par Indeed; 
+                    \begin{itemize}
+                        \item[] ($\implies$): Suppose, to the contrary, that $\chi_A$ is continuous at $a \in X$, but that $a \in \Ft A$. Then, $a \in \overline{X-A}$, and $a \in \bar{A}$. Now, let $\Ocal = (.99, 1.99) \subset \R$, without loss of generality. Then, $\chi_A(a) = 1 \in \Ocal$. Now, since $\chi_A$ is continuous, $\chi_A^{-1} [\Ocal]$ is open, and such that $a \in \chi_A^{-1} [\Ocal]$. But then, $\overline{X-A} \cap \chi_A^{-1} [\Ocal] \neq \emptyset$. Further, this implies that $X-A \cap \chi_A^{-1} [\Ocal] \neq \emptyset$. But then, $\chi_A(a) = 0 \in \Ocal$, a contradiction. 
+                        \item[] ($\impliedby$): 
+                    \end{itemize}
                 \end{proof}
                 
             \item This is left to the reader as an exercise.
@@ -516,9 +522,41 @@
             \item See section section 1. 
             
         \end{enumerate}
+        
+        
+        
     \subsection{Space-Filling Curves}
+        \begin{enumerate}[(1)]
+            \item We find a Peano curve which fills out the unit square in $\E^2$: 
+                \begin{proof} We apply lemma $2.10$. By a previous exercise, we have that $\partial [0,1]^2$ is homeomorphic to $\partial S^1$. Further, the boundary of the unit triangle is homeomorphic to $\partial S^1$. Therefore, by lemma $2.10$, there is a homeomorphism, $f$, from the unit triangle to the unit disc. Let $h: [0,1] \rightarrow T$ be the space filling curve of the triangle as mentioned in Armstrong. Then, $f \circ h$ is a continuous mapping from $[0,1] \rightarrow [0,1]^2$. Further, it is space filling. 
+                \end{proof}
+                
+            \item We find an onto, continuous function from $[0,1]$ to $S^2$: 
+                \begin{proof} From a previous exercise, we have that $\E^2 \cong_f (0,1) \times (0,1)$. Further, we have shown that $\E^2 \cong_\pi S^2 - (0,0,1)$. Thus, we extend $f$ to $g: [0,1]^2 \rightarrow S^2$ by 
+                \[g(x) = 
+                    \begin{cases}
+                    f(x) & x \notin \partial [0,1]^2 \\
+                    (0,0,1) & x \in \partial [0,1]^2
+                    \end{cases}
+                \]
+                Then, if $\Ocal \subset S^2$ is open, and contains $(0,0,1)$, then $g^{-1}[\Ocal]$ is the entire square via homeomorphism. Now, if $\Ocal \subset S^2$ does not contain $(0,0,1)$ and is open, then $g^{-1}[\Ocal] = f^{-1}[\Ocal]$ which is clearly open. 
+                \par
+                Thus, $g \circ h$, where $h$ is the triangle space-filling curve, is the desired function.
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: Use the fact that $[0,1]$ is compact. 
+            
+            \item This is left to the reader as an exercise. Hint: Use component wise definitions. 
+            
+            \item To proved a rigorous proof of this, at this point, is out of the question. However, via theorems 3.3, and 3.7, it is not true. 
+            
+        \end{enumerate}
     
     \subsection{The Tietze Extension Theorem}
+    Throughout these exercises, we assume that $(X, d)$ is a metric space, and that if $A \subset X$, it has the subspace metric. Further, the topology on $X$ is the induced topology, if not stated otherwise. 
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
     
 
 \newpage

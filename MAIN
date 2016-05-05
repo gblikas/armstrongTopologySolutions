@@ -419,14 +419,22 @@
         \item This is left to the reader as an exercise.
         
         \item We show that if $A$ is a dense subset of a space $(X, \tau)$, and if $\Ocal \in \tau$, that $\Ocal \subset \overline{A \cap \Ocal}$:
-            \begin{proof}
+            \begin{proof} Suppose, to the contrary, that $\Ocal \not\subset \overline{A \cap \Ocal}$. Then, there exist some $x \in \Ocal$, such that $x \notin \overline{A \cap \Ocal}$.
+            \par As $\overline{A \cap \Ocal}$ is closed, there exists some $\Ocal_x \in \tau$ such that $x \in \Ocal_x$, and 
+            \[\overline{A \cap \Ocal} \cap (\underset{x}\Ocal - \{x\}) = \emptyset \]
+            But, as $x \notin \overline{A \cap \Ocal}$, we have 
+            \[ \overline{A \cap \Ocal} \cap \Ocal_x = \emptyset \]
+            and consequently, $A \cap \Ocal \cap \Ocal_x = \emptyset$. But then, setting $B = \Ocal \cap \Ocal_x$, we have $x \in B$, $B \in \tau$, but $A \cap B = \emptyset$, contrary to extra lemma; $\bar{A} \neq X$, a contradiction. 
             \end{proof}
             
             
         \item This is left to the reader as an exercise.
         
-        \item Suppose that $Y$ is a subspace of $(X, \tau)$. We show taht a subset of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. Further, we show that we get the same result if we take the closer in $Y$ or $X$: 
-            \begin{proof}
+        \item Suppose that $Y$ is a subspace of $(X, \tau)$. We show that a subset $A$ of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. Further, we show that we get the same result if we take the closer in $Y$ or $X$: 
+            \begin{proof} If $A \subset Y$ is closed in $Y$, then $Y - A$ is open in $Y$. But then, by the definition of subspace topology, $Y - A = Y \cap \Ocal_y$, for some open $\Ocal_y \in X$. Consequently, we have 
+                \begin{align*}
+                    A & = Y - (Y \cap \Ocal_y) \\
+                \end{align*}
             \end{proof}
             
         \item Let $Y$ be a subspace of $(X, \tau)$. Given $A \subset Y$, we show that $A_X^\circ \subset A_Y^\circ$, and give an example when the two may not be equal: 

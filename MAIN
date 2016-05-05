@@ -555,7 +555,33 @@
     \subsection{The Tietze Extension Theorem}
     Throughout these exercises, we assume that $(X, d)$ is a metric space, and that if $A \subset X$, it has the subspace metric. Further, the topology on $X$ is the induced topology, if not stated otherwise. 
         \begin{enumerate}[(1)]
-            \item 
+            \item We show that $d(x,A) = 0$, if, and only if, $x \in \bar{A}$:
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that if $A,B \subset X$ are disjoint and closed, there exists disjoint open sets $U,V$ such that $A \subset U$ and $B \subset V$:
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+                
+            \item We show that every closed subset of a metric space is the intersection of a countable number of open sets: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+            
+            \item We show that if $A$ is a closed subset of $X$, then any map $f: A \rightarrow \E^n$ can be extended over $X$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: 
+            
+            \item This is left to the reader as an exercise.
+            
+            \item This is left to the reader as an exercise.
+            
+            \item This is left to the reader as an exercise.
         \end{enumerate}
     
 

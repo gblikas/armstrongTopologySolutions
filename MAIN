@@ -453,15 +453,26 @@
         \item This is left to the reader as an exercise. However, here is a counter example to this exercise: 
         
         \item We show that the frontier of a set always contains the frontier of its interior, and describe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
-            \begin{proof} 
+            \begin{proof} Let $(X, \tau)$ be a topological space, and let $A \subset X$. We want to show that $\Ft A^\circ \subset \Ft A$. 
+            \par Let $x \in \Ft A^\circ$. Then, 
+            \[ x \in \bar{A^\circ} \cap \overline{(X - A^\circ)} = \bar{A^\circ} \cup \overline{(X-A) \cup (A - A^\circ)}\]
+            Now, if $x \in \bar{A^\circ}$ and $x \in \overline{X -A}$, we are done. So suppose that $x \in \bar{A^\circ}$ and $x \in \overline{(A - A^\circ)}$. But then, $x \in \bar{A^\circ} \cup \overline{(A - A^\circ)} = \bar{A}$. Thus, the result follows.
+            \newline \par 
+            The inclusion $\Ft (A \cup B) \subset \Ft A \cup \Ft B$ always holds, and is left to the reader. To show that the reverse inclusion does not always hold, consider $X = \R$, and $A = \mathbb{Q}$. Then,
+                \begin{align*}
+                    \Ft (A \cup A^c) & = \Ft \R = \emptyset \\
+                    & \neq \Ft A \cup \Ft A^c  = \R 
+                \end{align*}
             \end{proof}
             
         \item This main part of this exercise is left to the reader. However, we do show that this topology does not have a countable base: 
-            \begin{proof} 
+            \begin{proof} Let $B = \tau$ be the topology specified. Suppose, to the contrary, that $\{B_n\}_{n = 1}^\infty$ is a countable base for the topology $\tau$. Define the function $f: \R \rightarrow \mathbb{N}$ as follows: for each $x \in \R$, let $f(x) = n$, such that $B_n \subset [x,1+x)$. Now, we show that $f$ is 1-1 to arrive at a contradiction: 
+            \par Indeed; Suppose to the contrary, without loss of generality, that $x < y$. Then, if $f(x) = f(y)$, $f(x) = [x, x+1) \subset B_{f(y)} = [y, y+1)$, which is impossible. Thus, $x = y$. 
             \end{proof}
             
         \item We show that if a topological space $(X, \tau)$ has a countable base for its topology, then $X$ contains a countable dense subset. I.e. A second countable space is separable: 
-            \begin{proof}
+            \begin{proof} Let $\{B_n\}_n$ be a countable base for $\tau$. By the Axiom of Choice, let $A$ be the collection of elements $\{a_i\}_i$ such that $a_i \in B_i$. The claim is that $\bar{A} = X$. 
+            \par Indeed; let $\Ocal \in \tau$. Then, $\Ocal = \bigcup_j B_j$, where $B_j \in B$. Now, as $A = \bigcup_i x_i$, where $x_i \in B_i$, we have $A \cap \Ocal \neq \emptyset$. Thus, by extra lemma, $\bar{A} = X$. 
             \end{proof}
         
     

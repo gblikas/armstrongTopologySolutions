@@ -104,8 +104,8 @@
                 \end{cases}
                 $$
             It is clear that as $f$ is a bijection, so is $g$. We show that $g$ is a homeomorphism: 
-            \par Suppose that $U$ is open in $Y$. Then, $g^{-1}[U] = f^{-1}[U]$, which is open in $X \cup \{\infty_1\}$. Now, if $\Ocal$ is open in $Y \cup \{\infty_2\}$, we have $\Ocal = K \cup \{\infty_2\}$, where $K \subset Y$ is compact. Then, 
-            $$g^{-1}[\Ocal] = g^{-1}[K \cup \{\infty_2\}] = g^{-1}[K] \cup g^{-1}[\{\infty_2\}] =g^{-1}[K] \cup \{\infty_1\}$$
+            \par Suppose that $U$ is open in $Y$. Then, $g^{-1}[U] = f^{-1}[U]$, which is open in $X \cup \{\infty_1\}$. Now, if ${\Ocal}$ is open in $Y \cup \{\infty_2\}$, we have ${\Ocal} = K \cup \{\infty_2\}$, where $K \subset Y$ is compact. Then, 
+            $$g^{-1}[{\Ocal}] = g^{-1}[K \cup \{\infty_2\}] = g^{-1}[K] \cup g^{-1}[\{\infty_2\}] =g^{-1}[K] \cup \{\infty_1\}$$
             which is open in $X \cup \{\infty_1\}$. 
             \par Consequently, as $g$ is one-to-one and onto, since $f$ is, $g$ is a homeomorphism by Theorem $3.7$, pg. $48$.
             \end{proof}
@@ -120,17 +120,17 @@
     
     \subsection{Quotient Maps \& Quotient Topology}
         \begin{enumerate}[(1)]
-            \item We show that if $q: X \rightarrow Y$ is a quotient map\footnote{Armstrong does not do a good job describing what the topology on $Y$ is. A simple exercise shows that by letting $\Ocal$ be open in $Y$ whenever $q^{-1}[\Ocal]$ is open in $X$, we have a topology on $Y$; call this $\tau_{Y}$. Further, Armstrong does not do an adequate job describing what a quotient map is: $q: X \rightarrow Y$ is a quotient map if it is onto, continuous with respect to $\tau_Y$, and such that $g^{-1}[\Ocal]$ is open in $X$ implies $\Ocal$ open in $Y$. We can summarize by saying that $q$ is onto, and such that $\Ocal$ is open in $Y$ iff $g^{-1}[\Ocal]$ is open in $X$.}, then the topology of $Y$ is the largest which makes $q$ continuous: 
+            \item We show that if $q: X \rightarrow Y$ is a quotient map\footnote{Armstrong does not do a good job describing what the topology on $Y$ is. A simple exercise shows that by letting ${\Ocal}$ be open in $Y$ whenever $q^{-1}[{\Ocal}]$ is open in $X$, we have a topology on $Y$; call this $\tau_{Y}$. Further, Armstrong does not do an adequate job describing what a quotient map is: $q: X \rightarrow Y$ is a quotient map if it is onto, continuous with respect to $\tau_Y$, and such that $g^{-1}[{\Ocal}]$ is open in $X$ implies ${\Ocal}$ open in $Y$. We can summarize by saying that $q$ is onto, and such that ${\Ocal}$ is open in $Y$ iff $g^{-1}[{\Ocal}]$ is open in $X$.}, then the topology of $Y$ is the largest which makes $q$ continuous: 
                 \begin{proof} Suppose that $\tau$ was some other topology on $Y$, such that $q$ was continuous. We conclude by showing that $\tau \subset \tau_Y$:
-                \par Indeed; if $\Ocal \in \tau$, then $q^{-1}[\Ocal]$ is open in $X$. But then, $q[q^{-1}[\Ocal]] = \Ocal \in \tau_Y$. Thus, $\tau \subset \tau_Y$. 
+                \par Indeed; if ${\Ocal} \in \tau$, then $q^{-1}[{\Ocal}]$ is open in $X$. But then, $q[q^{-1}[{\Ocal}]] = {\Ocal} \in \tau_Y$. Thus, $\tau \subset \tau_Y$. 
                 \end{proof}
                 
             \item Suppose that $(X, \tau)$ is a topological space, and $A$ a non-empty set. We show that if $f: X \rightarrow A$, then the quotient topology on $A$, $\tau_A$ is indeed a topology: 
-                \begin{proof} By definition, as noted above, $\Ocal$ is open in $A$, if $f^{-1}[\Ocal]$ is open in $X$:
+                \begin{proof} By definition, as noted above, ${\Ocal}$ is open in $A$, if $f^{-1}[{\Ocal}]$ is open in $X$:
                     \begin{enumerate}
                         \item As $f^{-1}[\emptyset] = \emptyset$, and $f^{-1}[A] = X$, $\emptyset, A \in \tau_A$.
-                        \item As $$f^{-1}[\bigcup_{j \in J} \Ocal_j] = \bigcup_{j \in J} f^{-1}[\Ocal_j],$$ we see that $\bigcup_{j \in J} \Ocal_j \in \tau_A$.
-                        \item Lastly, $$f^{-1}[\bigcap_{j =1 }^\infty \Ocal_j] = \bigcap_{j =1}^\infty f^{-1}[\Ocal_j]$$ So, $\bigcap_{j =1 }^\infty \Ocal_j \in \tau_A$. 
+                        \item As $$f^{-1}[\bigcup_{j \in J} {\Ocal}_j] = \bigcup_{j \in J} f^{-1}[{\Ocal}_j],$$ we see that $\bigcup_{j \in J} {\Ocal}_j \in \tau_A$.
+                        \item Lastly, $$f^{-1}[\bigcap_{j =1 }^\infty {\Ocal}_j] = \bigcap_{j =1}^\infty f^{-1}[{\Ocal}_j]$$ So, $\bigcap_{j =1 }^\infty {\Ocal}_j \in \tau_A$. 
                     \end{enumerate}
                 \end{proof}
                 
@@ -154,17 +154,17 @@
     \subsection{Topological Groups}
         \begin{enumerate}[(1)]
         
-            \item Suppose that $(G, \tau, *)$ is a topological group. Fixing $x \in G$, we show that $x\Ocal\in \tau$ if, and only if, $\Ocal \in \tau$: 
+            \item Suppose that $(G, \tau, *)$ is a topological group. Fixing $x \in G$, we show that $x{\Ocal}\in \tau$ if, and only if, ${\Ocal} \in \tau$: 
                 \begin{proof} 
                 $ $\newline
                     \begin{itemize}
-                        \item [] ($\implies$): Suppose that $x\Ocal \in \tau$. It follows from pg. $75$, that $L_{x^{-1}}: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_{x^{-1}}[\Ocal] \in \tau$.
-                        \item [] ($\impliedby$): Suppose that $\Ocal \in \tau$. Then, as noted on pg. $75$, $L_x: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_x[\Ocal] = x\Ocal \in \tau$.  
+                        \item [] ($\implies$): Suppose that $x{\Ocal} \in \tau$. It follows from pg. $75$, that $L_{x^{-1}}: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_{x^{-1}}[{\Ocal}] \in \tau$.
+                        \item [] ($\impliedby$): Suppose that ${\Ocal} \in \tau$. Then, as noted on pg. $75$, $L_x: G \rightarrow G$ is a homeomorphism and an open map: thus, $L_x[{\Ocal}] = x{\Ocal} \in \tau$.  
                     \end{itemize}
                 \end{proof}
                 
-            \item Suppose that $(G, \tau, *)$ is a topological group. We show that $\Ocal$ is a neighbourhood of $x \in G$, if, and only if, $x^{-1}\Ocal$ is a neighbourhood of $e$: 
-                \begin{proof} Suppose that $x \in G$, and without loss of generality, $\Ocal$ is an open set containing $x$. Then, by a previous lemma\footnote{reference this}, $L_{x^{-1}}[\Ocal] = x^{-1}\Ocal \in \tau$, and contains $x^{-1}x = e$.
+            \item Suppose that $(G, \tau, *)$ is a topological group. We show that ${\Ocal}$ is a neighbourhood of $x \in G$, if, and only if, $x^{-1}{\Ocal}$ is a neighbourhood of $e$: 
+                \begin{proof} Suppose that $x \in G$, and without loss of generality, ${\Ocal}$ is an open set containing $x$. Then, by a previous lemma\footnote{reference this}, $L_{x^{-1}}[{\Ocal}] = x^{-1}{\Ocal} \in \tau$, and contains $x^{-1}x = e$.
                 \par By considering $L_x$, similar logic shows the reverse implication. 
                 \end{proof}
                 
@@ -419,26 +419,26 @@
             
         \item This is left to the reader as an exercise.
         
-        \item We show that if $A$ is a dense subset of a space $(X, \tau)$, and if $\Ocal \in \tau$, that $\Ocal \subset \overline{A \cap \Ocal}$:
-            \begin{proof} Suppose, to the contrary, that $\Ocal \not\subset \overline{A \cap \Ocal}$. Then, there exist some $x \in \Ocal$, such that $x \notin \overline{A \cap \Ocal}$.
-            \par As $\overline{A \cap \Ocal}$ is closed, $x \in (\overline{A \cap \Ocal})^c$ and so,  there exists some $\Ocal_x \in \tau$ such that $x \in \Ocal_x$, and 
-            \[\overline{A \cap \Ocal} \cap (\underset{x}\Ocal - \{x\}) = \emptyset \]
-            But, as $x \notin \overline{A \cap \Ocal}$, we have 
-            \[ \overline{A \cap \Ocal} \cap \Ocal_x = \emptyset \]
-            and consequently, $A \cap \Ocal \cap \Ocal_x = \emptyset$. But then, setting $B = \Ocal \cap \Ocal_x$, we have $x \in B$, $B \in \tau$, but $A \cap B = \emptyset$, contrary to extra lemma; $\bar{A} \neq X$, a contradiction. 
+        \item We show that if $A$ is a dense subset of a space $(X, \tau)$, and if ${\Ocal} \in \tau$, that ${\Ocal} \subset \overline{A \cap {\Ocal}}$:
+            \begin{proof} Suppose, to the contrary, that ${\Ocal} \not\subset \overline{A \cap {\Ocal}}$. Then, there exist some $x \in {\Ocal}$, such that $x \notin \overline{A \cap {\Ocal}}$.
+            \par As $\overline{A \cap {\Ocal}}$ is closed, $x \in (\overline{A \cap {\Ocal}})^c$ and so,  there exists some ${\Ocal}_x \in \tau$ such that $x \in {\Ocal}_x$, and 
+            \[\overline{A \cap {\Ocal}} \cap (\underset{x}{\Ocal} - \{x\}) = \emptyset \]
+            But, as $x \notin \overline{A \cap {\Ocal}}$, we have 
+            \[ \overline{A \cap {\Ocal}} \cap {\Ocal}_x = \emptyset \]
+            and consequently, $A \cap {\Ocal} \cap {\Ocal}_x = \emptyset$. But then, setting $B = {\Ocal} \cap {\Ocal}_x$, we have $x \in B$, $B \in \tau$, but $A \cap B = \emptyset$, contrary to extra lemma; $\bar{A} \neq X$, a contradiction. 
             \end{proof}
             
             
         \item This is left to the reader as an exercise.
         
         \item Suppose that $Y$ is a subspace of $(X, \tau)$. We show that a subset $A$ of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. Further, we show that we get the same result if we take the closer in $Y$ or $X$: 
-            \begin{proof} If $A \subset Y$ is closed in $Y$, then $Y - A$ is open in $Y$. But then, by the definition of subspace topology, $Y - A = Y \cap \Ocal_y$, for some open $\Ocal_y \in X$. Consequently, we have 
+            \begin{proof} If $A \subset Y$ is closed in $Y$, then $Y - A$ is open in $Y$. But then, by the definition of subspace topology, $Y - A = Y \cap {\Ocal}_y$, for some open ${\Ocal}_y \in X$. Consequently, we have 
                 \begin{align*}
-                    A & = Y - (Y \cap \Ocal_y) \\
-                    & = Y \cap (Y \cap \Ocal_y)^c \\
-                    & = Y \cap (X - \Ocal_y)
+                    A & = Y - (Y \cap {\Ocal}_y) \\
+                    & = Y \cap (Y \cap {\Ocal}_y)^c \\
+                    & = Y \cap (X - {\Ocal}_y)
                 \end{align*}
-            And, as $X - \Ocal_y$ is closed in $X$, this proves the result. We note that a similar case holds in the case where $A$ is open.
+            And, as $X - {\Ocal}_y$ is closed in $X$, this proves the result. We note that a similar case holds in the case where $A$ is open.
             \par Letting $\bar{A_y}$ and $\bar{A_x}$ denote the closure of $A \subset Y$ in $Y$ and $X$ respectively, we show that  $\bar{A_y} = \bar{A_x}$: 
             \newline \par  From the previous part of this proof, we have that $\bar{A_y} = Y \cap C$, where $C$ is closed in $X$. Now, since $C$ is a closed set in $X$ containing $A$, we have $\bar{A_x} \subset C$, and so $Y \cap \bar{A_x} \subset \bar{A_y} = Y \cap C$. 
             \par Again by the first problem, we have $Y \cap \bar{A_x}$ is closed in $Y$ and contains $A$. So, 
@@ -447,7 +447,7 @@
             \end{proof}
             
         \item Let $Y$ be a subspace of $(X, \tau)$. Given $A \subset Y$, we show that $A_X^\circ \subset A_Y^\circ$, and give an example when the two may not be equal: 
-            \begin{proof} Let $x \in A_x^\circ$. Then, there exists and open $\Ocal_x \subset X$, with $x \in \Ocal_x$ and $\Ocal_x \subset A$. Now, since $\Ocal_x \subset A \subset Y$, $x \in \Ocal_x \cap Y \subset A$ and, $\Ocal_x \cap Y$ is open in $Y$, by definition. Thus, $x \in A_y^\circ$. 
+            \begin{proof} Let $x \in A_x^\circ$. Then, there exists and open ${\Ocal}_x \subset X$, with $x \in {\Ocal}_x$ and ${\Ocal}_x \subset A$. Now, since ${\Ocal}_x \subset A \subset Y$, $x \in {\Ocal}_x \cap Y \subset A$ and, ${\Ocal}_x \cap Y$ is open in $Y$, by definition. Thus, $x \in A_y^\circ$. 
             \par An example when they might not be equal is in the following case: Let $X = \R$, $Y = \mathbb{Z}$, and $A = \{0\}$. Then, $A_x^\circ = \emptyset$. But, every point of $\mathbb{Z}$ is open in the subspace topology, and so $A_y^\circ = \{ 0\}$. 
             \end{proof}
             
@@ -473,8 +473,10 @@
             
         \item We show that if a topological space $(X, \tau)$ has a countable base for its topology, then $X$ contains a countable dense subset. I.e. A second countable space is separable: 
             \begin{proof} Let $\{B_n\}_n$ be a countable base for $\tau$. By the Axiom of Choice, let $A$ be the collection of elements $\{a_i\}_i$ such that $a_i \in B_i$. The claim is that $\bar{A} = X$. 
-            \par Indeed; let $\Ocal \in \tau$. Then, $\Ocal = \bigcup_j B_j$, where $B_j \in B$. Now, as $A = \bigcup_i x_i$, where $x_i \in B_i$, we have $A \cap \Ocal \neq \emptyset$. Thus, by extra lemma, $\bar{A} = X$. 
+            \par Indeed; let ${\Ocal} \in \tau$. Then, ${\Ocal} = \bigcup_j B_j$, where $B_j \in B$. Now, as $A = \bigcup_i x_i$, where $x_i \in B_i$, we have $A \cap {\Ocal} \neq \emptyset$. Thus, by extra lemma, $\bar{A} = X$. 
             \end{proof}
+            
+    \end{enumerate}
         
     
     \subsection{Continuous Functions}
@@ -502,7 +504,7 @@
             \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
             
             \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
-                \begin{proof} To see that $f$ is continuous, let $\Ocal \in CO$. Then, $X - \Ocal = \R - \Ocal$ is finite. But then, $f^{-1}[\Ocal] = \Ocal$, and $\Ocal^c$ is finite in $\E$. This implies that $\Ocal = \bar{\Ocal}$. Thus, $\Ocal^c = \Ocal$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
+                \begin{proof} To see that $f$ is continuous, let ${\Ocal} \in CO$. Then, $X - {\Ocal} = \R - {\Ocal}$ is finite. But then, $f^{-1}[{\Ocal}] = {\Ocal}$, and ${\Ocal}^c$ is finite in $\E$. This implies that ${\Ocal} = \bar{{\Ocal}}$. Thus, ${\Ocal}^c = {\Ocal}$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
                 \par Consider the inverse function of $f$. Note that $(a,b)$, $a < b$ is open in $\E$. But, $f^{-1}[(a,b)] = (a,b) = f[(a,b)]$, which is not open in $X$. Thus, $f^{-1}$ is not continuous.
                 \end{proof}
                 
@@ -512,7 +514,7 @@
                 \begin{proof} We note that if $\overline{(X -A)} \cap \bar{A} \neq \emptyset$, then there exists $a \in \overline{(X -A)}$, $a \in \bar{A}$. With this in mind, we claim that $\chi_A$ is continuous at $a \in X$ if, and only if, $a \notin \Ft A$. 
                 \par Indeed; 
                     \begin{itemize}
-                        \item[] ($\implies$): Suppose, to the contrary, that $\chi_A$ is continuous at $a \in X$, but that $a \in \Ft A$. Then, $a \in \overline{X-A}$, and $a \in \bar{A}$. Now, let $\Ocal = (.99, 1.99) \subset \R$, without loss of generality. Then, $\chi_A(a) = 1 \in \Ocal$. Now, since $\chi_A$ is continuous, $\chi_A^{-1} [\Ocal]$ is open, and such that $a \in \chi_A^{-1} [\Ocal]$. But then, $\overline{X-A} \cap \chi_A^{-1} [\Ocal] \neq \emptyset$. Further, this implies that $X-A \cap \chi_A^{-1} [\Ocal] \neq \emptyset$. But then, $\chi_A(a) = 0 \in \Ocal$, a contradiction. 
+                        \item[] ($\implies$): Suppose, to the contrary, that $\chi_A$ is continuous at $a \in X$, but that $a \in \Ft A$. Then, $a \in \overline{X-A}$, and $a \in \bar{A}$. Now, let ${\Ocal} = (.99, 1.99) \subset \R$, without loss of generality. Then, $\chi_A(a) = 1 \in {\Ocal}$. Now, since $\chi_A$ is continuous, $\chi_A^{-1} [{\Ocal}]$ is open, and such that $a \in \chi_A^{-1} [{\Ocal}]$. But then, $\overline{X-A} \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. Further, this implies that $X-A \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. But then, $\chi_A(a) = 0 \in {\Ocal}$, a contradiction. 
                         \item[] ($\impliedby$): 
                     \end{itemize}
                 \end{proof}
@@ -539,7 +541,7 @@
                     (0,0,1) & x \in \partial [0,1]^2
                     \end{cases}
                 \]
-                Then, if $\Ocal \subset S^2$ is open, and contains $(0,0,1)$, then $g^{-1}[\Ocal]$ is the entire square via homeomorphism. Now, if $\Ocal \subset S^2$ does not contain $(0,0,1)$ and is open, then $g^{-1}[\Ocal] = f^{-1}[\Ocal]$ which is clearly open. 
+                Then, if ${\Ocal} \subset S^2$ is open, and contains $(0,0,1)$, then $g^{-1}[{\Ocal}]$ is the entire square via homeomorphism. Now, if ${\Ocal} \subset S^2$ does not contain $(0,0,1)$ and is open, then $g^{-1}[{\Ocal}] = f^{-1}[{\Ocal}]$ which is clearly open. 
                 \par
                 Thus, $g \circ h$, where $h$ is the triangle space-filling curve, is the desired function.
                 \end{proof}
@@ -560,7 +562,7 @@
                     \begin{itemize}
                         \item[] Suppose that $d(x,A) = 0 = \inf_{a \in A} d(x,a)$. Then, for every $\epsilon > 0$, there exists $a \in A$, such that 
                         \[|d(x,a) - 0| = d(x,a) < \epsilon \]
-                        Now, let $\Ocal$ be an open subset of $X$, $x \in \Ocal$. Choose $a \in A$ such that, $d(x,a) < \epsilon$. Then, $a \in \Ocal$, and $\Ocal \cap A \neq \emptyset$. Thus, $x \in \bar{A}$. 
+                        Now, let ${\Ocal}$ be an open subset of $X$, $x \in {\Ocal}$. Choose $a \in A$ such that, $d(x,a) < \epsilon$. Then, $a \in {\Ocal}$, and ${\Ocal} \cap A \neq \emptyset$. Thus, $x \in \bar{A}$. 
                         
                         \item[] Suppose that $x \in \bar{A}$. Then, we do the canonical ball construction and pick a sequence $\{a_n\}_n$ of elements of $A$, such that $d(x, a_n) \rightarrow 0$, $n \rightarrow \infty$. 
                     \end{itemize}
@@ -604,8 +606,54 @@
 \newpage
 \section{Compactness and Connectedness}
     
-    \end{enumerate}
-
+    \subsection{Closed and Bounded Subsets of $\E^n$}
+    There are not exercises for this section. 
+    
+    \subsection{The Heine-Borel Theorem}
+        \begin{enumerate}[(1)]
+            \item This is left to the reader as an exercise.
+            
+            \item This is left to the reader as an exercise.
+            
+            \item We use the Heine-Borel theorem to show that an infinite subset of a closed interval must have a limit point: 
+                \begin{proof} By 'infinite', we assume that the author means that the cardinality of the set is non-finite and countable. We proceed by contradiction: 
+                \par Let $C$ be the closed interval. Suppose that such an infinite subset, $A$, of $C$ does not have any limit points. Then, for each $x \in C$, there is an open set ${\Ocal}_x$ in $C$, such that $x \in {\Ocal}_x$ and ${\Ocal}_x \cap (A - \{x\}) = \emptyset$. In addition, 
+                \[C \subset \bigcup_{x \in C} {\Ocal}_x \]
+                So, $\bigcup_{x \in C} {\Ocal}_x$ is an open cover of $C$, and consequently, has a finite subcover: 
+                \[\mathcal{F} = \bigcup_{\substack{x_i  \\ i \in \{1,2, ..., N\}}} {\Ocal}_{x_i}\]
+                Then, $A \subset \mathcal{F}$ and ${\Ocal}_{x_i} \cap A = x_i$ for each $i$. Thus, 
+                \[A = \mathcal{F} \cap A = \{x_1, x_2, ..., x_N\}\]
+                A contradiction. 
+                \end{proof}
+                
+            \item We rephrase the definition of compactness in terms of closed sets:\footnote{Definition; The finite intersection propert (FIP): Let $\mathcal{F}$ be a collection of sets. Then, $\mathcal{F}$ has the finite intersection property if whenever $F_1, F_2, ..., F_n \in \mathcal{F}$, $F_1 \cap F_2 \cap ... \cap F_n \neq \emptyset$.} 
+                \begin{proof} We claim that $X$ is compact if, and only if, for every collection $\{C_i\}_{i \in I}$ of closed sets in $X$ with the FIP, $\bigcap_i C_i \neq \emptyset$. 
+                Indeed:
+                    \begin{itemize}
+                        \item[] ($\implies$) We proceed by contradiction: Let $X$ be compact, and let $\{C_i\}_{i \in I}$ be a collection of closed sets with the FIP, such that, $\bigcap_i C_i = \emptyset$. 
+                        \par Then, by De-Morgan's Laws, as $C_i^c$ is open, 
+                        \[\bigcup_i C_i^c = \Big( \bigcap_i C_i \Big)^c = \emptyset^c = X\]
+                        Thus, there exists a finite subcover, 
+                        \[\{C_{i_1}^c, C_{i_2}^c, ..., C_{i_n}^c\},\]
+                        with $X = \bigcup_k C_{i_k}^c$. And, so, 
+                        \[X^c = \emptyset = \Big(\bigcup_k C_{i_k}^c\Big)^c = \bigcap_k C_{i_k} \neq \emptyset\]
+                        However, this is clearly a contradiction. Thus, $\bigcap_i C_i \neq \emptyset$. 
+                        
+                        \item[] ($\impliedby$) Let $\mathcal{F} = \{ {\Ocal}_i\}_{i \in I}$ be an open cover of $X$. Then, $\{{\Ocal}_i^c\}_{i \in I}$ is a collection of closed sets, such that 
+                        \[\bigcap_i {{\Ocal}}_i^c = \Big( \bigcup_i {\Ocal}_i \Big)^c = X^c = \emptyset\]
+                        Thus, there exists a finite set $\{{\Ocal}_1^c, {\Ocal}_2^c, ..., {\Ocal}_n^c\}$, such that 
+                        $$\bigcap_{k = 1,2, ... , n} {\Ocal}_k^c = \emptyset $$ 
+                        \par But then, 
+                        \[\Big(\bigcap_{k = 1,2, ... , n} {\Ocal}_k^c\Big)^c = \bigcup_{k = 1,2, ... , n} {\Ocal}_k = (X^c)^c = X\]
+                        So, $\mathcal{F}$ contains a finite subcover. 
+                    \end{itemize}
+                \end{proof}
+        \end{enumerate}
+    
+    \subsection{Properties of Compact Spaces}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
     
         
 \newpage 
@@ -624,7 +672,7 @@
                     {H}((x,t), 0) & = (x,t) = 1_{CX} \\
                     {H}((x,t),1) & = (x,0) 
                 \end{align*}
-            Now, if $\Ocal_{CX} \in \tau_{CX}$, then $H^{-1}(\Ocal_{CX}) = (\Ocal_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
+            Now, if ${\Ocal}_{CX} \in \tau_{CX}$, then $H^{-1}({\Ocal}_{CX}) = ({\Ocal}_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
             \end{proof}
     
         \item We show that the punctured torus deformation retracts onto the one-point union of two circles. 
@@ -747,9 +795,9 @@
             
         \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,...,0)$ removed does not exhibit the fixed point property: 
             \begin{proof} Let $p=(1,...,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
-            \par Let $\Ocal$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}(\Ocal)$. Then $f(x) \in \Ocal$, and since $\Ocal$ is open there exists an $r>0$ such that $B_r(f(x))\subset \Ocal$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
+            \par Let ${\Ocal}$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}({\Ocal})$. Then $f(x) \in {\Ocal}$, and since ${\Ocal}$ is open there exists an $r>0$ such that $B_r(f(x))\subset {\Ocal}$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
             $$|f(x)-f(y)|=|\frac{x+p}{2}-\frac{y+p}{2}|=\frac{1}{2}|x-y|<r$$
-            Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}(\Ocal)$. Thus, $B_{2r}(x)\subset f^{-1}(\Ocal)$. Therefore, $f^{-1}(\Ocal)$ is open and $f$ is continuous.
+            Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}({\Ocal})$. Thus, $B_{2r}(x)\subset f^{-1}({\Ocal})$. Therefore, $f^{-1}({\Ocal})$ is open and $f$ is continuous.
             \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
             \end{proof}
             

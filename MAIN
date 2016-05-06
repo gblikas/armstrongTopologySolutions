@@ -652,8 +652,61 @@
     
     \subsection{Properties of Compact Spaces}
         \begin{enumerate}[(1)]
-            \item 
+            \item This is left to the reader as an exercise. Hint: Consider $\R$, and $\R$, with the discrete and indiscreet topologies. 
+            
+            \item We show that Lebesgue's Lemma fails for $\E^2$: 
+                \begin{proof}Let $B(0,1)$ be the open ball of radius one, centered around the origin. And, for each $p \neq 0$ in $\E^2$, let $B(p, \nicefrac{1}{||p||_2})$ be the open ball centered at $p$ and radius $\nicefrac{1}{||p||_2}$. Now, let $\delta > 0$, and let $n \in \mathbb{N}$ be such that 
+                \[\frac{1}{n} < \frac{\delta}{3}\]
+                Then, the open ball of radius $\nicefrac{2 \delta}{3}$ around the point $(n,0)$ is not contained in any $B(p, \nicefrac{1}{||p||_2})$. 
+                \end{proof}
+                
+            \item \textit{Lindel{\"o}f's Theorem}: We show that if $X$ has a countable base for its topology, $\tau$, then any open cover of $X$ contains a countable subcover: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is show by extra lemma, and the fact that compact subsets of $T_2$ spaces are closed.
+            
+            \item This is left to the reader as an exercise. Hint: These are a direct application of the exercises found in the book. 
+            
+            \item We find an example of a topological space $(X, \tau)$ and a compact subset whose closure is not compact: 
+                \begin{proof} Consider $\R = X$, and $\tau = \{\R, \emptyset, (-a,a) : a > 0\}$. Then, $\{0\}$ is clearly compact in $X$, and it is closed. But, $\overline{\{0\}} = \R$ as each $(-a, a)^c = (-\infty, -a] \cup [a, \infty)$ and $0 \notin (-\infty, -a] \cup [a, \infty)$. 
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+            
+            \item Let $f: X \rightarrow Y$ be a closed map such that $f^{-1}(y)$, $y \in Y$ is a compact subset of $X$. We show that $f^{-1}[K]$ is compact whenever $K$ is compact in $Y$: 
+                \begin{proof} This follows from the fact that 
+                \[f^{-1}[K] = f^{-1}[\bigcup_{k \in K} \{k\}] = \bigcup_{k \in K} f^{-1}[\{k\}]\]
+                and the fact that the union of finite sets is finite. 
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: Use the fact that a compact $T_2$ space is $T_3$, $T_4$ and theorem 3.7. 
+            
+            \item The proof of the first part is left to the reader. However, we show that any closed subset of a locally compact space is locally compact, $\mathbb{Q}$ is not locally compact,and that local compactness is preserved under homeomorphism: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Suppose that $X$ is locally compact and Hausdorff. Given $x \in X$, and a neighbourhood $\Ocal$ of $x$, we find a compact neighbourhood of $x$ which is contained in $\Ocal$:  
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise.
+            
+            \item We prove that $\E^n \cup \{\infty \}$ is homeomorphic to $S^n$:
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $X$, and $Y$ be locally compact Hausdorff spaces, and let $f: X \rightarrow Y$ be an onto map. We show that $f$ extends to a map from $X \cup \{\infty\}$ onto $Y \cup \{\infty\}$, if and only if, $f^{-1}[K]$ is compact for each compact subset $K$ of $Y$. Further, we deduce that if $X$ and $Y$ are homeomorphic spaces, then so are their one-point compactifications and find two spaces which are not homeomorphic, but have homeomorphic one-point compactifications:
+                \begin{proof}
+                \end{proof}
+    
         \end{enumerate}
+        
+    
+    \subsection{Product Spaces}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
     
         
 \newpage 

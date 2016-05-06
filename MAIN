@@ -578,8 +578,10 @@
                 Then, $A_n$ is open, for each $n \in \mathbb{N}$. The claim is that $\bigcap_n A_n = A$: 
                 \newline
                 \par Clearly, $A \subset A_n$, for each $n$ so, $A \subset \bigcap_n A_n$. Next, suppose that $x \in \bigcap_n A_n$, but $x \notin A$. Then, 
-                \[1 > \inf_{a \in \bigcap_n A_n} d(x,a) > 0\]
-                By the Archimedian Principal, there exists $n_0$ large enough so that $\nicefrac{1}{n_0} < \epsilon$. But then, $x \notin A_{n_0}$. Thus, $\bigcap_n A_n \subset A$. 
+                \[1 > \inf_{a \in \bigcap_n A_n} d(x,a) = \epsilon > 0\]
+                By the Archimedian Principal, there exists $n_0$ large enough so that $\nicefrac{1}{n_0} < \epsilon $. But then, 
+                \[x \notin \bigcap_n A_n\]
+                Thus, $\bigcap_n A_n \subset A$. 
                 \par This concludes the proof. 
                 \end{proof}
                 

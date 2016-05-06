@@ -556,26 +556,40 @@
     Throughout these exercises, we assume that $(X, d)$ is a metric space, and that if $A \subset X$, it has the subspace metric. Further, the topology on $X$ is the induced topology, if not stated otherwise. 
         \begin{enumerate}[(1)]
             \item We show that $d(x,A) = 0$, if, and only if, $x \in \bar{A}$:
-                \begin{proof}
+                \begin{proof} $ $\newline
+                    \begin{itemize}
+                        \item[] Suppose that $d(x,A) = 0 = \inf_{a \in A} d(x,a)$. Then, for every $\epsilon > 0$, there exists $a \in A$, such that 
+                        \[|d(x,a) - 0| = d(x,a) < \epsilon \]
+                        Now, let $\Ocal$ be an open subset of $X$, $x \in \Ocal$. Choose $a \in A$ such that, $d(x,a) < \epsilon$. Then, $a \in \Ocal$, and $\Ocal \cap A \neq \emptyset$. Thus, $x \in \bar{A}$. 
+                        
+                        \item[] Suppose that $x \in \bar{A}$. Then, we do the canonical ball construction and pick a sequence $\{a_n\}_n$ of elements of $A$, such that $d(x, a_n) \rightarrow 0$, $n \rightarrow \infty$. 
+                    \end{itemize}
                 \end{proof}
                 
             \item We show that if $A,B \subset X$ are disjoint and closed, there exists disjoint open sets $U,V$ such that $A \subset U$ and $B \subset V$:
-                \begin{proof}
+                \begin{proof} By lemma $2.13$, there exists a continuous function $f: X \rightarrow [-1,1]$, such that $f[A] \equiv 1$, and $f[B] \equiv -1$. Let $O_1 = [-1,0]$, and $O_2 = [0,1]$. Then, $O_1, O_2$ are open in $[-1,1]$. Thus, $f^{-1}[O_i]$ is open, as $f$ is continuous. Further, $f^{-1}[O_1] \cap f^{-1}[O_2] = \emptyset$, and $A \subset f^{-1}[O_1]$, $B \subset f^{-1}[O_2]$. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise.
                 
             \item We show that every closed subset of a metric space is the intersection of a countable number of open sets: 
-                \begin{proof}
+                \begin{proof} Let $A$ be a closed subset of $X$. Define 
+                \[A_n = \{x \in X : d(x,A) < \frac{1}{n} \}\]
+                Then, $A_n$ is open, for each $n \in \mathbb{N}$. The claim is that $\bigcap_n A_n = A$: 
+                \newline
+                \par Clearly, $A \subset A_n$, for each $n$ so, $A \subset \bigcap_n A_n$. Next, suppose that $x \in \bigcap_n A_n$, but $x \notin A$. Then, 
+                \[1 > \inf_{a \in \bigcap_n A_n} d(x,a) > 0\]
+                By the Archimedian Principal, there exists $n_0$ large enough so that $\nicefrac{1}{n_0} < \epsilon$. But then, $x \notin A_{n_0}$. Thus, $\bigcap_n A_n \subset A$. 
+                \par This concludes the proof. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise.
             
             \item We show that if $A$ is a closed subset of $X$, then any map $f: A \rightarrow \E^n$ can be extended over $X$: 
-                \begin{proof}
+                \begin{proof} 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: 
+            \item This is left to the reader as an exercise. 
             
             \item This is left to the reader as an exercise.
             

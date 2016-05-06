@@ -586,7 +586,7 @@
             \item This is left to the reader as an exercise.
             
             \item We show that if $A$ is a closed subset of $X$, then any map $f: A \rightarrow \E^n$ can be extended over $X$: 
-                \begin{proof} 
+                \begin{proof} The is the Tietze extension theorem applied component-wise. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise. 

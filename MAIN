@@ -4,6 +4,7 @@
 \usepackage{enumerate}
 \usepackage{hyperref}
 \usepackage{units}
+\usepackage{mathtools}
 
 
 %defined functions and such
@@ -40,10 +41,39 @@
 \tableofcontents
 
 \newpage
+
+\section{Definitions}
+
+    \subsection{Functions}
+        \begin{enumerate}[(1)]
+            \item Let $f:A \rightarrow B$ be a function. Then, 
+                \begin{itemize}
+                    \item $f$ is onto if, and only if, there exists a function $g: B \rightarrow A$ such that $fg = 1_B$.
+                    \item $f$ is one-to-one if, and only if, there exists a function $g: B \rightarrow A$ such that $gf = 1_A$ (provided $A$ is non-empty). 
+                    \item $f$ Is in 1-1 correspondence if there exists a function $g: B \rightarrow A$ such that $fg = 1_B$ and $gf = 1_A$. In this case, $g$ is unique and is called the inverse function of $f$, typically denoted $f^{-1}$. 
+                \end{itemize}
+        \end{enumerate}
+
+
 \section{Extra Proofs and Lemmas}
 
-
-
+    \subsection{Group Theory \& Abstract Algebra}
+    \begin{enumerate}[(1)]
+        \item Split Exact Sequence: Given an exact sequence of abeilean groups and homomorphisms, 
+        \[0 \xrightarrow[]{} G \xrightarrow{\theta} H \xrightarrow{\phi} K \xrightarrow[]{} 0, \]
+        and a homomorphism $\psi: K \rightarrow H$, such that $\phi\psi \equiv 1_K$, we have $H \cong G \oplus K$. 
+            \begin{proof}
+                Define $\alpha: G \oplus K \rightarrow H$ by $\alpha(g \oplus k) = \theta(g) + \psi(k)$: it is easy to see that $\alpha$ is a homomorphism. Also, $\alpha$ is (1-1), for if $\alpha(g \oplus k) = 0$, we have 
+                \[0 = \phi(\theta(g) + \psi(k)) = \phi\psi(k) = k;\]
+                but, then $\theta(g) = 0$, so that $g = 0$ since $\theta$ is one-to-one. 
+                \par Moreover, $\alpha$ is onto, since given $h \in H$, we have 
+                \[\phi(h - \psi\phi(h)) = \phi(h) - \phi\psi\phi(h) = 0\]
+                Thus, there exists $g \in G$ such that $h - \psi\phi(k) = \theta(g)$, that is, 
+                \[h = \theta(g) + \psi\phi(h) = \alpha(g \oplus \psi(h))\]
+            \end{proof}
+    \end{enumerate}
+    
+    
     \subsection{Limit Points, Closure \& Density}
     \begin{enumerate}[(1)]
     
@@ -686,8 +716,8 @@
                 \begin{proof}
                 \end{proof}
                 
-            \item Suppose that $X$ is locally compact and Hausdorff. Given $x \in X$, and a neighbourhood $\Ocal$ of $x$, we find a compact neighbourhood of $x$ which is contained in $\Ocal$:  
-                \begin{proof}
+            \item Suppose that $X$ is locally compact and Hausdorff. Given $x \in X$, and a neighbourhood $\Ocal$ of $x$, we find a compact neighbourhood $K$ of $x$ which is contained in $\Ocal$:  
+                \begin{proof} Let $\Ocal$ be as given. Then, since $X$ is locally compact, there exists a compact neighbourhood $V$, such that $x \in V$. By the subspace topology, it follows that $x \in V \cap \Ocal$ and $\Ocal \cap V$ is open in $V$. Further, as $V$ is compact, it is closed, by theorem 3.6. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise.

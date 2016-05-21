@@ -150,6 +150,13 @@
     
     \end{enumerate}
     
+    \subsection{Connectedness}
+        \begin{enumerate}[(1)]
+            \item We show that if $X$ is locally connected, then every connected component of $X$ is open in $X$; hence $X$ is the disjoint union of its connected components:
+                \begin{proof} Let $x \in Y$, where $Y$ is a connected component of $X$. By definition, $x$ is contained in some open connected subset $U$ of $X$. Since $Y$ is a maximal connected set containing $x$, we have $x \in U \subset Y$. This shows that $Y$ is open in $X$.
+                \end{proof}
+        \end{enumerate}
+    
     
     \subsection{Quotient Maps \& Quotient Topology}
         \begin{enumerate}[(1)]
@@ -912,20 +919,33 @@
         \item We show that
             \begin{itemize}
                 \item $\E^n$ is locally connected: 
-                    \begin{proof}
+                    \begin{proof} As has been shown, 
+                    \[ \{I_1 \times I_2 \times ... \times I_n : I_i \in \tau_{\E} \}\]
+                    is a base for the topology in $\E^n$. Thus, if $x \in \Ocal_x$ for some open neighbourhood $\Ocal_x$ in $\E^n$, there exists 
+                    \[I = I_1 \times I_2 \times ... \times I_n \subset \Ocal_x\]
+                    And, as each $I_i$ is connected, it follows by exercise 3.20, that $I$ is connected. 
                     \end{proof}
                     
                 \item $X = \{0\} \cup \{1/n : n \in \N\}$ is \textit{not} locally connected: 
-                    \begin{proof}
+                    \begin{proof} Let $\Ocal$ be an open neighbourhood of $0 \in X$, which is connected. But then, by theorem ($3.19$), $\Ocal$ is an interval. However, $X$ clearly contains no intervals. 
                     \end{proof}
             \end{itemize}
             
         \item We show that local connectedness is preserved by a homeomorphism, but need not be preserved by a continuous function: 
-            \begin{proof}
+            \begin{proof} The first part of this proof is direct. For the second part, consider $Y = \{0\} \cup \{1/n: n \in \N\}$ as above, and $X = \mathbb{Z}^+$ as subspaces of $\E$. Let $f: X  \bij Y$ be the canonical map. Then, $f$ is clearly continuous, but we have previously show that $Y$ is not locally compact. 
             \end{proof}
             
         \item We show that $(X, \tau)$ is locally connected, if, and only if every component of each open subset of $X$ is an open set: 
-            \begin{proof}
+            \begin{proof} 
+                \begin{itemize}
+                    \item[] ($\implies$): Suppose that $X$ is connected, and let $\Ocal$ be an open set in $X$, and $C$ a (maximal) connected component of $\Ocal$. Then, for some $x \in C$, there exists a connected open set $V_x$, such that 
+                    \[x \in V_x \subset \Ocal\]
+                    But, since $C$ is maximally connected, $V_x \subset C$. Then, 
+                    \[C = \bigcup_{x \in C} V_x \]
+                    and so $C$ is open. 
+                    
+                    \item[]  ($\impliedby$): Now, let $x \in X$, and $\Ocal$ an open set containing $x$. Then, the components of $\Ocal$ are open. Thus, let $V$ be a component such that $x \in V \subset \Ocal$. But then, $V$ is open, closed, and so connected. Thus, $X$ is locally connected. 
+                \end{itemize}
             \end{proof}
             
     \end{enumerate}
@@ -933,35 +953,47 @@
 \section{Joining Points by Paths}
     \begin{enumerate}[(1)]
         \item We show that the continuous image of a path-connected space is path-connected: 
-            \begin{proof}
+            \begin{proof} Without loss of generality, suppose that $f: X \rightarrow Y = f(X)$ is onto, and $X$ is path-connected. Then, for 
+            \[y_1 = f^{-1}(x_1), \quad  y_2 = f^{-1}(x_2)\]
+            in $Y$, there exists a path $h$ from $x_1$ to $x_2$. Thus, $f \circ h$ is the desired path.   
             \end{proof}
             
-        \item We show that $S^n$ is path-connected for $n > 0$: 
-            \begin{proof}
-            \end{proof}
+        \item This is left to the reader as an exercise. Hint: Consider the case $x \neq -y$, and use the straight-line homotopy composed with the canonical map. In the case where $x = -y$, pick a third point which is not equal and apply the above technique.  
         
         \item We prove that the product of two path-connected spaces is path-connected: 
-            \begin{proof}
+            \begin{proof} This follows directly from the definition of the product topology and set theory. 
             \end{proof}
             
         \item If $A$ and $B$ are path-connected subsets of a space $(X, \tau)$, and $A \cap B$ is non-empty, we show that $A \cup B$ is path-connected: 
-            \begin{proof}
+            \begin{proof} Suppose, without loss of generality, that 
+            \[x,y \in A \cup B, \quad x \in A, \quad x \in B\]
+            Pick $c \in A \cap B$, and by assumption, there exists paths $\gamma_1$ in $A$, $\gamma_2$ in $B$, which connect $x$ to $c$, and $c$ to $y$, respectively. 
+            \par It follows that $\gamma_1 \circ \gamma_2$ is the desired path. 
             \end{proof}
             
         \item We find a path-connected subset of a space whose closure is not path-connected:
-            \begin{proof}
+            \begin{proof} As the comments on page sixty-two point out, letting 
+            \[Z = \{(x, \sin(\pi/x): x \in \R^+\}\]
+            we see 
+            \[\overline{Z} = Y \cup Z = X\]
             \end{proof}
             
         \item We show that any indiscreet space is path-connected: 
-            \begin{proof}
+            \begin{proof} As any function on an indiscreet space is continuous, the result follows. 
             \end{proof}
             
         \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, ... \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
-            \begin{proof}
+            \begin{proof} It is not the case that fig. 3.4 is locally path-connect. To see this, we note that any path at the origin must contain points from $Y$ and $Z$. As the comments on page sixty-two point out, the result follows.  
+            \par For the second part of the proof, let 
+            \[X_0 = \{(0,y) : y \in [0,1] \}, \quad X_n = \{(1/n, y) : y \in [0,1]\}\]
+            Further, let $Y = \{(x,0) : x \in [0,1] \}$ and
+            \[X = Y \cup \Big( \bigcup_n X_n \Big)\] 
+            Then, $X$ is path connected as $Y \cap X_n \neq \emptyset$, for all $n$. \par To see that $X$ is not path connected, let $p \in (0,1)$, and consider $\Ocal \subset B(p,1)$ be open. Then, $\Ocal \cap Y = \emptyset$, so $\Ocal \cap X$ is a collection of line segments separate from each other. So, $V \cap X$ is not path connected. 
             \end{proof}
             
         \item We prove that a space which is connected, and locally path-connected is path-connected: 
-            \begin{proof}
+            \begin{proof}  Let $x \in X$. And let $\Ocal_x$ be the set of all $y \in X$ such that $y$ is path-connected to $x$; then, $\Ocal_x \neq \emptyset$. We claim that $\Ocal_x = X$. 
+            \par Indeed; as $\Ocal_x$ is a maximally connected component it is open, by extra lemma\footnote{cite this}. Similarly, $\Ocal_x^c$ is open. Thus, $\Ocal_x$ is both open and closed. Therefore, as $X$ is connected, $\Ocal_x = X$. This completes the proof. 
             \end{proof}
             
     \end{enumerate}

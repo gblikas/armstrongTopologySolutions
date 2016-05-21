@@ -9,14 +9,17 @@
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
+\DeclareMathOperator*{\Q}{\mathbb{Q}}
 \DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Aut}{\text{Aut}}
 \DeclareMathOperator*{\Int}{\text{Int}}
 \DeclareMathOperator*{\E}{\mathbb{E}}
-\DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
 \DeclareMathOperator*{\Ft}{\text{Fr}}
 \DeclareMathOperator*{\Image}{\text{Im}}
+\DeclareMathOperator*{\F}{\mathcal{F}}
+\DeclareMathOperator*{\Diam}{\text{Diam}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -77,17 +80,17 @@
     \subsection{Limit Points, Closure \& Density}
     \begin{enumerate}[(1)]
     
-        \item Let $(X, \tau)$ be a topological space, and $A \subset X$. We show that $\bar{A} = A \cup L_A$, where $L_A$ is the set of all accumulation points of $A$:
-            \begin{proof} If $\bar{A} = A$, then by Theorem $2.2$, pg. $29$, $L_A \subset A$ and we are done. So, suppose that $A$ is not closed. Then, $A$ does not contain all of its limit points; consequently, $L_A \neq \emptyset$. Further, the set $B = A \cup L_A$ is closed by Theorem $2.2$, pg. $29$. 
-            \par To conclude the proof, we show that any closed set $C$ containing $A$, contains $B$. Indeed; Let $C \subset X$ be closed, such that $A \subset C$. Now, for $a \in L_A$ and open set $O_a$ containing $a$, we have that $A \cap (O_a - \{a\}) \neq \emptyset$. But, as $A \subset C$, we have $C \cap (O_a - \{a\}) \neq \emptyset$. Therefore, $a \subset C$. So, $L_A \subset C$, implying $A \cup L_A \subset C$. By Theorem $2.3$, pg. $30$, $\bar{A} = B = A \cup L_A$.
+        \item Let $(X, \tau)$ be a topological space, and $A \subset X$. We show that $\overline{A} = A \cup L_A$, where $L_A$ is the set of all accumulation points of $A$:
+            \begin{proof} If $\overline{A} = A$, then by Theorem $2.2$, pg. $29$, $L_A \subset A$ and we are done. So, suppose that $A$ is not closed. Then, $A$ does not contain all of its limit points; consequently, $L_A \neq \emptyset$. Further, the set $B = A \cup L_A$ is closed by Theorem $2.2$, pg. $29$. 
+            \par To conclude the proof, we show that any closed set $C$ containing $A$, contains $B$. Indeed; Let $C \subset X$ be closed, such that $A \subset C$. Now, for $a \in L_A$ and open set $O_a$ containing $a$, we have that $A \cap (O_a - \{a\}) \neq \emptyset$. But, as $A \subset C$, we have $C \cap (O_a - \{a\}) \neq \emptyset$. Therefore, $a \subset C$. So, $L_A \subset C$, implying $A \cup L_A \subset C$. By Theorem $2.3$, pg. $30$, $\overline{A} = B = A \cup L_A$.
             \end{proof}
             
         \item Let $(X, \tau)$ be a topological space, and $A \subset X$. We prove that $L_A$, defined above, contains all limit points of sequences contained in $A$:\footnote{This assumes the general definition of limit points of a set}
             \begin{proof} Let $\{a_n\}_{n=1}^\infty \subset A$, such that $a_n \rightarrow a$. Then, $a \in L_{\{a_n: n \in \mathbb{N}\}}$ and every neighbourhood of $a$ contains a point of $\{a_n: n \in \mathbb{N}\} - \{a\} = B$. As $\{a_n: n \in \mathbb{N}\} \subset A$, every neighbourhood of $a$ has a point in $A - \{a\}$; $a \in L_A$. 
             \end{proof}
             
-        \item Let $(X, \tau)$ be a topological space, and $A \subset X$ such that $\bar{A} = X$. We prove that $A \cap O \neq \emptyset$, for all $O \neq \emptyset$, $O \in \tau$: 
-            \begin{proof} Suppose that for some $O \in \tau$, $O \neq \emptyset$, $A \cap O = \emptyset$. By a previous lemma, we have $\bar{A} = (L_A - A) \cup O^c$, implying $O^c = A$. But then we have $X = O^c = \bar{O^c} = \bar{A}$, as $O$ is open. But, contrarily, this implies that $(O^c)^c = O = X^c = \emptyset$.  
+        \item Let $(X, \tau)$ be a topological space, and $A \subset X$ such that $\overline{A} = X$. We prove that $A \cap O \neq \emptyset$, for all $O \neq \emptyset$, $O \in \tau$: 
+            \begin{proof} Suppose that for some $O \in \tau$, $O \neq \emptyset$, $A \cap O = \emptyset$. By a previous lemma, we have $\overline{A} = (L_A - A) \cup O^c$, implying $O^c = A$. But then we have $X = O^c = \overline{O^c} = \overline{A}$, as $O$ is open. But, contrarily, this implies that $(O^c)^c = O = X^c = \emptyset$.  
             \end{proof}
             
         \item We prove that the intersection of a closed set and a compact set is always compact: 
@@ -100,8 +103,8 @@
             \begin{proof} 
                 \begin{enumerate}
                 $ $\newline
-                    \item[] ($\implies$): Suppose, to the contrary, that $\bar{C} = C$, but $L \notin C$. Thus, there exists some $\epsilon > 0$, such that $B_\epsilon(L) \cap C = \emptyset$, as $L$ is not a limit point of $C$. But then, $a_n \notin B_\epsilon(L)$, for all $n \geq N$, $N \in \mathbb{N}$ is sufficiently large; A contradiction. 
-                    \item[] ($\impliedby$): Suppose, to the contrary, that $\bar{C} \neq C$. Then, by extra lemma\footnote{reference this}, there is some $l \in L_C$, such that $L \notin C$. Thus, for each $n \in \mathbb{N}$, we pick $a_n \in B_{\nicefrac{1}{n}}(L) \cap C \neq \emptyset$. Consequently, $\{a_n\}_{n=1}^\infty$ is a sequence in $C$ such that $a_n \rightarrow L \in C$, by hypothesis; A contradiction.
+                    \item[] ($\implies$): Suppose, to the contrary, that $\overline{C} = C$, but $L \notin C$. Thus, there exists some $\epsilon > 0$, such that $B_\epsilon(L) \cap C = \emptyset$, as $L$ is not a limit point of $C$. But then, $a_n \notin B_\epsilon(L)$, for all $n \geq N$, $N \in \mathbb{N}$ is sufficiently large; A contradiction. 
+                    \item[] ($\impliedby$): Suppose, to the contrary, that $\overline{C} \neq C$. Then, by extra lemma\footnote{reference this}, there is some $l \in L_C$, such that $L \notin C$. Thus, for each $n \in \mathbb{N}$, we pick $a_n \in B_{\nicefrac{1}{n}}(L) \cap C \neq \emptyset$. Consequently, $\{a_n\}_{n=1}^\infty$ is a sequence in $C$ such that $a_n \rightarrow L \in C$, by hypothesis; A contradiction.
                 \end{enumerate}
             \end{proof}
             
@@ -252,12 +255,12 @@
                     \end{itemize}
                 \end{proof}
                 
-            \item Let $(X, \tau)$ be a topological space. We show that the cone on $X$, $CX$ is contractible. We consider the "cone tip" as $X \times \{0\}$:     \begin{proof} Consider the function $\bar{H}: (X \times I) \times I \rightarrow X \times I$, given by $\bar{H}((x,v),s) = (x,v(1-s))$. By the     product topology, it follows that $\bar{H}$ is continuous. \footnote{For every $t \in I$, we can associate $\pi(\bar{H}((x,v),t))$ with           $(c,v(1-t),t)$, showing that the product topology of $CX \times I$ agrees with that of $(X \times I) \times I$.} Let $\pi:X \times I            \rightarrow CX = \nicefrac{X \times I}{X \times \{0\}}$ be the canonical map. The claim is that $\pi \circ \bar{H}: (X \times I) \times I     \rightarrow CX$ is the desired homotopy.
+            \item Let $(X, \tau)$ be a topological space. We show that the cone on $X$, $CX$ is contractible. We consider the "cone tip" as $X \times \{0\}$:     \begin{proof} Consider the function $\overline{H}: (X \times I) \times I \rightarrow X \times I$, given by $\overline{H}((x,v),s) = (x,v(1-s))$. By the     product topology, it follows that $\overline{H}$ is continuous. \footnote{For every $t \in I$, we can associate $\pi(\overline{H}((x,v),t))$ with           $(c,v(1-t),t)$, showing that the product topology of $CX \times I$ agrees with that of $(X \times I) \times I$.} Let $\pi:X \times I            \rightarrow CX = \nicefrac{X \times I}{X \times \{0\}}$ be the canonical map. The claim is that $\pi \circ \overline{H}: (X \times I) \times I     \rightarrow CX$ is the desired homotopy.
                 \par Direct computation shows that, for all $x \in X$, $v \in V$,
-                $$\pi(\bar{H}( (x,v),0)) = \pi((x,v)) = (x,v),$$
+                $$\pi(\overline{H}( (x,v),0)) = \pi((x,v)) = (x,v),$$
                 and 
-                $$\pi(\bar{H}( (x,v),1)) = \pi((x,0)) = (x,0)$$
-                Thus, $H \equiv \pi \circ \bar{H}$ is the desired homotopy. 
+                $$\pi(\overline{H}( (x,v),1)) = \pi((x,0)) = (x,0)$$
+                Thus, $H \equiv \pi \circ \overline{H}$ is the desired homotopy. 
                 \end{proof}
                 
         \end{enumerate}
@@ -430,8 +433,8 @@
             \begin{itemize}
                 \item $\{(x,y): 1 < x^2+y^2 \leq 2\} = A$: 
                     \begin{align*}
-                        \Ft A & = \bar{A} \cap  \overline{(\E - A)} \\
-                        & = \bar{A} \cap  \big\{ \{(x,y): 0 \leq x^2+y^2 \leq 1\} \cup \{(x,y): 2 \leq x^2+y^2\} \big\}\\
+                        \Ft A & = \overline{A} \cap  \overline{(\E - A)} \\
+                        & = \overline{A} \cap  \big\{ \{(x,y): 0 \leq x^2+y^2 \leq 1\} \cup \{(x,y): 2 \leq x^2+y^2\} \big\}\\
                         & = \{(x,y): x^2+y^2 = 1 \lor x^2+y^2 = 2 \}
                     \end{align*}
                     The rest are left to the reader. 
@@ -455,7 +458,7 @@
             \[\overline{A \cap {\Ocal}} \cap (\underset{x}{\Ocal} - \{x\}) = \emptyset \]
             But, as $x \notin \overline{A \cap {\Ocal}}$, we have 
             \[ \overline{A \cap {\Ocal}} \cap {\Ocal}_x = \emptyset \]
-            and consequently, $A \cap {\Ocal} \cap {\Ocal}_x = \emptyset$. But then, setting $B = {\Ocal} \cap {\Ocal}_x$, we have $x \in B$, $B \in \tau$, but $A \cap B = \emptyset$, contrary to extra lemma; $\bar{A} \neq X$, a contradiction. 
+            and consequently, $A \cap {\Ocal} \cap {\Ocal}_x = \emptyset$. But then, setting $B = {\Ocal} \cap {\Ocal}_x$, we have $x \in B$, $B \in \tau$, but $A \cap B = \emptyset$, contrary to extra lemma; $\overline{A} \neq X$, a contradiction. 
             \end{proof}
             
             
@@ -469,11 +472,11 @@
                     & = Y \cap (X - {\Ocal}_y)
                 \end{align*}
             And, as $X - {\Ocal}_y$ is closed in $X$, this proves the result. We note that a similar case holds in the case where $A$ is open.
-            \par Letting $\bar{A_y}$ and $\bar{A_x}$ denote the closure of $A \subset Y$ in $Y$ and $X$ respectively, we show that  $\bar{A_y} = \bar{A_x}$: 
-            \newline \par  From the previous part of this proof, we have that $\bar{A_y} = Y \cap C$, where $C$ is closed in $X$. Now, since $C$ is a closed set in $X$ containing $A$, we have $\bar{A_x} \subset C$, and so $Y \cap \bar{A_x} \subset \bar{A_y} = Y \cap C$. 
-            \par Again by the first problem, we have $Y \cap \bar{A_x}$ is closed in $Y$ and contains $A$. So, 
-            \[ \bar{A_y} \subset Y \cap \bar{A_x} \subset \bar{A_x}\]
-            Thus, $\bar{A_y} = \bar{A_x}$. 
+            \par Letting $\overline{A_y}$ and $\overline{A_x}$ denote the closure of $A \subset Y$ in $Y$ and $X$ respectively, we show that  $\overline{A_y} = \overline{A_x}$: 
+            \newline \par  From the previous part of this proof, we have that $\overline{A_y} = Y \cap C$, where $C$ is closed in $X$. Now, since $C$ is a closed set in $X$ containing $A$, we have $\overline{A_x} \subset C$, and so $Y \cap \overline{A_x} \subset \overline{A_y} = Y \cap C$. 
+            \par Again by the first problem, we have $Y \cap \overline{A_x}$ is closed in $Y$ and contains $A$. So, 
+            \[ \overline{A_y} \subset Y \cap \overline{A_x} \subset \overline{A_x}\]
+            Thus, $\overline{A_y} = \overline{A_x}$. 
             \end{proof}
             
         \item Let $Y$ be a subspace of $(X, \tau)$. Given $A \subset Y$, we show that $A_X^\circ \subset A_Y^\circ$, and give an example when the two may not be equal: 
@@ -486,8 +489,8 @@
         \item We show that the frontier of a set always contains the frontier of its interior, and describe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
             \begin{proof} Let $(X, \tau)$ be a topological space, and let $A \subset X$. We want to show that $\Ft A^\circ \subset \Ft A$. 
             \par Let $x \in \Ft A^\circ$. Then, 
-            \[ x \in \bar{A^\circ} \cap \overline{(X - A^\circ)} = \bar{A^\circ} \cup \overline{(X-A) \cup (A - A^\circ)}\]
-            Now, if $x \in \bar{A^\circ}$ and $x \in \overline{X -A}$, we are done. So suppose that $x \in \bar{A^\circ}$ and $x \in \overline{(A - A^\circ)}$. But then, $x \in \bar{A^\circ} \cup \overline{(A - A^\circ)} = \bar{A}$. Thus, the result follows.
+            \[ x \in \overline{A^\circ} \cap \overline{(X - A^\circ)} = \overline{A^\circ} \cup \overline{(X-A) \cup (A - A^\circ)}\]
+            Now, if $x \in \overline{A^\circ}$ and $x \in \overline{X -A}$, we are done. So suppose that $x \in \overline{A^\circ}$ and $x \in \overline{(A - A^\circ)}$. But then, $x \in \overline{A^\circ} \cup \overline{(A - A^\circ)} = \overline{A}$. Thus, the result follows.
             \newline \par 
             The inclusion $\Ft (A \cup B) \subset \Ft A \cup \Ft B$ always holds, and is left to the reader. To show that the reverse inclusion does not always hold, consider $X = \R$, and $A = \mathbb{Q}$. Then,
                 \begin{align*}
@@ -502,8 +505,8 @@
             \end{proof}
             
         \item We show that if a topological space $(X, \tau)$ has a countable base for its topology, then $X$ contains a countable dense subset. I.e. A second countable space is separable: 
-            \begin{proof} Let $\{B_n\}_n$ be a countable base for $\tau$. By the Axiom of Choice, let $A$ be the collection of elements $\{a_i\}_i$ such that $a_i \in B_i$. The claim is that $\bar{A} = X$. 
-            \par Indeed; let ${\Ocal} \in \tau$. Then, ${\Ocal} = \bigcup_j B_j$, where $B_j \in B$. Now, as $A = \bigcup_i x_i$, where $x_i \in B_i$, we have $A \cap {\Ocal} \neq \emptyset$. Thus, by extra lemma, $\bar{A} = X$. 
+            \begin{proof} Let $\{B_n\}_n$ be a countable base for $\tau$. By the Axiom of Choice, let $A$ be the collection of elements $\{a_i\}_i$ such that $a_i \in B_i$. The claim is that $\overline{A} = X$. 
+            \par Indeed; let ${\Ocal} \in \tau$. Then, ${\Ocal} = \bigcup_j B_j$, where $B_j \in B$. Now, as $A = \bigcup_i x_i$, where $x_i \in B_i$, we have $A \cap {\Ocal} \neq \emptyset$. Thus, by extra lemma, $\overline{A} = X$. 
             \end{proof}
             
     \end{enumerate}
@@ -534,17 +537,17 @@
             \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
             
             \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
-                \begin{proof} To see that $f$ is continuous, let ${\Ocal} \in CO$. Then, $X - {\Ocal} = \R - {\Ocal}$ is finite. But then, $f^{-1}[{\Ocal}] = {\Ocal}$, and ${\Ocal}^c$ is finite in $\E$. This implies that ${\Ocal} = \bar{{\Ocal}}$. Thus, ${\Ocal}^c = {\Ocal}$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
+                \begin{proof} To see that $f$ is continuous, let ${\Ocal} \in CO$. Then, $X - {\Ocal} = \R - {\Ocal}$ is finite. But then, $f^{-1}[{\Ocal}] = {\Ocal}$, and ${\Ocal}^c$ is finite in $\E$. This implies that ${\Ocal} = \overline{{\Ocal}}$. Thus, ${\Ocal}^c = {\Ocal}$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
                 \par Consider the inverse function of $f$. Note that $(a,b)$, $a < b$ is open in $\E$. But, $f^{-1}[(a,b)] = (a,b) = f[(a,b)]$, which is not open in $X$. Thus, $f^{-1}$ is not continuous.
                 \end{proof}
                 
             \item This is left to the reader as an exercise.
             
             \item Let $(X, \tau)$ be a topological space, $A \subset X$, and $\chi_A$ its characteristic function. We describe the frontier of $A$ in terms of $\chi$: 
-                \begin{proof} We note that if $\overline{(X -A)} \cap \bar{A} \neq \emptyset$, then there exists $a \in \overline{(X -A)}$, $a \in \bar{A}$. With this in mind, we claim that $\chi_A$ is continuous at $a \in X$ if, and only if, $a \notin \Ft A$. 
+                \begin{proof} We note that if $\overline{(X -A)} \cap \overline{A} \neq \emptyset$, then there exists $a \in \overline{(X -A)}$, $a \in \overline{A}$. With this in mind, we claim that $\chi_A$ is continuous at $a \in X$ if, and only if, $a \notin \Ft A$. 
                 \par Indeed; 
                     \begin{itemize}
-                        \item[] ($\implies$): Suppose, to the contrary, that $\chi_A$ is continuous at $a \in X$, but that $a \in \Ft A$. Then, $a \in \overline{X-A}$, and $a \in \bar{A}$. Now, let ${\Ocal} = (.99, 1.99) \subset \R$, without loss of generality. Then, $\chi_A(a) = 1 \in {\Ocal}$. Now, since $\chi_A$ is continuous, $\chi_A^{-1} [{\Ocal}]$ is open, and such that $a \in \chi_A^{-1} [{\Ocal}]$. But then, $\overline{X-A} \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. Further, this implies that $X-A \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. But then, $\chi_A(a) = 0 \in {\Ocal}$, a contradiction. 
+                        \item[] ($\implies$): Suppose, to the contrary, that $\chi_A$ is continuous at $a \in X$, but that $a \in \Ft A$. Then, $a \in \overline{X-A}$, and $a \in \overline{A}$. Now, let ${\Ocal} = (.99, 1.99) \subset \R$, without loss of generality. Then, $\chi_A(a) = 1 \in {\Ocal}$. Now, since $\chi_A$ is continuous, $\chi_A^{-1} [{\Ocal}]$ is open, and such that $a \in \chi_A^{-1} [{\Ocal}]$. But then, $\overline{X-A} \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. Further, this implies that $X-A \cap \chi_A^{-1} [{\Ocal}] \neq \emptyset$. But then, $\chi_A(a) = 0 \in {\Ocal}$, a contradiction. 
                         \item[] ($\impliedby$): 
                     \end{itemize}
                 \end{proof}
@@ -587,14 +590,14 @@
     \subsection{The Tietze Extension Theorem}
     Throughout these exercises, we assume that $(X, d)$ is a metric space, and that if $A \subset X$, it has the subspace metric. Further, the topology on $X$ is the induced topology, if not stated otherwise. 
         \begin{enumerate}[(1)]
-            \item We show that $d(x,A) = 0$, if, and only if, $x \in \bar{A}$:
+            \item We show that $d(x,A) = 0$ if, and only if, $x \in \overline{A}$:
                 \begin{proof} $ $\newline
                     \begin{itemize}
                         \item[] Suppose that $d(x,A) = 0 = \inf_{a \in A} d(x,a)$. Then, for every $\epsilon > 0$, there exists $a \in A$, such that 
                         \[|d(x,a) - 0| = d(x,a) < \epsilon \]
-                        Now, let ${\Ocal}$ be an open subset of $X$, $x \in {\Ocal}$. Choose $a \in A$ such that, $d(x,a) < \epsilon$. Then, $a \in {\Ocal}$, and ${\Ocal} \cap A \neq \emptyset$. Thus, $x \in \bar{A}$. 
+                        Now, let ${\Ocal}$ be an open subset of $X$, $x \in {\Ocal}$. Choose $a \in A$ such that, $d(x,a) < \epsilon$. Then, $a \in {\Ocal}$, and ${\Ocal} \cap A \neq \emptyset$. Thus, $x \in \overline{A}$. 
                         
-                        \item[] Suppose that $x \in \bar{A}$. Then, we do the canonical ball construction and pick a sequence $\{a_n\}_n$ of elements of $A$, such that $d(x, a_n) \rightarrow 0$, $n \rightarrow \infty$. 
+                        \item[] Suppose that $x \in \overline{A}$. Then, we do the canonical ball construction and pick a sequence $\{a_n\}_n$ of elements of $A$, such that $d(x, a_n) \rightarrow 0$, $n \rightarrow \infty$. 
                     \end{itemize}
                 \end{proof}
                 
@@ -682,7 +685,9 @@
     
     \subsection{Properties of Compact Spaces}
         \begin{enumerate}[(1)]
-            \item This is left to the reader as an exercise. Hint: Consider $\R$, and $\R$, with the discrete and indiscreet topologies. 
+            \item This is left to the reader as an exercise.
+            
+            \item This is left to the reader as an exercise. Hint: Consider the identity map on $\R$, and $\R$, with the discrete and indiscreet topologies, repectively.  
             
             \item We show that Lebesgue's Lemma fails for $\E^2$: 
                 \begin{proof}Let $B(0,1)$ be the open ball of radius one, centered around the origin. And, for each $p \neq 0$ in $\E^2$, let $B(p, \nicefrac{1}{||p||_2})$ be the open ball centered at $p$ and radius $\nicefrac{1}{||p||_2}$. Now, let $\delta > 0$, and let $n \in \mathbb{N}$ be such that 
@@ -691,12 +696,39 @@
                 \end{proof}
                 
             \item \textit{Lindel{\"o}f's Theorem}: We show that if $X$ has a countable base for its topology, $\tau$, then any open cover of $X$ contains a countable subcover: 
-                \begin{proof}
+                \begin{proof} Suppose that $\F$ is a countable base for the topology on $(X, \tau)$. Then, $\F = \{F_1, F_2, ..., F_n, ... \}$. Let $\{\Ocal_\alpha \}_\alpha$ be an open cover of $X$. Then, as $\F$ is a base for $\tau$, 
+                \[\bigcup_\alpha \Ocal_\alpha = \bigcup_{i \in I} F_i\]
+                In addition, for each $x \in X$ there exists $n \in I$, and $\alpha_0$, such that 
+                \[x \in F_n \subset \Ocal_{\alpha_0}\]
+                Thus, let 
+                \[\{F_{n_k}\}_k\]
+                be the collection of all such $F_{n_k}$, as described above. Then, clearly 
+                \[\bigcup_k F_{n_k} = X\]
+                and, for each $F_{n_k} \in \{F_{n_k}\}_k$, there is an $\alpha_{n_k}$, such that 
+                \[F_{n_k} \subset \Ocal_{\alpha_{n_k}}\]
+                Consequently, 
+                \[\{ \Ocal_{\alpha_{n_k}} \}_{n_k} \]
+                is a subcover of $\{\Ocal_\alpha \}_\alpha$. 
+                Finally, as $I$ is countable, so is $\{F_{n_k}\}$ and $\{ \Ocal_{\alpha_{n_k}} \}$.
                 \end{proof}
                 
-            \item This is show by extra lemma, and the fact that compact subsets of $T_2$ spaces are closed.
+            \item This is shown by an extra lemma, and the fact that compact subsets of $T_2$ spaces are closed.
             
-            \item This is left to the reader as an exercise. Hint: These are a direct application of the exercises found in the book. 
+            \item Let $A$ be a compact subset of a metric space $(X,d)$. We show, 
+                \begin{itemize}
+                    \item that the diameter of $A$, $\Diam A$, is equal to $d(x,y)$ for some $x,y \in A$: 
+                        \begin{proof} By lemma ($2.13$), for a fixed $y \in A$, the function defined by $f(x) = d(x, \{y\})$ is continuous. By theorem $3.10$, $f$ is bounded, and obtains its bounds on $A$; for some $x_0 \in A$, $d(x, \{y\}) \leq d(x_0, \{y\})$ for all $x \in A$.  Further, ranging over $y \in A$, we see that 
+                        \[\Diam A = d(x_0, y_0), \quad x_0, y_0 \in A.\]
+                        \end{proof}
+                    \item that given $x \in X$, $d(x,A) = d(x,y)$, for some $y \in A$: 
+                        \begin{proof} This is lemma ($2.13$), and the fact that $A$ is compact. 
+                        \end{proof}
+                    \item that given a closed subset $B$, disjoint from $A$, that $d(A,B) > 0$: 
+                        \begin{proof} Suppose, to the contrary, that $d(A,B) = 0$. Then, by definition, we have 
+                        \[\inf_{\substack{x \in A \\ y \in B}} d(x, y) = d(A,B) = 0\]
+                        An application of the above shows that, actually, $d(A,B) = 0 = d(a,b)$ for some $a \in A$, and $b \in B$. But then, by properties of metrics spaces, we have $a = b$; a contraction, as $A \cap B = \emptyset$. 
+                        \end{proof}
+                \end{itemize}
             
             \item We find an example of a topological space $(X, \tau)$ and a compact subset whose closure is not compact: 
                 \begin{proof} Consider $\R = X$, and $\tau = \{\R, \emptyset, (-a,a) : a > 0\}$. Then, $\{0\}$ is clearly compact in $X$, and it is closed. But, $\overline{\{0\}} = \R$ as each $(-a, a)^c = (-\infty, -a] \cup [a, \infty)$ and $0 \notin (-\infty, -a] \cup [a, \infty)$. 
@@ -710,11 +742,33 @@
                 and the fact that the union of finite sets is finite. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: Use the fact that a compact $T_2$ space is $T_3$, $T_4$ and theorem 3.7. 
+            \item This is left to the reader as an exercise. Hint: Use the fact that a subset of a $T_2$ space is $T_2$, and theorem 3.7. Show that $f: X \rightarrow f(X)$ is onto. 
             
-            \item The proof of the first part is left to the reader. However, we show that any closed subset of a locally compact space is locally compact, $\mathbb{Q}$ is not locally compact,and that local compactness is preserved under homeomorphism: 
-                \begin{proof}
-                \end{proof}
+            \item The proof of the first part is left to the reader. However, we show
+                \begin{itemize}
+                    \item that any closed subset of a locally compact space is locally compact: 
+                        \begin{proof} Let $(X, \tau)$ be the locally compact space, and $A \subset X$, with $\overline{A} =A$. Let $p \in A$. Then, as $X$ is locally compact, there exists a compact neighbourhood \[K_X \subset X, \quad p \in K_X\] 
+                        Then, via the subspace topology, $K_X \cap A$ is a neighbourhood of $p$ in $A$. 
+                        \par Next, let $\F$ be an open cover of $K_X \cap A$. Then, we see that $\F \cup \{A^c\}$ is an open cover of $K_X$. Further, there exists a finite subcover $\F_1 \subset \F$, such that $\F_1 - \{A^c\}$ is a finite subcover of 
+                        \[K_X \cap A \subset \F_1 - \{A^c\}\] 
+                        and so $K_X \cap A$ is a compact neighbourhood of $p$ in $A$. 
+                        \end{proof}
+                    \item that $\mathbb{Q}$ is not locally compact (as a subset of $\R$): 
+                        \begin{proof} Suppose, to the contrary, that $\Q$ is locally compact. Then, let $A \subset \Q$ be a compact neighbourhood. Then, there exists an open interval $I \subset \R$, with 
+                        \[I \cap \Q \subset A\]
+                        Now, let $x \in I$, where $x$ is irrational. As $\Q$ is dense in $\R$, there exists a sequence of rationals in $\Q \cap A$ with, 
+                        \[\{q_n\} \rightarrow x \notin A, \quad n \rightarrow \infty \]
+                        But then, $A$ is not closed. Thus, by theorem ($3.5$), it cannot be compact. 
+                        \end{proof}
+                    \item that local compactness is preserved under homeomorphism: 
+                        \begin{proof} Suppose that $f: X \rightarrow Y$ is a homeomorphism, and that $X$ is locally compact. We want to show that $Y$ is locally compact. 
+                        \par Let $p \in Y$. Then, there is a locally compact neighbourhood $K_p$ of $f^{-1}(p)$ in $X$. Now, let $\F$ be an open cover of $f(\{K_p\})$. Then, 
+                        \[\F_1 = \{f^{-1}(\{F\}) : F \in \F \}\]
+                        is an open cover of $K_p$ in $X$. It follows that $\F_1$ has a finite subcover, $\F_2$, and that 
+                        \[\{f(\{F\}) : F \in \F_2\}\]
+                        is a finite subcover for $f(\{K_p\}) \subset Y$. 
+                        \end{proof}
+                \end{itemize}
                 
             \item Suppose that $X$ is locally compact and Hausdorff. Given $x \in X$, and a neighbourhood $\Ocal$ of $x$, we find a compact neighbourhood $K$ of $x$ which is contained in $\Ocal$:  
                 \begin{proof} Let $\Ocal$ be as given. Then, since $X$ is locally compact, there exists a compact neighbourhood $V$, such that $x \in V$. By the subspace topology, it follows that $x \in V \cap \Ocal$ and $\Ocal \cap V$ is open in $V$. Further, as $V$ is compact, it is closed, by theorem 3.6. 
@@ -723,17 +777,114 @@
             \item This is left to the reader as an exercise.
             
             \item We prove that $\E^n \cup \{\infty \}$ is homeomorphic to $S^n$:
-                \begin{proof}
+                \begin{proof} As before \footnote{reference this}, there exists a homeomorphism 
+                \[h: {\E}^n \rightarrow S^n- \{p\}, \quad p \in S^n\]
+                Clearly, the one point compactification of $\E^n$ is $\E^n \cup \{\infty \}$.  And further, the one point compactification of $S^n- \{p\}$ is $S^n$. 
+                \par As both these spaces are $T_2$, it follows by an extra lemma that 
+                \[ {\E}^n \cup \{\infty \} \simeq S^n \]
                 \end{proof}
                 
             \item Let $X$, and $Y$ be locally compact Hausdorff spaces, and let $f: X \rightarrow Y$ be an onto map. We show that $f$ extends to a map from $X \cup \{\infty\}$ onto $Y \cup \{\infty\}$, if and only if, $f^{-1}[K]$ is compact for each compact subset $K$ of $Y$. Further, we deduce that if $X$ and $Y$ are homeomorphic spaces, then so are their one-point compactifications and find two spaces which are not homeomorphic, but have homeomorphic one-point compactifications:
-                \begin{proof}
+                \begin{proof} This problem was first shown as an extra lemma. Thus, we find two spaces which are note homeomorphic but have homeomorphic one point compactifications: 
+                \par Consider 
+                \[X_1 = [0,1) \cup (1/2, 1] \quad X_2 = [0,1) \]
+                and the result follows. 
                 \end{proof}
     
         \end{enumerate}
         
     
     \subsection{Product Spaces}
+    \begin{enumerate}[(1)]
+        \item This is left to the reader as an exercise.
+        
+        \item Suppose that $A,B$ are compact in $X,Y$, respectively. We show that if $W$ is a neighbourhood of $A \times B$ in $X \times Y$, that there exists a neighbourhood $U$ of $A$ in $X$, and a neighbourhood $V$ of $B$ in $Y$, such that 
+        \[U \times V \subset W\]
+            \begin{proof}  Since $A, B$ are compact, by theorem ($3.15$), $A \times B$ is compact. As this is the case, there exists a finite set of $(a,b)$, $a \in A$, $b \in B$, with neighbourhoods 
+            \[U_{a_1} \times V_{b_1}, U_{a_2} \times V_{b_2} , \dots , U_{a_n} \times V_{b_n} \]
+            such that 
+            \[A \times B \subset \bigcup_i U_{a_i} \times V_{b_i}\]
+            Now, for each $a \in A$, let 
+            \[E_a = \bigcap_{\substack{U_{a_i} \\ a \in U_{a_i} }} U_{a_i},\]
+            and 
+            \[F_b = \bigcap_{\substack{V_{b_i} \\ b \in V_{b_i} }} V_{b_i}\]
+            for each $b \in B$. Then, as $\{U_{a_i} \times V_{b_i}\}_i$ is finite, 
+            \[ \{ E_x \times F_y : x \in A, y \in B \}\]
+            is finite. Further, we see that 
+            \[A \times B \subset \bigcup_{a,b} E_a \times F_b = U \times V\]
+            Consequently, $U \times V \subset W$, by construction. 
+            \end{proof}
+        
+        \item We prove that 
+            \begin{itemize}
+                \item the product of two second-countable spaces is second-countable: 
+                    \begin{proof} Let $X,Y$ be second countable spaces. Then, as the finite union of countable sets is countable, it follows that the topology on $X \times Y$ has a countable base. 
+                    \end{proof}
+                \item the product of two separable spaces is separable: 
+                    \begin{proof} Suppose that $X,Y$ are separable. Then, they contain a countable dense subset, $A \subset X$, $B \subset Y$. From set theory, it follows that $A \times B$ is countable. Thus, we show that $\overline{A \times B} = X \times Y$: 
+                    \par Indeed; from exercise twenty on page fifty-five, we have 
+                    \[\overline{A \times B} = \overline{A} \times \overline{B} = X \times Y\]
+                    \end{proof}
+            \end{itemize}
+            
+        \item We prove that $[0,1) \times [0,1) \simeq [0,1] \times [0,1)$:
+            \begin{proof} As previously show, there exists some $h: [0,1) \times [0,1) \rightarrow D_1^2$, 
+            \[D_1^2 = D^2 - \{ x = (x_1, x_2) \in S^1 : x_1 > 0 \land x_2 > 0 \},\]
+            a homeomorphism. 
+            Similarly, under the same map, $h: [0,1] \times [0,1) \rightarrow D_2^2$, 
+            \[D_2^2 = D^2 - \{ x = (x_1, x_2) \in S^1 :  x_2 > \sqrt{2}/2 \},\]
+            is a homeomorphism. 
+            But, $ \{ x = (x_1, x_2) \in S^1 :  x_2 > \sqrt{2}/2 \} = B$,  $\{ x = (x_1, x_2) \in S^1 : x_1 > 0 \land x_2 > 0 \} = A$ are open in $S^1$, and so homeomorphic via, say, $h'$. 
+            \par Consequently, 
+            \[ S^1 - A \simeq_{h'} S^1 - B\]
+            But then, 
+            \[D_1^2 = \Int D^2 \cup (S^1 - A) \simeq_{h' \circ i} \Int D^2 \cup (S^1 - B) =  D_2^2 \]
+            It follows that 
+            \[ [0,1) \times [0,1) \simeq_{h} D_1^2 \simeq D_2^2 \simeq_{h} [0,1] \times [0,1) \]
+            \end{proof}
+            
+        \item This is left to the reader as an exercise.
+        
+        \item The first part is trivial. So, we show that $X$ is Hausdorff if, and only if, $\Delta(\{X\})$ is closed in $X \times X$: 
+            \begin{proof} 
+                \begin{itemize}
+                    \item[] ($\implies$) Suppose that $X$ is $T_2$. We show that $\Delta(\{X\}) ^ c$ is open in $X \times X$. Now, for $(x,y) \notin \Delta(\{X\})$, we have that there exists open sets, $U_x, U_y$, such that 
+                    \[ x \in U_x, \quad y \in U_y, \quad U_x \cap U_y = \emptyset\] 
+                    \par Now, let $U_x \times U_y = W$, which is open in $X \times X$. If $p \in W \cap \Delta(\{X\})$, then $p \in W$, and so $U_x \cap U_y \neq \emptyset$. Thus, 
+                    \[W \subset \Delta(\{X\}) ^ c\]
+                    and so $\Delta(\{X\})$ is closed. 
+                    
+                    \item[] ($\impliedby$) Suppose that $\Delta(\{X\})$ is closed in $X \times X$. Now, if $(x,y) \notin \Delta(\{X\})$, then $(x,y) \in \Delta(\{X\}) ^ c$, which is open. And so, by definition of the topology on $X \times X$, there exist open sets $U, V$, such that 
+                    \[(x,y) \in U \times V \subset \Delta(\{X\}) ^c\]
+                    But, then 
+                    \[ (U \times V)  \cap \Delta(\{X\}) = \emptyset,\]
+                    implies $U \cap V = \emptyset$, by set theory. 
+                \end{itemize}
+            \end{proof}
+        
+        \item This is left to the reader as an exercise. Hint: Consider $f: \R^+ \rightarrow \R$, given by $f(x) = \frac{1}{x}$ and use the sequential criterion for closure. 
+        
+        \item This is left to the reader as an exercise. Hint: This is the obvious topology. 
+        
+        \item This is left to the reader as an exercise. Hint: Consider the function $f: \R^+ \rightarrow \R$ given by $f(x) = \frac{x}{1+x}$.
+        
+        \item We show that
+            \begin{itemize}
+                \item the box topology contains the product topology: 
+                    \begin{proof} As $X_i$ is open in $(X_i, \tau_i)$, the result follows. 
+                    \end{proof}
+                \item the box topology and the product topology are equal if, and only if, $X_i$ is an indiscreet space for all but finitely man values of $i$: 
+                    \begin{proof} If $U_i = \emptyset$, for any $i$, then
+                    \[\prod X_i = \emptyset\]
+                    And, so the only sets of the form 
+                    \[U_1 \times U_2 \times ... \]
+                    which are non-empty, are those which have $U_i = X_i$ for all but finitely many $i$. 
+                    \end{proof}
+            \end{itemize}
+        
+    \end{enumerate}
+    
+\section{Connectedness}
     \begin{enumerate}[(1)]
         \item 
     \end{enumerate}

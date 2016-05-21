@@ -886,7 +886,20 @@
     
 \section{Connectedness}
     \begin{enumerate}[(1)]
-        \item 
+        \item Let $X = \{ (a,b) \in \E^2 : a \in \Q \lor b \in \Q\}$. We show that $X$ with the induced topology is connected: 
+            \begin{proof} We seek to apply theorem ($3.25$), on page fifty-eight. Indeed, for each $q \in Q$, let 
+            \[X_q = \{ (a,b) \in \E^2 : a = q \lor b = q\}\]
+            Then clearly 
+            \[X_q = A_q \cup B_q,\]
+            where $A_q = \{ (a,b) \in \E^2 : a = q, b \in \E \}$, $B_q = \{ (a,b) \in \E^2 : a \in \E \lor b = q\}$. Further, for each $q \in \Q$, 
+            \[A_q \cong \E \cong B_q\]
+            So, $A_q$, $B_q$ are connected, and as $A_q \cap B_q = \{(q,q)\}$, $X_q$ is connect by theorem ($3.25$).
+            \par For $t,q \in \Q$, we have 
+            \[ X_t \cap X_q = \{(q,t), (t,q)\} \neq \emptyset\]
+            and so, another application of $3.25$ shows that 
+            \[X = \bigcup_{q \in \Q} X_q\]
+            is connected. 
+            \end{proof}
     \end{enumerate}
     
         

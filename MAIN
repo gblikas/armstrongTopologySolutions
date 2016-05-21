@@ -900,6 +900,70 @@
             \[X = \bigcup_{q \in \Q} X_q\]
             is connected. 
             \end{proof}
+            
+        \item This is left to the reader as an exercise. Hint: Use exercise eleven, chapter two, page thirty two. 
+        
+        \item This is left to the reader as an exercise. Hint: Use theorem ($3.27$), page sixty. 
+        
+        \item (Intermediate Value Theorem) We show that if $f: [a,b] \rightarrow \E$ is a map such that $f(a) < 0$ and $f(b) > 0$, then there exists some $c \in [a,b]$ for which $f(c) = 0$: 
+            \begin{proof} By theorem ($3.21$), page fifty-eight, $f([a,b]) \subset \E$ is connected. By theorem ($3.19$), page fifty-seven, $f([a,b])$ is an interval. In particular, $f([a,b]) = [f(a'), f(b')]$, where $f(a')$, $f(b')$, are the minimum and maximum of $f$ on $[a,b]$. Thus, $[f(a), f(b)] \subset [f(a'), f(b')] $, and $0 \in [f(a), f(b)]$. Thus, there exists $c \in [a,b]$, $f(c) = 0$. 
+            \end{proof}
+            
+        \item We show that
+            \begin{itemize}
+                \item $\E^n$ is locally connected: 
+                    \begin{proof}
+                    \end{proof}
+                    
+                \item $X = \{0\} \cup \{1/n : n \in \N\}$ is \textit{not} locally connected: 
+                    \begin{proof}
+                    \end{proof}
+            \end{itemize}
+            
+        \item We show that local connectedness is preserved by a homeomorphism, but need not be preserved by a continuous function: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that $(X, \tau)$ is locally connected, if, and only if every component of each open subset of $X$ is an open set: 
+            \begin{proof}
+            \end{proof}
+            
+    \end{enumerate}
+
+\section{Joining Points by Paths}
+    \begin{enumerate}[(1)]
+        \item We show that the continuous image of a path-connected space is path-connected: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that $S^n$ is path-connected for $n > 0$: 
+            \begin{proof}
+            \end{proof}
+        
+        \item We prove that the product of two path-connected spaces is path-connected: 
+            \begin{proof}
+            \end{proof}
+            
+        \item If $A$ and $B$ are path-connected subsets of a space $(X, \tau)$, and $A \cap B$ is non-empty, we show that $A \cup B$ is path-connected: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We find a path-connected subset of a space whose closure is not path-connected:
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that any indiscreet space is path-connected: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, ... \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
+            \begin{proof}
+            \end{proof}
+            
+        \item We prove that a space which is connected, and locally path-connected is path-connected: 
+            \begin{proof}
+            \end{proof}
+            
     \end{enumerate}
     
         

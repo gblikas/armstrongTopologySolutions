@@ -20,6 +20,8 @@
 \DeclareMathOperator*{\Image}{\text{Im}}
 \DeclareMathOperator*{\F}{\mathcal{F}}
 \DeclareMathOperator*{\Diam}{\text{Diam}}
+\DeclareMathOperator*{\RP}{\R\text{P}}
+\DeclareMathOperator*{\Z}{\mathbb{Z}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -694,7 +696,7 @@
         \begin{enumerate}[(1)]
             \item This is left to the reader as an exercise.
             
-            \item This is left to the reader as an exercise. Hint: Consider the identity map on $\R$, and $\R$, with the discrete and indiscreet topologies, repectively.  
+            \item This is left to the reader as an exercise. Hint: Consider the identity map on $\R$, and $\R$, with the discrete and indiscreet topologies, respectively.  
             
             \item We show that Lebesgue's Lemma fails for $\E^2$: 
                 \begin{proof}Let $B(0,1)$ be the open ball of radius one, centered around the origin. And, for each $p \neq 0$ in $\E^2$, let $B(p, \nicefrac{1}{||p||_2})$ be the open ball centered at $p$ and radius $\nicefrac{1}{||p||_2}$. Now, let $\delta > 0$, and let $n \in \mathbb{N}$ be such that 
@@ -997,6 +999,50 @@
             \end{proof}
             
     \end{enumerate}
+    
+\newpage
+\section{Identification Spaces}
+    \subsection{Constructing the M\"obius Strip}
+    There are no exercises listed for this section. 
+    
+    \subsection{The Identification Topology}
+        \begin{enumerate}[(1)]
+            \item  We check that the three descriptions of ${\RP}^n$ all lead to the same space: 
+                \begin{proof} We first note that the canonical construction of $\RP^n$ is formed via the relation 
+                \[ x \sim_\mathcal{R} \lambda x \quad \forall \lambda \neq 0, \quad \lambda \in \R\]
+                As $\lambda$ can always be chosen so that $||x \cdot \lambda || = 1$, we consider such $\lambda$ as equivalence class representatives. 
+                \par To see that (a), (b) are equivalent, let $h: \E^{n+1} \rightarrow \E / \sim_{\mathcal{R}}$ be the aforementioned quotient map and $i: S^n \rightarrow \E^{n+1}$ be the natural embedding. Then, as $S^n$ is compact, $\E / \sim_{\mathcal{R}}$ is Hausdorff, it follows by an extra lemma, and corollary ($4.4$), that $h \circ i$ is an identification map. So, (a), (b) are equivalent. 
+                \par To see that (b) and (c) are equivalent, let $i: S^n \rightarrow B^n$ be the natural embedding, and $g$ is quotient map given in (c). Then, again, by corollary ($4.4$), $g \circ i$ is an identification map. Thus, (b) and (c) are equivalent. 
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: It is $\RP^2$. 
+            
+            \item This is left to the reader as an exercise. Hint: Consider the canonical map from $[0,1]$ to $S^1$, and $[0,1) \subset [0,1]$. 
+            
+            \item With the terminology from the previous problem, we show that if $A$ is open in $X$, and if $f$ is an open map then $f|_A : A \rightarrow f(A)$ is an identification map: 
+                \begin{proof} This is theorem ($4.3$), page sixty-seven. 
+                \end{proof}
+                
+            \item Let $X$ denote the union of all circles of the form 
+            \[\Big(x - \frac{1}{n}\Big)^2 + y^2 = \Big(\frac{1}{n}\Big)^2, \quad n \in \N\]
+            with the induced topology. Let $Y$ denote the identification space obtained from the real line b identifying all the integers to a single point. We show that $X \not\cong Y$: 
+                \begin{proof} We claim that $X$ is compact, but $Y$ is not. 
+                \par Indeed; To show that $X$ is compact, first let $\{ \Ocal_\alpha \}_\alpha$ be an open cover of $X$. Then, there exists some $\alpha_0$, such that 
+                \[\{(0,0)\} \subset \Ocal_{\alpha_0} \]
+                Thus, as $\Ocal_{\alpha_0}$ is an open set containing $\{(0,0)\}$, there exists some $n_0 \in \N$ for which 
+                \[\Big(x - \frac{1}{n}\Big)^2 + y^2 \subset B(\Ocal_{\alpha_0}), \quad n \geq n_0 \]
+                where $B(\Ocal_{\alpha_0})$ denotes the solid ball with boundary $\Ocal_{\alpha_0}$. Consequently, only finitely many circles are outside $B(\Ocal_{\alpha_0})$. Thus, compactness follows.
+                \par To show that $Y$ is not compact, consider the open cover of $\R$ given by 
+                \[\{(n -1/2, n+1+1/2) \}_{n \in \Z} \]
+                There is clearly no finite subcover of $\R$. This completes the proof. 
+                \end{proof}
+                
+            \item We given an example of an identification map which is neither open nor closed: 
+                \begin{proof} 
+                \end{proof}
+        \end{enumerate}
+        
+
     
         
 \newpage 

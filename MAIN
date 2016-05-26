@@ -1038,8 +1038,21 @@
                 \end{proof}
                 
             \item We given an example of an identification map which is neither open nor closed: 
-                \begin{proof} 
+                \begin{proof} Let $\pi_1: \R \times \R \rightarrow \R$ be projection onto the first coordinate and consider
+                \[A = \{(x,y) : x \geq 0 \lor y = 0 \} \subset \R \times \R\]
+                We show that $\pi_1|_A$ is a quotient map which is neither open nor closed: 
+                \par Indeed; We know that $\pi_1$ is a quotient map, as it send open sets to open sets. In addition, $\pi_1|_A$ is obviously saturated and so a quotient map. To see that it is neither open nor closed, consider 
+                \[C = \{ (x, 1/x) : x \in \R - \{0\} \}\]
+                which we have previously shown is closed. Then, clearly $C \cap A$ is clearly closed in $A$, but 
+                \[\pi_1 |_A [C \cap A] = (0,\infty)\]
+                which is open. And, 
+                \[V = A \cap (\R \times (-1, \infty))\]
+                is open in $A$, but 
+                \[\pi_1|_A [V] = [0, \infty) \]
+                is closed in $\E$. This proves the result. 
                 \end{proof}
+                
+            \item 
         \end{enumerate}
         
 

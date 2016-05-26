@@ -1052,13 +1052,170 @@
                 is closed in $\E$. This proves the result. 
                 \end{proof}
                 
-            \item 
+            \item This is left to the reader as an exercise.
+            
+            \item Suppose that $X$ is a compact $T_2$ space. We show that 
+                \begin{itemize}
+                    \item the cone on $X$ is homeomorphism to the one-point compactification of $X \times [0,1)$: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item if $A$ is closed in $X$, then $X/A$ is homeomorphic to the one-point compactification of $X - A$: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item Let $f: X \rightarrow X'$ be a continuous function and suppose that we have partitions $\mathcal{P}$, $\mathcal{P}'$ of $X$ and $X'$ respectively, such that if two points of $X$ lie in the same member of $\mathcal{P}$, their images under $f$ liee in the same member of $\mathcal{P}'$. We show that if $Y$, $Y'$ are the identification spaces given by these partitions, that $f$ induces a map $f': Y \rightarrow Y'$, and that if $f$ is an identification map then so is $f'$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: See attached solution. 
+            
+            \item This is left to the reader as an exercise. See attached solution. 
+            
+            \item This is left to the reader as an exercise. See attached solution. 
         \end{enumerate}
         
+    \subsection{Topological Groups}
+        Throughout this section, and the rest of the book, the author assumes that such groups are $T_2$. Unless otherwise stated, this will be the case throughout the solutions.  
+        \begin{enumerate}[(1)]
 
+            \item This is left to the reader as an exercise.
+            
+            \item Suppose that $(G, m, \tau)$ is a topological group. We show that 
+                \begin{itemize}
+                    \item if $H$ is a subgroup of $G$, that its closure $\overline{H}$ is also a subgroup: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item if $H$ is normal, then so is $\overline{H}$: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item Let $G$ be a compact Hausdorff space which has the structure of a group. We show that $G$ is a topological group if the multiplication $m: G \times G \rightarrow G$ is continuous:  
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove that $O(n)$ is homeomorphic to $SO(n)$ and that they are isomorphic as topological groups: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $A,B$ be compact subsets of a topological group. We show that the product set $AB$ is compact: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that if $U$ is a neighbourhood of $e$ in a topological group, there is a neighbourhood $V$ of $e$ fow which $VV^{-1} \subset U$:  
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $H$ be a discrete subgroup of a topological group $(G, m, \tau)$. We find a neighbourhood $N$ of $e$ in $G$ such that the translates $hN = L_h(N)$, $h \in H$ are all disjoint: 
+                \begin{proof}
+                \end{proof}
+            
+            \item We show that if $C$ is a compact subset of a topological group $(G, m, \tau)$, and if $H$ is a discrete subgroup of $G$ that $H \cap C$ is finite: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove that every nontrivial discrete subgroup of $\R$ is infinite cyclic: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove that every non-trivial discrete subgroup of the circle is finite and cyclic: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Suppose that $A,B \in O(2)$, such that $\det A  = 1$, $\det B = -1$. We show that $B^2 = I$, and $BAB^{-1} = A^{-1}$, and deduce that every discrete subgroup of $O(2)$ is either cyclic or dihedral: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We shwo that the automorphism group of $\R$ is isomorphic to $\R \times \Z_2$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the automorphism group of the circle group is isomorphic to $\Z_2$: 
+                \begin{proof}
+                \end{proof}
+                
+        \end{enumerate}
+        
+    \subsection{Orbit Spaces}
+        \begin{enumerate}[(1)]
+            \item We give an action of $\Z$ on $\E \times [0,1]$ which has the M\"obius Strip as an orbit space: 
+                \begin{proof}
+                \end{proof}
+                
+            \item  We find an action of $\Z_2$ on the torus with oribit space the cylinder: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We describe the orbits  of the natural action of $SO(n)$ on $\E^n$ as a group of linear transformation and identify the orbit space: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Suppose that $\pi : X \rightarrow X/G$ is the natural identification map. We show that 
+                \begin{itemize}
+                    \item if $\Ocal$ is open in $X$, then $\pi^{-1}(\pi(\Ocal))$ is the union of the sets $g(\Ocal)$, $g \in G$:
+                        \begin{proof}
+                        \end{proof}
+                    
+                    \item $\pi$ is an open map: 
+                            \begin{proof}
+                            \end{proof}
+                            
+                    \item $\pi$ is not necessarily a closed map: 
+                            \begin{proof}
+                            \end{proof}
+            
+                \end{itemize}
+            
+            \item We show that
+                \begin{itemize}
+                    \item if $X$ is Hausdorff, it is not necessarily the case that $X/G$ be Hausdorff:
+                        \begin{proof}
+                        \end{proof}
+                    
+                    \item if $(X, m, \tau)$ is a topological group and $G$ is a closed subgroup acting on $X$ by left translation, that $X/G$ is Hausdorff:
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We show that the stabilizer of any point is closed subgroup of $G$ when $X$ is Hausdorff, and that points in the same orbit have conjugate stabilizers for any $X$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Suppose that $G$ is compact, $X$ is Hausdorff and that $G$ acts transitively on $X$. We show that $X$ is homeomorphic to the orbit space $G/\text{(stabilizer of x)}$ for any $x \in X$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove that the resulting space is homeomorphic to the Lens space $L(p,q)$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that $L(2,1)$ is homeomorphic to $\RP^3$ and that if $p$ divides $q-q'$, that $L(p,q)$ is homeomorphic to $L(p,q')$: 
+                \begin{proof}
+                \end{proof}
+           
+        \end{enumerate}
     
         
 \newpage 
+
+\section{Homotopic Maps}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
+    
+\section{Construction of the Fundamental Group}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
+    
+\section{Calculations}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
+
 \section{Homotopy Type}
 \par Throughout this section, $\simeq$ will typically denote homotopy equivalence.
     \begin{enumerate}[(1)]
@@ -1136,14 +1293,12 @@
         \item \textit{FTA}: We prove the fundamental theorem of algebra: 
     \end{enumerate}
     
-
-\newpage
 \section{Brouwer Fixed-Point Theorem}
 \par Throughout, we say a topological space $(X, \tau_X)$ has the fixed-point property if every continuous function from $X$ to itself has a fixed point. 
 
     \begin{enumerate}[(1)]
         \item We determine which of the following have the fixed point property: 
-            \begin{enumerate}
+            \begin{itemize}
                 \item The $2$-Sphere: $S^2$ does not exhibit the fixed point property. 
                     \begin{proof}
                     We have previously shown that the map $f:S^n \rightarrow S^n$, given by $f(x) = -x$ is a homeomorphism.
@@ -1161,7 +1316,7 @@
                 \item The one point union of two circles: $X \vee Y = \nicefrac{ X  \amalg Y }{\{p\}}$ does not exhibit the fixed point property: 
                     \begin{proof} Define a function $f$ as follows: If $x\in X$ then we map $e^{ix}$ to $e^{i(x+\pi)}$. Also if $y \in Y$, we map $y$ to $f(p)=e^{\nicefrac{i\pi}{2}}$. This function $f$, as defined on the one point union, leaves no points fixed.
                     \end{proof}
-            \end{enumerate}
+            \end{itemize}
             
         \item Suppose $X$ and $Y$ are of the same homotopy type and $X$ has the fixed-point property. We prove that $Y$ does not necessarily have the fixed point property: 
             \begin{proof} Let $Y$ be the subspace $(0,1) \subset \E^n$, and let $X = \{1/2\}$. Note that $Y$ is homotopic to $X$ by the straight line homotopy, and every map from $X$ to itself has a fixed point. Yet, the function $f: Y \rightarrow Y$, defined by $f(y)=y^2$ has no fixed point. 
@@ -1233,10 +1388,16 @@
             \end{proof}
             
     \end{enumerate}
-    
-    
-\newpage 
+
 \section{Separation of the Plane}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
+    
+\section{The Boundary of a Surface}
+    \begin{enumerate}[(1)]
+        \item 
+    \end{enumerate}
 
         
 \end{document}

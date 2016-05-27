@@ -11,6 +11,7 @@
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
 \DeclareMathOperator*{\Q}{\mathbb{Q}}
 \DeclareMathOperator*{\R}{\mathbb{R}}
+\DeclareMathOperator*{\C}{\mathbb{C}}
 \DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Aut}{\text{Aut}}
 \DeclareMathOperator*{\Int}{\text{Int}}
@@ -1175,23 +1176,70 @@
                 \end{proof}
                 
             \item We prove that every nontrivial discrete subgroup of $\R$ is infinite cyclic: 
-                \begin{proof} 
+                \begin{proof} Let $G$ be a non-trivial discrete subgroup of $\R$. Let $g \in G$, $g \neq 0$. Then, as $(G, m, \tau)$ is discrete, $\{0,g\}$ is a neighbourhood of $0$, and so, $g$ generates $G$ (theorem ($4.11$), page seventy-five). The proof that $G = \langle g \rangle$ is clear from the division algorithm. To conclude, we show that $|G| = \infty$: 
+                \par Suppose, to the contrary, that $|G| = p$, for some $p \in \N$. Then, as $\overline{G} = G$, $\inf G \in G$. But then, by the Archimedian Principle, there exists some $n \in \N$, for which $ng > \inf G$, $hg \in \langle g \rangle$. Thus, $|G| = \infty$. 
                 \end{proof}
                 
             \item We prove that every non-trivial discrete subgroup of the circle is finite and cyclic: 
-                \begin{proof}
+                \begin{proof} Let $G$ be a discrete subgroup of $S^1$. Define $f: [0,1] \rightarrow S^1$ by $f(t) = e^{2\pi i t}$. Then, $G$ is finite, since it is discrete, and compact. It is easy to see that $f^{-1}(G)$ is a discrete subgroup of $\R$, so is cyclic. Thus, $G = f(f^{-1}(G))$ is cyclic. 
                 \end{proof}
                 
             \item Suppose that $A,B \in O(2)$, such that $\det A  = 1$, $\det B = -1$. We show that $B^2 = I$, and $BAB^{-1} = A^{-1}$, and deduce that every discrete subgroup of $O(2)$ is either cyclic or dihedral: 
-                \begin{proof}
+                \begin{proof} By exhaustion, 
+                \[ B = 
+                        \begin{bmatrix}
+                        \pm1 & 0 \\
+                        0 & \mp1
+                        \end{bmatrix} 
+                \]
+                Thus, either way, $B^2 = I$. The fact that $BAB^{-1} = A^{-1}$ is routine. To complete the proof, we show that every discrete subgroup of $O(2)$ is either cyclic or dihedral:  
+                \par From the comments on page seventy-seven, and exercise sixteen, we have that 
+                \[O(2) \cong SO(2) \times \Z_2 \cong S^1 \times \Z_2\]
+                Now, let $G$ be a discrete subgroup of $S^1 \times \Z_2$. Then, for every $X \in O(2)$, $\det X \neq \pm 1$, we have 
+                \[f(X) \cong SO(2) \times \{1\} \cong S^1 \times \{1\} \cong S^1\]
+                as in the previous exercise. By the exercise a above, we have that $f(X)$ must be finite cyclic. In other-words, $f^{-1}(f(X)) = X$ is finite cyclic. 
+                \par To finish the proof, suppose that $X \in G$ was such that $\det X = -1$, without loss of generality. Now, let $K = G \cap SO(2)$. Then, $K$ is cyclic and $K$ is the set of $Z \in G$, such that $\det Z = 1$. Let $M$ be the generator of $K$. Likewise, let $N$ be the generator of $G-K$. Then, as $N^2 = I$, $NMN^{-1} = N^{-1}$, $\langle M, N \rangle$ is dihedral. 
+                \par We claim that $G = \langle M, N \rangle$; Let $L \in G - \langle M, N \rangle$. Then, $L \notin K$, and so $\det L = -1$. Consequently, $\det LMN = 1$, and so, $LMN \in K$. But then, $L \in G$; a contradiction. This completes the proof.
                 \end{proof}
                 
-            \item We shwo that the automorphism group of $\R$ is isomorphic to $\R \times \Z_2$: 
-                \begin{proof}
-                \end{proof}
+            \item We show that  
+                \begin{itemize}
+                    \item if $T$ is an automorphism of the topological group $\R$, that $T(r) = rT(1)$, for any rational $r$:
+                        \begin{proof} If $n \in \N$, then we must have $T(n + x) = T(n) + T(x)$. Further, as $T$ sends generators to generators, we must have 
+                        \[T(n) = n, \quad T(n + x) = n + T(x)\]
+                        It follows from the equality 
+                        \[T(1) = \sum_{i = 1}^n T(1/n) = n + T(1/n)\]
+                        that 
+                        \[T(m/n) = m T(1/n) = \frac{m}{n} T(1)\]
+                        Note the change in notation. 
+                        Thus, as $\Q$ is dense in $\R$, it follows from the sequential criterion for continuity, that $xT(1) = T(x)$ for all $x \in \R$.
+                        \end{proof}
+                    \item the automorphism group of $\R$ is isomorphic to $\R \times \Z_2$:
+                        \begin{proof} We first show that $\Aut \R \cong \R \times \Z_2$; The map $T_x: \R \rightarrow \R$, given by $T_x(y) = yx$, $x \neq 0$ is an automorphism of $\R$, such that $T_x(1) = x$. Thus, consider $f: \R - \{0\} \rightarrow \Aut \R$ given by $f(x) = x = T_x(1)$, for each $T_x \in \Aut \R$, as described above. Then, clearly, $f$ is 1-1 and onto. Further, 
+                        \[f(xy) = T_x(1) T_y(1) = xy = f(x)f(y)\]
+                        \par To conclude, we show that $\R - \{0\} \cong \R \times \Z_2$; Consider the map 
+                        \[g: \R \times \Z_2 \rightarrow \R, \quad 
+                            g(x,y) = 
+                                \begin{cases}
+                                    e^x & y = 0 \\
+                                    -e^x & y =1
+                                \end{cases}
+                        \]
+                        We claim that $g$ is a homeomorphic isomorphism. As $e^x: \R \rightarrow \R^+$ is a homeomorphism from $\R$ to $\R^+$, it follows that $g$ is a homeomorphism. To show that it is a isomorhism, we show the homomorphism property: 
+                        Without loss of generality, suppose that $(x,y), (x',y') \in \R \times \Z_2$ is such that $y = 0$, $y' = 1$; then, 
+                        \[g(x,y)g(x',y') = e^x(-e^{x'}) = -e^{x + x'} = g(x + x', y + y')\]
+                        This completes the proof. 
+                        \end{proof}
+                \end{itemize}
                 
             \item We show that the automorphism group of the circle group is isomorphic to $\Z_2$: 
-                \begin{proof}
+                \begin{proof}   We first note that the identity map $i: S^1 \rightarrow S^1$ is the trivial automorphism. In addition, we have show that the conjugate map given by $\overline{i}(x) = \overline{x}$ is an automorphism. We show that $|\Aut S^1| = 2$: \par We show that if $f$ is any other automorphism, the $f \equiv i$, or $f \equiv \overline{i}$. Indeed; first note that, as 
+                \[S^1 \cong U(1) = \bigcup_n U_n, \quad U_n = \{c \in \C: c^n = 1\},\]
+                if $f \in \Aut S^1$, then $f$ must send generators to generators. So, consider the generators of $U(1)$, given by $U_2$, and $U_3$. Then, 
+                \[U_2 \cong \Z_2, \quad U_3 \cong \Z_3\]
+                Further, for $f \in \Aut S^1$, we must have $f(-1) = -1$, and thusly, 
+                \[f( \frac{-1 + i \sqrt{3}}{2}) = \frac{-1 \pm i \sqrt{3}}{2}\]
+                In which case, $f \cong i$ and $f \cong \overline{i}$, respectively. Thus, by extra lemma, we have that $|\Aut S^1| = 2$ implies $\Aut U(1) \cong \Z_2$.
                 \end{proof}
                 
         \end{enumerate}
@@ -1199,11 +1247,36 @@
     \subsection{Orbit Spaces}
         \begin{enumerate}[(1)]
             \item We give an action of $\Z$ on $\E \times [0,1]$ which has the M\"obius Strip as an orbit space: 
-                \begin{proof}
+                \begin{proof} Define $\pi : \Z \times (\E \times [0,1]) \rightarrow \E^2$, by
+                \[ \pi (z, (x,y)) = 
+                    \begin{cases}
+                    (x+z,y) & z \in 2\Z \\
+                    (x+z, 1-y) & z \in 2\Z +1
+                    \end{cases}
+                \]
+                We show that $\pi$ is a topological group action:  
+                    \begin{itemize}
+                        \item Clear by construction.
+                        \item As, $\pi(0,(x,y)) = (x + 0, y) = (x,y)$, the result follows. 
+                        \item As the components are continuous, $\pi$ is continuous. 
+                    \end{itemize}
                 \end{proof}
                 
             \item  We find an action of $\Z_2$ on the torus with oribit space the cylinder: 
-                \begin{proof}
+                \begin{proof} Consider the cylinder on page eighty. Define $\pi : \Z_2 \times T \rightarrow T$, by 
+                \[\pi(g, (x,y,z)) = 
+                    \begin{cases}
+                    (x, -y , z) & g = 1 \\
+                    (x, y, z) & g = 0 
+                    \end{cases}
+                    \]
+                We check that $\pi$ is a $T$ group action: 
+                    \begin{itemize}
+                        \item By definition. 
+                        \item As $ 0 \equiv e \in \Z_2$, clearly $\pi (0 ,(x,y,z))  = (x, y, z)$. 
+                        \item As the components are continuous, $\pi$ is continuous.
+                    \end{itemize}
+                To show that $\pi(\Z_2 \times T) \cong C$, we note that $\{(x,y,z) : y \in \R\}$ is the canonical cylinder.
                 \end{proof}
                 
             \item We describe the orbits  of the natural action of $SO(n)$ on $\E^n$ as a group of linear transformation and identify the orbit space: 

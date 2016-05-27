@@ -1057,16 +1057,43 @@
             \item Suppose that $X$ is a compact $T_2$ space. We show that 
                 \begin{itemize}
                     \item the cone on $X$ is homeomorphism to the one-point compactification of $X \times [0,1)$: 
-                        \begin{proof}
+                        \begin{proof} Note that, as $X$ is compact, $X \times [0,1]$ is compact. Further, 
+                        \[X \times [0,1] = X \times [0,1) \cup X \times \{1\}\] 
+                        As the one point compactification of $X \times [0,1)$ is $X \times [0,1]$ and $X \times \{1\}$ is compact in $X \times [0,1]$, the result follows. 
                         \end{proof}
                         
                     \item if $A$ is closed in $X$, then $X/A$ is homeomorphic to the one-point compactification of $X - A$: 
-                        \begin{proof}
+                        \begin{proof} Let $Y = X - A \cup \{\infty\}$ be the one point compactification of $X - A$. Further, let $P$ be the image of $A$ in $X/A$, under the identification map 
+                        \[i : X \rightarrow X/A \]
+                        We show that the function $h: X/A \rightarrow Y$ given by 
+                        \[h(x) = 
+                                \begin{cases}
+                                x & x \in X - A \\
+                                \infty & x \in P 
+                                \end{cases}
+                        \]
+                        is a homeomorphism. We apply theorem ($3.7$) and claim that $h \circ i$ is continuous. 
+                        \par Indeed; If $\Ocal$ is open in $Y$ and $\infty \notin \Ocal$, then $\Ocal \subset X - A$, and so, 
+                        \[(h \circ i)^{-1}(\Ocal) = \Ocal \subset X\]
+                        is open. Now, if $\infty \in \Ocal$, then $\Ocal^c$ is compact in $X - A$ by definition and is closed. Thus, $(h \circ i)^{-1}(\Ocal^c)$ is closed in $X$. Consequently, 
+                        \[(h \circ i)^{-1}(\Ocal^c)^c = (h \circ i)^{-1}(\Ocal) \]
+                        is open in $X$. So, $h$ is continuous.  
+                        \par As $X - A \cup \{\infty\}$ is $T_2$ and $X - A$ compact (it is the continuous image under $i$ of $X$), $h$ is a homeomorphism by theorem ($3.7$), page forty-eight. This completes the proof. 
                         \end{proof}
                 \end{itemize}
                 
-            \item Let $f: X \rightarrow X'$ be a continuous function and suppose that we have partitions $\mathcal{P}$, $\mathcal{P}'$ of $X$ and $X'$ respectively, such that if two points of $X$ lie in the same member of $\mathcal{P}$, their images under $f$ liee in the same member of $\mathcal{P}'$. We show that if $Y$, $Y'$ are the identification spaces given by these partitions, that $f$ induces a map $f': Y \rightarrow Y'$, and that if $f$ is an identification map then so is $f'$: 
-                \begin{proof}
+            \item Let $f: X \rightarrow X'$ be a continuous function and suppose that we have partitions $\mathscr{P}$, $\mathscr{P}'$ of $X$ and $X'$ respectively, such that if two points of $X$ lie in the same member of $\mathcal{P}$, their images under $f$ lie in the same member of $\mathscr{P}'$. We show that if $Y$, $Y'$ are the identification spaces given by these partitions, that $f$ induces a map $f': Y \rightarrow Y'$, and that if $f$ is an identification map then so is $f'$: 
+                \begin{proof} Let $\pi : X \rightarrow Y$, $\pi': X' \rightarrow Y'$ be the given identification maps. We show that $f$ induces a map $f': Y \rightarrow Y'$: 
+                \par Define $f': Y \rightarrow Y'$ by $f'(\pi(\mathcal{P})) = \pi' (f(\mathcal{P}))$, for all $\mathcal{P} \in \mathscr{P}$. To show that $f'$ is a map, we first show that it is well-defined. For all $\mathcal{P} \in \mathscr{P}$, there exists $\mathcal{P}' \in \mathscr{P}'$, such that $f(\mathcal{P}) \subset \mathcal{P}'$, by assumption. The fact that $f'$ is well-defined follows and everywhere defined is clear. 
+                \par To show that $f'$ is a map, let $\Ocal$ be open in $Y'$. Then, we have 
+                \[f'^{-1}(\Ocal) = (\pi' \circ f)^{-1}(\Ocal) = f^{-1}(\pi'^{-1}(\Ocal)),\]
+                which is open as $f$ is continuous. Thus, $f'$ is a map. 
+                \par To conclude the proof, we show that if $f$ is an identification map, then so is $f'$: Indeed; Let $\Ocal$ be open in $Y$. We claim that $f'(\Ocal)$ is open in $Y'$. By definition, if $\Ocal$ is open in $Y$, 
+                then as $\pi$ is an identification map, $\pi^{-1}(\Ocal)$ is open in $X$. Further, 
+                \[(\pi' \circ f \circ \pi^{-1})(\Ocal) = \pi'(f(\pi^{-1}(\Ocal))) = f'(\pi(\pi^{-1}(\Ocal))) = f'(\Ocal) \]
+                and, 
+                \[f^{-1}(\pi'^{-1}(f'(\Ocal))) = f^{-1}(\pi'^{-1}(\pi'(f(\pi^{-1}(\Ocal))))) = \pi^{-1}(\Ocal) \]
+                Thus, by definition of identification map, $f'(\Ocal)$ is open in $Y'$. This concludes the proof.
                 \end{proof}
                 
             \item This is left to the reader as an exercise. Hint: See attached solution. 
@@ -1084,33 +1111,60 @@
             
             \item Suppose that $(G, m, \tau)$ is a topological group. We show that 
                 \begin{itemize}
-                    \item if $H$ is a subgroup of $G$, that its closure $\overline{H}$ is also a subgroup: 
-                        \begin{proof}
+                    \item if $H$ is a subgroup of $G$, then its closure $\overline{H}$ is also a subgroup: 
+                        \begin{proof} Let $a,b \in \overline{H}$. We claim that $a + b \in \overline{H}$. Now, as $H \subset \overline{H}$, $m^{-1}(H) \subset m^{-1}(\overline{H})$. It follows that as 
+                        \[m^{-1}(H) = \{(a,b) : a,b \in H\} = H \times H\]
+                        we have $H \times H \subset \overline{H} \times \overline{H} 
+                        \subset m^{-1}(\overline{H})$. But, as $\overline{H}$ is closed, and $m$ is continuous, we have 
+                        \[m(\overline{H} \times \overline{H}) \subset \overline{H}\]
+                        \par Similarly we can show this for the inverse function.
                         \end{proof}
                         
                     \item if $H$ is normal, then so is $\overline{H}$: 
-                        \begin{proof}
+                        \begin{proof} We use the characterization for normality give by left and right co-set equality. As previously show, $\overline{H} \leq G$. As $gH = Hg$, we have that 
+                            \begin{itemize}
+                                \item $gH = Hg \subset g\overline{H}$, and so $\overline{H}g \subset g \overline{H}$.
+                                \item Similarly, $g\overline{H} \subset \overline{H}g$.
+                            \end{itemize}
                         \end{proof}
                 \end{itemize}
                 
             \item Let $G$ be a compact Hausdorff space which has the structure of a group. We show that $G$ is a topological group if the multiplication $m: G \times G \rightarrow G$ is continuous:  
-                \begin{proof}
+                \begin{proof}Let $\pi$ be the canonical homeomorphism between $G$ and $\{e\} \times G$, and $p_2$ projection onto the second coordinate. From the fact that compositions of homeomorphisms are homeomorphisms, and the comments on page seventy-five, it follows that $L_{g^{-2}}$ is a homeomorphism and 
+                \[p_2 \circ (\pi \circ L_{g^{-2}}) \equiv i: G \rightarrow G^{-1}\] is continuous. 
                 \end{proof}
                 
             \item We prove that $O(n)$ is homeomorphic to $SO(n)$ and that they are isomorphic as topological groups: 
-                \begin{proof}
+                \begin{proof} Consider the determinate function restricted to $O(n)$. It follows that the function $g: O(n) \rightarrow SO(n) \times \Z_2$ given by 
+                \[g(X) = (\det(X) X , \det X)\]
+                is 1-1 and onto. We show that $g$ is continuous. Let $\Ocal$ be open in $SO(n) \times \Z_2$. Then, $\Ocal = U \times \{1\}$, or $\Ocal = U \times \{0\}$ for some open $U$ in $SO(n)$. But, as $SO(n)$ is a subgroup of $O(n)$, $U$ is open in $O(n)$. Thus, as $U, -U$ are open by extra lemma, it follows that 
+                \[g^{-1}(U \times \{1\}) = -U, \quad g^{-1}(U \times \{0\}) = U\]
+                are open. Thus, $g$ is continuous. As $O(n)$ is compat, and $SO(n) \times \Z_2$ is Hausdorff, it follows from theorem ($3.7$), page forty-eight, that $g$ is a homeomorphism. 
+                \par To conclude the proof, we note that $\det XY = \det X \det Y$.  
                 \end{proof}
                 
             \item Let $A,B$ be compact subsets of a topological group. We show that the product set $AB$ is compact: 
-                \begin{proof}
+                \begin{proof} As $m: G \times G \rightarrow G$ is continuous, and $m(A \times B) = AB$, compactness follows from theorem ($3.4$), page forty-seven.  
                 \end{proof}
                 
             \item We show that if $U$ is a neighbourhood of $e$ in a topological group, there is a neighbourhood $V$ of $e$ fow which $VV^{-1} \subset U$:  
-                \begin{proof}
+                \begin{proof} Consider $m^{-1}(U)$. Then, $m^{-1}(U)$ is an open neighbourhood of $(e,e)$ in $G \times G$. It follows from the definition of product topology that $m^{-1}(U) = V \times V$ for some open set $V$ in $G$. Via $L_{v^{-2}}$, we have 
+                \[V \cong_{L_{v^{-2}}} V^{-1}\] 
+                and so, 
+                \[V \times V \cong V \times V^{-1} \]
+                And, as $m$ is continuous, we have 
+                \[m(V \times V^{-1}) = VV^{-1} \subset U = m(m^{-1}(U))\]
                 \end{proof}
                 
             \item Let $H$ be a discrete subgroup of a topological group $(G, m, \tau)$. We find a neighbourhood $N$ of $e$ in $G$ such that the translates $hN = L_h(N)$, $h \in H$ are all disjoint: 
-                \begin{proof}
+                \begin{proof} As $H$ is disrete, for some open cover $\{\Ocal_\alpha\}_\alpha$, each $\Ocal_\alpha$ contains one element of $H$. In particular, there exits some $\Ocal_{\alpha_0}$, such that 
+                \[\{e\} \subset \Ocal_{\alpha_0}\]
+                Thus, $\Ocal_{\alpha_0} \cap H = \{e\}$. By an exercise above, there exists some open $N$ in $G$, for which $NN^{-1} \subset \Ocal_{\alpha_0}$. Now, suppose to the contrary that for some $h,g \in H$, $h \neq g$, $hN \cap gN = \emptyset$. 
+                \par Then, there exits some $n_1, n_2 \in N$, for which $hn_1 = g n_2$, implying that 
+                \[g^{-1}h = n_2n_1^{-1} \in NN^{-1} \subset \Ocal_{\alpha_0} \]
+                But then, $g^{-1}h = n_2n_1^{-1} \in \Ocal_{\alpha_0}$. This implies that 
+                \[g^{-1}h \in \Ocal_{\alpha_0} \cap H = \{e\};\]
+                a contradiction.
                 \end{proof}
             
             \item We show that if $C$ is a compact subset of a topological group $(G, m, \tau)$, and if $H$ is a discrete subgroup of $G$ that $H \cap C$ is finite: 

@@ -1159,7 +1159,7 @@
             \item Let $H$ be a discrete subgroup of a topological group $(G, m, \tau)$. We find a neighbourhood $N$ of $e$ in $G$ such that the translates $hN = L_h(N)$, $h \in H$ are all disjoint: 
                 \begin{proof} As $H$ is disrete, for some open cover $\{\Ocal_\alpha\}_\alpha$, each $\Ocal_\alpha$ contains one element of $H$. In particular, there exits some $\Ocal_{\alpha_0}$, such that 
                 \[\{e\} \subset \Ocal_{\alpha_0}\]
-                Thus, $\Ocal_{\alpha_0} \cap H = \{e\}$. By an exercise above, there exists some open $N$ in $G$, for which $NN^{-1} \subset \Ocal_{\alpha_0}$. Now, suppose to the contrary that for some $h,g \in H$, $h \neq g$, $hN \cap gN = \emptyset$. 
+                Thus, $\Ocal_{\alpha_0} \cap H \neq \{e\}$. By an exercise above, there exists some open $N$ in $G$, for which $NN^{-1} \subset \Ocal_{\alpha_0}$. Now, suppose to the contrary that for some $h,g \in H$, $h \neq g$, $hN \cap gN = \emptyset$. 
                 \par Then, there exits some $n_1, n_2 \in N$, for which $hn_1 = g n_2$, implying that 
                 \[g^{-1}h = n_2n_1^{-1} \in NN^{-1} \subset \Ocal_{\alpha_0} \]
                 But then, $g^{-1}h = n_2n_1^{-1} \in \Ocal_{\alpha_0}$. This implies that 
@@ -1168,11 +1168,14 @@
                 \end{proof}
             
             \item We show that if $C$ is a compact subset of a topological group $(G, m, \tau)$, and if $H$ is a discrete subgroup of $G$ that $H \cap C$ is finite: 
-                \begin{proof}
+                \begin{proof} By extra lemma, $\overline{H} = H$, and as $C$ is compact in a $T_2$ space, $C$ is closed. This implies that $H \cap C \subset C$ is closed, and compact by theorem ($3.5$), page forty-seven. 
+                \par Suppose, to the contrary, that $H \cap C$ was not finite. As 
+                \[\bigcup_{x \in C} \{x\}\]
+                is an open cover of $H \cap C$, no finite set of $\{x : x \in C\}$ could cover $H \cap C$, contradicting the compactness of $H \cap C$. 
                 \end{proof}
                 
             \item We prove that every nontrivial discrete subgroup of $\R$ is infinite cyclic: 
-                \begin{proof}
+                \begin{proof} 
                 \end{proof}
                 
             \item We prove that every non-trivial discrete subgroup of the circle is finite and cyclic: 

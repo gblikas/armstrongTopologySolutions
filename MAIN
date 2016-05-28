@@ -23,6 +23,8 @@
 \DeclareMathOperator*{\Diam}{\text{Diam}}
 \DeclareMathOperator*{\RP}{\R\text{P}}
 \DeclareMathOperator*{\Z}{\mathbb{Z}}
+\DeclareMathOperator*{\Orb}{\text{Orb}}
+\DeclareMathOperator*{\Stab}{\text{stab}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -1280,42 +1282,82 @@
                 \end{proof}
                 
             \item We describe the orbits  of the natural action of $SO(n)$ on $\E^n$ as a group of linear transformation and identify the orbit space: 
-                \begin{proof}
+                \begin{proof} Let $r\in \R$, $r\geq0$, let 
+                \[S_r=\{p\in \E^n \mid \|p\|=r\}\]
+                Then since $\text{SO}(n)$ preserves distances, $SO(n)$ must take $S_r$ to itself.  Furthermore, the action on $S_r$ is transitive, because it is transitive on $S^{n-1}\subset \E^n$ and $S_r = r \cdot S^{n-1}$.  To see the action on $S^{n-1}$ is transitive, for any vector $\mathbf{v} \in S^{n-1}$, it can be put into an orthonormal basis $\mathbf{B}$.  Then there is a change of coordinates matrix $M$ from the standard basis $\mathbf{e_1}, \dots, \mathbf{e_n}$ to $\mathbf{B}$ that takes $\mathbf{e_1}$ to $v$.  Since both bases are orthonormal, $M \in O(n)$.  Clearly $M$ can be chosen to be in $SO(n)$ such that $M(\mathbf{e_1})=v$ (if it's not already in $SO(n)$, just multiply one of the other $\mathbf{e_i}$'s by $-1$). Since any element of $S^{n-1}$ can be taken to $\mathbf{e_1}$, the action must be transitive.  Now if $\mathbf{v} \in \E^n$ is arbitrary ($v \neq 0$) then just scale $v$ to be in $S^{n-1}$, transform within $S^{n-1}$ and scale back.  The two scaling operations assure that the resulting transformation has determinant equal to one, and therefore is in $SO(n)$.
+                
+                \par Now let $r,r'\in \R$, $r,r'>0$, $r \neq r'$.  Since things in $SO(n)$ are length preserving, an element of $SO(n)$ cannot take an element of $S_r$ to an element of $S_{r'}$.  Thus each $S_r$ is exactly one orbit (true also if $r=0$ since $S_0$ consists of one point).
+                
+                \par Let $f:\E^n \rightarrow [0,\infty)$ be given by $f(\mathbf{v})=\|\mathbf{v}\|$.  Then $f$ is a continuous function that identifies each orbit of the action to a single point. Let $B$ be an open ball in $\E^n$.  Then clearly $f(B)$ is an interval, open in $[0,\infty)$.  Since functions respect unions, it follows that $f$ is an open map.  By Corollary 4.4 $f$ is an identification map.  Thus the identification space is homeomorphic to the image of $f$, which is $[0,\infty)$.  Thus the orbit space of $SO(n)$ on $\E^n$ is homeomorphic to $[0,\infty)$.
                 \end{proof}
                 
             \item Suppose that $\pi : X \rightarrow X/G$ is the natural identification map. We show that 
                 \begin{itemize}
                     \item if $\Ocal$ is open in $X$, then $\pi^{-1}(\pi(\Ocal))$ is the union of the sets $g(\Ocal)$, $g \in G$:
-                        \begin{proof}
+                        \begin{proof} Let $a\in \Ocal$ and $g\in G$.  Since $ga$ is in the same orbit as $a$, $\pi(ga)=\pi(a)$.  Thus $\pi( g(\Ocal))=\pi(\Ocal)$, for all $g\in G$,  \[g(\Ocal)\subset \pi^{-1}(\pi(\Ocal)) \quad \forall g \in G\] 
+                        and, 
+                        \[\bigcup_{g\in G}g(\Ocal) \subset \pi^{-1}(\pi(\Ocal))\]
+                        Now suppose $x\in\pi^{-1}(\pi(\Ocal))$; Then $\pi(x)\in\pi(\Ocal)$.   Thus $x$ is in the same orbit as some element of $\Ocal$, i.e. $x=ga$ for some $g\in G$ and $a\in \Ocal$. Consequently, $x\in g(\Ocal)$ implies  \[\pi^{-1}(\pi(\Ocal))\subset\bigcup_{g\in G}g(\Ocal)\]   
+                        Since we have containment in both directions, we can conclude that 
+                        \[\pi^{-1}(\pi(\Ocal))=\bigcup_{g\in G} g(\Ocal)\]
                         \end{proof}
                     
                     \item $\pi$ is an open map: 
-                            \begin{proof}
+                            \begin{proof} Now suppose $\Ocal$ is open in $X$. Recall a set $U \subset X/G$ is open in $X/G$ if, and only if, $\pi^{-1}(U)$ is open in $X$. Now, $\pi^{-1}(\pi(\Ocal))$ is a union of sets of the form $g(\Ocal)$ and (since each $g$ induces a homeomorphism of $X$) $g(\Ocal)$ is open in $X$, for all $g\in G$.  Thus $\pi^{-1}(\pi(\Ocal))$ is open. Consequently, $\pi(O)$ is open in $X/G$. 
                             \end{proof}
                             
                     \item $\pi$ is not necessarily a closed map: 
-                            \begin{proof}
+                            \begin{proof} We will show by counter-example that $\pi$ is not a closed map.  Let $\Z$ act on $\R$ by translation: $x \mapsto x+z$.  This orbit space is $S^1$.  For each $n= 0,1,2,\dots$, let \[A_n=[n+\frac{1}{n+3},n+\frac{1}{n+2}]\]
+                            So, 
+                                \begin{align*}
+                                    A_0 & = [1/3,1/2] \\
+                                    A_1 & =[1+\frac{1}{4},1+\frac{1}{3}] \\
+                                    A_2 & =[2+\frac{1}{5},2+\frac{1}{4}] \\
+                                    & \vdots 
+                                \end{align*}
+                            Let $A = \bigcup_n A_n$.  Then $A$ is closed in $\E$, but $\pi(A)=\pi((0,1/2])$ which is not a closed subset of $S^1$.
                             \end{proof}
-            
                 \end{itemize}
             
             \item We show that
                 \begin{itemize}
                     \item if $X$ is Hausdorff, it is not necessarily the case that $X/G$ be Hausdorff:
-                        \begin{proof}
+                        \begin{proof} Consider $X = S^1 \times S^1$. We claim that 
+                        \[X/\R\]
+                        given in example seven, page eighty-three is not $T_2$. Clearly, $S^1 \times S^1 = T$ is $T_2$. Suppose to the contrary, that for some $x,y \in X/\R$, there exists disjoint neighbourhoods $\Ocal_x$, $\Ocal_y$. But then, as the comments on page eighty-three point out, $\Orb x$ is dense in $T$. But then, 
+                        \[\Ocal_x \cap \Ocal_y \neq \emptyset\]
                         \end{proof}
                     
                     \item if $(X, m, \tau)$ is a topological group and $G$ is a closed subgroup acting on $X$ by left translation, that $X/G$ is Hausdorff:
-                        \begin{proof}
+                        \begin{proof} Let 
+                        \[C=\{(x,y)\in X\times X\mid x^{-1}y\in G\}\]
+                        and $h:X\times X\rightarrow X$ be the map $h(x,y)=x^{-1}y$. Then $h^{-1}(G)=C$. 
+                        \par Since $G$ is closed and $h$ is continuous, it follows that $C$ is closed.  Let $f:X\rightarrow X/G$ be the identification map.  Let $g:X\times X\rightarrow X/G\times X/G$ be the map $g(x,y)=(f(x),f(y))$.  By Problem 29 $f$ is an open map.  It follows that $g$ is an open map.  Thus by Theorem 4.3 $g$ is an identification map.   Let $\Delta$ be the diagonal in $X/G\times X/G$.  Then $g^{-1}(\Delta)=C$. Since $g$ is an identification map and $C$ is closed in $X\times X$, it follows that $\Delta$ is closed in $X/G\times X/G$.  By Chapter 3, Problem 25 (page 55) it follows that $X/G$ is Hausdorff.\\
                         \end{proof}
                 \end{itemize}
                 
             \item We show that the stabilizer of any point is closed subgroup of $G$ when $X$ is Hausdorff, and that points in the same orbit have conjugate stabilizers for any $X$: 
-                \begin{proof}
+                \begin{proof} If $g$ and $g'$ are in the stabilizer of $x$, then $gg'x=gx=x$ so $gg'$ is in the stabilizer of $x$.  And $g^{-1}gx=1\cdot x=x$, but also $g^{-1}gx=g^{-1}x$.  Thus $g^{-1}x=x$ so $g^{-1}$ is in the stabilizer of $x$.  It follows that the stabilizer of $x$ is a subgroup of $G$.
+                Now, let $f:G\rightarrow X$ be given by $f(g)=gx$.  Then $f$ is continuous.  Since $X$ is Hausdorff, by Theorem 3.6 points are closed (finite sets are always compact).  Thus $f^{-1}(x)$ is closed in $X$.  But $f^{-1}(x)$ is exactly the stabilizer of $x$.  Thus the stabilizer of $x$ is closed in $X$.
+                \par  It remains to show points in the same orbit have conjugate stabilizers.  Let $x,y$ be in the same orbit, so $x=gy$ for some $g\in G$ and, let $a\in \Stab x$.  Then
+                    \begin{align*}
+                        g^{-1}agy & =g^{-1}ax=g^{-1}x=y \\    
+                        & \implies g^{-1}ag\in \Stab y \\
+                        & \implies g^{-1} (\Stab x)g \subset \Stab y
+                    \end{align*}
+                Now let $a \in \Stab y$.  Then, 
+                \[ gag^{-1}x=gay=gy=x\] 
+                So,
+                    \begin{align*}
+                        gag^{-1}\in \Stab x \implies \Stab y \subset g^{-1} (\Stab x)g
+                    \end{align*}
+                Since we have set containment in both directions it follows that 
+                \[g^{-1} (\Stab x)g= \Stab y\]
                 \end{proof}
                 
             \item Suppose that $G$ is compact, $X$ is Hausdorff and that $G$ acts transitively on $X$. We show that $X$ is homeomorphic to the orbit space $G/\text{(stabilizer of x)}$ for any $x \in X$: 
-                \begin{proof}
+                \begin{proof} Let $x\in X$, $f:G\rightarrow X$ be given by $f(g)=gx$. Since $G$ acts transitively, $f$ is onto.  Since $G$ is compact and $X$ is Hausdorff, $f$ is an identification map by corollary ($4.4$).  So $G^*$, the identification space associated to $f$, is homeomorphic to $X$.  
+                \par Now, suppose $f(g_1)=f(g_2)$.  Then $g_2^{-1}g_1 \in \Stab x$.  Consequently, $g_1$ is in the same coset as $g_2$ with respect to the subgroup $(\text{stabilizer of }x)$. Thus $G^*$ is exactly $G/(\text{stabilizer of }x)$.
                 \end{proof}
                 
             \item We prove that the resulting space is homeomorphic to the Lens space $L(p,q)$: 

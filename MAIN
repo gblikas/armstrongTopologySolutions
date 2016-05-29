@@ -1677,12 +1677,62 @@
 
 \section{Separation of the Plane}
     \begin{enumerate}[(1)]
-        \item 
+        \item Let $A$ be a compact subset of $\E^n$. We show that $\E^n - A$ has exactly one unbounded component: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $J$ be a polygonal Jordan curve in the plane. Let $p$ be a point in the unbounded component of $\E^2 - J$ which does not lie on any of the lines produced by extending each of the segments of $J$ in both directions. Given a point $x$ of $\E^2 - J$, say that $x$ is inside (outside) $J$ if the straight line joining $p$ to $x$ cuts across $J$ and odd (even) number of times. We show that the complement of $J$ has exactly two components, namely the set of inside points and the set of outside points: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $J$ be a polygonal Jordan curve in the plane, and let $X$ denote the closure of the bounded component of $J$. We show that $X$ is homeomorphic to a disc: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We prove Sch\"onflies theorem for polygonal Jordan curves: 
+            \begin{proof}
+            \end{proof}
+        
+        \item If $J$ is a Jordan curve in the plane, we use theorem ($5.12$) to show that the frontier of any component of $\E^2 - J$ is $J$: 
+            \begin{proof}
+            \end{proof}
+        
+        \item We give an example of a subspace of the plane which has the homotopy type of a circle, which separates the plane into two components, but which is not the frontier of both these components: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We give example of simple closed curves which separate, and fail to separate
+            \begin{itemize}
+                \item the torus: 
+                    \begin{proof}
+                    \end{proof}
+                
+                \item $\RP^2$: 
+                    \begin{proof}
+                    \end{proof}
+                    
+            \end{itemize}
+        
+        \item Let $X$ be the subspace of the plane which is homeomorphic to a disc. We generalize the argument of theorem ($5.21$) to show that $X$ cannot separate the plane: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Suppose that $X$ is both connected and locally path-connected. We show that a map $f: X \rightarrow S^1$ lifts to a map $f': X \rightarrow \R$ if, and only, if the induced homomorphism $f_*: \pi_1(X) \rightarrow \pi_1 (S^1)$ is the zero homomorphism: 
+            \begin{proof}
+            \end{proof}
+            
     \end{enumerate}
     
 \section{The Boundary of a Surface}
     \begin{enumerate}[(1)]
-        \item 
+        \item We use an argument similar to that of theorem ($5.23$) to prove that $\E^2$ and $\E^3$ are not homeomorphic: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We use the material of this section to show that the spaces $X$, and $Y$ illustrated in problem twenty-four of chapter one are not homeomorphic: 
+            \begin{proof}
+            \end{proof} 
+            
     \end{enumerate}
 
         

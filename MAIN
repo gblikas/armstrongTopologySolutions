@@ -1374,39 +1374,111 @@
 \newpage 
 
 \section{Homotopic Maps}
+Throughout this section $i$ will typically denote the identity map, unless otherwise stated. 
     \begin{enumerate}[(1)]
         \item Let $C$ denote the unit circle in the plane. Suppose that $f: C \rightarrow C$ is a map which is not homotopic to the identity. We show that $f(x) = -x$ for some $x \in C$: 
-            \begin{proof}
+            \begin{proof} Suppose, to the contrary, that for any $x \in C$, $f(x) \neq -x$. Then, we claim that $f \simeq i$. Indeed; as the example on page eighty-nine points out, 
+            \[F(x,t) = \frac{(1-t)f(x) + tg(x)}{||(1-t)f(x) + tg(x)||}\]
+            is such that 
+            \[f \simeq_F i \equiv g;\]
+            a contradiction.
             \end{proof}
             
         \item With $C$ as above, we show that the map which takes each point of $C$ to its antipodal is homotopic to the identity: 
-            \begin{proof}
+            \begin{proof} Consider the matrix 
+            \[ A_\theta = 
+                            \begin{bmatrix}
+                            \cos(\theta) & -\sin(\theta) \\
+                            \sin(\theta) & \cos(\theta) 
+                            \end{bmatrix}
+            \] 
+            Then, $A_\pi \equiv f(x) $. Thus, define $F: C \times I \rightarrow C$ by 
+            \[ F (x,t) =
+                        \begin{bmatrix}
+                        \cos( \pi(1-t)) & -\sin(\pi(1-t)) \\
+                        \sin(\pi(1-t)) & \cos(\pi(1-t)) 
+                        \end{bmatrix} x
+            \]
+            We show that $F$ is homotopy from $f$ to $i$: 
+            \par Clearly, 
+                \begin{align*}
+                    F(x,0) &= A_\pi x \equiv f(x) \\
+                    F(x,1) &= A_0 x = Ix \equiv i
+                \end{align*}
+            Further, as $F$ is the sum of continuous functions, it is continuous. Thus, 
+            \[f \simeq_F i\]
             \end{proof}
             
-        \item Let $D$ be the disc bounded by $C$, and parametrize $D$ using polar coordinates. Let $h: D \rightarrow D$ be the homeomorphism defined by $h(0) = 0$, $h(r, \theta) = (r , \theta + 2\pi r)$. We find a homotopy $F$, from $h$ to the identity, such that the function 
+        \item Let $D$ be the disc bounded by $C$, and parametrize $D$ using polar coordinates. Let $h: D \rightarrow D$ be the homeomorphism defined by $h(0) = 0$, $h(r, \theta) = (r , \theta + 2\pi r)$. We find a homotopy $F$, from $h$ to the identity, such that the functions
         \[F|_{D \times \{t\}} : D \times \{t\} \rightarrow D, \quad t \in [0,1] \]
         are all homeomorphisms: 
-            \begin{proof}
+            \begin{proof} Let $i(r,\theta)=(r,\theta)$ the identity map.  Define $F:D\times I\to D$ by $F((r,\theta),t)=(r,\theta+2\pi r(1-t))$.  $F$ is given by polynomials in $r,\theta$ and $t$, so $F$ is continuous.  Further, 
+                \begin{align*}
+                    F((r,\theta),0) & =h(r,\theta) \\
+                    F((r,\theta),1) & =(r,\theta) = i(r,\theta) 
+                \end{align*}
+            Thus,
+            \[h \simeq_F i\]
+            Since $F|_{D\times\{t\}}\to D$ is a one-to-one continuous map from a compact space to a Hausdorff space, theorem ($3.7$) implies that  $F|_{D\times\{t\}}\to D$ is a homeomorphism.
             \end{proof}
             
         \item With the above terminology, we show that $h$ is homotopic to the identity relative to $C$: 
-            \begin{proof}
+            \begin{proof} As we are consider $h$ relative to $C$, $r = 1$ for all $x \in C$. Thus, 
+            \[h = h' = (1, \theta + 2\pi)\]
+            Define $F: \partial D \times I \rightarrow \partial D$ by 
+            \[F(x, t)  = (1, \theta + 2\pi(1-t))\]
+            Then, 
+                \begin{align*}
+                    F(x,0) & = (1 , \theta + 2\pi) = h'(x) \\
+                    F(x,1) & = (1, \theta) = i(x), 
+                \end{align*}
+            where $i$ is the identity on $C$. Likewise, $F$ is continuous as it is polynomial in $\theta$, $t$. Consquently, 
+            \[h' \equiv h|_{\partial D} \simeq_F i \]
             \end{proof}
             
         \item Let $f: X \rightarrow S^n$ be a map that is not onto. We show that $f$ is null-homotopic: 
-            \begin{proof}
+            \begin{proof} Let $p$ be a point in $S^n$ such that its antipodal point $-p$ is not in the image of $f$.   Now let $g:X\to S^n$ be the constant function $g(x)=p$. Then $g(x)$ and $f(x)$ never give a pair of antipodal points for any $x\in X$.  By example two on page eighty-nine, $f$ and $g$ are homotopic.
             \end{proof}
             
         \item Let $CY$ denote the cone on $Y$. We show that any two maps $f,g: X \rightarrow CY$ are homotopic: 
-            \begin{proof}
+            \begin{proof} By extra lemma \footnote{reference  this} $f$, $g$ are null-homotopic. 
             \end{proof}
             
         \item We show that a map from $X$ to $Y$  is null homotopic if, and only, if it extends to a map from the cone on $X$ to $Y$: 
             \begin{proof}
+                \begin{itemize}
+                    \item[] ($\implies$): Suppose that $f: X \rightarrow Y$ is null-homotopic, via $F$. Thus, 
+                    \[F: CX \rightarrow Y, \quad \text{as} \quad CX = \nicefrac{X}{X \times \{1\}}\]
+                    Thus, we need to show that $F$ is an extension of $f$. 
+                    \par Indeed, $X \times \{0\} \subset X \times I$, and 
+                    \[\{f(x) : x \in X\} \cup \{0\} \subset Y\]
+                    So, 
+                    \[F|_{X \times \{0\}} (x,t) = F(x,0) = f(x), \quad \forall x \in X \times \{0\} \cong X.\]
+                    As $f$ is continuous, it follows that $F|_{X \times \{0\}}$ is. 
+                    
+                    \item[] ($\impliedby$): Suppose that $f: X \times Y$ is a map and that $F:CX \rightarrow Y$ is an extension of $f$. Then, consider the map $H(x,t) = F(x,t)$. As 
+                    \[F(x,1) \equiv X \times \{1\},\]
+                    we have 
+                    \[F(x,1) = H(x,1) = c, \quad \text{for some } c \in Y.\]
+                    In addition, 
+                    \[H(x,0) \equiv F|_{X \times \{0\}} \equiv f \]
+                    and we have 
+                    \[f \simeq_H i\]
+                \end{itemize}
+                
+                
             \end{proof}
             
         \item Let $A$ denote the annulus $\{(r,\theta) : r \in [1,2], \theta \in [0,2\pi]\}$, and let $h$ be a homeomorphism of $A$ defined by $h(r, \theta) = (r, \theta + 2\pi(r-1))$. We show that $h$ is homotopic to the identity map:
-            \begin{proof}
+            \begin{proof} Consider the function $F: A \times I \rightarrow A$ given by 
+            \[F((r,\theta) , t) = (r, \theta + 2\pi t(r-1))\]
+            Then, 
+                \begin{align*}
+                    F((r,\theta), 0 ) & = (r, \theta) = i(r, \theta) \\
+                    F((r, \theta), 1) & = (r, \theta + 2 \pi (r  - 1)) 
+                \end{align*}
+            As $F$ is polynomial in $\theta, t, r$, it follows that $F$ is continuous. Thus, 
+            \[h \simeq_F i\]
             \end{proof}
             
     \end{enumerate}
@@ -1414,7 +1486,7 @@
 \section{Construction of the Fundamental Group}
     \begin{enumerate}[(1)]
         \item Let $\alpha, \beta, \gamma$ be loops in a space $X$, all based at $p$. We write out the formulae for $(\alpha.\beta).\gamma$, and $\alpha.(\beta.\gamma)$ and show that they are homotopic loops relative $\{0,1\}$: 
-            \begin{proof}
+            \begin{proof} 
             \end{proof}
             
         \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 

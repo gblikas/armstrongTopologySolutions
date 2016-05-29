@@ -32,6 +32,8 @@
   {\endproof} %this make a lemma indented in proof
 \newcommand{\bij}{\mathrel{\hookrightarrow\hspace{-1.8ex}\to}} %creates a bijection arrow
 \newcommand*\productop{\mathbin{\Pi}} %disjoint union 
+\newcommand\inner[2]{\langle #1, #2 \rangle}
+\newcommand\innerone[1]{\langle #1 \rangle}
 
 %counters and reformating: 
 \setcounter{section}{-1}
@@ -1522,11 +1524,22 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \[ (H(t,1) = \alpha.(\beta.\gamma)) (t) \]
             By two applications of the Gluing Lemma, $H$ is continuous. So, 
             \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel } \{0,1\}\]
-            
             \end{proof}
             
         \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 
-            \begin{proof}
+            \begin{proof} The isomorphism defined by $\sigma_*$ and $\gamma_*$ are 
+            \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}. \alpha. \sigma \]
+            and, 
+            \[\gamma_*( \innerone{\alpha}) = \gamma^{-1}.\alpha.\gamma\]
+            where $\alpha$ is a loop based at $p$. The claim is that 
+            \[\sigma_*(\innerone{\alpha}) = \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}})\]
+            Indeed; 
+                \begin{align*}
+                    \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) & = \gamma_*( \innerone{\gamma.\sigma^{-1}}) \gamma_*( \innerone{\alpha}) \gamma_*( \innerone{\sigma.\gamma^{-1}}) \\
+                    & = (\gamma^{-1}.\gamma.\sigma^{-1}.\gamma).(\gamma^{-1}.\sigma. \gamma).(\gamma^{-1}.\sigma.\gamma^{-1}.\gamma) \\
+                    & = \sigma^{-1}.\alpha.\sigma \\ 
+                    & = \sigma_*(\innerone{\alpha})
+                \end{align*}
             \end{proof}
             
         \item Let $X$ be a path connected space. We describe when it is true that for any two points $p,q \in X$, all paths from $p$, $q$ induce the same isomorphism between $\pi_1(X, p)$ and $\pi_1(X, q)$: 

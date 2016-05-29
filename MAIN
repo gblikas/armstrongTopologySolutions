@@ -1375,17 +1375,131 @@
 
 \section{Homotopic Maps}
     \begin{enumerate}[(1)]
-        \item 
+        \item Let $C$ denote the unit circle in the plane. Suppose that $f: C \rightarrow C$ is a map which is not homotopic to the identity. We show that $f(x) = -x$ for some $x \in C$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item With $C$ as above, we show that the map which takes each point of $C$ to its antipodal is homotopic to the identity: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $D$ be the disc bounded by $C$, and parametrize $D$ using polar coordinates. Let $h: D \rightarrow D$ be the homeomorphism defined by $h(0) = 0$, $h(r, \theta) = (r , \theta + 2\pi r)$. We find a homotopy $F$, from $h$ to the identity, such that the function 
+        \[F|_{D \times \{t\}} : D \times \{t\} \rightarrow D, \quad t \in [0,1] \]
+        are all homeomorphisms: 
+            \begin{proof}
+            \end{proof}
+            
+        \item With the above terminology, we show that $h$ is homotopic to the identity relative to $C$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $f: X \rightarrow S^n$ be a map that is not onto. We show that $f$ is null-homotopic: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $CY$ denote the cone on $Y$. We show that any two maps $f,g: X \rightarrow CY$ are homotopic: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that a map from $X$ to $Y$  is null homotopic if, and only, if it extends to a map from the cone on $X$ to $Y$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $A$ denote the annulus $\{(r,\theta) : r \in [1,2], \theta \in [0,2\pi]\}$, and let $h$ be a homeomorphism of $A$ defined by $h(r, \theta) = (r, \theta + 2\pi(r-1))$. We show that $h$ is homotopic to the identity map:
+            \begin{proof}
+            \end{proof}
+            
     \end{enumerate}
     
 \section{Construction of the Fundamental Group}
     \begin{enumerate}[(1)]
-        \item 
+        \item Let $\alpha, \beta, \gamma$ be loops in a space $X$, all based at $p$. We write out the formulae for $(\alpha.\beta).\gamma$, and $\alpha.(\beta.\gamma)$ and show that they are homotopic loops relative $\{0,1\}$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $X$ be a path connected space. We describe when it is true that for any two points $p,q \in X$, all paths from $p$, $q$ induce the same isomorphism between $\pi_1(X, p)$ and $\pi_1(X, q)$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that any indiscreet space has trivial fundamental group: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $(G, m, \tau)$ be a path-connected topological group. Given two loops $\alpha$, $\beta$ based at $e$ in $G$, define a map $F: [0,1]^2 \rightarrow G$ by 
+        \[F(s,t) = \alpha(s).\beta(t)\]
+        We show the effect of this map on the square, and prove that the fundamental group of $G$ is abelian: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We show that the space $\E^n - \{p\}$, where $p$ is a point in $\E^n$ has trivial fundamental group for $n \geq 3$: 
+            \begin{proof}
+            \end{proof}
+            
     \end{enumerate}
     
 \section{Calculations}
     \begin{enumerate}[(1)]
-        \item 
+        \item We use theorem ($5.13$) to show that the M\"obius strip and the cylinder both have fundamental group $\Z$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Consider $S^n \subset \E^{n+1}$. Given a loop $\alpha$ in $S^n$, we find a loop $\beta$ in $\E^{n+1}$ which is based at the same point as $\alpha$, and is made up of a finite number of straight line segments, and satisfy 
+        \[|| \alpha(s) - \beta(s)|| < 1, \quad s \in [0,1]\]
+        And, we use this to deduce that $S^n$ is simply connected when $n \geq 2$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Considering the 'proof' of theorem ($5.13$), we show that for $g_1, g_2 \in G$, $\gamma_1.(g_1 \circ \gamma_2)$ joins $x_0$ to $g_1g_2(x_0)$, where $\gamma_1$, $\gamma_2$ are paths from $x_0$ to $g_1(x_0)$, $g_2(x_0)$, respectively. In addidtion, we use this to deduce that $\phi$ is a homomorphism: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $\pi: X \rightarrow Y$ be a covering map and $\alpha$ a path in $Y$. We show that $\alpha$ lifts to a (unique) path in $X$ which begins at any preassigned point of $\pi^{-1}(\alpha(0))$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item Let $\pi: X \rightarrow Y$ be a covering map, $p \in Y$, $q \in \pi^{-1}(p)$, and $F: I \times I \rightarrow Y$ a map such that 
+        \[F(0,t) = F(1,t) = p, \quad t \in [0,1]\]
+        We use the argument of lemma ($5.11$) to find a map $F': I \times I \rightarrow X$ which satisfies 
+        \[\pi \circ F' = F, \quad F'(0,t) = q, \quad t \in [0,1]\]
+        and is unique: 
+            \begin{proof}
+            \end{proof}
+            
+        \item With the terminology above, we note that for each $t \in [0,1]$, we have a path $F_t(s) = F(s,t)$ in $Y$ which begins at $p$. Let $F'_t$ be its unique lift to a path $X$ which begins at $q$, and set $F'(s,t) = F'_t(s)$. We show that $F'$ is continuous and lifts $F$: 
+            \begin{proof}
+            \end{proof}
+            
+        \item We describe the homomorphism $f_*: \pi_1(S^1,1) \rightarrow \pi_1(S^1, f(1))$ induced by each of the following maps: 
+            \begin{itemize}
+                \item $f(e^{i\theta}) = e^{i(\theta + \pi)}$, $\theta \in [0, 2\pi]$: 
+                    \begin{proof}
+                    \end{proof}
+                    
+                \item $f(e^{i\theta}) = e^{in\theta}$, $\theta \in [0,2\pi]$, $n \in \Z$: 
+                    \begin{proof}
+                    \end{proof}
+                    
+                \item $f(e^{i \theta}) = 
+                        \begin{cases} 
+                            e^{i \theta } & \theta \in [0, \pi] \\
+                            e^{i(2\pi - \theta)} & \theta \in [\pi, 2\pi]
+                        \end{cases}$: 
+                            \begin{proof}
+                            \end{proof}
+            \end{itemize}
+        
+        \item For each of the three different action of $\Z_2$ on the torus, in section $4.4$, we describe the homomorphism from the fundamental group of the torus to that of the orbit space induced by the natural identification map: 
+            \begin{proof}
+            \end{proof}
+        
+        \item As in problem eight, page ninety-one, we show that it is impossible to find a homotopy from $h$ to the identify which is relative to the two boundary circles of $A$: 
+            \begin{proof}
+            \end{proof}
+        
     \end{enumerate}
 
 \section{Homotopy Type}

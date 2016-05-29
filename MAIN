@@ -1543,17 +1543,37 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \end{proof}
             
         \item Let $X$ be a path connected space. We describe when it is true that for any two points $p,q \in X$, all paths from $p$, $q$ induce the same isomorphism between $\pi_1(X, p)$ and $\pi_1(X, q)$: 
-            \begin{proof}
+            \begin{proof}As the above proof shows, if $\gamma$, $\sigma$ are paths from $p$ to $q$, then
+            \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}.\alpha.\sigma\]
+            Thus, $\sigma_* = \gamma_*$  if, and only, if 
+            \[\gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) = \gamma_*(\innerone{\alpha}),\]
+            i.e. $\innerone{\alpha} . \innerone{\beta} = \innerone{\beta} . \innerone{\alpha}$. Thus, $\pi_1(X)$ must be abelian. 
             \end{proof}
             
         \item We show that any indiscreet space has trivial fundamental group: 
-            \begin{proof}
+            \begin{proof} By a previous problem, if $(X, \tau)$ is indiscreet, then $X$ is path connected as $\tau = \{X, \emptyset\}$. The idea here is that there are no open sets (holes) for a path to get caught on. We claim that $X$ is contractible: 
+            \par Consider $\pi_1(X, x_0)$, for some fixed $x_0 \in X$. Define $i \in \pi_1(X, x_0)$ by 
+            \[i(x) = x_0, \quad \forall x \in X\]
+            Now, for an arbitrary $f \in \pi_1(X, x_0)$, define $H: X \times I \rightarrow X$ by 
+            \[H(x,t) =
+                    \begin{cases}
+                    i(x) & t \in [0,\nicefrac{1}{2}] \\
+                    f(x) & t \in [\nicefrac{1}{2}, 1]
+                    \end{cases}
+                \]
+            Then, $H$ is the desired homotopy as 
+                \begin{align*}
+                    H(x,0) & = i(x) \\
+                    H(x,1) & = f(x)
+                \end{align*}
+            and it is continuous as the only non-trivial open sets in $\tau $ is $X$ and $H^{-1}(X) = X \times I$, which is open in $X \times I$. Therefore, 
+            \[f \simeq_H i \]
             \end{proof}
             
         \item Let $(G, m, \tau)$ be a path-connected topological group. Given two loops $\alpha$, $\beta$ based at $e$ in $G$, define a map $F: [0,1]^2 \rightarrow G$ by 
         \[F(s,t) = \alpha(s).\beta(t)\]
         We show the effect of this map on the square, and prove that the fundamental group of $G$ is abelian: 
-            \begin{proof}
+            \begin{proof} 
             \end{proof}
             
         \item We show that the space $\E^n - \{p\}$, where $p$ is a point in $\E^n$ has trivial fundamental group for $n \geq 3$: 
@@ -1858,3 +1878,4 @@ Throughout this section $i$ will typically denote the identity map, unless other
 
         
 \end{document}
+          

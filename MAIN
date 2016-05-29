@@ -1486,7 +1486,43 @@ Throughout this section $i$ will typically denote the identity map, unless other
 \section{Construction of the Fundamental Group}
     \begin{enumerate}[(1)]
         \item Let $\alpha, \beta, \gamma$ be loops in a space $X$, all based at $p$. We write out the formulae for $(\alpha.\beta).\gamma$, and $\alpha.(\beta.\gamma)$ and show that they are homotopic loops relative $\{0,1\}$: 
-            \begin{proof} 
+            \begin{proof} By definition, we have 
+            \[((\alpha . \beta). \gamma)(t) = 
+                                            \begin{cases} 
+                                            \alpha(4t) & t \in [0, 1/4] \\
+                                            \beta(4t -1) & t \in [1/4,1/2] \\
+                                            \gamma(2t -1) & t \in [1/2,1]
+                                            \end{cases} 
+                \]                            
+            and,
+            \[ (\alpha.(\beta.\gamma))(t) = 
+                                            \begin{cases}
+                                            \alpha(2t) & t \in [0,1/2] \\
+                                            \beta(4t-2) & t \in [1/2,3/4] \\
+                                            \gamma(4t-3) & t \in [3/4,1] 
+                                            \end{cases}
+                \]
+            Considering the canonical diagram,we have claim that $H: X \times I \rightarrow X$, defined by
+            \[ H(t,s) = 
+                        \begin{cases}
+                        \alpha(\nicefrac{4t}{s+1}) & t \in [0, \frac{s+1}{4}] \\
+                        \beta(4t-1-s) & t \in [ \frac{s+1}{4}, \frac{s +2}{4}] \\
+                        \gamma(\nicefrac{4t-2-s}{2-s}) & t \in [\frac{s+2}{4}, 1] 
+                        \end{cases}
+                \]
+            is a homotopy. Indeed; 
+            \[H(t,0) = 
+                        \begin{cases}
+                            \alpha(4t) & t \in [0, 1/4] \\
+                            \beta(4t -1) & t \in [1/4,1/2] \\
+                            \gamma(2t -1) & t \in [1/2,1]                        
+                        \end{cases}
+                \]
+            and, similarly, 
+            \[ (H(t,1) = \alpha.(\beta.\gamma)) (t) \]
+            By two applications of the Gluing Lemma, $H$ is continuous. So, 
+            \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel } \{0,1\}\]
+            
             \end{proof}
             
         \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 

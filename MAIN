@@ -1523,7 +1523,7 @@ Throughout this section $i$ will typically denote the identity map, unless other
             and, similarly, 
             \[ (H(t,1) = \alpha.(\beta.\gamma)) (t) \]
             By two applications of the Gluing Lemma, $H$ is continuous. So, 
-            \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel } \{0,1\}\]
+            \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel} \{0,1\}\]
             \end{proof}
             
         \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 
@@ -1597,7 +1597,7 @@ Throughout this section $i$ will typically denote the identity map, unless other
             Then, let $H(s,t) = m(P(s,t), Q(s,t))$. Note that $H$ is a homotopy between $\alpha.\beta$ and $m(\alpha(t), \beta(t))$. Similarly, we can show that 
             \[m(\alpha(t), \beta(t)) \simeq_{H'} \beta. \alpha, \]
             where $H' = Q P$. Therefore, 
-            \[\alpha.\beta \text{ rel } \{0,1\} \simeq_H m(\alpha(t), \beta(t)) \simeq_{H'} \beta.\alpha \text{ rel } \{0,1\} \]
+            \[\alpha.\beta \text{ rel} \{0,1\} \simeq_H m(\alpha(t), \beta(t)) \simeq_{H'} \beta.\alpha \text{ rel} \{0,1\} \]
             I.e. $\pi_1(G)$ is abelian. 
             
             \end{proof}
@@ -1700,7 +1700,7 @@ Throughout this section $i$ will typically denote the identity map, unless other
         
         \item As in problem eight, page ninety-one, we show that it is impossible to find a homotopy from $h$ to the identify which is relative to the two boundary circles of $A$: 
             \begin{proof} If $h \simeq_F i$ rel $\{c_1, c_2\}$, then 
-            \[\alpha^{-1} \beta \simeq_F c \text{ rel } \{0,1\}\]
+            \[\alpha^{-1} \beta \simeq_F c \text{ rel} \{0,1\}\]
             However, $\alpha^{-1} \beta$ is homotopic to the loop of constant radius which we know is non-trivial via a deformation retract. 
             \end{proof}
         
@@ -1817,12 +1817,22 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \end{proof}
         
         \item We show that the 'house with two rooms' is contractible: 
+            \begin{proof} A rigorus proof of this theorem is probably beyond the scope of this section. However, a sketch of it is given in Allen Hatcher's \textit{Algebraic Topology}, Chapter 0.  text\footnote{cite this}.
+            \end{proof}
         
         \item We give a detailed proof to show that the cylinder and the M{\"o}bius strip have the homotopy type of the circle: 
+            \begin{proof} We have previously shown that both the cylinder and the M\"obius strip are homotopic to $S^1$. For a more general argument: 
+            \par A deformation retract $F:X\times I\rightarrow X$ of $X$ onto $A\subset X$ induces a homotopy equivalence by taking $F(-,1):X\rightarrow A$ and the inclusion $\iota:A\rightarrow X$. Thus, the composition of the homotopy equivalences $M\rightarrow S^1\rightarrow S^1\times I$ prove the result. 
+            \end{proof}
         
-        \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p$. 
+        \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p = (0,1/2)$: 
+            \begin{proof} This is a problem in Munker's \textit{Topology}. In his text, the point $p$ is $(0,1)$. We proceed with this assumption: 
+            \par Let $p = x_0=(0,1)$. Consider a neighborhood $U$ of $x_0$ which is disjoint from $I\times\{0\}$. Suppose $H:X\times I\to X$ is the homotopy starting with the identity on $X$ and ending with the constant map $X\to\{x_0\}$ such that $H(x_0,t)=x_0$ for all times $t$. That means $\{x_0\}\times I$ has a neighborhood $H^{-1}(U)$. By the tube lemma (this is the statement that in the product topology, there is an open set containing a compact product), there is an open set $V$ such that $\{x_0\}\times I\subset V\times I\subset H^{-1}(U)$. That means every point in $V$ stays in $U$ during the entire deformation. However a point $y=(a,1)$ must traverse a path to $x_0$ and no such path exists within $U$.
+            \end{proof}
         
         \item \textit{FTA}: We prove the fundamental theorem of algebra: 
+            \begin{proof} This is shown in Munker's \textit{Topology}, page three-hundered-fifty. 
+            \end{proof}
     \end{enumerate}
     
 \section{Brouwer Fixed-Point Theorem}

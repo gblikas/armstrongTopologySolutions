@@ -1753,26 +1753,68 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \end{enumerate}
             
         \item Suppose that $f,g: S^1 \rightarrow X$ are homotopic maps. We prove that the spaces formed from $X$ by attaching a disc, using $f$ and using $g$ are homotopy equivalent; in other words, we prove that $X \cup_f D \simeq X \cup_g D$: 
-            \begin{proof} We aim to find maps $r,s'$, such that $r: X \cup_f D \rightarrow X \cup_g D$, $s: X \cup_g D \rightarrow X \cup_f D$, $s \circ r \simeq 1_{X \cup_f D}$ and  $r \circ s \simeq 1_{X \cup_g D}$. We note that 
-            $$\nicefrac{X \sqcup D}{f(A) \sim A} = X \cup_f D, \quad  \nicefrac{X \sqcup D}{g(A) \sim A} =X \cup_g D $$
-            \par As $f \simeq_F g$, $F$ is a map such that $F:S^1 \times I \rightarrow X$, and $F(x,0) = f(x)$, as well as, $F(x,1) = g(x)$. Using $F$, we construct the function $r:X \cup_f D \rightarrow X \cup_g D$ as follows: 
-            \[ r(x) = 
-                \begin{cases}
-                    \{x, F(x,1)\} & x \in \{x, f(x)\} \\ 
-                    x & \text{otherwise}\\
-                \end{cases}
-            \]
-            Similarly, define $s: X \cup_g D \rightarrow X \cup_f D$ by
-            \[ r(x) = 
-                \begin{cases}
-                    \{x, F(x,0)\} & x \in \{x, f(x)\} \\ 
-                    x & \text{otherwise}\\
-                \end{cases}
-            \]
+            \begin{proof} We show that this is true for $S^{n-1}$. To show this, we claim that $X \cup_f D$ and $X \cup_g D$ are deformation retracts of the same space, $X \cup_F (D^n \times I)$, where 
+            \[f \simeq_F g\]
+            As $F: S^1 \times I \rightarrow S^1$ is a homotopy between $f$ and $g$, we have that 
+                \begin{align*}
+                    F(x,0) & = f(x) \\ 
+                    F(x, 1) & = g(x) 
+                \end{align*}
+            We claim that the function $r: D^n \times I \rightarrow D^n \times \{0\} \cup S^{n-1} \times I$ given by 
+            \[ r(x,t) = 
+                        \begin{cases}
+                            \big( \frac{2x}{2-t} , 0 \big) & t \in [0, 2(1-||x||)] \\
+                            \big( \frac{x}{||x||}, 2 - \frac{2-t}{||x||} \big) & t \in [2(1-||x||), 1]
+                        \end{cases}
+                \]
+            is a retraction. 
+                \begin{Lemma} \textit{$r$, as defined above is a retraction: }
+                    \par In the first case, suppose that 
+                    \[(x,t) \in D^n \times \{0\} \cup S^{n-1} \times I = A \]
+                    is such that $x \in D^n$, and $t = 0$. Then, we have that 
+                    \[r(x,t) = r(x,0) = (x,0)\]
+                    In the second case, if $t > 0$, and $x \in S^{n-1}$, then $||x||= 1$ and so $ t \in [0,1]$ and
+                    \[r(x,t) = \Big( \frac{x}{1} , 2 - \frac{2-t}{1}\Big) = (x,t) \]
+                    Thus, $r|_A = 1_A$. A similar argument shows that $r(D^n \times I) = A$.
+                    \par To complete the proof of the lemma, we note that as $r$ is polynomial in $x$ and $t$, it follows that $r$ is continuous. Consequently, $r$ is a retraction. 
+                \end{Lemma}
             
+            We further claim that $r$ is a deformation retraction. To show this, consider the function 
+                    \[d: (D^n \times I) \times I \rightarrow D^n \times I\]
+                    \[d((x,t),s) = s (r(x,t)) + (1-s)(x,t) \]
+            As 
+                \begin{align*}
+                    d((x,t),0 & = (x,t) \\
+                    d((x,t), 1) & = r(x,t)
+                \end{align*}
+            it follows that $d$ is a homotopy between $r$ and the identity. Consequently, $r$ is a deformation retraction. 
+            \par Using the fact that $r$ is a deformation retraction we have that $X \cup_F (D^n \times I)$ deformation retracts onto 
+            \[X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) = X \cup_f (D^n \times \{0\}) \cong D^n   \]
+            (where $X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) \cong (D^n \times \{0\} \cup_f X)$ via the map sending $D^n \times \{0\}$ and $X$ to itself, and $S^{n-1} \times I$ to $F(S^{n-1} \times I)$.)
+            \par A similar argument show a deformation retract of $D^n \times I$ onto 
+            \[D^n \times \{1\} \cup S^{n-1} \times I\]
+            which gives the identification space with $g$ as the attaching map. And, the result follows. 
             \end{proof}
         
         \item We use the previous problem, and the third example of homotopy given in section $5.1$, to show that the 'dunce hat' has the homotopy type of a disc, and is therefore contractible: 
+            \begin{proof} This is so horrendously explained by Armstrong. By "the third example of homotopy given in section 5.1," we assume that Armstrong really means "(\textit{to take as the canonical definition of 'dunce cap') that the dunce cap is constructed by } gluing $D^2$ to $S^1$ via the map $g: S^1 \rightarrow S^1$ given by 
+            \[ g(e^{i\theta}) = 
+                                \begin{cases}
+                                e^{4i\theta} & 0 \leq \theta \leq \pi/2 \\
+                                e^{4i(2\theta - \pi)} & \pi/2 \leq \theta \leq 3\pi/2 \\
+                                e^{8i(\pi - \theta)} & 3\pi/2 \leq \theta \leq 2 \pi 
+                                \end{cases}"
+                \]
+            That is, $S^1 \cup_g D^2$ is the dunce hat. With this assumption, we continue with the proof: 
+            \par Consider the adjunct space given by $i: S^1 \rightarrow D^2$; $X \cup_i D^2$. To conclude, we show that $g$ is homotopic to the identity map: 
+            \par Consider $F: S^1 \times I \rightarrow S^1$ given by 
+            \[ F( e^{i\theta} , t) = tg(e^{i\theta}) + (1 - t)e^{i\theta}\]
+            This is the straight line homotopy; 
+            \[g \simeq_F i\]
+            Thus, by exercise twenty-seven, page one-hundered-nine, $i,g : S^1 \rightarrow D^2$ are homotopic, so that 
+            \[S^1 \cup_g D^2 \simeq S^1 \cup_i D^2 \cong D^2\]
+            and the result follows. 
+            \end{proof}
         
         \item We show that the 'house with two rooms' is contractible: 
         

@@ -1573,11 +1573,37 @@ Throughout this section $i$ will typically denote the identity map, unless other
         \item Let $(G, m, \tau)$ be a path-connected topological group. Given two loops $\alpha$, $\beta$ based at $e$ in $G$, define a map $F: [0,1]^2 \rightarrow G$ by 
         \[F(s,t) = \alpha(s).\beta(t)\]
         We show the effect of this map on the square, and prove that the fundamental group of $G$ is abelian: 
-            \begin{proof} 
+            \begin{proof} We want to show that for any two loops $\alpha$, $\beta$ that
+            \[\innerone{\alpha}\innerone{\beta} = \innerone{\beta}\innerone{\alpha}\]
+            As 
+            \[F(s,0) = F(s,1) = \alpha(s), \quad F(0,t) = F(1,t) = \beta(t),\]
+            we have that 
+            \[\alpha \simeq_F \alpha(s), \quad \beta \simeq_F \beta(t).\]
+            We first show that $\alpha.\beta \simeq m(\alpha(t), \beta(t))$: 
+            \par Define $P: [0,1]^2 \rightarrow G$ by
+            \[P(s,t) = 
+                        \begin{cases}
+                        \alpha(\frac{2t}{1-s}) & t \in [0, \frac{1+s}{2}] \\
+                        e & t \in (\frac{1+s}{2}, 1]
+                        \end{cases}
+                \]
+            and, $Q: [0,1]^2 \rightarrow G$ by
+            \[ Q(s,t) =
+                        \begin{cases}
+                        e & t \in [0, \frac{1-s}{2}] \\
+                        \beta(\frac{2t-1+2}{1+s}) & t \in (\frac{1-s}{2}, 1]
+                        \end{cases}
+                \]
+            Then, let $H(s,t) = m(P(s,t), Q(s,t))$. Note that $H$ is a homotopy between $\alpha.\beta$ and $m(\alpha(t), \beta(t))$. Similarly, we can show that 
+            \[m(\alpha(t), \beta(t)) \simeq_{H'} \beta. \alpha, \]
+            where $H' = Q P$. Therefore, 
+            \[\alpha.\beta \text{ rel } \{0,1\} \simeq_H m(\alpha(t), \beta(t)) \simeq_{H'} \beta.\alpha \text{ rel } \{0,1\} \]
+            I.e. $\pi_1(G)$ is abelian. 
+            
             \end{proof}
             
-        \item We show that the space $\E^n - \{p\}$, where $p$ is a point in $\E^n$ has trivial fundamental group for $n \geq 3$: 
-            \begin{proof}
+        \item We show that the space $\E^n - B$, where $B = \{(x,y,z) : y = 0 \land 0 \leq z \leq 1\}$ has trivial fundamental group:
+            \begin{proof}  As $B$ is homeomorphic to a point, it follows by extra lemma that $\E^n - B$ has trivial fundamental group. 
             \end{proof}
             
     \end{enumerate}
@@ -1878,4 +1904,3 @@ Throughout this section $i$ will typically denote the identity map, unless other
 
         
 \end{document}
-          

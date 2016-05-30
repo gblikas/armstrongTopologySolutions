@@ -1611,17 +1611,38 @@ Throughout this section $i$ will typically denote the identity map, unless other
 \section{Calculations}
     \begin{enumerate}[(1)]
         \item We use theorem ($5.13$) to show that the M\"obius strip and the cylinder both have fundamental group $\Z$: 
-            \begin{proof}
+            \begin{proof} Letting $X = \E^1 \times I$, it is clear that as $\E$ and $[0,1]$ are convex, that $X$ is simply connected. Consider the action of $\Z$ on the identification square which yields the M\"obius loop. It follows that 
+            \[\pi_1( \E \times [0,1] / \Z) = \pi_1(M) \cong \Z\]
+            \par This is similar for the torus. 
             \end{proof}
             
         \item Consider $S^n \subset \E^{n+1}$. Given a loop $\alpha$ in $S^n$, we find a loop $\beta$ in $\E^{n+1}$ which is based at the same point as $\alpha$, and is made up of a finite number of straight line segments, and satisfy 
         \[|| \alpha(s) - \beta(s)|| < 1, \quad s \in [0,1]\]
         And, we use this to deduce that $S^n$ is simply connected when $n \geq 2$: 
-            \begin{proof}
+            \begin{proof} Note that for each $n$, $S^n$ is compact. Likewise, as $[0,1]$ is compact, $\alpha([0,1])$ is compact. Now, either $\alpha$ contains antipodal points, or it doesn't. Let 
+            \[\{ \Ocal_b\}_b\]
+            be an open cover of $\alpha([0,1])$. Then, it has an finite subcover; say, 
+            \[\{ \Ocal_{b_i}\}_{i=1}^N\]
+            \par If $\alpha$ has no antipodal points, then we are done as the path $\beta$ which connects one point form each $\Ocal_{b_i}$ at the same value is the desired path. 
+            \par Now, if $\alpha$ has antipodal points for some $s \in [0,1]$ wew can disjointize neighbourhoods so that $\alpha(s) \in V_i$, and $-\alpha(s) \in V_j$, such that $\alpha(s) \notin V_j$ and $-\alpha(s) \in V_i$, such that 
+            \[\bigcup V_i = \bigcup \Ocal_{b_i}\]
+            and the construction of $\beta$ follows, as above. 
+            \par To conclude the proof, we show that $S^n$ is simply connected: Indeed; by construction, no line adjoining $\alpha(s)$ and $\beta(s)$ goes through the origin. Thus, the projective straight linke homotopy shows that $S^n$ is simply connected, as $\E^{n+1}$ is for $n \geq 2$. 
+            \par Note, this breaks down in the case where the  stereographic projective homotopy fails. This completes the proof. 
             \end{proof}
             
         \item Considering the 'proof' of theorem ($5.13$), we show that for $g_1, g_2 \in G$, $\gamma_1.(g_1 \circ \gamma_2)$ joins $x_0$ to $g_1g_2(x_0)$, where $\gamma_1$, $\gamma_2$ are paths from $x_0$ to $g_1(x_0)$, $g_2(x_0)$, respectively. In addidtion, we use this to deduce that $\phi$ is a homomorphism: 
-            \begin{proof}
+            \begin{proof} As the statement on page one-hundered-two points out, 
+            \[\gamma_1.(g_1 \circ \gamma_2)\]
+            is a path from $x_0$ to $\gamma_1\gamma_2(x_0)$.
+            Thus, as in the proof of ($5.13$), 
+                \begin{align*}
+                    \phi(g_1g_2) & = \innerone{\pi \circ (\gamma_1. g_1 \circ \gamma_2) } \\
+                    & = \innerone{\pi \circ \gamma_1. \pi \circ \gamma_2} \\
+                    & = \innerone{\pi \circ \gamma_1} \innerone{\pi \circ \gamma_2} \\
+                    & \phi(g_1) \phi(g_2) 
+                \end{align*}
+            As $\pi \circ \gamma_1. \pi \circ \gamma_2$ is a loop at $\pi(x_0)$ (it follows that they are in the same homotopy class). 
             \end{proof}
             
         \item Let $\pi: X \rightarrow Y$ be a covering map and $\alpha$ a path in $Y$. We show that $\alpha$ lifts to a (unique) path in $X$ which begins at any preassigned point of $\pi^{-1}(\alpha(0))$: 

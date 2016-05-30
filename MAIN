@@ -1646,7 +1646,18 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \end{proof}
             
         \item Let $\pi: X \rightarrow Y$ be a covering map and $\alpha$ a path in $Y$. We show that $\alpha$ lifts to a (unique) path in $X$ which begins at any preassigned point of $\pi^{-1}(\alpha(0))$: 
-            \begin{proof}
+            \begin{proof} As $X = \bigcup_{y \in Y} \{y\}$, we can form an open cover of $Y$ by evenly covered, i.e. canonical, neighbourhoods. Let $\Ocal$ be the aforementioned open cover, and set 
+            \[\alpha^{-1}(\Ocal)\]
+            to be the family of open sets which cover $[0,1]$. As $[0,1] \subset \R$, is compact, and 
+            \[\bigcup \alpha^{-1}(\Ocal)\]
+            is an open cover of $[0,1]$, $\bigcup \alpha^{-1}(\Ocal)$ has a Lebesgue number, $\delta$. 
+            \par Now, choose $n \in \N$, so that $\nicefrac{1}{n} < \delta$. Then, consider the partition of $[0,1]$, given by 
+            \[\{0,1/n, 2/n \dots , \nicefrac{n-1}{n}\}\]
+            Then, for each $i = 1, 2, \dots, n$, 
+            \[\alpha\Big(\Big[\frac{i-1}{n}, \frac{i}{n}\Big]\Big)\]
+            lies inside a canonical neighbourhood of $Y$. Thus, by setting 
+            \[t_i = \frac{i-1}{n},\]
+            the result follows. 
             \end{proof}
             
         \item Let $\pi: X \rightarrow Y$ be a covering map, $p \in Y$, $q \in \pi^{-1}(p)$, and $F: I \times I \rightarrow Y$ a map such that 
@@ -1654,21 +1665,24 @@ Throughout this section $i$ will typically denote the identity map, unless other
         We use the argument of lemma ($5.11$) to find a map $F': I \times I \rightarrow X$ which satisfies 
         \[\pi \circ F' = F, \quad F'(0,t) = q, \quad t \in [0,1]\]
         and is unique: 
-            \begin{proof}
+            \begin{proof} As the argument of lemma ($5.11$) is really quite bad, we proceed with a more technical proof via problem twenty. 
             \end{proof}
             
         \item With the terminology above, we note that for each $t \in [0,1]$, we have a path $F_t(s) = F(s,t)$ in $Y$ which begins at $p$. Let $F'_t$ be its unique lift to a path $X$ which begins at $q$, and set $F'(s,t) = F'_t(s)$. We show that $F'$ is continuous and lifts $F$: 
-            \begin{proof}
+            \begin{proof} By the homotopy lifting lemma, there exists a unique homotopy lift, $B$ of $F$. By the proof so mentioned, $B$ is continuous and satisfies 
+            \[\pi \circ B \equiv F\]
+            But, by the path lifting lemma, as $F'(s,t_0)$, $t_0 \in [0,1]$ is a lift of a path $F(s,t)$ with initial point $q$, 
+            \[B = F'\]
             \end{proof}
             
         \item We describe the homomorphism $f_*: \pi_1(S^1,1) \rightarrow \pi_1(S^1, f(1))$ induced by each of the following maps: 
             \begin{itemize}
                 \item $f(e^{i\theta}) = e^{i(\theta + \pi)}$, $\theta \in [0, 2\pi]$: 
-                    \begin{proof}
+                    \begin{proof} Note, $f_*(\innerone{\alpha}) = \innerone{f(\alpha)} = \innerone{-\alpha}$. And, as $f(1) = -1$, $f_* \equiv id$.
                     \end{proof}
                     
                 \item $f(e^{i\theta}) = e^{in\theta}$, $\theta \in [0,2\pi]$, $n \in \Z$: 
-                    \begin{proof}
+                    \begin{proof} Note, $f(1) = 1$. Thus, for each loop, we have $f_*(\innerone{\alpha}) = \innerone{n\alpha}$. So, $f_*$ sends the loop component to the $n$-th degree of $\alpha$. 
                     \end{proof}
                     
                 \item $f(e^{i \theta}) = 
@@ -1676,7 +1690,7 @@ Throughout this section $i$ will typically denote the identity map, unless other
                             e^{i \theta } & \theta \in [0, \pi] \\
                             e^{i(2\pi - \theta)} & \theta \in [\pi, 2\pi]
                         \end{cases}$: 
-                            \begin{proof}
+                            \begin{proof} Note, $f(1) = 1$. $f_*$ means that any loop part on the upper half of $S^1$ is identified to the lower part of $S^1$. Thus, it returns the straight line for each loop on $S^1$. 
                             \end{proof}
             \end{itemize}
         
@@ -1685,7 +1699,9 @@ Throughout this section $i$ will typically denote the identity map, unless other
             \end{proof}
         
         \item As in problem eight, page ninety-one, we show that it is impossible to find a homotopy from $h$ to the identify which is relative to the two boundary circles of $A$: 
-            \begin{proof}
+            \begin{proof} If $h \simeq_F i$ rel $\{c_1, c_2\}$, then 
+            \[\alpha^{-1} \beta \simeq_F c \text{ rel } \{0,1\}\]
+            However, $\alpha^{-1} \beta$ is homotopic to the loop of constant radius which we know is non-trivial via a deformation retract. 
             \end{proof}
         
     \end{enumerate}

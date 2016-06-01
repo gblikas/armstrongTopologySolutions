@@ -5,6 +5,10 @@
 \usepackage{hyperref}
 \usepackage{units}
 \usepackage{mathtools}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
 
 
 %defined functions and such
@@ -15,6 +19,7 @@
 \DeclareMathOperator*{\N}{\mathbb{N}}
 \DeclareMathOperator*{\Aut}{\text{Aut}}
 \DeclareMathOperator*{\Int}{\text{Int}}
+\DeclareMathOperator*{\Out}{\text{Out}}
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \DeclareMathOperator*{\Ocal}{\mathcal{O}}
 \DeclareMathOperator*{\Ft}{\text{Fr}}
@@ -308,9 +313,28 @@
             $$e(\Gamma) - e(\Gamma) \leq v(\Gamma') - e(\Gamma') = 1$$
             \end{proof}
             
-        \item This is left to the reader as an exercise.
+        \item We find a tree in the polyhedron of Fig. 1.3 which contains all the vertexes and construct the dual graph $\Gamma$ and show that $\Gamma$ contains loops:
+            \begin{proof} Please refer to figures \hyperref[fig:sub1.1]{\ref{fig:sub1.1}} and \hyperref[fig:sub1.2]{\ref{fig:sub1.2}} 
+                \begin{figure}
+                    \centering
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong1.jpg}
+                      \caption{The tree that contains every vertex.}
+                      \label{fig:sub1.1}
+                    \end{subfigure}%
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong2.jpg}
+                      \caption{Blue: Dual graph. Green: loops.}
+                      \label{fig:sub1.2}
+                    \end{subfigure}
+                    \end{figure}
+            \end{proof}
         
-        \item This is left to the reader as an exercise. 
+        \item Having done  Problem 4, thicken both $T$ and $\Gamma$ in the polyhedron.  $T$ is a tree, so thickening it gives a disc.  We investigate what happens when you thicken $\Gamma$?
+            \begin{proof}  $\Gamma$ is basically two loops connected at a point, with some other edges connected that do not make any more loops.  So thickening should produce something homeomorphic to what is shown in Problem 11 (b).
+            \end{proof}
         
         \item Let $P$ be a regular polyhedron in which each face has $p$ edges and for which $q$ faces meet at each vertex. We use Euler's formula to prove that,
         $$ \frac{1}{p} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e} $$
@@ -320,7 +344,7 @@
             \end{proof}
             
         \item We deduce that there are only $5$ regular (convex) polyhedra. 
-            \begin{proof} If $P$ is a polyhedra, it must satisfy the above criterion.Further, we assume that $p \geq 3$, since if not, we cannot construct a polygon. We use Shl{\"u}t notation. By checking routinley, for values up to $p,q \leq 5$ we have the following set of polyhedra: 
+            \begin{proof} If $P$ is a polyhedra, it must satisfy the above criterion.Further, we assume that $p \geq 3$, since if not, we cannot construct a polygon. We use Shl{\"u}t notation. By checking routinely, for values up to $p,q \leq 5$ we have the following set of polyhedra: 
             $$\{ \{3,3\}, \{3,5\}, \{5,3\}, \{3,4\} , \{4,3\}\}$$
             \par Now, if $p \geq 6$, then we must have
             $$ \frac{1}{6} + \frac{1}{q} = \frac{1}{2} + \frac{1}{e}$$
@@ -331,13 +355,58 @@
                     & < \frac{1}{2} + \frac{1}{e}
                 \end{align*}
             A contradiction. 
+            \par Please see figures \hyperref[fig:sub1.3]{\ref{fig:sub1.3}}, \hyperref[fig:sub1.4]{\ref{fig:sub1.4}}, \hyperref[fig:sub1.5]{\ref{fig:sub1.5}}, \hyperref[fig:sub1.6]{\ref{fig:sub1.6}}, and \hyperref[fig:sub1.7]{\ref{fig:sub1.7}}.
+                \begin{figure}
+                    \centering
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong8.jpg}
+                      \caption{Tetrahedron}
+                      \label{fig:sub1.3}
+                    \end{subfigure}%
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong7.jpg}
+                      \caption{Cube}
+                      \label{fig:sub1.4}
+                    \end{subfigure}
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong9.jpg}
+                      \caption{Octahedron}
+                      \label{fig:sub1.5}
+                    \end{subfigure}
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong10.jpg}
+                      \caption{Dodecahedron}
+                      \label{fig:sub1.6}
+                    \end{subfigure}
+                    \begin{subfigure}{.5\textwidth}
+                      \centering
+                      \includegraphics[width=.4\linewidth]{armstrong6.jpg}
+                      \caption{Icosahedron}
+                      \label{fig:sub1.7}
+                    \end{subfigure}
+                    \label{fig:sub1.8}
+                    \caption{All five platonic solids.}
+                    \end{figure}                 
             \end{proof}
             
-        \item This is left to the reader as an exercise. 
+        \item We check that $v-e+f=0$ for the polyhedron shown in Fig. 1.3 and find a polyhedron which can be deformed into a pretzel and calculate its Euler number: 
+            \begin{proof} For the polyhedron in Fig. 1.3, $v=20$, $e=40$, $f=20$.  Therefore $v-e+f=0$.  Figure \hyperref[fig:sub1.9]{\ref{fig:sub1.9}} is basically a donut with two holes, i.e. a "pretzel". 
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=.4\linewidth]{armstrong3.jpg}
+                    \caption{"pretzel"}
+                    \label{fig:sub1.9}
+                \end{figure}%
+            \par Figure \hyperref[fig:sub1.9]{\ref{fig:sub1.9}} has $38$ faces ($10$ on the top, $10$ on the bottom, $10$ inside the hole, and $8$ around the outside sides).  It has $76$ edges ($29$ on the top, $29$ on the bottom, $10$ vertical ones inside the holes and $8$ vertical ones around the outside sides), and it has $36$ vertexes ($18$ on the top, $18$ on the bottom); Therefore $v-e+f=-2$.
+            \end{proof}
         
         \item This is left to the reader as an exercise. 
         
-        \item We find a homeomorphism from the real xline to the open interval $(0,1)$, and show that any two open intervals are homeomorphic:
+        \item We find a homeomorphism from the real line to the open interval $(0,1)$, and show that any two open intervals are homeomorphic:
             \begin{proof} We show that the real line, $\R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.This amount to showing that $arctan: \R \rightarrow (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$ is continuous, 1-1, onto and that $tan \equiv arctan^{-1}$ is continuous. Thus, $\R \simeq (\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$.  
             \par To conclude the proof, we show that any open subset, $(a,b) \subset \R$ is homeomorphic to $(\nicefrac{-\pi}{2}, \nicefrac{\pi}{2})$, $a \neq b$:
             \par Indeed, under the mapping $f(x) = (b-a)(\frac{x}{\pi} +\frac{1}{2}) +a$, we have 
@@ -386,14 +455,14 @@
         \item Define $f:[0,1) \rightarrow C$, by $f(x) = e^{2\pi i x}$. We prove that $f$ is a continuous bijection. In addition, we find a point $x \in [0,1)$ and a neighbourhood $N$, of $x$ in $[0,1)$, such that $f[N]$ is not a neighbourhood of $f(x)$ in $C$; consequently, this means $f$ is not a homeomorphism. 
             \begin{proof} We first show that $f$ is a continuous bijection: 
             \par Via Euler's formula,
-            \[ e^{2\pi i x} = cos(2\pi x) + i sin(2\pi x), \quad \forall x \in \R \]
+            \[ e^{2\pi i x} = \cos(2\pi x) + i \sin(2\pi x), \quad \forall x \in \R \]
             Using this fact, we show that $f$ is 1-1 and onto. 
                 \begin{itemize}
-                    \item 1-1: Suppose that $cos(2\pi x) + i sin(2\pi x) = cos(2\pi y) + i sin(2\pi y)$ for some $x, y \in [0,1)$. Then, by component-wise comparison of complex numbers we have $cos(2\pi y) = cos(2\pi x)$, iff, $2 \pi y = 2\pi x$, iff $x = y$, as $x,y \in [0,1)$; likewise for $sin$. Thus, $f$ is 1-1. 
+                    \item 1-1: Suppose that $\cos(2\pi x) + i \sin(2\pi x) = \cos(2\pi y) + i \sin(2\pi y)$ for some $x, y \in [0,1)$. Then, by component-wise comparison of complex numbers we have $\cos(2\pi y) = \cos(2\pi x)$, iff, $2 \pi y = 2\pi x$, iff $x = y$, as $x,y \in [0,1)$; likewise for $\sin$. Thus, $f$ is 1-1. 
                     
-                    \item Onto: Let $y \in C$. Then, $y = cos(2\pi y_0) + i sin(2\pi y_1)$ for some $(y_0, y_1) \in \R^2$. But as $f: [0,1) \rightarrow C$, we have $0 \leq 2 \pi y_0, 2\pi y_1 \leq 2\pi$. Consequently, $f$ is onto.
+                    \item Onto: Let $y \in C$. Then, $y = \cos(2\pi y_0) + i \sin(2\pi y_1)$ for some $(y_0, y_1) \in \R^2$. But as $f: [0,1) \rightarrow C$, we have $0 \leq 2 \pi y_0, 2\pi y_1 \leq 2\pi$. Consequently, $f$ is onto.
                     
-                    \item Continuity: By the definition of continuity in $\mathbb{C}$, and the fact that $cos$, $sin$ are continuous, we have that $f$ is continuous. 
+                    \item Continuity: By the definition of continuity in $\mathbb{C}$, and the fact that $\cos$, $\sin$ are continuous, we have that $f$ is continuous. 
                 \end{itemize}
             
             Next, consider $[0, 1/2) \subset [0,1)$. This is a open neighbourhood in $[0,1)$, by definition. But, $f[[0,1/2)]$ is $C$ intersected with the upper half of the plane minus $z = -1$. Which is not a neighbourhood of $z =1 \in C$, because any open ball centered around $z =1$ must contain the lower plane. Therefore, $f$ is not a homeomorphism. 
@@ -407,19 +476,63 @@
             \begin{proof} A solid proof of this relies on the fact that a circumscribed polygon with center of mass $0$ is homeomorphic to $S^n$ via radial projection. The result of which are shown in chapter $5$. 
             \end{proof}
             
-        \item See accompanying solution.  
-        
-        %Let $\partial D = S^1 \subset \mathbb{C}$. Given two points $x,y \in \Int{D}$, we find a homeomorphism from $D$ to $D$ which interchanges $x$ and $y$ and leaves all the points of $C$ fixed:
-            %\begin{proof} 
-            %\end{proof}
+        \item  Let $C$ denote the unit circle in the complex plane and $D$ the disc which it bounds.  Given two points $x,y\in  D-C$, we find a homeomorphism from $D$ to $D$ which interchanges $x$ and $y$ and leaves all points of $C$ fixed:
+            \begin{proof} This is more or less intuitively obvious.  But writing down an explicit function is not so easy.  First note that for any $a \in \mathbb C$, the function $f(z)=\frac{z-a}{1-\overline{A}z}$ takes $S^1$ to itself.  To see this suppose $|z|=1$.  then
+                \begin{align*}
+                    \left|\frac{z-a}{1-\overline{a}z}\right|&=\left|\frac{z-a}{\overline{z}z-\overline{a}z}\right|\\
+                    &=\left|\frac{z-a}{(\overline{z}-\overline{a})z}\right|\\
+                    &=\left|\frac{z-a}{\overline{z-a}}\right|\frac{1}{|z|}\\
+                    &=1
+                \end{align*}
+            If $|a|<1$ then the denominator never vanishes so this is a continuous function on $D$.  Also,
+            $f(0)=-a$, so if $|a|<1$ then since $f$ takes $C$ to itself and $0$ maps to $-a\in(D-C)$, $f$ must take all of $D$ to itself.  The inverse $f^{-1}$ is therefore also a continuous function from $D$ to $D$ that takes $C$ to $C$.
+            Now suppose $x,y\in\mathbb C$ with $|x|<1$ and $|y|<1$, let
+            $$f_1(z)=\frac{z-x}{1-\bar xz}$$
+            and
+            $$f_2(z)=\frac{z-ty_1}{1-t\bar{y_1}z}$$
+            where $y_1=f_1(y)$ and $t=\frac{1-\sqrt{1-|y_1|^2}}{|y_1|^2}$. 
+            As shown above, both $f_1$ and $f_2$ take $C$ to itself. 
+            Finally let
+            $$g(z)=ze^{i(1-|z|)\pi/(1-|x_2|)}$$
+            where $x_2=f_2(0)$.
+            Then $g(x_2)=-x_2$ and $g(-x_2)=x_2$ and $g(z)=z$ $\forall$ $z\in C$.  Since $z\mapsto|z|$ is continuous, $g$ is built up from sums, products and compositions of continuous functions and therefore $g$ is continuous.
+            \par The function $f_1^{-1}f_2^{-1}gf_2f_1$ is therefore a continuous function from $D$ to $D$ that switches $x$ and $y$ and fixes $C$.
+            \end{proof}
             
-        \item See accompanying solution. 
+        \item   With $C,D$ as above (in Problem 21), define $h:D-C\rightarrow D-C$ by
+            \begin{align*}
+                h(0) & = 0 \\
+                h(re^{i\theta}) & =r\exp\left[i\left(\theta+\frac{2\pi r}{1-r}\right)\right]
+            \end{align*}
+            We show that $h$ is a homeomorphism, but that $h$ cannot be extended to a homeomorphism from $D$ to $D$ and draw a picture which shows the effect of $h$ on a diameter of $D$: 
+                \begin{proof} The function $h$ restricted to a circle of radius $r$ acts by rotation of $2\pi r/(1-r)$ radians.  Now $2\pi r/(1-r)\rightarrow\infty$ as $r\rightarrow 1$, so as the circle radius grows towards one, it gets rotated to greater and greater angles approaching infinity.  Thus intuitively it's pretty obvious this could not be extended to the boundary. See figure \hyperref[fig:1.9]{\ref{fig:1.9}}.
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=.4\linewidth]{armstrong4.jpg}
+                        \label{fig:1.9}
+                    \end{figure}
+                \par Now, we can think of $(r,\theta)$ as polar coordinates in $\mathbb R^2$.  And the topology on $\mathbb C$ is the same as that on $\mathbb R^2$.    Thus as a function of two variables $r$ and $\theta$ this is just a combination of continuous functions by sums, products, quotients and composition.  Since the only denominator involved does not vanish for $|r|<1$, this is a continuous function of $r$ and $\theta$ on $D$ which is clearly onto.  Since it is a simple rotation on each circle of radius $r$, it is also clearly one-to-one.  The inverse is evidently
+                    \begin{align*}
+                        h^{-1}(0) & =0 \\
+                        h^{-1}(re^{i\theta}) & = r\exp\left[i\left(\theta-\frac{2\pi r}{1-r}\right)\right] \\
+                    \end{align*}
+                \par Now, let $r_n=\frac{n}{n+2}$ for $n$ odd and $r_n=\frac{n-1}{n}$ for $n$ even.  Then for $n$ odd, $\frac{r}{1-r}=\frac n2$, and for $n$ even $\frac{r}{1-r}=n-1$.  Therefore $\exp\left[i\left(\frac{2\pi r_n}{1-r_n}\right)\right]$ equals 1 if $r$ is even and $-1$ if $r$ is odd.  Now, $r_n\rightarrow 1$.  So if $h$ could be extended to all of $D$ we must have $h(1)=\lim h(r_n)$.  But $h(r_n)$ does not converge, it alternates between 1 and $-1$.  Therefore, there is no way to extend $h$ to $C$ to be continuous.
+                \end{proof}
         
-        \item This is left to the reader as an exercise.
+        \item  Using the intuitive notion of connectedness, we argue that a circle and a circle with a spike attached cannot be homeomorphic (Fig. 1.26):
+            \begin{proof}  In the circle, if we remove any one point what remains is still connected.  However in the circle with a spike attached there is one point we can remove that renders the space not-connected.  Since this property of being able to remove a point and retain connectedness must be a topological property preserved by homeomorphism, the two spaces cannot be homeomorphic.
+            \end{proof}
         
-        \item This is left to the reader as an exercise.
+        \item Let $X,Y$ be the subspace of the plane shown in Fig. 1.27.  Under the assumption that any homeomorphism from the annulus to itself must send the points of the two boundary circles among themselves, we argue that $X$ and $Y$ cannot be homeomorphic:
+            \begin{proof} The two points that connect the two spikes to the two boundary circles in $X$ must go to the two points that connect the two spikes to the boundary circles in $Y$, because those are the only two points on the boundary circles that can be removed to result in a disconnected space, and because by assumption the circles go to the circles.  Since the two points lie on the same circle in $Y$ but on different circles in $X$, some part of the outer circle in $Y$ must go to the outer circle in $X$ and the rest must go to the inner circle in $X$.  But then some part of the outer circle in $Y$ must go to the interior of $X$. I'm not sure exactly how Armstrong expects us to prove this but it basically follows from the intermediate value theorem, applied to the two coordinates thinking of these shapes as embedded in $\mathbb R^2$. 
+            \end{proof}
         
-        \item This is left to the reader as an exercise.
+        \item With $X$ and $Y$ as above, consider the following two subspaces of $\mathbb E^3$:
+        $$X\times[0,1] = \{(x,y,z)\mid(x,y)\in X, 0\leq z\leq 1\},$$
+        $$Y\times[0,1] = \{(x,y,z)\mid(x,y)\in Y, 0\leq z\leq 1\}.$$
+        Convince yourself that if these spaces are made of rubber then they can be deformed into one another, and hence that they are homeomorphic: 
+            \begin{proof}With the extra dimension, the squareness can be continuously deformed so that it is a solid torus, with two flat rectangular shapes sticking off.  One has both rectangles pointing out and one has one pointing out and the other pointing in.  Since the torus is round, the first space made from $X$ can be rotated at the location where the inner rectangle is a full half turn to point the rectangle out, and as parallel slices (discs) of the torus move away from where the rectangle is attached, the rotation gradually gets less and less until it becomes zero before reaching the other rectangle.  In this way the inner rectangle can be rotated to point out without affecting the other rectangle and with a gradual change in rotation angle between them guaranteeing the operation is continuous.
+            \end{proof}
         
         \item This is left to the reader as an exercise.
         
@@ -432,7 +545,43 @@
     \subsection{Open and Closed Sets}
     \begin{enumerate}[(1)]
     
-        \item This is left to the reader as an exercise.
+        \item We verify each of the following for arbitrary subsets $A,B$ of a space $X$:
+            \begin{itemize}
+                \item $\overline{A\cup B}=\overline{A}\cup \overline{B}$:
+                    \begin{proof} $\overline{A}$ and $\overline{B}$ are closed by theorem ($2.3$).  Thus $\overline{A} \cup \overline{B}$ is closed.  Now $A\subseteq \overline{A}$ and $B\subseteq \overline{B}$.  Therefore $\overline{A} \cup \overline{B}$ is a closed set containing $A\cup B$.  By Theorem 2.3 $\overline{A\cup B}$ is the smallest closed set containing $A\cup B$, thus it must be that $\overline{A\cup B}\subseteq \overline{A}\cup \overline{B}$.  Conversely, $\overline{A\cup B}$ is a closed set that contains $A$, so $\overline{A\cup B}\supseteq\overline{A}$.  Similarly $\overline{A\cup B}\supseteq\overline{B}$.  Thus $\overline{A\cup B}\supseteq\overline{A}\cup\overline{B}$.  Thus $\overline{A\cup B}=\overline{A}\cup\overline{B}$.
+                    \end{proof}
+                    
+                \item $\overline{A\cap B} \subseteq \overline{A}\cap \overline{B}$:
+                    \begin{proof} $\overline{A}$ is a closed set that contains $A\cap B$, so $\overline{A\cap B}\subseteq\overline{A}$.   Likewise $\overline{A\cap B}\subseteq\overline{B}$.  Thus $\overline{A\cap B}\subseteq\overline{A}\cap\overline{B}$.
+                    \par To see that equality does not hold, let $A=\mathbb Q$ and let $B=\mathbb R - \mathbb Q$.  Then $A\cap B=\emptyset$, so $\overline{A\cap B}=\emptyset$.  But $\overline{A}=\mathbb R$ and $\overline{B}=\mathbb R$, so $\overline{A}\cap \overline{B}=\mathbb R$.
+                    \end{proof}
+                    
+                \item $\bar{\overline{A}}=\overline{A}$:
+                    \begin{proof} $\bar{\overline{A}}$ is the smallest closed set containing $\overline{A}$ by corollary ($2.4$), and $\overline{A}$ is closed by theorem ($2.3$), that contains $\overline{A}$.  Thus $\overline{A}=\bar{\overline{A}}$.
+                    \end{proof}
+                    
+                \item $(A\cup B)^{\circ}\supseteq\overset{\circ}{A}\cup\overset{\circ}{B}$:
+                    \begin{proof} Let $x\in\overset{\circ}{A}\cup\overset{\circ}{B}$.  Assume, without loss of generality, that $x\in\overset{\circ}{A}$. Then there is an open set $U\subseteq A$ such that $x\in A$.  But then $x\in U\subseteq A\cup B$.  So $x\in\overset{\circ}{A}\cup\overset{\circ}{B}$.  
+                    \par Thus 
+                    \[\overset{\circ}{A}\cup\overset{\circ}{B}\subseteq(A\cup B)^{\circ}\]
+                    \par To see that equality does not hold, let $A=\mathbb Q$ and let $B=\mathbb R - \mathbb Q$.  Then $\overset{\circ}{A}=\emptyset$ and $\overset{\circ}{B}=\emptyset$.  And $A\cup B=\mathbb R$, so $(A\cup B)^{\circ}=\mathbb R$.  Therefore $(A\cup B)^\circ=\mathbb R$ but $\overset{\circ}{A}\cap \overset{\circ}{B}=\emptyset$.
+                    \end{proof}
+                    
+                \item $(A\cap B)^{\circ}=\overset{\circ}{A}\cap\overset{\circ}{B}$:
+                    \begin{proof} Let $U$ be an open set in $A\cap B$.  Then $U\subseteq A$ and $U\subseteq B$.  Thus $(A\cap B)^\circ \subseteq \overset{\circ}{A}\cap\overset{\circ}{B}$.  Conversely suppose $x\in\overset{\circ}{A}\cap\overset{\circ}{B}$.  Then $\exists$ open sets $U$ and $V$ s.t.\ $x\in U\subseteq A$ and $x\in V\subseteq B$.  Then $U\cap V$ is open and $x\in U\cap V\subseteq A\cap B$.  Thus $(A\cap B)^\circ \supseteq \overset{\circ}{A}\cap\overset{\circ}{B}$.  
+                    \par Thus 
+                    \[(A\cap B)^\circ = \overset{\circ}{A}\cap\overset{\circ}{B}\]
+                    \end{proof}
+                    
+                \item $(\overset{\circ}{A})^\circ=\overset{\circ}{A}$:
+                    \begin{proof} Clearly 
+                    \[(\overset{\circ}{A})^\circ\subseteq\overset{\circ}{A}\] 
+                    Let $x\in\overset{\circ}{A}$.  Then there exists an open set $U$, such that $x\in U\subseteq A$.  Now $\overset{\circ}{A}$ is a union of open sets so is open.  Let $V=\overset{\circ}{A}\cap U$.  Then $x\in V\subseteq \overset{\circ}{A}$.  Therefore $x\in(\overset{\circ}{A})^\circ$ and so, \[\overset{\circ}{A}\subseteq(\overset{\circ}{A})^\circ\]
+                    \par Thus, 
+                    \[\overset{\circ}{A}=(\overset{\circ}{A})^\circ\]
+                    \end{proof}
+                    
+            \end{itemize}
         
         \item This is left to the reader as an exercise.
         
@@ -1932,49 +2081,57 @@ Throughout this section $i$ will typically denote the identity map, unless other
     \end{enumerate}
 
 \section{Separation of the Plane}
+Most of the exercises in the section are too difficulty for an undergraduate introductory course in algebraic topology. As a result, we refer to well-known sources, which prove the results. 
     \begin{enumerate}[(1)]
         \item Let $A$ be a compact subset of $\E^n$. We show that $\E^n - A$ has exactly one unbounded component: 
-            \begin{proof}
+            \begin{proof} As $A$ is compact, it is closed and bounded. Further, we identify $\E^n$ with $S^n - \{p\}$ under stereographic projection, $\pi$. Then, $A$ is a compact set in $S^n$ such that $\{p\} \not\subset A \cap S^n$. The  remainder of this proof is an extension of lemma ($61.1$), Munkers' \textit{Topology}\footnote{cite this}. 
             \end{proof}
             
-        \item Let $J$ be a polygonal Jordan curve in the plane. Let $p$ be a point in the unbounded component of $\E^2 - J$ which does not lie on any of the lines produced by extending each of the segments of $J$ in both directions. Given a point $x$ of $\E^2 - J$, say that $x$ is inside (outside) $J$ if the straight line joining $p$ to $x$ cuts across $J$ and odd (even) number of times. We show that the complement of $J$ has exactly two components, namely the set of inside points and the set of outside points: 
-            \begin{proof}
+        \item Let $J$ be a polygonal Jordan curve in the plane. Let $p$ be a point in the unbounded component of $\E^2 - J$ which does not lie on any of the lines produced by extending each of the segments of $J$ in both directions. Given a point $x$ of $\E^2 - J$, say that $x$ is inside (outside) $J$ if the straight line joining $p$ to $x$ cuts across $J$ an odd (even) number of times. We show that the complement of $J$ has exactly two components, namely the set of inside points and the set of outside points: 
+            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
             \end{proof}
             
         \item Let $J$ be a polygonal Jordan curve in the plane, and let $X$ denote the closure of the bounded component of $J$. We show that $X$ is homeomorphic to a disc: 
-            \begin{proof}
+            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
             \end{proof}
             
         \item We prove Sch\"onflies theorem for polygonal Jordan curves: 
-            \begin{proof}
+            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
             \end{proof}
         
         \item If $J$ is a Jordan curve in the plane, we use theorem ($5.12$) to show that the frontier of any component of $\E^2 - J$ is $J$: 
-            \begin{proof}
+            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
             \end{proof}
         
         \item We give an example of a subspace of the plane which has the homotopy type of a circle, which separates the plane into two components, but which is not the frontier of both these components: 
-            \begin{proof}
+            \begin{proof} Consider the standard annulus in the plane, 
+            \[A = \{(x,y) : x^2 + y^2 = r \land 1 \leq r \leq 2 \}\]
+            Then, as we have previously shown, $A$ deformation retracts onto $S^1 \subset A$, and so $A$ has the homotopy type of a circle. Further, 
+            \[\Int A = \{(x,y) : x^2 + y^2 < 1\},\]
+            with $\partial \Int A = S^1 \neq A$. In addition, 
+            \[\Out A = \{(x,y) : x^2 +y^2 > 2\},\]
+            and $\partial \Out A = 2S^1 \neq A$. 
             \end{proof}
             
         \item We give example of simple closed curves which separate, and fail to separate
             \begin{itemize}
                 \item the torus: 
-                    \begin{proof}
+                    \begin{proof} Considering the torus as the identification space of $[0,1]^2$, the circle of radius $1/4$ centered at $(1/2,1/2)$, separates $T$, while the line $x = 1/2$ does not. 
                     \end{proof}
                 
                 \item $\RP^2$: 
-                    \begin{proof}
+                    \begin{proof} Note that $\RP^2$ is given by the equivalence relation 
+                    $x ~ \lambda x$, $\lambda\neq 0$. Thus, a curve in $\RP^2$ is a set of equivalence classes. Thus, a circle of radius $1/4$ centered at $(1/2,1/2)$, which is equivalent to an arc on the first quadrant of $S^1$ separates $\RP^2$. And, $S^1$ does not separate $\RP^2$. 
                     \end{proof}
                     
             \end{itemize}
         
         \item Let $X$ be the subspace of the plane which is homeomorphic to a disc. We generalize the argument of theorem ($5.21$) to show that $X$ cannot separate the plane: 
-            \begin{proof}
+            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
             \end{proof}
             
         \item Suppose that $X$ is both connected and locally path-connected. We show that a map $f: X \rightarrow S^1$ lifts to a map $f': X \rightarrow \R$ if, and only, if the induced homomorphism $f_*: \pi_1(X) \rightarrow \pi_1 (S^1)$ is the zero homomorphism: 
-            \begin{proof}
+            \begin{proof} See the accompanying solution\footnote{http://stanford.edu/class/math215b/Sol3.pdf}. 
             \end{proof}
             
     \end{enumerate}
@@ -1982,14 +2139,13 @@ Throughout this section $i$ will typically denote the identity map, unless other
 \section{The Boundary of a Surface}
     \begin{enumerate}[(1)]
         \item We use an argument similar to that of theorem ($5.23$) to prove that $\E^2$ and $\E^3$ are not homeomorphic: 
-            \begin{proof}
+            \begin{proof} We have previously show that $\pi_1(\E^m)$ is trivial for $m \geq 3$, while $\pi_1(\E^2)$ is not. The result follows. 
             \end{proof}
             
         \item We use the material of this section to show that the spaces $X$, and $Y$ illustrated in problem twenty-four of chapter one are not homeomorphic: 
-            \begin{proof}
+            \begin{proof} Suppose, to the contrary, that $X$ and $Y$ were homeomorphic. Then, by corollary ($5.25$), they have homeomorphic boundaries. Further, it follows from the proof of theorem ($5.24$), that the outer boundaries, $\Out X$, of $X$ and $\Out Y$ of $Y$ must be homeomorphic, as well as the inner boundaries. However, 
             \end{proof} 
             
     \end{enumerate}
 
-        
 \end{document}

@@ -2164,17 +2164,101 @@
 \chapter{Triangulations}
     \section{Triangulating Spaces}
         \begin{enumerate}[(1)]
-            \item 
+            \item We construct triangulations for
+                \begin{itemize}
+                    \item the cylinder: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item the Klein Bottle: 
+                        \begin{proof}
+                        \end{proof}
+                    
+                    \item the double Torus: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We finish off the proof of lemma ($6.3$):
+                \begin{proof} There is really nothing left to finish off. We have previously show that a connect and locally path-connect space is path-connected. 
+                \end{proof}
+                
+            \item If $|K|$ is a connected space, we show that nay two vertexes of $K$ can be connected by a path whose image is a collection of vertexes and edges of $K$:   
+                \begin{proof}
+                \end{proof}
+                
+            \item We check that $|CK|$ and $C|K|$ are homeomorphic spaces: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that if $X$ and $Y$ are triangulable spaces, then $X \times Y$ is triangulable: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that if $K$ and $L$ are complexes in $\E^n$, that $|K| \cap |L|$ is a polyhedron: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that $S^n$ and $P^n$ are both triangulable: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the 'dunce hat' is triangulable, but the 'comb space' is not: 
+                \begin{proof}
+                \end{proof}
+            
         \end{enumerate}
         
     \section{Barycentric Subdivision}
         \begin{enumerate}[(1)]
-            \item 
+            \item We present a visualization of the first barycentric subdivision of a $3$-Simplex: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $\mathcal{F}$ be an open cover of $|K|$, we show the existence of a barycentric subdivision $K^r$, with the propert that given a vertex $v$ of $K^r$, there is an open set $U \in \mathcal{F}$ which contain all the simplexes of $K^r$ that have $v$ as a vertex: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $L$ be a subcomplex of $K$, and let $N$ be the following collection of simplexes of $K^2$: a simplex $B$ lies in $N$ if we can find a simplex $C$ in $L^2$ such that the vertexes of $B$ and $C$ together determine a simplex of $K^2$. We show that
+                \begin{itemize}
+                    \item $N$ is a subcomplex of $K^2$: 
+                        \begin{proof}
+                        \end{proof}
+                    
+                    \item $|N|$ is a neighbourhood of $|L|$ in $|K|$: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We use the construction of problem $11$ to prove that if $X$ is a triangulable space, and $Y$ is a subspace of $X$ which is triangulated by a subcomplex of some triangulation of $X$, then the space obtained from $X$ by shrinking $Y$ to a point is triangulable: 
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Simplicial Approximation}
         \begin{enumerate}[(1)]
-            \item 
+            \item We use the simplicial approximation theorem to show that the $n$-sphere is simply connected for $n \geq 2$: 
+                \begin{proof}
+                \end{proof}
+            
+            \item We show that if $k < m,n$ that any map from $S^k$ to $S^m$ is null homotopic, and that the same is true of any map from $S^k$ to $S^m \times S^n$:   
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that a simplicial map from $|K|$ to $|L|$ induces a simplicial from $|K^m|$ to $|L^m|$ for any $m$: 
+                \begin{proof}
+                \end{proof}
+            
+            \item Suppose that $s: |K^m| \rightarrow |L|$ simplicially approximates $f: |K^m| \rightarrow |L|$, and $t: |L^n| \rightarrow |M|$ simplicially approximates $g: |L^n| \rightarrow M$. We determine if $ts: |K^{m+n}| \rightarrow |M|$ is always a simplicial approximation for $gf: |K^{m+n}| \rightarrow |M|$:   
+                \begin{proof}
+                \end{proof}
+                
+            \item We use the simplicial approximation theorem to show that the set of homotopy classes of maps from one polyhedron to another is always countable: 
+                \begin{proof}
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. 
+            
         \end{enumerate}
 
     \section{The Edge Group of a Complex}

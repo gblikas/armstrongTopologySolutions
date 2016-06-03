@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsfonts, amsthm, amsmath, amssymb, mathrsfs,mathabx}
 \usepackage{enumerate}
@@ -42,21 +42,18 @@
 
 %counters and reformating: 
 \setcounter{section}{-1}
-
-
+\setcounter{chapter}{-1}
 
 \title{Armstrong Topology Solutions}
 \author{George Blikas}
 \date{April 2016}
 
-\begin{document}
 
-\maketitle
+\begin{document}
 
 \tableofcontents
 
-\newpage
-
+\chapter{Preliminaries}
 \section{Definitions}
 
     \subsection{Functions}
@@ -284,9 +281,20 @@
                 
         \end{enumerate}
 
-\newpage 
-\section{Introduction}
-    \subsection{Topological Invariants}
+\clearpage
+\chapter{Introduction}
+    \section{Euler's Theorem}
+    There are no exercises listed for this section.
+    \section{Topological Equivalence}
+    There are no exercises listed for this section.
+    \section{Surfaces}
+    There are no exercises listed for this section.
+    \section{Abstract Spaces}
+    There are no exercises listed for this section.
+    \section{A Classification Theorem}
+    There are no exercises listed for this section.
+    
+    \section{Topological Invariants}
     \begin{enumerate}
     
         \item We prove that $v(T) - e(T) = 1$ for any tree $T$: 
@@ -540,9 +548,9 @@
             
     \end{enumerate}
     
-\newpage
-\section{Continuity}
-    \subsection{Open and Closed Sets}
+\clearpage
+\chapter{Continuity}
+    \section{Open and Closed Sets}
     \begin{enumerate}[(1)]
     
         \item We verify each of the following for arbitrary subsets $A,B$ of a space $X$:
@@ -675,7 +683,7 @@
     \end{enumerate}
         
     
-    \subsection{Continuous Functions}
+    \section{Continuous Functions}
         \begin{enumerate}[(1)]
             \item We show that if $f: \R \rightarrow \R$ is a map, then the set of points left fixed by $f$ is closed. Further, the kernel of $f$ is closed.
                 \begin{proof} Define $f_0(x) = f(x) - x$. The rest is left to the reader. 
@@ -723,7 +731,7 @@
         
         
         
-    \subsection{Space-Filling Curves}
+    \section{Space-Filling Curves}
         \begin{enumerate}[(1)]
             \item We find a Peano curve which fills out the unit square in $\E^2$: 
                 \begin{proof} We apply lemma $2.10$. By a previous exercise, we have that $\partial [0,1]^2$ is homeomorphic to $\partial S^1$. Further, the boundary of the unit triangle is homeomorphic to $\partial S^1$. Therefore, by lemma $2.10$, there is a homeomorphism, $f$, from the unit triangle to the unit disc. Let $h: [0,1] \rightarrow T$ be the space filling curve of the triangle as mentioned in Armstrong. Then, $f \circ h$ is a continuous mapping from $[0,1] \rightarrow [0,1]^2$. Further, it is space filling. 
@@ -750,7 +758,7 @@
             
         \end{enumerate}
     
-    \subsection{The Tietze Extension Theorem}
+    \section{The Tietze Extension Theorem}
     Throughout these exercises, we assume that $(X, d)$ is a metric space, and that if $A \subset X$, it has the subspace metric. Further, the topology on $X$ is the induced topology, if not stated otherwise. 
         \begin{enumerate}[(1)]
             \item We show that $d(x,A) = 0$ if, and only if, $x \in \overline{A}$:
@@ -800,12 +808,12 @@
     
 
 \newpage
-\section{Compactness and Connectedness}
+\chapter{Compactness and Connectedness}
     
-    \subsection{Closed and Bounded Subsets of $\E^n$}
+    \section{Closed and Bounded Subsets of $\E^n$}
     There are not exercises for this section. 
     
-    \subsection{The Heine-Borel Theorem}
+    \section{The Heine-Borel Theorem}
         \begin{enumerate}[(1)]
             \item This is left to the reader as an exercise.
             
@@ -846,7 +854,7 @@
                 \end{proof}
         \end{enumerate}
     
-    \subsection{Properties of Compact Spaces}
+    \section{Properties of Compact Spaces}
         \begin{enumerate}[(1)]
             \item This is left to the reader as an exercise.
             
@@ -957,7 +965,7 @@
         \end{enumerate}
         
     
-    \subsection{Product Spaces}
+    \section{Product Spaces}
     \begin{enumerate}[(1)]
         \item This is left to the reader as an exercise.
         
@@ -1047,119 +1055,119 @@
         
     \end{enumerate}
     
-\section{Connectedness}
-    \begin{enumerate}[(1)]
-        \item Let $X = \{ (a,b) \in \E^2 : a \in \Q \lor b \in \Q\}$. We show that $X$ with the induced topology is connected: 
-            \begin{proof} We seek to apply theorem ($3.25$), on page fifty-eight. Indeed, for each $q \in Q$, let 
-            \[X_q = \{ (a,b) \in \E^2 : a = q \lor b = q\}\]
-            Then clearly 
-            \[X_q = A_q \cup B_q,\]
-            where $A_q = \{ (a,b) \in \E^2 : a = q, b \in \E \}$, $B_q = \{ (a,b) \in \E^2 : a \in \E \lor b = q\}$. Further, for each $q \in \Q$, 
-            \[A_q \cong \E \cong B_q\]
-            So, $A_q$, $B_q$ are connected, and as $A_q \cap B_q = \{(q,q)\}$, $X_q$ is connect by theorem ($3.25$).
-            \par For $t,q \in \Q$, we have 
-            \[ X_t \cap X_q = \{(q,t), (t,q)\} \neq \emptyset\]
-            and so, another application of $3.25$ shows that 
-            \[X = \bigcup_{q \in \Q} X_q\]
-            is connected. 
-            \end{proof}
+    \section{Connectedness}
+        \begin{enumerate}[(1)]
+            \item Let $X = \{ (a,b) \in \E^2 : a \in \Q \lor b \in \Q\}$. We show that $X$ with the induced topology is connected: 
+                \begin{proof} We seek to apply theorem ($3.25$), on page fifty-eight. Indeed, for each $q \in Q$, let 
+                \[X_q = \{ (a,b) \in \E^2 : a = q \lor b = q\}\]
+                Then clearly 
+                \[X_q = A_q \cup B_q,\]
+                where $A_q = \{ (a,b) \in \E^2 : a = q, b \in \E \}$, $B_q = \{ (a,b) \in \E^2 : a \in \E \lor b = q\}$. Further, for each $q \in \Q$, 
+                \[A_q \cong \E \cong B_q\]
+                So, $A_q$, $B_q$ are connected, and as $A_q \cap B_q = \{(q,q)\}$, $X_q$ is connect by theorem ($3.25$).
+                \par For $t,q \in \Q$, we have 
+                \[ X_t \cap X_q = \{(q,t), (t,q)\} \neq \emptyset\]
+                and so, another application of $3.25$ shows that 
+                \[X = \bigcup_{q \in \Q} X_q\]
+                is connected. 
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: Use exercise eleven, chapter two, page thirty two. 
             
-        \item This is left to the reader as an exercise. Hint: Use exercise eleven, chapter two, page thirty two. 
-        
-        \item This is left to the reader as an exercise. Hint: Use theorem ($3.27$), page sixty. 
-        
-        \item (Intermediate Value Theorem) We show that if $f: [a,b] \rightarrow \E$ is a map such that $f(a) < 0$ and $f(b) > 0$, then there exists some $c \in [a,b]$ for which $f(c) = 0$: 
-            \begin{proof} By theorem ($3.21$), page fifty-eight, $f([a,b]) \subset \E$ is connected. By theorem ($3.19$), page fifty-seven, $f([a,b])$ is an interval. In particular, $f([a,b]) = [f(a'), f(b')]$, where $f(a')$, $f(b')$, are the minimum and maximum of $f$ on $[a,b]$. Thus, $[f(a), f(b)] \subset [f(a'), f(b')] $, and $0 \in [f(a), f(b)]$. Thus, there exists $c \in [a,b]$, $f(c) = 0$. 
-            \end{proof}
+            \item This is left to the reader as an exercise. Hint: Use theorem ($3.27$), page sixty. 
             
-        \item We show that
-            \begin{itemize}
-                \item $\E^n$ is locally connected: 
-                    \begin{proof} As has been shown, 
-                    \[ \{I_1 \times I_2 \times ... \times I_n : I_i \in \tau_{\E} \}\]
-                    is a base for the topology in $\E^n$. Thus, if $x \in \Ocal_x$ for some open neighbourhood $\Ocal_x$ in $\E^n$, there exists 
-                    \[I = I_1 \times I_2 \times ... \times I_n \subset \Ocal_x\]
-                    And, as each $I_i$ is connected, it follows by exercise 3.20, that $I$ is connected. 
-                    \end{proof}
-                    
-                \item $X = \{0\} \cup \{1/n : n \in \N\}$ is \textit{not} locally connected: 
-                    \begin{proof} Let $\Ocal$ be an open neighbourhood of $0 \in X$, which is connected. But then, by theorem ($3.19$), $\Ocal$ is an interval. However, $X$ clearly contains no intervals. 
-                    \end{proof}
-            \end{itemize}
-            
-        \item We show that local connectedness is preserved by a homeomorphism, but need not be preserved by a continuous function: 
-            \begin{proof} The first part of this proof is direct. For the second part, consider $Y = \{0\} \cup \{1/n: n \in \N\}$ as above, and $X = \mathbb{Z}^+$ as subspaces of $\E$. Let $f: X  \bij Y$ be the canonical map. Then, $f$ is clearly continuous, but we have previously show that $Y$ is not locally compact. 
-            \end{proof}
-            
-        \item We show that $(X, \tau)$ is locally connected, if, and only if every component of each open subset of $X$ is an open set: 
-            \begin{proof} 
+            \item (Intermediate Value Theorem) We show that if $f: [a,b] \rightarrow \E$ is a map such that $f(a) < 0$ and $f(b) > 0$, then there exists some $c \in [a,b]$ for which $f(c) = 0$: 
+                \begin{proof} By theorem ($3.21$), page fifty-eight, $f([a,b]) \subset \E$ is connected. By theorem ($3.19$), page fifty-seven, $f([a,b])$ is an interval. In particular, $f([a,b]) = [f(a'), f(b')]$, where $f(a')$, $f(b')$, are the minimum and maximum of $f$ on $[a,b]$. Thus, $[f(a), f(b)] \subset [f(a'), f(b')] $, and $0 \in [f(a), f(b)]$. Thus, there exists $c \in [a,b]$, $f(c) = 0$. 
+                \end{proof}
+                
+            \item We show that
                 \begin{itemize}
-                    \item[] ($\implies$): Suppose that $X$ is connected, and let $\Ocal$ be an open set in $X$, and $C$ a (maximal) connected component of $\Ocal$. Then, for some $x \in C$, there exists a connected open set $V_x$, such that 
-                    \[x \in V_x \subset \Ocal\]
-                    But, since $C$ is maximally connected, $V_x \subset C$. Then, 
-                    \[C = \bigcup_{x \in C} V_x \]
-                    and so $C$ is open. 
-                    
-                    \item[]  ($\impliedby$): Now, let $x \in X$, and $\Ocal$ an open set containing $x$. Then, the components of $\Ocal$ are open. Thus, let $V$ be a component such that $x \in V \subset \Ocal$. But then, $V$ is open, closed, and so connected. Thus, $X$ is locally connected. 
+                    \item $\E^n$ is locally connected: 
+                        \begin{proof} As has been shown, 
+                        \[ \{I_1 \times I_2 \times ... \times I_n : I_i \in \tau_{\E} \}\]
+                        is a base for the topology in $\E^n$. Thus, if $x \in \Ocal_x$ for some open neighbourhood $\Ocal_x$ in $\E^n$, there exists 
+                        \[I = I_1 \times I_2 \times ... \times I_n \subset \Ocal_x\]
+                        And, as each $I_i$ is connected, it follows by exercise 3.20, that $I$ is connected. 
+                        \end{proof}
+                        
+                    \item $X = \{0\} \cup \{1/n : n \in \N\}$ is \textit{not} locally connected: 
+                        \begin{proof} Let $\Ocal$ be an open neighbourhood of $0 \in X$, which is connected. But then, by theorem ($3.19$), $\Ocal$ is an interval. However, $X$ clearly contains no intervals. 
+                        \end{proof}
                 \end{itemize}
-            \end{proof}
-            
-    \end{enumerate}
+                
+            \item We show that local connectedness is preserved by a homeomorphism, but need not be preserved by a continuous function: 
+                \begin{proof} The first part of this proof is direct. For the second part, consider $Y = \{0\} \cup \{1/n: n \in \N\}$ as above, and $X = \mathbb{Z}^+$ as subspaces of $\E$. Let $f: X  \bij Y$ be the canonical map. Then, $f$ is clearly continuous, but we have previously show that $Y$ is not locally compact. 
+                \end{proof}
+                
+            \item We show that $(X, \tau)$ is locally connected, if, and only if every component of each open subset of $X$ is an open set: 
+                \begin{proof} 
+                    \begin{itemize}
+                        \item[] ($\implies$): Suppose that $X$ is connected, and let $\Ocal$ be an open set in $X$, and $C$ a (maximal) connected component of $\Ocal$. Then, for some $x \in C$, there exists a connected open set $V_x$, such that 
+                        \[x \in V_x \subset \Ocal\]
+                        But, since $C$ is maximally connected, $V_x \subset C$. Then, 
+                        \[C = \bigcup_{x \in C} V_x \]
+                        and so $C$ is open. 
+                        
+                        \item[]  ($\impliedby$): Now, let $x \in X$, and $\Ocal$ an open set containing $x$. Then, the components of $\Ocal$ are open. Thus, let $V$ be a component such that $x \in V \subset \Ocal$. But then, $V$ is open, closed, and so connected. Thus, $X$ is locally connected. 
+                    \end{itemize}
+                \end{proof}
+                
+        \end{enumerate}
 
-\section{Joining Points by Paths}
-    \begin{enumerate}[(1)]
-        \item We show that the continuous image of a path-connected space is path-connected: 
-            \begin{proof} Without loss of generality, suppose that $f: X \rightarrow Y = f(X)$ is onto, and $X$ is path-connected. Then, for 
-            \[y_1 = f^{-1}(x_1), \quad  y_2 = f^{-1}(x_2)\]
-            in $Y$, there exists a path $h$ from $x_1$ to $x_2$. Thus, $f \circ h$ is the desired path.   
-            \end{proof}
+    \section{Joining Points by Paths}
+        \begin{enumerate}[(1)]
+            \item We show that the continuous image of a path-connected space is path-connected: 
+                \begin{proof} Without loss of generality, suppose that $f: X \rightarrow Y = f(X)$ is onto, and $X$ is path-connected. Then, for 
+                \[y_1 = f^{-1}(x_1), \quad  y_2 = f^{-1}(x_2)\]
+                in $Y$, there exists a path $h$ from $x_1$ to $x_2$. Thus, $f \circ h$ is the desired path.   
+                \end{proof}
+                
+            \item This is left to the reader as an exercise. Hint: Consider the case $x \neq -y$, and use the straight-line homotopy composed with the canonical map. In the case where $x = -y$, pick a third point which is not equal and apply the above technique.  
             
-        \item This is left to the reader as an exercise. Hint: Consider the case $x \neq -y$, and use the straight-line homotopy composed with the canonical map. In the case where $x = -y$, pick a third point which is not equal and apply the above technique.  
-        
-        \item We prove that the product of two path-connected spaces is path-connected: 
-            \begin{proof} This follows directly from the definition of the product topology and set theory. 
-            \end{proof}
-            
-        \item If $A$ and $B$ are path-connected subsets of a space $(X, \tau)$, and $A \cap B$ is non-empty, we show that $A \cup B$ is path-connected: 
-            \begin{proof} Suppose, without loss of generality, that 
-            \[x,y \in A \cup B, \quad x \in A, \quad x \in B\]
-            Pick $c \in A \cap B$, and by assumption, there exists paths $\gamma_1$ in $A$, $\gamma_2$ in $B$, which connect $x$ to $c$, and $c$ to $y$, respectively. 
-            \par It follows that $\gamma_1 \circ \gamma_2$ is the desired path. 
-            \end{proof}
-            
-        \item We find a path-connected subset of a space whose closure is not path-connected:
-            \begin{proof} As the comments on page sixty-two point out, letting 
-            \[Z = \{(x, \sin(\pi/x): x \in \R^+\}\]
-            we see 
-            \[\overline{Z} = Y \cup Z = X\]
-            \end{proof}
-            
-        \item We show that any indiscreet space is path-connected: 
-            \begin{proof} As any function on an indiscreet space is continuous, the result follows. 
-            \end{proof}
-            
-        \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, ... \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
-            \begin{proof} It is not the case that fig. 3.4 is locally path-connect. To see this, we note that any path at the origin must contain points from $Y$ and $Z$. As the comments on page sixty-two point out, the result follows.  
-            \par For the second part of the proof, let 
-            \[X_0 = \{(0,y) : y \in [0,1] \}, \quad X_n = \{(1/n, y) : y \in [0,1]\}\]
-            Further, let $Y = \{(x,0) : x \in [0,1] \}$ and
-            \[X = Y \cup \Big( \bigcup_n X_n \Big)\] 
-            Then, $X$ is path connected as $Y \cap X_n \neq \emptyset$, for all $n$. \par To see that $X$ is not path connected, let $p \in (0,1)$, and consider $\Ocal \subset B(p,1)$ be open. Then, $\Ocal \cap Y = \emptyset$, so $\Ocal \cap X$ is a collection of line segments separate from each other. So, $V \cap X$ is not path connected. 
-            \end{proof}
-            
-        \item We prove that a space which is connected, and locally path-connected is path-connected: 
-            \begin{proof}  Let $x \in X$. And let $\Ocal_x$ be the set of all $y \in X$ such that $y$ is path-connected to $x$; then, $\Ocal_x \neq \emptyset$. We claim that $\Ocal_x = X$. 
-            \par Indeed; as $\Ocal_x$ is a maximally connected component it is open, by extra lemma\footnote{cite this}. Similarly, $\Ocal_x^c$ is open. Thus, $\Ocal_x$ is both open and closed. Therefore, as $X$ is connected, $\Ocal_x = X$. This completes the proof. 
-            \end{proof}
-            
-    \end{enumerate}
+            \item We prove that the product of two path-connected spaces is path-connected: 
+                \begin{proof} This follows directly from the definition of the product topology and set theory. 
+                \end{proof}
+                
+            \item If $A$ and $B$ are path-connected subsets of a space $(X, \tau)$, and $A \cap B$ is non-empty, we show that $A \cup B$ is path-connected: 
+                \begin{proof} Suppose, without loss of generality, that 
+                \[x,y \in A \cup B, \quad x \in A, \quad x \in B\]
+                Pick $c \in A \cap B$, and by assumption, there exists paths $\gamma_1$ in $A$, $\gamma_2$ in $B$, which connect $x$ to $c$, and $c$ to $y$, respectively. 
+                \par It follows that $\gamma_1 \circ \gamma_2$ is the desired path. 
+                \end{proof}
+                
+            \item We find a path-connected subset of a space whose closure is not path-connected:
+                \begin{proof} As the comments on page sixty-two point out, letting 
+                \[Z = \{(x, \sin(\pi/x): x \in \R^+\}\]
+                we see 
+                \[\overline{Z} = Y \cup Z = X\]
+                \end{proof}
+                
+            \item We show that any indiscreet space is path-connected: 
+                \begin{proof} As any function on an indiscreet space is continuous, the result follows. 
+                \end{proof}
+                
+            \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, ... \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
+                \begin{proof} It is not the case that fig. 3.4 is locally path-connect. To see this, we note that any path at the origin must contain points from $Y$ and $Z$. As the comments on page sixty-two point out, the result follows.  
+                \par For the second part of the proof, let 
+                \[X_0 = \{(0,y) : y \in [0,1] \}, \quad X_n = \{(1/n, y) : y \in [0,1]\}\]
+                Further, let $Y = \{(x,0) : x \in [0,1] \}$ and
+                \[X = Y \cup \Big( \bigcup_n X_n \Big)\] 
+                Then, $X$ is path connected as $Y \cap X_n \neq \emptyset$, for all $n$. \par To see that $X$ is not path connected, let $p \in (0,1)$, and consider $\Ocal \subset B(p,1)$ be open. Then, $\Ocal \cap Y = \emptyset$, so $\Ocal \cap X$ is a collection of line segments separate from each other. So, $V \cap X$ is not path connected. 
+                \end{proof}
+                
+            \item We prove that a space which is connected, and locally path-connected is path-connected: 
+                \begin{proof}  Let $x \in X$. And let $\Ocal_x$ be the set of all $y \in X$ such that $y$ is path-connected to $x$; then, $\Ocal_x \neq \emptyset$. We claim that $\Ocal_x = X$. 
+                \par Indeed; as $\Ocal_x$ is a maximally connected component it is open, by extra lemma\footnote{cite this}. Similarly, $\Ocal_x^c$ is open. Thus, $\Ocal_x$ is both open and closed. Therefore, as $X$ is connected, $\Ocal_x = X$. This completes the proof. 
+                \end{proof}
+                
+        \end{enumerate}
     
 \newpage
-\section{Identification Spaces}
-    \subsection{Constructing the M\"obius Strip}
+\chapter{Identification Spaces}
+    \section{Constructing the M\"obius Strip}
     There are no exercises listed for this section. 
     
-    \subsection{The Identification Topology}
+    \section{The Identification Topology}
         \begin{enumerate}[(1)]
             \item  We check that the three descriptions of ${\RP}^n$ all lead to the same space: 
                 \begin{proof} We first note that the canonical construction of $\RP^n$ is formed via the relation 
@@ -1257,7 +1265,7 @@
             \item This is left to the reader as an exercise. See attached solution. 
         \end{enumerate}
         
-    \subsection{Topological Groups}
+    \section{Topological Groups}
         Throughout this section, and the rest of the book, the author assumes that such groups are $T_2$. Unless otherwise stated, this will be the case throughout the solutions.  
         \begin{enumerate}[(1)]
 
@@ -1397,7 +1405,7 @@
                 
         \end{enumerate}
         
-    \subsection{Orbit Spaces}
+    \section{Orbit Spaces}
         \begin{enumerate}[(1)]
             \item We give an action of $\Z$ on $\E \times [0,1]$ which has the M\"obius Strip as an orbit space: 
                 \begin{proof} Define $\pi : \Z \times (\E \times [0,1]) \rightarrow \E^2$, by
@@ -1523,629 +1531,716 @@
     
         
 \newpage 
-
-\section{Homotopic Maps}
-Throughout this section $i$ will typically denote the identity map, unless otherwise stated. 
-    \begin{enumerate}[(1)]
-        \item Let $C$ denote the unit circle in the plane. Suppose that $f: C \rightarrow C$ is a map which is not homotopic to the identity. We show that $f(x) = -x$ for some $x \in C$: 
-            \begin{proof} Suppose, to the contrary, that for any $x \in C$, $f(x) \neq -x$. Then, we claim that $f \simeq i$. Indeed; as the example on page eighty-nine points out, 
-            \[F(x,t) = \frac{(1-t)f(x) + tg(x)}{||(1-t)f(x) + tg(x)||}\]
-            is such that 
-            \[f \simeq_F i \equiv g;\]
-            a contradiction.
-            \end{proof}
-            
-        \item With $C$ as above, we show that the map which takes each point of $C$ to its antipodal is homotopic to the identity: 
-            \begin{proof} Consider the matrix 
-            \[ A_\theta = 
+\chapter{The Fundamental Group}
+    \section{Homotopic Maps}
+    Throughout this section $i$ will typically denote the identity map, unless otherwise stated. 
+        \begin{enumerate}[(1)]
+            \item Let $C$ denote the unit circle in the plane. Suppose that $f: C \rightarrow C$ is a map which is not homotopic to the identity. We show that $f(x) = -x$ for some $x \in C$: 
+                \begin{proof} Suppose, to the contrary, that for any $x \in C$, $f(x) \neq -x$. Then, we claim that $f \simeq i$. Indeed; as the example on page eighty-nine points out, 
+                \[F(x,t) = \frac{(1-t)f(x) + tg(x)}{||(1-t)f(x) + tg(x)||}\]
+                is such that 
+                \[f \simeq_F i \equiv g;\]
+                a contradiction.
+                \end{proof}
+                
+            \item With $C$ as above, we show that the map which takes each point of $C$ to its antipodal is homotopic to the identity: 
+                \begin{proof} Consider the matrix 
+                \[ A_\theta = 
+                                \begin{bmatrix}
+                                \cos(\theta) & -\sin(\theta) \\
+                                \sin(\theta) & \cos(\theta) 
+                                \end{bmatrix}
+                \] 
+                Then, $A_\pi \equiv f(x) $. Thus, define $F: C \times I \rightarrow C$ by 
+                \[ F (x,t) =
                             \begin{bmatrix}
-                            \cos(\theta) & -\sin(\theta) \\
-                            \sin(\theta) & \cos(\theta) 
-                            \end{bmatrix}
-            \] 
-            Then, $A_\pi \equiv f(x) $. Thus, define $F: C \times I \rightarrow C$ by 
-            \[ F (x,t) =
-                        \begin{bmatrix}
-                        \cos( \pi(1-t)) & -\sin(\pi(1-t)) \\
-                        \sin(\pi(1-t)) & \cos(\pi(1-t)) 
-                        \end{bmatrix} x
-            \]
-            We show that $F$ is homotopy from $f$ to $i$: 
-            \par Clearly, 
-                \begin{align*}
-                    F(x,0) &= A_\pi x \equiv f(x) \\
-                    F(x,1) &= A_0 x = Ix \equiv i
-                \end{align*}
-            Further, as $F$ is the sum of continuous functions, it is continuous. Thus, 
-            \[f \simeq_F i\]
-            \end{proof}
-            
-        \item Let $D$ be the disc bounded by $C$, and parametrize $D$ using polar coordinates. Let $h: D \rightarrow D$ be the homeomorphism defined by $h(0) = 0$, $h(r, \theta) = (r , \theta + 2\pi r)$. We find a homotopy $F$, from $h$ to the identity, such that the functions
-        \[F|_{D \times \{t\}} : D \times \{t\} \rightarrow D, \quad t \in [0,1] \]
-        are all homeomorphisms: 
-            \begin{proof} Let $i(r,\theta)=(r,\theta)$ the identity map.  Define $F:D\times I\to D$ by $F((r,\theta),t)=(r,\theta+2\pi r(1-t))$.  $F$ is given by polynomials in $r,\theta$ and $t$, so $F$ is continuous.  Further, 
-                \begin{align*}
-                    F((r,\theta),0) & =h(r,\theta) \\
-                    F((r,\theta),1) & =(r,\theta) = i(r,\theta) 
-                \end{align*}
-            Thus,
-            \[h \simeq_F i\]
-            Since $F|_{D\times\{t\}}\to D$ is a one-to-one continuous map from a compact space to a Hausdorff space, theorem ($3.7$) implies that  $F|_{D\times\{t\}}\to D$ is a homeomorphism.
-            \end{proof}
-            
-        \item With the above terminology, we show that $h$ is homotopic to the identity relative to $C$: 
-            \begin{proof} As we are consider $h$ relative to $C$, $r = 1$ for all $x \in C$. Thus, 
-            \[h = h' = (1, \theta + 2\pi)\]
-            Define $F: \partial D \times I \rightarrow \partial D$ by 
-            \[F(x, t)  = (1, \theta + 2\pi(1-t))\]
-            Then, 
-                \begin{align*}
-                    F(x,0) & = (1 , \theta + 2\pi) = h'(x) \\
-                    F(x,1) & = (1, \theta) = i(x), 
-                \end{align*}
-            where $i$ is the identity on $C$. Likewise, $F$ is continuous as it is polynomial in $\theta$, $t$. Consquently, 
-            \[h' \equiv h|_{\partial D} \simeq_F i \]
-            \end{proof}
-            
-        \item Let $f: X \rightarrow S^n$ be a map that is not onto. We show that $f$ is null-homotopic: 
-            \begin{proof} Let $p$ be a point in $S^n$ such that its antipodal point $-p$ is not in the image of $f$.   Now let $g:X\to S^n$ be the constant function $g(x)=p$. Then $g(x)$ and $f(x)$ never give a pair of antipodal points for any $x\in X$.  By example two on page eighty-nine, $f$ and $g$ are homotopic.
-            \end{proof}
-            
-        \item Let $CY$ denote the cone on $Y$. We show that any two maps $f,g: X \rightarrow CY$ are homotopic: 
-            \begin{proof} By extra lemma \footnote{reference  this} $f$, $g$ are null-homotopic. 
-            \end{proof}
-            
-        \item We show that a map from $X$ to $Y$  is null homotopic if, and only, if it extends to a map from the cone on $X$ to $Y$: 
-            \begin{proof}
-                \begin{itemize}
-                    \item[] ($\implies$): Suppose that $f: X \rightarrow Y$ is null-homotopic, via $F$. Thus, 
-                    \[F: CX \rightarrow Y, \quad \text{as} \quad CX = \nicefrac{X}{X \times \{1\}}\]
-                    Thus, we need to show that $F$ is an extension of $f$. 
-                    \par Indeed, $X \times \{0\} \subset X \times I$, and 
-                    \[\{f(x) : x \in X\} \cup \{0\} \subset Y\]
-                    So, 
-                    \[F|_{X \times \{0\}} (x,t) = F(x,0) = f(x), \quad \forall x \in X \times \{0\} \cong X.\]
-                    As $f$ is continuous, it follows that $F|_{X \times \{0\}}$ is. 
+                            \cos( \pi(1-t)) & -\sin(\pi(1-t)) \\
+                            \sin(\pi(1-t)) & \cos(\pi(1-t)) 
+                            \end{bmatrix} x
+                \]
+                We show that $F$ is homotopy from $f$ to $i$: 
+                \par Clearly, 
+                    \begin{align*}
+                        F(x,0) &= A_\pi x \equiv f(x) \\
+                        F(x,1) &= A_0 x = Ix \equiv i
+                    \end{align*}
+                Further, as $F$ is the sum of continuous functions, it is continuous. Thus, 
+                \[f \simeq_F i\]
+                \end{proof}
+                
+            \item Let $D$ be the disc bounded by $C$, and parametrize $D$ using polar coordinates. Let $h: D \rightarrow D$ be the homeomorphism defined by $h(0) = 0$, $h(r, \theta) = (r , \theta + 2\pi r)$. We find a homotopy $F$, from $h$ to the identity, such that the functions
+            \[F|_{D \times \{t\}} : D \times \{t\} \rightarrow D, \quad t \in [0,1] \]
+            are all homeomorphisms: 
+                \begin{proof} Let $i(r,\theta)=(r,\theta)$ the identity map.  Define $F:D\times I\to D$ by $F((r,\theta),t)=(r,\theta+2\pi r(1-t))$.  $F$ is given by polynomials in $r,\theta$ and $t$, so $F$ is continuous.  Further, 
+                    \begin{align*}
+                        F((r,\theta),0) & =h(r,\theta) \\
+                        F((r,\theta),1) & =(r,\theta) = i(r,\theta) 
+                    \end{align*}
+                Thus,
+                \[h \simeq_F i\]
+                Since $F|_{D\times\{t\}}\to D$ is a one-to-one continuous map from a compact space to a Hausdorff space, theorem ($3.7$) implies that  $F|_{D\times\{t\}}\to D$ is a homeomorphism.
+                \end{proof}
+                
+            \item With the above terminology, we show that $h$ is homotopic to the identity relative to $C$: 
+                \begin{proof} As we are consider $h$ relative to $C$, $r = 1$ for all $x \in C$. Thus, 
+                \[h = h' = (1, \theta + 2\pi)\]
+                Define $F: \partial D \times I \rightarrow \partial D$ by 
+                \[F(x, t)  = (1, \theta + 2\pi(1-t))\]
+                Then, 
+                    \begin{align*}
+                        F(x,0) & = (1 , \theta + 2\pi) = h'(x) \\
+                        F(x,1) & = (1, \theta) = i(x), 
+                    \end{align*}
+                where $i$ is the identity on $C$. Likewise, $F$ is continuous as it is polynomial in $\theta$, $t$. Consquently, 
+                \[h' \equiv h|_{\partial D} \simeq_F i \]
+                \end{proof}
+                
+            \item Let $f: X \rightarrow S^n$ be a map that is not onto. We show that $f$ is null-homotopic: 
+                \begin{proof} Let $p$ be a point in $S^n$ such that its antipodal point $-p$ is not in the image of $f$.   Now let $g:X\to S^n$ be the constant function $g(x)=p$. Then $g(x)$ and $f(x)$ never give a pair of antipodal points for any $x\in X$.  By example two on page eighty-nine, $f$ and $g$ are homotopic.
+                \end{proof}
+                
+            \item Let $CY$ denote the cone on $Y$. We show that any two maps $f,g: X \rightarrow CY$ are homotopic: 
+                \begin{proof} By extra lemma \footnote{reference  this} $f$, $g$ are null-homotopic. 
+                \end{proof}
+                
+            \item We show that a map from $X$ to $Y$  is null homotopic if, and only, if it extends to a map from the cone on $X$ to $Y$: 
+                \begin{proof}
+                    \begin{itemize}
+                        \item[] ($\implies$): Suppose that $f: X \rightarrow Y$ is null-homotopic, via $F$. Thus, 
+                        \[F: CX \rightarrow Y, \quad \text{as} \quad CX = \nicefrac{X}{X \times \{1\}}\]
+                        Thus, we need to show that $F$ is an extension of $f$. 
+                        \par Indeed, $X \times \{0\} \subset X \times I$, and 
+                        \[\{f(x) : x \in X\} \cup \{0\} \subset Y\]
+                        So, 
+                        \[F|_{X \times \{0\}} (x,t) = F(x,0) = f(x), \quad \forall x \in X \times \{0\} \cong X.\]
+                        As $f$ is continuous, it follows that $F|_{X \times \{0\}}$ is. 
+                        
+                        \item[] ($\impliedby$): Suppose that $f: X \times Y$ is a map and that $F:CX \rightarrow Y$ is an extension of $f$. Then, consider the map $H(x,t) = F(x,t)$. As 
+                        \[F(x,1) \equiv X \times \{1\},\]
+                        we have 
+                        \[F(x,1) = H(x,1) = c, \quad \text{for some } c \in Y.\]
+                        In addition, 
+                        \[H(x,0) \equiv F|_{X \times \{0\}} \equiv f \]
+                        and we have 
+                        \[f \simeq_H i\]
+                    \end{itemize}
                     
-                    \item[] ($\impliedby$): Suppose that $f: X \times Y$ is a map and that $F:CX \rightarrow Y$ is an extension of $f$. Then, consider the map $H(x,t) = F(x,t)$. As 
-                    \[F(x,1) \equiv X \times \{1\},\]
-                    we have 
-                    \[F(x,1) = H(x,1) = c, \quad \text{for some } c \in Y.\]
-                    In addition, 
-                    \[H(x,0) \equiv F|_{X \times \{0\}} \equiv f \]
-                    and we have 
-                    \[f \simeq_H i\]
+                    
+                \end{proof}
+                
+            \item Let $A$ denote the annulus $\{(r,\theta) : r \in [1,2], \theta \in [0,2\pi]\}$, and let $h$ be a homeomorphism of $A$ defined by $h(r, \theta) = (r, \theta + 2\pi(r-1))$. We show that $h$ is homotopic to the identity map:
+                \begin{proof} Consider the function $F: A \times I \rightarrow A$ given by 
+                \[F((r,\theta) , t) = (r, \theta + 2\pi t(r-1))\]
+                Then, 
+                    \begin{align*}
+                        F((r,\theta), 0 ) & = (r, \theta) = i(r, \theta) \\
+                        F((r, \theta), 1) & = (r, \theta + 2 \pi (r  - 1)) 
+                    \end{align*}
+                As $F$ is polynomial in $\theta, t, r$, it follows that $F$ is continuous. Thus, 
+                \[h \simeq_F i\]
+                \end{proof}
+                
+        \end{enumerate}
+        
+    \section{Construction of the Fundamental Group}
+        \begin{enumerate}[(1)]
+            \item Let $\alpha, \beta, \gamma$ be loops in a space $X$, all based at $p$. We write out the formulae for $(\alpha.\beta).\gamma$, and $\alpha.(\beta.\gamma)$ and show that they are homotopic loops relative $\{0,1\}$: 
+                \begin{proof} By definition, we have 
+                \[((\alpha . \beta). \gamma)(t) = 
+                                                \begin{cases} 
+                                                \alpha(4t) & t \in [0, 1/4] \\
+                                                \beta(4t -1) & t \in [1/4,1/2] \\
+                                                \gamma(2t -1) & t \in [1/2,1]
+                                                \end{cases} 
+                    \]                            
+                and,
+                \[ (\alpha.(\beta.\gamma))(t) = 
+                                                \begin{cases}
+                                                \alpha(2t) & t \in [0,1/2] \\
+                                                \beta(4t-2) & t \in [1/2,3/4] \\
+                                                \gamma(4t-3) & t \in [3/4,1] 
+                                                \end{cases}
+                    \]
+                Considering the canonical diagram,we have claim that $H: X \times I \rightarrow X$, defined by
+                \[ H(t,s) = 
+                            \begin{cases}
+                            \alpha(\nicefrac{4t}{s+1}) & t \in [0, \frac{s+1}{4}] \\
+                            \beta(4t-1-s) & t \in [ \frac{s+1}{4}, \frac{s +2}{4}] \\
+                            \gamma(\nicefrac{4t-2-s}{2-s}) & t \in [\frac{s+2}{4}, 1] 
+                            \end{cases}
+                    \]
+                is a homotopy. Indeed; 
+                \[H(t,0) = 
+                            \begin{cases}
+                                \alpha(4t) & t \in [0, 1/4] \\
+                                \beta(4t -1) & t \in [1/4,1/2] \\
+                                \gamma(2t -1) & t \in [1/2,1]                        
+                            \end{cases}
+                    \]
+                and, similarly, 
+                \[ (H(t,1) = \alpha.(\beta.\gamma)) (t) \]
+                By two applications of the Gluing Lemma, $H$ is continuous. So, 
+                \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel} \{0,1\}\]
+                \end{proof}
+                
+            \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 
+                \begin{proof} The isomorphism defined by $\sigma_*$ and $\gamma_*$ are 
+                \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}. \alpha. \sigma \]
+                and, 
+                \[\gamma_*( \innerone{\alpha}) = \gamma^{-1}.\alpha.\gamma\]
+                where $\alpha$ is a loop based at $p$. The claim is that 
+                \[\sigma_*(\innerone{\alpha}) = \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}})\]
+                Indeed; 
+                    \begin{align*}
+                        \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) & = \gamma_*( \innerone{\gamma.\sigma^{-1}}) \gamma_*( \innerone{\alpha}) \gamma_*( \innerone{\sigma.\gamma^{-1}}) \\
+                        & = (\gamma^{-1}.\gamma.\sigma^{-1}.\gamma).(\gamma^{-1}.\sigma. \gamma).(\gamma^{-1}.\sigma.\gamma^{-1}.\gamma) \\
+                        & = \sigma^{-1}.\alpha.\sigma \\ 
+                        & = \sigma_*(\innerone{\alpha})
+                    \end{align*}
+                \end{proof}
+                
+            \item Let $X$ be a path connected space. We describe when it is true that for any two points $p,q \in X$, all paths from $p$, $q$ induce the same isomorphism between $\pi_1(X, p)$ and $\pi_1(X, q)$: 
+                \begin{proof}As the above proof shows, if $\gamma$, $\sigma$ are paths from $p$ to $q$, then
+                \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}.\alpha.\sigma\]
+                Thus, $\sigma_* = \gamma_*$  if, and only, if 
+                \[\gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) = \gamma_*(\innerone{\alpha}),\]
+                i.e. $\innerone{\alpha} . \innerone{\beta} = \innerone{\beta} . \innerone{\alpha}$. Thus, $\pi_1(X)$ must be abelian. 
+                \end{proof}
+                
+            \item We show that any indiscreet space has trivial fundamental group: 
+                \begin{proof} By a previous problem, if $(X, \tau)$ is indiscreet, then $X$ is path connected as $\tau = \{X, \emptyset\}$. The idea here is that there are no open sets (holes) for a path to get caught on. We claim that $X$ is contractible: 
+                \par Consider $\pi_1(X, x_0)$, for some fixed $x_0 \in X$. Define $i \in \pi_1(X, x_0)$ by 
+                \[i(x) = x_0, \quad \forall x \in X\]
+                Now, for an arbitrary $f \in \pi_1(X, x_0)$, define $H: X \times I \rightarrow X$ by 
+                \[H(x,t) =
+                        \begin{cases}
+                        i(x) & t \in [0,\nicefrac{1}{2}] \\
+                        f(x) & t \in [\nicefrac{1}{2}, 1]
+                        \end{cases}
+                    \]
+                Then, $H$ is the desired homotopy as 
+                    \begin{align*}
+                        H(x,0) & = i(x) \\
+                        H(x,1) & = f(x)
+                    \end{align*}
+                and it is continuous as the only non-trivial open sets in $\tau $ is $X$ and $H^{-1}(X) = X \times I$, which is open in $X \times I$. Therefore, 
+                \[f \simeq_H i \]
+                \end{proof}
+                
+            \item Let $(G, m, \tau)$ be a path-connected topological group. Given two loops $\alpha$, $\beta$ based at $e$ in $G$, define a map $F: [0,1]^2 \rightarrow G$ by 
+            \[F(s,t) = \alpha(s).\beta(t)\]
+            We show the effect of this map on the square, and prove that the fundamental group of $G$ is abelian: 
+                \begin{proof} We want to show that for any two loops $\alpha$, $\beta$ that
+                \[\innerone{\alpha}\innerone{\beta} = \innerone{\beta}\innerone{\alpha}\]
+                As 
+                \[F(s,0) = F(s,1) = \alpha(s), \quad F(0,t) = F(1,t) = \beta(t),\]
+                we have that 
+                \[\alpha \simeq_F \alpha(s), \quad \beta \simeq_F \beta(t).\]
+                We first show that $\alpha.\beta \simeq m(\alpha(t), \beta(t))$: 
+                \par Define $P: [0,1]^2 \rightarrow G$ by
+                \[P(s,t) = 
+                            \begin{cases}
+                            \alpha(\frac{2t}{1-s}) & t \in [0, \frac{1+s}{2}] \\
+                            e & t \in (\frac{1+s}{2}, 1]
+                            \end{cases}
+                    \]
+                and, $Q: [0,1]^2 \rightarrow G$ by
+                \[ Q(s,t) =
+                            \begin{cases}
+                            e & t \in [0, \frac{1-s}{2}] \\
+                            \beta(\frac{2t-1+2}{1+s}) & t \in (\frac{1-s}{2}, 1]
+                            \end{cases}
+                    \]
+                Then, let $H(s,t) = m(P(s,t), Q(s,t))$. Note that $H$ is a homotopy between $\alpha.\beta$ and $m(\alpha(t), \beta(t))$. Similarly, we can show that 
+                \[m(\alpha(t), \beta(t)) \simeq_{H'} \beta. \alpha, \]
+                where $H' = Q P$. Therefore, 
+                \[\alpha.\beta \text{ rel} \{0,1\} \simeq_H m(\alpha(t), \beta(t)) \simeq_{H'} \beta.\alpha \text{ rel} \{0,1\} \]
+                I.e. $\pi_1(G)$ is abelian. 
+                
+                \end{proof}
+                
+            \item We show that the space $\E^n - B$, where $B = \{(x,y,z) : y = 0 \land 0 \leq z \leq 1\}$ has trivial fundamental group:
+                \begin{proof}  As $B$ is homeomorphic to a point, it follows by extra lemma that $\E^n - B$ has trivial fundamental group. 
+                \end{proof}
+                
+        \end{enumerate}
+        
+    \section{Calculations}
+        \begin{enumerate}[(1)]
+            \item We use theorem ($5.13$) to show that the M\"obius strip and the cylinder both have fundamental group $\Z$: 
+                \begin{proof} Letting $X = \E^1 \times I$, it is clear that as $\E$ and $[0,1]$ are convex, that $X$ is simply connected. Consider the action of $\Z$ on the identification square which yields the M\"obius loop. It follows that 
+                \[\pi_1( \E \times [0,1] / \Z) = \pi_1(M) \cong \Z\]
+                \par This is similar for the torus. 
+                \end{proof}
+                
+            \item Consider $S^n \subset \E^{n+1}$. Given a loop $\alpha$ in $S^n$, we find a loop $\beta$ in $\E^{n+1}$ which is based at the same point as $\alpha$, and is made up of a finite number of straight line segments, and satisfy 
+            \[|| \alpha(s) - \beta(s)|| < 1, \quad s \in [0,1]\]
+            And, we use this to deduce that $S^n$ is simply connected when $n \geq 2$: 
+                \begin{proof} Note that for each $n$, $S^n$ is compact. Likewise, as $[0,1]$ is compact, $\alpha([0,1])$ is compact. Now, either $\alpha$ contains antipodal points, or it doesn't. Let 
+                \[\{ \Ocal_b\}_b\]
+                be an open cover of $\alpha([0,1])$. Then, it has an finite subcover; say, 
+                \[\{ \Ocal_{b_i}\}_{i=1}^N\]
+                \par If $\alpha$ has no antipodal points, then we are done as the path $\beta$ which connects one point form each $\Ocal_{b_i}$ at the same value is the desired path. 
+                \par Now, if $\alpha$ has antipodal points for some $s \in [0,1]$ wew can disjointize neighbourhoods so that $\alpha(s) \in V_i$, and $-\alpha(s) \in V_j$, such that $\alpha(s) \notin V_j$ and $-\alpha(s) \in V_i$, such that 
+                \[\bigcup V_i = \bigcup \Ocal_{b_i}\]
+                and the construction of $\beta$ follows, as above. 
+                \par To conclude the proof, we show that $S^n$ is simply connected: Indeed; by construction, no line adjoining $\alpha(s)$ and $\beta(s)$ goes through the origin. Thus, the projective straight linke homotopy shows that $S^n$ is simply connected, as $\E^{n+1}$ is for $n \geq 2$. 
+                \par Note, this breaks down in the case where the  stereographic projective homotopy fails. This completes the proof. 
+                \end{proof}
+                
+            \item Considering the 'proof' of theorem ($5.13$), we show that for $g_1, g_2 \in G$, $\gamma_1.(g_1 \circ \gamma_2)$ joins $x_0$ to $g_1g_2(x_0)$, where $\gamma_1$, $\gamma_2$ are paths from $x_0$ to $g_1(x_0)$, $g_2(x_0)$, respectively. In addidtion, we use this to deduce that $\phi$ is a homomorphism: 
+                \begin{proof} As the statement on page one-hundered-two points out, 
+                \[\gamma_1.(g_1 \circ \gamma_2)\]
+                is a path from $x_0$ to $\gamma_1\gamma_2(x_0)$.
+                Thus, as in the proof of ($5.13$), 
+                    \begin{align*}
+                        \phi(g_1g_2) & = \innerone{\pi \circ (\gamma_1. g_1 \circ \gamma_2) } \\
+                        & = \innerone{\pi \circ \gamma_1. \pi \circ \gamma_2} \\
+                        & = \innerone{\pi \circ \gamma_1} \innerone{\pi \circ \gamma_2} \\
+                        & \phi(g_1) \phi(g_2) 
+                    \end{align*}
+                As $\pi \circ \gamma_1. \pi \circ \gamma_2$ is a loop at $\pi(x_0)$ (it follows that they are in the same homotopy class). 
+                \end{proof}
+                
+            \item Let $\pi: X \rightarrow Y$ be a covering map and $\alpha$ a path in $Y$. We show that $\alpha$ lifts to a (unique) path in $X$ which begins at any preassigned point of $\pi^{-1}(\alpha(0))$: 
+                \begin{proof} As $X = \bigcup_{y \in Y} \{y\}$, we can form an open cover of $Y$ by evenly covered, i.e. canonical, neighbourhoods. Let $\Ocal$ be the aforementioned open cover, and set 
+                \[\alpha^{-1}(\Ocal)\]
+                to be the family of open sets which cover $[0,1]$. As $[0,1] \subset \R$, is compact, and 
+                \[\bigcup \alpha^{-1}(\Ocal)\]
+                is an open cover of $[0,1]$, $\bigcup \alpha^{-1}(\Ocal)$ has a Lebesgue number, $\delta$. 
+                \par Now, choose $n \in \N$, so that $\nicefrac{1}{n} < \delta$. Then, consider the partition of $[0,1]$, given by 
+                \[\{0,1/n, 2/n \dots , \nicefrac{n-1}{n}\}\]
+                Then, for each $i = 1, 2, \dots, n$, 
+                \[\alpha\Big(\Big[\frac{i-1}{n}, \frac{i}{n}\Big]\Big)\]
+                lies inside a canonical neighbourhood of $Y$. Thus, by setting 
+                \[t_i = \frac{i-1}{n},\]
+                the result follows. 
+                \end{proof}
+                
+            \item Let $\pi: X \rightarrow Y$ be a covering map, $p \in Y$, $q \in \pi^{-1}(p)$, and $F: I \times I \rightarrow Y$ a map such that 
+            \[F(0,t) = F(1,t) = p, \quad t \in [0,1]\]
+            We use the argument of lemma ($5.11$) to find a map $F': I \times I \rightarrow X$ which satisfies 
+            \[\pi \circ F' = F, \quad F'(0,t) = q, \quad t \in [0,1]\]
+            and is unique: 
+                \begin{proof} As the argument of lemma ($5.11$) is really quite bad, we proceed with a more technical proof via problem twenty. 
+                \end{proof}
+                
+            \item With the terminology above, we note that for each $t \in [0,1]$, we have a path $F_t(s) = F(s,t)$ in $Y$ which begins at $p$. Let $F'_t$ be its unique lift to a path $X$ which begins at $q$, and set $F'(s,t) = F'_t(s)$. We show that $F'$ is continuous and lifts $F$: 
+                \begin{proof} By the homotopy lifting lemma, there exists a unique homotopy lift, $B$ of $F$. By the proof so mentioned, $B$ is continuous and satisfies 
+                \[\pi \circ B \equiv F\]
+                But, by the path lifting lemma, as $F'(s,t_0)$, $t_0 \in [0,1]$ is a lift of a path $F(s,t)$ with initial point $q$, 
+                \[B = F'\]
+                \end{proof}
+                
+            \item We describe the homomorphism $f_*: \pi_1(S^1,1) \rightarrow \pi_1(S^1, f(1))$ induced by each of the following maps: 
+                \begin{itemize}
+                    \item $f(e^{i\theta}) = e^{i(\theta + \pi)}$, $\theta \in [0, 2\pi]$: 
+                        \begin{proof} Note, $f_*(\innerone{\alpha}) = \innerone{f(\alpha)} = \innerone{-\alpha}$. And, as $f(1) = -1$, $f_* \equiv id$.
+                        \end{proof}
+                        
+                    \item $f(e^{i\theta}) = e^{in\theta}$, $\theta \in [0,2\pi]$, $n \in \Z$: 
+                        \begin{proof} Note, $f(1) = 1$. Thus, for each loop, we have $f_*(\innerone{\alpha}) = \innerone{n\alpha}$. So, $f_*$ sends the loop component to the $n$-th degree of $\alpha$. 
+                        \end{proof}
+                        
+                    \item $f(e^{i \theta}) = 
+                            \begin{cases} 
+                                e^{i \theta } & \theta \in [0, \pi] \\
+                                e^{i(2\pi - \theta)} & \theta \in [\pi, 2\pi]
+                            \end{cases}$: 
+                                \begin{proof} Note, $f(1) = 1$. $f_*$ means that any loop part on the upper half of $S^1$ is identified to the lower part of $S^1$. Thus, it returns the straight line for each loop on $S^1$. 
+                                \end{proof}
                 \end{itemize}
-                
-                
-            \end{proof}
             
-        \item Let $A$ denote the annulus $\{(r,\theta) : r \in [1,2], \theta \in [0,2\pi]\}$, and let $h$ be a homeomorphism of $A$ defined by $h(r, \theta) = (r, \theta + 2\pi(r-1))$. We show that $h$ is homotopic to the identity map:
-            \begin{proof} Consider the function $F: A \times I \rightarrow A$ given by 
-            \[F((r,\theta) , t) = (r, \theta + 2\pi t(r-1))\]
-            Then, 
-                \begin{align*}
-                    F((r,\theta), 0 ) & = (r, \theta) = i(r, \theta) \\
-                    F((r, \theta), 1) & = (r, \theta + 2 \pi (r  - 1)) 
-                \end{align*}
-            As $F$ is polynomial in $\theta, t, r$, it follows that $F$ is continuous. Thus, 
-            \[h \simeq_F i\]
-            \end{proof}
+            \item For each of the three different action of $\Z_2$ on the torus, in section $4.4$, we describe the homomorphism from the fundamental group of the torus to that of the orbit space induced by the natural identification map: 
+                \begin{proof}
+                \end{proof}
             
-    \end{enumerate}
+            \item As in problem eight, page ninety-one, we show that it is impossible to find a homotopy from $h$ to the identify which is relative to the two boundary circles of $A$: 
+                \begin{proof} If $h \simeq_F i$ rel $\{c_1, c_2\}$, then 
+                \[\alpha^{-1} \beta \simeq_F c \text{ rel} \{0,1\}\]
+                However, $\alpha^{-1} \beta$ is homotopic to the loop of constant radius which we know is non-trivial via a deformation retract. 
+                \end{proof}
+            
+        \end{enumerate}
     
-\section{Construction of the Fundamental Group}
-    \begin{enumerate}[(1)]
-        \item Let $\alpha, \beta, \gamma$ be loops in a space $X$, all based at $p$. We write out the formulae for $(\alpha.\beta).\gamma$, and $\alpha.(\beta.\gamma)$ and show that they are homotopic loops relative $\{0,1\}$: 
-            \begin{proof} By definition, we have 
-            \[((\alpha . \beta). \gamma)(t) = 
-                                            \begin{cases} 
-                                            \alpha(4t) & t \in [0, 1/4] \\
-                                            \beta(4t -1) & t \in [1/4,1/2] \\
-                                            \gamma(2t -1) & t \in [1/2,1]
-                                            \end{cases} 
-                \]                            
-            and,
-            \[ (\alpha.(\beta.\gamma))(t) = 
-                                            \begin{cases}
-                                            \alpha(2t) & t \in [0,1/2] \\
-                                            \beta(4t-2) & t \in [1/2,3/4] \\
-                                            \gamma(4t-3) & t \in [3/4,1] 
-                                            \end{cases}
-                \]
-            Considering the canonical diagram,we have claim that $H: X \times I \rightarrow X$, defined by
-            \[ H(t,s) = 
-                        \begin{cases}
-                        \alpha(\nicefrac{4t}{s+1}) & t \in [0, \frac{s+1}{4}] \\
-                        \beta(4t-1-s) & t \in [ \frac{s+1}{4}, \frac{s +2}{4}] \\
-                        \gamma(\nicefrac{4t-2-s}{2-s}) & t \in [\frac{s+2}{4}, 1] 
-                        \end{cases}
-                \]
-            is a homotopy. Indeed; 
-            \[H(t,0) = 
-                        \begin{cases}
-                            \alpha(4t) & t \in [0, 1/4] \\
-                            \beta(4t -1) & t \in [1/4,1/2] \\
-                            \gamma(2t -1) & t \in [1/2,1]                        
-                        \end{cases}
-                \]
-            and, similarly, 
-            \[ (H(t,1) = \alpha.(\beta.\gamma)) (t) \]
-            By two applications of the Gluing Lemma, $H$ is continuous. So, 
-            \[(\alpha.\beta). \gamma \simeq_H \alpha.(\beta.\gamma) \text{ rel} \{0,1\}\]
-            \end{proof}
-            
-        \item Let $\gamma$, $\sigma$ be two paths in the space $X$ which start at $p$ and end at $q$. We show that $\sigma_*$ is the composition of $\gamma_*$ and the inner automorphism of $\pi_1(X, q)$ induced by the element $\langle \sigma^{-1} \gamma \rangle$: 
-            \begin{proof} The isomorphism defined by $\sigma_*$ and $\gamma_*$ are 
-            \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}. \alpha. \sigma \]
-            and, 
-            \[\gamma_*( \innerone{\alpha}) = \gamma^{-1}.\alpha.\gamma\]
-            where $\alpha$ is a loop based at $p$. The claim is that 
-            \[\sigma_*(\innerone{\alpha}) = \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}})\]
-            Indeed; 
-                \begin{align*}
-                    \gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) & = \gamma_*( \innerone{\gamma.\sigma^{-1}}) \gamma_*( \innerone{\alpha}) \gamma_*( \innerone{\sigma.\gamma^{-1}}) \\
-                    & = (\gamma^{-1}.\gamma.\sigma^{-1}.\gamma).(\gamma^{-1}.\sigma. \gamma).(\gamma^{-1}.\sigma.\gamma^{-1}.\gamma) \\
-                    & = \sigma^{-1}.\alpha.\sigma \\ 
-                    & = \sigma_*(\innerone{\alpha})
-                \end{align*}
-            \end{proof}
-            
-        \item Let $X$ be a path connected space. We describe when it is true that for any two points $p,q \in X$, all paths from $p$, $q$ induce the same isomorphism between $\pi_1(X, p)$ and $\pi_1(X, q)$: 
-            \begin{proof}As the above proof shows, if $\gamma$, $\sigma$ are paths from $p$ to $q$, then
-            \[\sigma_*(\innerone{\alpha}) = \sigma^{-1}.\alpha.\sigma\]
-            Thus, $\sigma_* = \gamma_*$  if, and only, if 
-            \[\gamma_*( \innerone{\gamma.\sigma^{-1}} \innerone{\alpha} \innerone{\sigma.\gamma^{-1}}) = \gamma_*(\innerone{\alpha}),\]
-            i.e. $\innerone{\alpha} . \innerone{\beta} = \innerone{\beta} . \innerone{\alpha}$. Thus, $\pi_1(X)$ must be abelian. 
-            \end{proof}
-            
-        \item We show that any indiscreet space has trivial fundamental group: 
-            \begin{proof} By a previous problem, if $(X, \tau)$ is indiscreet, then $X$ is path connected as $\tau = \{X, \emptyset\}$. The idea here is that there are no open sets (holes) for a path to get caught on. We claim that $X$ is contractible: 
-            \par Consider $\pi_1(X, x_0)$, for some fixed $x_0 \in X$. Define $i \in \pi_1(X, x_0)$ by 
-            \[i(x) = x_0, \quad \forall x \in X\]
-            Now, for an arbitrary $f \in \pi_1(X, x_0)$, define $H: X \times I \rightarrow X$ by 
-            \[H(x,t) =
+    \section{Homotopy Type}
+    \par Throughout this section, $\simeq$ will typically denote homotopy equivalence.
+        \begin{enumerate}[(1)]
+            \item If $X \simeq Y$ and $X' \simeq Y'$, we show that $X \times X' \simeq Y \times Y'$: 
+                \begin{proof} We are given maps $f: X \rightarrow Y$, $g: Y \rightarrow X$, $f':X' \rightarrow Y'$ and $g': Y' \rightarrow X'$, such that $g \circ f \simeq_{\gamma'} 1_X$, $f \circ g \simeq_{\gamma} 1_Y$, $g' \circ f' \simeq_{\delta '} 1_{X'}$ and $f' \circ g' \simeq_{\delta} 1_{Y'}$. 
+                \par From the component-wise definition of the product topology, $F: X \times X' \rightarrow Y \times Y'$, defined by $F(x,x') = (f(x), f'(x'))$, and $G: Y \times Y' \rightarrow X \times X'$, defined by $G(y,y') = (g(y), g'(y'))$ are continuous. Further, $F \circ G \simeq 1_{Y \times Y'}$, and $G \circ F \simeq 1_{X \times X'}$, via the canonical maps, component-wise defined: $\mathcal{F}:(X \times X') \times I \rightarrow X \times X'$, $\mathcal{F} \equiv (\gamma', \delta')$, and $\mathcal{G}:(Y \times Y') \times I \rightarrow Y \times Y'$, $\mathcal{G} \equiv (\gamma, \delta)$, respectively. 
+                \par Thus, $X \times X' \simeq Y \times Y'$.
+                \end{proof}
+                
+            \item We show that the cone, $CX$, is contractible for any space $(X, \tau_X)$:\footnote{We proved another proof for this. The first of which is in the extra lemmas section.}
+                \begin{proof} By definition, we have $CX = \nicefrac{X \times I}{X\times \{1\}}$. Define ${H}: CX \times I \rightarrow CX$ by $${H}((x,t),s) = (x, t(1-s))$$ Then, we have 
+                    \begin{align*}
+                        {H}((x,t), 0) & = (x,t) = 1_{CX} \\
+                        {H}((x,t),1) & = (x,0) 
+                    \end{align*}
+                Now, if ${\Ocal}_{CX} \in \tau_{CX}$, then $H^{-1}({\Ocal}_{CX}) = ({\Ocal}_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
+                \end{proof}
+        
+            \item We show that the punctured torus deformation retracts onto the one-point union of two circles. 
+                \begin{proof} We consider the torus as the identification space of a square, $X$, bounded by the box whose edge points are $(-1,-1),(-1,1),(1,1),(1,-1)$. Assume, without loss of generality, that the point $(0,0)$ is removed. 
+                \par We show that $F:T \times I \rightarrow T$ defined by 
+                $$F(x,t) = (1-t)x + t\frac{x}{||x||}$$
+                is a deformation retract onto the one point union of two circles: 
+                \par As
+                    \begin{align*}
+                        F(x,0) & = x \\
+                        F(x,1) & = \frac{x}{||x||} 
+                    \end{align*}
+                $F$ is a deformation retract onto $\partial X$. The function $f: \partial X \rightarrow S_1^1 \bigvee S_2^1$, given by 
+                \[f(x) = 
                     \begin{cases}
-                    i(x) & t \in [0,\nicefrac{1}{2}] \\
-                    f(x) & t \in [\nicefrac{1}{2}, 1]
+                        g(x) & x \in (-1,\pm1)t + (1,\pm1)(1-t) \\
+                        s(x) & x \in (\pm1,1)t + (\pm,-1)(1-t)
                     \end{cases}
-                \]
-            Then, $H$ is the desired homotopy as 
-                \begin{align*}
-                    H(x,0) & = i(x) \\
-                    H(x,1) & = f(x)
-                \end{align*}
-            and it is continuous as the only non-trivial open sets in $\tau $ is $X$ and $H^{-1}(X) = X \times I$, which is open in $X \times I$. Therefore, 
-            \[f \simeq_H i \]
-            \end{proof}
+                    \]
+                for all $t \in I$, where $g,s$ are the guaranteed homeomorphisms from $[a,b]$ to $S^1$, is a homeomorphism by the Gluing Lemma. 
+                \end{proof}
             
-        \item Let $(G, m, \tau)$ be a path-connected topological group. Given two loops $\alpha$, $\beta$ based at $e$ in $G$, define a map $F: [0,1]^2 \rightarrow G$ by 
-        \[F(s,t) = \alpha(s).\beta(t)\]
-        We show the effect of this map on the square, and prove that the fundamental group of $G$ is abelian: 
-            \begin{proof} We want to show that for any two loops $\alpha$, $\beta$ that
-            \[\innerone{\alpha}\innerone{\beta} = \innerone{\beta}\innerone{\alpha}\]
-            As 
-            \[F(s,0) = F(s,1) = \alpha(s), \quad F(0,t) = F(1,t) = \beta(t),\]
-            we have that 
-            \[\alpha \simeq_F \alpha(s), \quad \beta \simeq_F \beta(t).\]
-            We first show that $\alpha.\beta \simeq m(\alpha(t), \beta(t))$: 
-            \par Define $P: [0,1]^2 \rightarrow G$ by
-            \[P(s,t) = 
-                        \begin{cases}
-                        \alpha(\frac{2t}{1-s}) & t \in [0, \frac{1+s}{2}] \\
-                        e & t \in (\frac{1+s}{2}, 1]
-                        \end{cases}
-                \]
-            and, $Q: [0,1]^2 \rightarrow G$ by
-            \[ Q(s,t) =
-                        \begin{cases}
-                        e & t \in [0, \frac{1-s}{2}] \\
-                        \beta(\frac{2t-1+2}{1+s}) & t \in (\frac{1-s}{2}, 1]
-                        \end{cases}
-                \]
-            Then, let $H(s,t) = m(P(s,t), Q(s,t))$. Note that $H$ is a homotopy between $\alpha.\beta$ and $m(\alpha(t), \beta(t))$. Similarly, we can show that 
-            \[m(\alpha(t), \beta(t)) \simeq_{H'} \beta. \alpha, \]
-            where $H' = Q P$. Therefore, 
-            \[\alpha.\beta \text{ rel} \{0,1\} \simeq_H m(\alpha(t), \beta(t)) \simeq_{H'} \beta.\alpha \text{ rel} \{0,1\} \]
-            I.e. $\pi_1(G)$ is abelian. 
-            
-            \end{proof}
-            
-        \item We show that the space $\E^n - B$, where $B = \{(x,y,z) : y = 0 \land 0 \leq z \leq 1\}$ has trivial fundamental group:
-            \begin{proof}  As $B$ is homeomorphic to a point, it follows by extra lemma that $\E^n - B$ has trivial fundamental group. 
-            \end{proof}
-            
-    \end{enumerate}
-    
-\section{Calculations}
-    \begin{enumerate}[(1)]
-        \item We use theorem ($5.13$) to show that the M\"obius strip and the cylinder both have fundamental group $\Z$: 
-            \begin{proof} Letting $X = \E^1 \times I$, it is clear that as $\E$ and $[0,1]$ are convex, that $X$ is simply connected. Consider the action of $\Z$ on the identification square which yields the M\"obius loop. It follows that 
-            \[\pi_1( \E \times [0,1] / \Z) = \pi_1(M) \cong \Z\]
-            \par This is similar for the torus. 
-            \end{proof}
-            
-        \item Consider $S^n \subset \E^{n+1}$. Given a loop $\alpha$ in $S^n$, we find a loop $\beta$ in $\E^{n+1}$ which is based at the same point as $\alpha$, and is made up of a finite number of straight line segments, and satisfy 
-        \[|| \alpha(s) - \beta(s)|| < 1, \quad s \in [0,1]\]
-        And, we use this to deduce that $S^n$ is simply connected when $n \geq 2$: 
-            \begin{proof} Note that for each $n$, $S^n$ is compact. Likewise, as $[0,1]$ is compact, $\alpha([0,1])$ is compact. Now, either $\alpha$ contains antipodal points, or it doesn't. Let 
-            \[\{ \Ocal_b\}_b\]
-            be an open cover of $\alpha([0,1])$. Then, it has an finite subcover; say, 
-            \[\{ \Ocal_{b_i}\}_{i=1}^N\]
-            \par If $\alpha$ has no antipodal points, then we are done as the path $\beta$ which connects one point form each $\Ocal_{b_i}$ at the same value is the desired path. 
-            \par Now, if $\alpha$ has antipodal points for some $s \in [0,1]$ wew can disjointize neighbourhoods so that $\alpha(s) \in V_i$, and $-\alpha(s) \in V_j$, such that $\alpha(s) \notin V_j$ and $-\alpha(s) \in V_i$, such that 
-            \[\bigcup V_i = \bigcup \Ocal_{b_i}\]
-            and the construction of $\beta$ follows, as above. 
-            \par To conclude the proof, we show that $S^n$ is simply connected: Indeed; by construction, no line adjoining $\alpha(s)$ and $\beta(s)$ goes through the origin. Thus, the projective straight linke homotopy shows that $S^n$ is simply connected, as $\E^{n+1}$ is for $n \geq 2$. 
-            \par Note, this breaks down in the case where the  stereographic projective homotopy fails. This completes the proof. 
-            \end{proof}
-            
-        \item Considering the 'proof' of theorem ($5.13$), we show that for $g_1, g_2 \in G$, $\gamma_1.(g_1 \circ \gamma_2)$ joins $x_0$ to $g_1g_2(x_0)$, where $\gamma_1$, $\gamma_2$ are paths from $x_0$ to $g_1(x_0)$, $g_2(x_0)$, respectively. In addidtion, we use this to deduce that $\phi$ is a homomorphism: 
-            \begin{proof} As the statement on page one-hundered-two points out, 
-            \[\gamma_1.(g_1 \circ \gamma_2)\]
-            is a path from $x_0$ to $\gamma_1\gamma_2(x_0)$.
-            Thus, as in the proof of ($5.13$), 
-                \begin{align*}
-                    \phi(g_1g_2) & = \innerone{\pi \circ (\gamma_1. g_1 \circ \gamma_2) } \\
-                    & = \innerone{\pi \circ \gamma_1. \pi \circ \gamma_2} \\
-                    & = \innerone{\pi \circ \gamma_1} \innerone{\pi \circ \gamma_2} \\
-                    & \phi(g_1) \phi(g_2) 
-                \end{align*}
-            As $\pi \circ \gamma_1. \pi \circ \gamma_2$ is a loop at $\pi(x_0)$ (it follows that they are in the same homotopy class). 
-            \end{proof}
-            
-        \item Let $\pi: X \rightarrow Y$ be a covering map and $\alpha$ a path in $Y$. We show that $\alpha$ lifts to a (unique) path in $X$ which begins at any preassigned point of $\pi^{-1}(\alpha(0))$: 
-            \begin{proof} As $X = \bigcup_{y \in Y} \{y\}$, we can form an open cover of $Y$ by evenly covered, i.e. canonical, neighbourhoods. Let $\Ocal$ be the aforementioned open cover, and set 
-            \[\alpha^{-1}(\Ocal)\]
-            to be the family of open sets which cover $[0,1]$. As $[0,1] \subset \R$, is compact, and 
-            \[\bigcup \alpha^{-1}(\Ocal)\]
-            is an open cover of $[0,1]$, $\bigcup \alpha^{-1}(\Ocal)$ has a Lebesgue number, $\delta$. 
-            \par Now, choose $n \in \N$, so that $\nicefrac{1}{n} < \delta$. Then, consider the partition of $[0,1]$, given by 
-            \[\{0,1/n, 2/n \dots , \nicefrac{n-1}{n}\}\]
-            Then, for each $i = 1, 2, \dots, n$, 
-            \[\alpha\Big(\Big[\frac{i-1}{n}, \frac{i}{n}\Big]\Big)\]
-            lies inside a canonical neighbourhood of $Y$. Thus, by setting 
-            \[t_i = \frac{i-1}{n},\]
-            the result follows. 
-            \end{proof}
-            
-        \item Let $\pi: X \rightarrow Y$ be a covering map, $p \in Y$, $q \in \pi^{-1}(p)$, and $F: I \times I \rightarrow Y$ a map such that 
-        \[F(0,t) = F(1,t) = p, \quad t \in [0,1]\]
-        We use the argument of lemma ($5.11$) to find a map $F': I \times I \rightarrow X$ which satisfies 
-        \[\pi \circ F' = F, \quad F'(0,t) = q, \quad t \in [0,1]\]
-        and is unique: 
-            \begin{proof} As the argument of lemma ($5.11$) is really quite bad, we proceed with a more technical proof via problem twenty. 
-            \end{proof}
-            
-        \item With the terminology above, we note that for each $t \in [0,1]$, we have a path $F_t(s) = F(s,t)$ in $Y$ which begins at $p$. Let $F'_t$ be its unique lift to a path $X$ which begins at $q$, and set $F'(s,t) = F'_t(s)$. We show that $F'$ is continuous and lifts $F$: 
-            \begin{proof} By the homotopy lifting lemma, there exists a unique homotopy lift, $B$ of $F$. By the proof so mentioned, $B$ is continuous and satisfies 
-            \[\pi \circ B \equiv F\]
-            But, by the path lifting lemma, as $F'(s,t_0)$, $t_0 \in [0,1]$ is a lift of a path $F(s,t)$ with initial point $q$, 
-            \[B = F'\]
-            \end{proof}
-            
-        \item We describe the homomorphism $f_*: \pi_1(S^1,1) \rightarrow \pi_1(S^1, f(1))$ induced by each of the following maps: 
-            \begin{itemize}
-                \item $f(e^{i\theta}) = e^{i(\theta + \pi)}$, $\theta \in [0, 2\pi]$: 
-                    \begin{proof} Note, $f_*(\innerone{\alpha}) = \innerone{f(\alpha)} = \innerone{-\alpha}$. And, as $f(1) = -1$, $f_* \equiv id$.
-                    \end{proof}
-                    
-                \item $f(e^{i\theta}) = e^{in\theta}$, $\theta \in [0,2\pi]$, $n \in \Z$: 
-                    \begin{proof} Note, $f(1) = 1$. Thus, for each loop, we have $f_*(\innerone{\alpha}) = \innerone{n\alpha}$. So, $f_*$ sends the loop component to the $n$-th degree of $\alpha$. 
-                    \end{proof}
-                    
-                \item $f(e^{i \theta}) = 
-                        \begin{cases} 
-                            e^{i \theta } & \theta \in [0, \pi] \\
-                            e^{i(2\pi - \theta)} & \theta \in [\pi, 2\pi]
-                        \end{cases}$: 
-                            \begin{proof} Note, $f(1) = 1$. $f_*$ means that any loop part on the upper half of $S^1$ is identified to the lower part of $S^1$. Thus, it returns the straight line for each loop on $S^1$. 
-                            \end{proof}
-            \end{itemize}
-        
-        \item For each of the three different action of $\Z_2$ on the torus, in section $4.4$, we describe the homomorphism from the fundamental group of the torus to that of the orbit space induced by the natural identification map: 
-            \begin{proof}
-            \end{proof}
-        
-        \item As in problem eight, page ninety-one, we show that it is impossible to find a homotopy from $h$ to the identify which is relative to the two boundary circles of $A$: 
-            \begin{proof} If $h \simeq_F i$ rel $\{c_1, c_2\}$, then 
-            \[\alpha^{-1} \beta \simeq_F c \text{ rel} \{0,1\}\]
-            However, $\alpha^{-1} \beta$ is homotopic to the loop of constant radius which we know is non-trivial via a deformation retract. 
-            \end{proof}
-        
-    \end{enumerate}
-
-\section{Homotopy Type}
-\par Throughout this section, $\simeq$ will typically denote homotopy equivalence.
-    \begin{enumerate}[(1)]
-        \item If $X \simeq Y$ and $X' \simeq Y'$, we show that $X \times X' \simeq Y \times Y'$: 
-            \begin{proof} We are given maps $f: X \rightarrow Y$, $g: Y \rightarrow X$, $f':X' \rightarrow Y'$ and $g': Y' \rightarrow X'$, such that $g \circ f \simeq_{\gamma'} 1_X$, $f \circ g \simeq_{\gamma} 1_Y$, $g' \circ f' \simeq_{\delta '} 1_{X'}$ and $f' \circ g' \simeq_{\delta} 1_{Y'}$. 
-            \par From the component-wise definition of the product topology, $F: X \times X' \rightarrow Y \times Y'$, defined by $F(x,x') = (f(x), f'(x'))$, and $G: Y \times Y' \rightarrow X \times X'$, defined by $G(y,y') = (g(y), g'(y'))$ are continuous. Further, $F \circ G \simeq 1_{Y \times Y'}$, and $G \circ F \simeq 1_{X \times X'}$, via the canonical maps, component-wise defined: $\mathcal{F}:(X \times X') \times I \rightarrow X \times X'$, $\mathcal{F} \equiv (\gamma', \delta')$, and $\mathcal{G}:(Y \times Y') \times I \rightarrow Y \times Y'$, $\mathcal{G} \equiv (\gamma, \delta)$, respectively. 
-            \par Thus, $X \times X' \simeq Y \times Y'$.
-            \end{proof}
-            
-        \item We show that the cone, $CX$, is contractible for any space $(X, \tau_X)$:\footnote{We proved another proof for this. The first of which is in the extra lemmas section.}
-            \begin{proof} By definition, we have $CX = \nicefrac{X \times I}{X\times \{1\}}$. Define ${H}: CX \times I \rightarrow CX$ by $${H}((x,t),s) = (x, t(1-s))$$ Then, we have 
-                \begin{align*}
-                    {H}((x,t), 0) & = (x,t) = 1_{CX} \\
-                    {H}((x,t),1) & = (x,0) 
-                \end{align*}
-            Now, if ${\Ocal}_{CX} \in \tau_{CX}$, then $H^{-1}({\Ocal}_{CX}) = ({\Ocal}_{CX}, I) \in  CX \times I$. Thus, $H$ is continuous. This proves the result. 
-            \end{proof}
-    
-        \item We show that the punctured torus deformation retracts onto the one-point union of two circles. 
-            \begin{proof} We consider the torus as the identification space of a square, $X$, bounded by the box whose edge points are $(-1,-1),(-1,1),(1,1),(1,-1)$. Assume, without loss of generality, that the point $(0,0)$ is removed. 
-            \par We show that $F:T \times I \rightarrow T$ defined by 
-            $$F(x,t) = (1-t)x + t\frac{x}{||x||}$$
-            is a deformation retract onto the one point union of two circles: 
-            \par As
-                \begin{align*}
-                    F(x,0) & = x \\
-                    F(x,1) & = \frac{x}{||x||} 
-                \end{align*}
-            $F$ is a deformation retract onto $\partial X$. The function $f: \partial X \rightarrow S_1^1 \bigvee S_2^1$, given by 
-            \[f(x) = 
-                \begin{cases}
-                    g(x) & x \in (-1,\pm1)t + (1,\pm1)(1-t) \\
-                    s(x) & x \in (\pm1,1)t + (\pm,-1)(1-t)
-                \end{cases}
-                \]
-            for all $t \in I$, where $g,s$ are the guaranteed homeomorphisms from $[a,b]$ to $S^1$, is a homeomorphism by the Gluing Lemma. 
-            \end{proof}
-        
-        \item For each of the following cases, we choose as base point in $C$ and describe the generators for the fundamental groups of $C$ and $S$. Further, we write down the homomorphism, in terms of these generators, the fundamental groups induced by the inclusion of $C$ in $S$. 
-        \par Consider the following examples of a circle $C$ embedded in a surface $S$: 
-            \begin{enumerate}
-                \item $S = \text{M{\"o}bius Strip}$ and $C = \partial S$: 
-                \item $S = S^1 \times S^1 = T^1$ and $C = \{(x.y) \in T^1 : x = y\}$:
-                \item $S = S^1 \times I$ and $C = S^1 \times 1$:
-            \end{enumerate}
-            
-        \item Suppose that $f,g: S^1 \rightarrow X$ are homotopic maps. We prove that the spaces formed from $X$ by attaching a disc, using $f$ and using $g$ are homotopy equivalent; in other words, we prove that $X \cup_f D \simeq X \cup_g D$: 
-            \begin{proof} We show that this is true for $S^{n-1}$. To show this, we claim that $X \cup_f D$ and $X \cup_g D$ are deformation retracts of the same space, $X \cup_F (D^n \times I)$, where 
-            \[f \simeq_F g\]
-            As $F: S^1 \times I \rightarrow S^1$ is a homotopy between $f$ and $g$, we have that 
-                \begin{align*}
-                    F(x,0) & = f(x) \\ 
-                    F(x, 1) & = g(x) 
-                \end{align*}
-            We claim that the function $r: D^n \times I \rightarrow D^n \times \{0\} \cup S^{n-1} \times I$ given by 
-            \[ r(x,t) = 
-                        \begin{cases}
-                            \big( \frac{2x}{2-t} , 0 \big) & t \in [0, 2(1-||x||)] \\
-                            \big( \frac{x}{||x||}, 2 - \frac{2-t}{||x||} \big) & t \in [2(1-||x||), 1]
-                        \end{cases}
-                \]
-            is a retraction. 
-                \begin{Lemma} \textit{$r$, as defined above is a retraction: }
-                    \par In the first case, suppose that 
-                    \[(x,t) \in D^n \times \{0\} \cup S^{n-1} \times I = A \]
-                    is such that $x \in D^n$, and $t = 0$. Then, we have that 
-                    \[r(x,t) = r(x,0) = (x,0)\]
-                    In the second case, if $t > 0$, and $x \in S^{n-1}$, then $||x||= 1$ and so $ t \in [0,1]$ and
-                    \[r(x,t) = \Big( \frac{x}{1} , 2 - \frac{2-t}{1}\Big) = (x,t) \]
-                    Thus, $r|_A = 1_A$. A similar argument shows that $r(D^n \times I) = A$.
-                    \par To complete the proof of the lemma, we note that as $r$ is polynomial in $x$ and $t$, it follows that $r$ is continuous. Consequently, $r$ is a retraction. 
-                \end{Lemma}
-            
-            We further claim that $r$ is a deformation retraction. To show this, consider the function 
-                    \[d: (D^n \times I) \times I \rightarrow D^n \times I\]
-                    \[d((x,t),s) = s (r(x,t)) + (1-s)(x,t) \]
-            As 
-                \begin{align*}
-                    d((x,t),0 & = (x,t) \\
-                    d((x,t), 1) & = r(x,t)
-                \end{align*}
-            it follows that $d$ is a homotopy between $r$ and the identity. Consequently, $r$ is a deformation retraction. 
-            \par Using the fact that $r$ is a deformation retraction we have that $X \cup_F (D^n \times I)$ deformation retracts onto 
-            \[X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) = X \cup_f (D^n \times \{0\}) \cong D^n   \]
-            (where $X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) \cong (D^n \times \{0\} \cup_f X)$ via the map sending $D^n \times \{0\}$ and $X$ to itself, and $S^{n-1} \times I$ to $F(S^{n-1} \times I)$.)
-            \par A similar argument show a deformation retract of $D^n \times I$ onto 
-            \[D^n \times \{1\} \cup S^{n-1} \times I\]
-            which gives the identification space with $g$ as the attaching map. And, the result follows. 
-            \end{proof}
-        
-        \item We use the previous problem, and the third example of homotopy given in section $5.1$, to show that the 'dunce hat' has the homotopy type of a disc, and is therefore contractible: 
-            \begin{proof} This is so horrendously explained by Armstrong. By "the third example of homotopy given in section 5.1," we assume that Armstrong really means "(\textit{to take as the canonical definition of 'dunce cap') that the dunce cap is constructed by } gluing $D^2$ to $S^1$ via the map $g: S^1 \rightarrow S^1$ given by 
-            \[ g(e^{i\theta}) = 
-                                \begin{cases}
-                                e^{4i\theta} & 0 \leq \theta \leq \pi/2 \\
-                                e^{4i(2\theta - \pi)} & \pi/2 \leq \theta \leq 3\pi/2 \\
-                                e^{8i(\pi - \theta)} & 3\pi/2 \leq \theta \leq 2 \pi 
-                                \end{cases}"
-                \]
-            That is, $S^1 \cup_g D^2$ is the dunce hat. With this assumption, we continue with the proof: 
-            \par Consider the adjunct space given by $i: S^1 \rightarrow D^2$; $X \cup_i D^2$. To conclude, we show that $g$ is homotopic to the identity map: 
-            \par Consider $F: S^1 \times I \rightarrow S^1$ given by 
-            \[ F( e^{i\theta} , t) = tg(e^{i\theta}) + (1 - t)e^{i\theta}\]
-            This is the straight line homotopy; 
-            \[g \simeq_F i\]
-            Thus, by exercise twenty-seven, page one-hundered-nine, $i,g : S^1 \rightarrow D^2$ are homotopic, so that 
-            \[S^1 \cup_g D^2 \simeq S^1 \cup_i D^2 \cong D^2\]
-            and the result follows. 
-            \end{proof}
-        
-        \item We show that the 'house with two rooms' is contractible: 
-            \begin{proof} A rigorus proof of this theorem is probably beyond the scope of this section. However, a sketch of it is given in Allen Hatcher's \textit{Algebraic Topology}, Chapter 0.  text\footnote{cite this}.
-            \end{proof}
-        
-        \item We give a detailed proof to show that the cylinder and the M{\"o}bius strip have the homotopy type of the circle: 
-            \begin{proof} We have previously shown that both the cylinder and the M\"obius strip are homotopic to $S^1$. For a more general argument: 
-            \par A deformation retract $F:X\times I\rightarrow X$ of $X$ onto $A\subset X$ induces a homotopy equivalence by taking $F(-,1):X\rightarrow A$ and the inclusion $\iota:A\rightarrow X$. Thus, the composition of the homotopy equivalences $M\rightarrow S^1\rightarrow S^1\times I$ prove the result. 
-            \end{proof}
-        
-        \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p = (0,1/2)$: 
-            \begin{proof} This is a problem in Munker's \textit{Topology}. In his text, the point $p$ is $(0,1)$. We proceed with this assumption: 
-            \par Let $p = x_0=(0,1)$. Consider a neighborhood $U$ of $x_0$ which is disjoint from $I\times\{0\}$. Suppose $H:X\times I\to X$ is the homotopy starting with the identity on $X$ and ending with the constant map $X\to\{x_0\}$ such that $H(x_0,t)=x_0$ for all times $t$. That means $\{x_0\}\times I$ has a neighborhood $H^{-1}(U)$. By the tube lemma (this is the statement that in the product topology, there is an open set containing a compact product), there is an open set $V$ such that $\{x_0\}\times I\subset V\times I\subset H^{-1}(U)$. That means every point in $V$ stays in $U$ during the entire deformation. However a point $y=(a,1)$ must traverse a path to $x_0$ and no such path exists within $U$.
-            \end{proof}
-        
-        \item \textit{FTA}: We prove the fundamental theorem of algebra: 
-            \begin{proof} This is shown in Munker's \textit{Topology}, page three-hundered-fifty. 
-            \end{proof}
-    \end{enumerate}
-    
-\section{Brouwer Fixed-Point Theorem}
-\par Throughout, we say a topological space $(X, \tau_X)$ has the fixed-point property if every continuous function from $X$ to itself has a fixed point. 
-
-    \begin{enumerate}[(1)]
-        \item We determine which of the following have the fixed point property: 
-            \begin{itemize}
-                \item The $2$-Sphere: $S^2$ does not exhibit the fixed point property. 
-                    \begin{proof}
-                    We have previously shown that the map $f:S^n \rightarrow S^n$, given by $f(x) = -x$ is a homeomorphism.
-                    \end{proof}
-                    
-                \item The Torus: $T^1 = S^1 \times S^1$ does not exhibit the fixed point property. 
-                    \begin{proof}
-                    As $T^1 = S^1 \times S^1$, and the antipodal map, $f$, on $S^1$ is a homeomorphism, we have that $F: T^1 \rightarrow T^1$, defined by $F((x,y)) = (f(x),f(y))$, is continuous and doesn't exhibit the fixed point property. 
-                    \end{proof}
-                    
-                \item The interior of the unit disc: $\text{Int}D^1$ does not exhibit the fixed point property: 
-                    \begin{proof} Note that the interior of the unit disc is homeomorphic to the euclidean plane by a homeomorphism $h: \text{Int}D^1 \rightarrow \mathbb{E}^2$. We define a function $g$ from the euclidean plane to the euclidean plane by $g((x,y))=(x+1,y)$. Then, $h^{-1}\circ g\circ h$ is a continuous function from the disc to itself that has no fixed point.
-                    \end{proof}
-                    
-                \item The one point union of two circles: $X \vee Y = \nicefrac{ X  \amalg Y }{\{p\}}$ does not exhibit the fixed point property: 
-                    \begin{proof} Define a function $f$ as follows: If $x\in X$ then we map $e^{ix}$ to $e^{i(x+\pi)}$. Also if $y \in Y$, we map $y$ to $f(p)=e^{\nicefrac{i\pi}{2}}$. This function $f$, as defined on the one point union, leaves no points fixed.
-                    \end{proof}
-            \end{itemize}
-            
-        \item Suppose $X$ and $Y$ are of the same homotopy type and $X$ has the fixed-point property. We prove that $Y$ does not necessarily have the fixed point property: 
-            \begin{proof} Let $Y$ be the subspace $(0,1) \subset \E^n$, and let $X = \{1/2\}$. Note that $Y$ is homotopic to $X$ by the straight line homotopy, and every map from $X$ to itself has a fixed point. Yet, the function $f: Y \rightarrow Y$, defined by $f(y)=y^2$ has no fixed point. 
-            \end{proof}
-            
-        \item Suppose that $X$ retracts onto the subspace $A \subset X$, and that $A$ has the fixed point property. We show that $X$ may not exhibit the fixed point property: 
-            \begin{proof} Take $X$ and $Y$, as above. The straight-line homotopy proves the assertion. 
-            \end{proof}
-        
-        
-        \item We show that if $X$ retracts onto the subspace $A$, and $X$ has the fixed-point property, then $A$ also has it: 
-            \begin{proof} Let $f:A\rightarrow X$ be a continuous function. Since $X$ retracts onto $A$, there exists a map $g:X\rightarrow A$ such that $g \restriction{A} \equiv 1_A$. Then, $f \circ g$ is a continuous function from $X$ to $X$, and so has a fixed point. Hence, there exists an $a\in A$ such that $f(g(a))=f(a)=a$. This completes the proof. 
-            \end{proof}
-            
-        \item We deduce that the fixed-point property holds for the 'house with two rooms', $X$: 
-            \begin{proof} As was previously show, $X$ is contractible to some $x_0$. Thus, there exists some map $F: X \times I \rightarrow X$ such that $F(x,0) = x$, and $F(x,1) = x_0$. Thus, by extra lemma \footnote{include this}, every map $f:X \rightarrow Y$ is null-homotopic. In particular, this includes that maps $g: X \rightarrow X$. Thus, $X$ has the fixed point property\footnote{If this is not totally clear, see extra lemma.}. 
-            \par To use the previous problems hints, we could think about starting with the unit cylinder, and pushing in the areas from the top and bottom. However, this method is not rigorous. 
-            \end{proof}
-            
-        \item Let $f$ be a fixed-point-free map from a compact metric space $(X,d)$ to itself. We prove there is a positive number $\epsilon$ such that $d(x,f(x)) > \epsilon$, $\forall x\in X$: 
-            \begin{proof} We show the contrapositive; Suppose that for all $\epsilon>0$ there exists an element $x \in X$ such that $d(x,f(x)) \leq \epsilon$. Pick $x_1\in X$ such that $d(x_1,f(x)) \leq \frac{1}{2} < 1$.
-            \par It follows that there exists a set, $\{x_1,...,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
-            \par Now, let 
-            $$\epsilon_0 = \dfrac{1}{2}\min \Big\{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\Big\}$$
-            Then there exists an element $x\in X$ such that $d(x,f(x))\leq\epsilon_0$. Pick $x\in X$ that satisfies this property, and call this $x_{n+1}$. Note here that $d(x_n,f(x_n)) < d(x_{n+1},f(x_{n+1}))$ by construction. So that for all $i<n+1$, $d(x_i,f(x_i))\leq d(x_n,f(x_n))< d(x_{n+1},f(x_{n+1}))$. Thus by induction, we have created an infinite sequence $\{x_n\}_{n = 1}^\infty$ of distinct points such that $d(x_k,f(x_k))<\nicefrac{1}{k}$ for each positive integer $k$. And, $\{d(x_n,f(x_n))\}_n$ is a monotone decreasing sequence.
-            \par Since $X$ is compact, every infinite subset has a limit point. Therefore $\{x_n\}_{n=1}^\infty $ has a limit point $x \in X$. 
-            \par Let $\epsilon > 0$ be given. Since $f$ is continuous at $x$, then there exists a $\delta >0$ such that $d(x,a)<\delta\implies d(f(x),f(a)<\nicefrac{\epsilon}{3}$ for all $a\in X$. By the Archimedian Property, we can find a positive integer $k$, such that 
-            $$\frac{1}{k}<\frac{\epsilon}{3}$$
-            Set $r= \min\{\dfrac{\epsilon}{3},\delta\}$. Then, since $x$ is a limit point of $\{x_n\}_{n = 1}^\infty$, there are infinitely many points of the sequence, such that $d(x_N,x)<r$. Thus, there exists a point $x_N$ such that $N>k$ and $d(x_N,x)<r$. Since $d(x_N,x)<\delta$, then $d(f(x_N),f(x))<\nicefrac{\epsilon}{3}$. Since $N>k$,  $$d(x_N,f(x_N)) < d(x_k,f(x_k)) < \nicefrac{1}{k} < \frac{\epsilon}{3}$$
-            Therefore $$d(x,f(x))\leq d(x,x_N)+d(x_N,f(x_N))+d(f(x_N),f(x))<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$$
-            \par Thus, for all $\epsilon>0$, we have that $d(x,f(x))<\epsilon$. Thus, $d(x,f(x)) \leq 0$, and hence $d(x,f(x))=0$. Consequently, $f(x)=x$, and so $f$ is not a fixed-point-free map.
-            \end{proof}
-            
-        \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,...,0)$ removed does not exhibit the fixed point property: 
-            \begin{proof} Let $p=(1,...,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
-            \par Let ${\Ocal}$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}({\Ocal})$. Then $f(x) \in {\Ocal}$, and since ${\Ocal}$ is open there exists an $r>0$ such that $B_r(f(x))\subset {\Ocal}$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
-            $$|f(x)-f(y)|=|\frac{x+p}{2}-\frac{y+p}{2}|=\frac{1}{2}|x-y|<r$$
-            Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}({\Ocal})$. Thus, $B_{2r}(x)\subset f^{-1}({\Ocal})$. Therefore, $f^{-1}({\Ocal})$ is open and $f$ is continuous.
-            \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
-            \end{proof}
-            
-        \item We show that the one-point union of $X$ and $Y$, $X \vee Y$, has the fixed-point property if, and only if, both $X$ and $Y$ have it:
-            \begin{proof} 
-            $ $\newline
-                \begin{itemize}
-                    \item[] ($\implies$): Suppose that the one point union $X\vee Y$ has the fixed-point-property. Let $f:X\rightarrow X$ be a map, and let $p$ be the point glued together in the one point union. Then, define $g:X\vee Y\rightarrow X\vee Y$, as $g(x)=f(x)$, if $x\in X$, and $g(x)=f(p)$, if $x \in Y$. By the gluing lemma, $g$ is a continuous map and so, by hypothesis, has a fixed point $x_0$. Note that $g$ is a map into $X$. Thus the fixed point must be in $X$. Hence, by construction, $x_0=g(x_0)=f(x_0)$, so that $f$ has a fixed point. Similarly, any continuous function from $Y$ to itself has a fixed point.
-                    \item[] ($\impliedby$): Suppose $X$ and $Y$ have the fixed point property and let $f:X\vee Y\rightarrow X\vee Y$ be a map. Then, suppose $f(p)\in X$, and define a map $g:X\rightarrow X$ such that $g(x)=f(x)$, if $f(x)\in X$, and $g(x)=p$, if $f(x)\notin X$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $x = g(x) = f(x)$. Thus, $f$ has a fixed point. Next, suppose $f(p)\in Y$, and define a map $g:Y\rightarrow Y$ such that $g(y)=f(y)$, if $f(y)\in Y$, and $g(y)=p$, if $f(y)\notin Y$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $y=g(y)=f(y)$. Consequently, $f$ has a fixed point.
-                \end{itemize}
-            \end{proof}
-        
-        \item How does changing 'continuous function' to 'homeomorphism' in the definition of the fixed-point property affect problem $33$, $37$?
-            \begin{proof} We first examine problem $33$: 
-                \begin{itemize}
-                    \item[] $S^2$: This topological space would not exhibit the fixed point property. We know that the antipodal map is a homeomorphism which leaves no points fixed. 
-                    \item[] $S^1 \times S^1$: Likewise, the antipodal map on each component, $S^1$, provides another counter example.
-                    \item[] $\Int{D}$: Neither does this space have the homeomorphic fixed point property. To see this, we note that $\Int{D} \simeq \E$, and the map $g: \E \rightarrow \E$, given by $g(x) = x+1$ is a homeomorphism which leaves no points fixed.
-                    \item[] $X \bigvee Y$: First, consider the map $E_1: X \bigvee Y \rightarrow X \bigvee Y$, given by $E_1(x) = x$, if $x \in X -\{p\}$. And, $E_2(y) = e^{yi\nicefrac{\pi}{2}}$. Then, $E_1$ is a homeomorphism, which leaves $X$ fixed, except for $p$. Similarly, define $E_2$ for $Y$. Then, it follows that $E_2 \circ E_1:X \bigvee Y \rightarrow X \bigvee Y$ is a homeomorphism that leaves no points of $X \bigvee Y$ fixed. Thus, $X \bigvee Y$ does not exhibit the fixed point property\footnote{We make use of the previous proof; that is $X \bigvee Y$ has the fixed point propert iff $X$ and $Y$ both have it.}. 
-                \end{itemize}
-                \par Now, we examine problem $37$:
-                \par This shape does not exhibit the homeomorphic fixed point property. Consider $\partial B^n = S^{n-1}$, and let $p = (1,0,...,0)$. Then, $B^n - \{p\} = \Int{B^n} \cup S^{n-1} - \{p\}$. Furthermore, without loss of generality, $S^{n-1} -\{p\} \simeq \{-p\}$.\footnote{See previous exercises.} It follows that $\Int{B^n} \cup S^{n-1} - \{p\} \simeq \Int{B^n} \cup \{-p\}$. To conclude, we exhibit a homeomorphism on $\Int{B^n} \cup \{-p\}$  which does not have a fixed point: 
-                \par Consider $f: \Int{B^n} \cup \{-p\} \rightarrow \Int{B^n} \cup \{-p\}$ defined by 
-                \[ f(x) = 
-                    \begin{cases}
-                    -x & x \notin \{-p, 0\} \\
-                    0 & x = -p \\
-                    -p & x = 0 
-                    \end{cases}\]
-                The fact that $f$ is 1-1 and onto is clear by construction. Further, $f$ is continuous, by the Gluing Lemma\footnote{Armstrong, pg. $69$.}. It follows that $f$ is a homeomorphism, as $f^{-1} \equiv -f$. However, $f$ clearly leaves no points fixed. 
-            \end{proof}
-            
-    \end{enumerate}
-
-\section{Separation of the Plane}
-Most of the exercises in the section are too difficulty for an undergraduate introductory course in algebraic topology. As a result, we refer to well-known sources, which prove the results. 
-    \begin{enumerate}[(1)]
-        \item Let $A$ be a compact subset of $\E^n$. We show that $\E^n - A$ has exactly one unbounded component: 
-            \begin{proof} As $A$ is compact, it is closed and bounded. Further, we identify $\E^n$ with $S^n - \{p\}$ under stereographic projection, $\pi$. Then, $A$ is a compact set in $S^n$ such that $\{p\} \not\subset A \cap S^n$. The  remainder of this proof is an extension of lemma ($61.1$), Munkers' \textit{Topology}\footnote{cite this}. 
-            \end{proof}
-            
-        \item Let $J$ be a polygonal Jordan curve in the plane. Let $p$ be a point in the unbounded component of $\E^2 - J$ which does not lie on any of the lines produced by extending each of the segments of $J$ in both directions. Given a point $x$ of $\E^2 - J$, say that $x$ is inside (outside) $J$ if the straight line joining $p$ to $x$ cuts across $J$ an odd (even) number of times. We show that the complement of $J$ has exactly two components, namely the set of inside points and the set of outside points: 
-            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
-            \end{proof}
-            
-        \item Let $J$ be a polygonal Jordan curve in the plane, and let $X$ denote the closure of the bounded component of $J$. We show that $X$ is homeomorphic to a disc: 
-            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
-            \end{proof}
-            
-        \item We prove Sch\"onflies theorem for polygonal Jordan curves: 
-            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
-            \end{proof}
-        
-        \item If $J$ is a Jordan curve in the plane, we use theorem ($5.12$) to show that the frontier of any component of $\E^2 - J$ is $J$: 
-            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
-            \end{proof}
-        
-        \item We give an example of a subspace of the plane which has the homotopy type of a circle, which separates the plane into two components, but which is not the frontier of both these components: 
-            \begin{proof} Consider the standard annulus in the plane, 
-            \[A = \{(x,y) : x^2 + y^2 = r \land 1 \leq r \leq 2 \}\]
-            Then, as we have previously shown, $A$ deformation retracts onto $S^1 \subset A$, and so $A$ has the homotopy type of a circle. Further, 
-            \[\Int A = \{(x,y) : x^2 + y^2 < 1\},\]
-            with $\partial \Int A = S^1 \neq A$. In addition, 
-            \[\Out A = \{(x,y) : x^2 +y^2 > 2\},\]
-            and $\partial \Out A = 2S^1 \neq A$. 
-            \end{proof}
-            
-        \item We give example of simple closed curves which separate, and fail to separate
-            \begin{itemize}
-                \item the torus: 
-                    \begin{proof} Considering the torus as the identification space of $[0,1]^2$, the circle of radius $1/4$ centered at $(1/2,1/2)$, separates $T$, while the line $x = 1/2$ does not. 
-                    \end{proof}
+            \item For each of the following cases, we choose as base point in $C$ and describe the generators for the fundamental groups of $C$ and $S$. Further, we write down the homomorphism, in terms of these generators, the fundamental groups induced by the inclusion of $C$ in $S$. 
+            \par Consider the following examples of a circle $C$ embedded in a surface $S$: 
+                \begin{enumerate}
+                    \item $S = \text{M{\"o}bius Strip}$ and $C = \partial S$: 
+                    \item $S = S^1 \times S^1 = T^1$ and $C = \{(x.y) \in T^1 : x = y\}$:
+                    \item $S = S^1 \times I$ and $C = S^1 \times 1$:
+                \end{enumerate}
                 
-                \item $\RP^2$: 
-                    \begin{proof} Note that $\RP^2$ is given by the equivalence relation 
-                    $x ~ \lambda x$, $\lambda\neq 0$. Thus, a curve in $\RP^2$ is a set of equivalence classes. Thus, a circle of radius $1/4$ centered at $(1/2,1/2)$, which is equivalent to an arc on the first quadrant of $S^1$ separates $\RP^2$. And, $S^1$ does not separate $\RP^2$. 
-                    \end{proof}
-                    
-            \end{itemize}
+            \item Suppose that $f,g: S^1 \rightarrow X$ are homotopic maps. We prove that the spaces formed from $X$ by attaching a disc, using $f$ and using $g$ are homotopy equivalent; in other words, we prove that $X \cup_f D \simeq X \cup_g D$: 
+                \begin{proof} We show that this is true for $S^{n-1}$. To show this, we claim that $X \cup_f D^n$ and $X \cup_g D^n$ are deformation retracts of the same space, $X \cup_F (D^n \times I)$, where 
+                \[f \simeq_F g\]
+                As $F: S^1 \times I \rightarrow S^1$ is a homotopy between $f$ and $g$, we have that 
+                    \begin{align*}
+                        F(x,0) & = f(x) \\ 
+                        F(x, 1) & = g(x) 
+                    \end{align*}
+                We claim that the function $r: D^n \times I \rightarrow D^n \times \{0\} \cup S^{n-1} \times I$ given by 
+                \[ r(x,t) = 
+                            \begin{cases}
+                                \big( \frac{2x}{2-t} , 0 \big) & t \in [0, 2(1-||x||)] \\
+                                \big( \frac{x}{||x||}, 2 - \frac{2-t}{||x||} \big) & t \in [2(1-||x||), 1]
+                            \end{cases}
+                    \]
+                is a retraction. 
+                    \begin{Lemma} \textit{$r$, as defined above is a retraction: }
+                        \par In the first case, suppose that 
+                        \[(x,t) \in D^n \times \{0\} \cup S^{n-1} \times I = A \]
+                        is such that $x \in D^n$, and $t = 0$. Then, we have that 
+                        \[r(x,t) = r(x,0) = (x,0)\]
+                        In the second case, if $t > 0$, and $x \in S^{n-1}$, then $||x||= 1$ and so $ t \in [0,1]$ and
+                        \[r(x,t) = \Big( \frac{x}{1} , 2 - \frac{2-t}{1}\Big) = (x,t) \]
+                        Thus, $r|_A = 1_A$. A similar argument shows that $r(D^n \times I) = A$.
+                        \par To complete the proof of the lemma, we note that as $r$ is polynomial in $x$ and $t$, it follows that $r$ is continuous. Consequently, $r$ is a retraction. 
+                    \end{Lemma}
+                
+                We further claim that $r$ is a deformation retraction. To show this, consider the function 
+                        \[d: (D^n \times I) \times I \rightarrow D^n \times I\]
+                        \[d((x,t),s) = s (r(x,t)) + (1-s)(x,t) \]
+                As 
+                    \begin{align*}
+                        d((x,t),0 & = (x,t) \\
+                        d((x,t), 1) & = r(x,t)
+                    \end{align*}
+                it follows that $d$ is a homotopy between $r$ and the identity. Consequently, $r$ is a deformation retraction. 
+                \par Using the fact that $r$ is a deformation retraction we have that $X \cup_F (D^n \times I)$ deformation retracts onto 
+                \[X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) = X \cup_f (D^n \times \{0\}) \cong D^n   \]
+                (where $X \cup_F (D^n \times \{0\} \cup S^{n-1} \times I) \cong (D^n \times \{0\} \cup_f X)$ via the map sending $D^n \times \{0\}$ and $X$ to itself, and $S^{n-1} \times I$ to $F(S^{n-1} \times I)$.)
+                \par A similar argument show a deformation retract of $D^n \times I$ onto 
+                \[D^n \times \{1\} \cup S^{n-1} \times I\]
+                which gives the identification space with $g$ as the attaching map. And, the result follows. 
+                \end{proof}
+            
+            \item We use the previous problem, and the third example of homotopy given in section $5.1$, to show that the 'dunce hat' has the homotopy type of a disc, and is therefore contractible: 
+                \begin{proof} This is so horrendously explained by Armstrong. By "the third example of homotopy given in section 5.1," we assume that Armstrong really means "(\textit{to take as the canonical definition of 'dunce cap') that the dunce cap is constructed by } gluing $D^2$ to $S^1$ via the map $g: S^1 \rightarrow S^1$ given by 
+                \[ g(e^{i\theta}) = 
+                                    \begin{cases}
+                                    e^{4i\theta} & 0 \leq \theta \leq \pi/2 \\
+                                    e^{4i(2\theta - \pi)} & \pi/2 \leq \theta \leq 3\pi/2 \\
+                                    e^{8i(\pi - \theta)} & 3\pi/2 \leq \theta \leq 2 \pi 
+                                    \end{cases}"
+                    \]
+                That is, $S^1 \cup_g D^2$ is the dunce hat. With this assumption, we continue with the proof: 
+                \par Consider the adjunct space given by $i: S^1 \rightarrow D^2$; $X \cup_i D^2$. To conclude, we show that $g$ is homotopic to the identity map: 
+                \par Consider $F: S^1 \times I \rightarrow S^1$ given by 
+                \[ F( e^{i\theta} , t) = tg(e^{i\theta}) + (1 - t)e^{i\theta}\]
+                This is the straight line homotopy; 
+                \[g \simeq_F i\]
+                Thus, by exercise twenty-seven, page one-hundered-nine, $i,g : S^1 \rightarrow D^2$ are homotopic, so that 
+                \[S^1 \cup_g D^2 \simeq S^1 \cup_i D^2 \cong D^2\]
+                and the result follows. 
+                \end{proof}
+            
+            \item We show that the 'house with two rooms' is contractible: 
+                \begin{proof} A rigorus proof of this theorem is probably beyond the scope of this section. However, a sketch of it is given in Allen Hatcher's \textit{Algebraic Topology}, Chapter 0.  text\footnote{cite this}.
+                \end{proof}
+            
+            \item We give a detailed proof to show that the cylinder and the M{\"o}bius strip have the homotopy type of the circle: 
+                \begin{proof} We have previously shown that both the cylinder and the M\"obius strip are homotopic to $S^1$. For a more general argument: 
+                \par A deformation retract $F:X\times I\rightarrow X$ of $X$ onto $A\subset X$ induces a homotopy equivalence by taking $F(-,1):X\rightarrow A$ and the inclusion $\iota:A\rightarrow X$. Thus, the composition of the homotopy equivalences $M\rightarrow S^1\rightarrow S^1\times I$ prove the result. 
+                \end{proof}
+            
+            \item Let $X$ be the comb space. We prove that the identity map of $X$ is not homotopic $\text{rel} \{p\}$, to the constant map, $p = (0,1/2)$: 
+                \begin{proof} This is a problem in Munker's \textit{Topology}. In his text, the point $p$ is $(0,1)$. We proceed with this assumption: 
+                \par Let $p = x_0=(0,1)$. Consider a neighborhood $U$ of $x_0$ which is disjoint from $I\times\{0\}$. Suppose $H:X\times I\to X$ is the homotopy starting with the identity on $X$ and ending with the constant map $X\to\{x_0\}$ such that $H(x_0,t)=x_0$ for all times $t$. That means $\{x_0\}\times I$ has a neighborhood $H^{-1}(U)$. By the tube lemma (this is the statement that in the product topology, there is an open set containing a compact product), there is an open set $V$ such that $\{x_0\}\times I\subset V\times I\subset H^{-1}(U)$. That means every point in $V$ stays in $U$ during the entire deformation. However a point $y=(a,1)$ must traverse a path to $x_0$ and no such path exists within $U$.
+                \end{proof}
+            
+            \item \textit{FTA}: We prove the fundamental theorem of algebra: 
+                \begin{proof} This is shown in Munker's \textit{Topology}, page three-hundered-fifty. 
+                \end{proof}
+        \end{enumerate}
         
-        \item Let $X$ be the subspace of the plane which is homeomorphic to a disc. We generalize the argument of theorem ($5.21$) to show that $X$ cannot separate the plane: 
-            \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
-            \end{proof}
-            
-        \item Suppose that $X$ is both connected and locally path-connected. We show that a map $f: X \rightarrow S^1$ lifts to a map $f': X \rightarrow \R$ if, and only, if the induced homomorphism $f_*: \pi_1(X) \rightarrow \pi_1 (S^1)$ is the zero homomorphism: 
-            \begin{proof} See the accompanying solution\footnote{http://stanford.edu/class/math215b/Sol3.pdf}. 
-            \end{proof}
-            
-    \end{enumerate}
+    \section{Brouwer Fixed-Point Theorem}
+    \par Throughout, we say a topological space $(X, \tau_X)$ has the fixed-point property if every continuous function from $X$ to itself has a fixed point. 
     
-\section{The Boundary of a Surface}
-    \begin{enumerate}[(1)]
-        \item We use an argument similar to that of theorem ($5.23$) to prove that $\E^2$ and $\E^3$ are not homeomorphic: 
-            \begin{proof} We have previously show that $\pi_1(\E^m)$ is trivial for $m \geq 3$, while $\pi_1(\E^2)$ is not. The result follows. 
-            \end{proof}
+        \begin{enumerate}[(1)]
+            \item We determine which of the following have the fixed point property: 
+                \begin{itemize}
+                    \item The $2$-Sphere: $S^2$ does not exhibit the fixed point property. 
+                        \begin{proof}
+                        We have previously shown that the map $f:S^n \rightarrow S^n$, given by $f(x) = -x$ is a homeomorphism.
+                        \end{proof}
+                        
+                    \item The Torus: $T^1 = S^1 \times S^1$ does not exhibit the fixed point property. 
+                        \begin{proof}
+                        As $T^1 = S^1 \times S^1$, and the antipodal map, $f$, on $S^1$ is a homeomorphism, we have that $F: T^1 \rightarrow T^1$, defined by $F((x,y)) = (f(x),f(y))$, is continuous and doesn't exhibit the fixed point property. 
+                        \end{proof}
+                        
+                    \item The interior of the unit disc: $\text{Int}D^1$ does not exhibit the fixed point property: 
+                        \begin{proof} Note that the interior of the unit disc is homeomorphic to the euclidean plane by a homeomorphism $h: \text{Int}D^1 \rightarrow \mathbb{E}^2$. We define a function $g$ from the euclidean plane to the euclidean plane by $g((x,y))=(x+1,y)$. Then, $h^{-1}\circ g\circ h$ is a continuous function from the disc to itself that has no fixed point.
+                        \end{proof}
+                        
+                    \item The one point union of two circles: $X \vee Y = \nicefrac{ X  \amalg Y }{\{p\}}$ does not exhibit the fixed point property: 
+                        \begin{proof} Define a function $f$ as follows: If $x\in X$ then we map $e^{ix}$ to $e^{i(x+\pi)}$. Also if $y \in Y$, we map $y$ to $f(p)=e^{\nicefrac{i\pi}{2}}$. This function $f$, as defined on the one point union, leaves no points fixed.
+                        \end{proof}
+                \end{itemize}
+                
+            \item Suppose $X$ and $Y$ are of the same homotopy type and $X$ has the fixed-point property. We prove that $Y$ does not necessarily have the fixed point property: 
+                \begin{proof} Let $Y$ be the subspace $(0,1) \subset \E^n$, and let $X = \{1/2\}$. Note that $Y$ is homotopic to $X$ by the straight line homotopy, and every map from $X$ to itself has a fixed point. Yet, the function $f: Y \rightarrow Y$, defined by $f(y)=y^2$ has no fixed point. 
+                \end{proof}
+                
+            \item Suppose that $X$ retracts onto the subspace $A \subset X$, and that $A$ has the fixed point property. We show that $X$ may not exhibit the fixed point property: 
+                \begin{proof} Take $X$ and $Y$, as above. The straight-line homotopy proves the assertion. 
+                \end{proof}
             
-        \item We use the material of this section to show that the spaces $X$, and $Y$ illustrated in problem twenty-four of chapter one are not homeomorphic: 
-            \begin{proof} Suppose, to the contrary, that $X$ and $Y$ were homeomorphic. Then, by corollary ($5.25$), they have homeomorphic boundaries. Further, it follows from the proof of theorem ($5.24$), that the outer boundaries, $\Out X$, of $X$ and $\Out Y$ of $Y$ must be homeomorphic, as well as the inner boundaries. However, 
-            \end{proof} 
             
-    \end{enumerate}
+            \item We show that if $X$ retracts onto the subspace $A$, and $X$ has the fixed-point property, then $A$ also has it: 
+                \begin{proof} Let $f:A\rightarrow X$ be a continuous function. Since $X$ retracts onto $A$, there exists a map $g:X\rightarrow A$ such that $g \restriction{A} \equiv 1_A$. Then, $f \circ g$ is a continuous function from $X$ to $X$, and so has a fixed point. Hence, there exists an $a\in A$ such that $f(g(a))=f(a)=a$. This completes the proof. 
+                \end{proof}
+                
+            \item We deduce that the fixed-point property holds for the 'house with two rooms', $X$: 
+                \begin{proof} As was previously show, $X$ is contractible to some $x_0$. Thus, there exists some map $F: X \times I \rightarrow X$ such that $F(x,0) = x$, and $F(x,1) = x_0$. Thus, by extra lemma \footnote{include this}, every map $f:X \rightarrow Y$ is null-homotopic. In particular, this includes that maps $g: X \rightarrow X$. Thus, $X$ has the fixed point property\footnote{If this is not totally clear, see extra lemma.}. 
+                \par To use the previous problems hints, we could think about starting with the unit cylinder, and pushing in the areas from the top and bottom. However, this method is not rigorous. 
+                \end{proof}
+                
+            \item Let $f$ be a fixed-point-free map from a compact metric space $(X,d)$ to itself. We prove there is a positive number $\epsilon$ such that $d(x,f(x)) > \epsilon$, $\forall x\in X$: 
+                \begin{proof} We show the contrapositive; Suppose that for all $\epsilon>0$ there exists an element $x \in X$ such that $d(x,f(x)) \leq \epsilon$. Pick $x_1\in X$ such that $d(x_1,f(x)) \leq \frac{1}{2} < 1$.
+                \par It follows that there exists a set, $\{x_1,...,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
+                \par Now, let 
+                $$\epsilon_0 = \dfrac{1}{2}\min \Big\{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\Big\}$$
+                Then there exists an element $x\in X$ such that $d(x,f(x))\leq\epsilon_0$. Pick $x\in X$ that satisfies this property, and call this $x_{n+1}$. Note here that $d(x_n,f(x_n)) < d(x_{n+1},f(x_{n+1}))$ by construction. So that for all $i<n+1$, $d(x_i,f(x_i))\leq d(x_n,f(x_n))< d(x_{n+1},f(x_{n+1}))$. Thus by induction, we have created an infinite sequence $\{x_n\}_{n = 1}^\infty$ of distinct points such that $d(x_k,f(x_k))<\nicefrac{1}{k}$ for each positive integer $k$. And, $\{d(x_n,f(x_n))\}_n$ is a monotone decreasing sequence.
+                \par Since $X$ is compact, every infinite subset has a limit point. Therefore $\{x_n\}_{n=1}^\infty $ has a limit point $x \in X$. 
+                \par Let $\epsilon > 0$ be given. Since $f$ is continuous at $x$, then there exists a $\delta >0$ such that $d(x,a)<\delta\implies d(f(x),f(a)<\nicefrac{\epsilon}{3}$ for all $a\in X$. By the Archimedian Property, we can find a positive integer $k$, such that 
+                $$\frac{1}{k}<\frac{\epsilon}{3}$$
+                Set $r= \min\{\dfrac{\epsilon}{3},\delta\}$. Then, since $x$ is a limit point of $\{x_n\}_{n = 1}^\infty$, there are infinitely many points of the sequence, such that $d(x_N,x)<r$. Thus, there exists a point $x_N$ such that $N>k$ and $d(x_N,x)<r$. Since $d(x_N,x)<\delta$, then $d(f(x_N),f(x))<\nicefrac{\epsilon}{3}$. Since $N>k$,  $$d(x_N,f(x_N)) < d(x_k,f(x_k)) < \nicefrac{1}{k} < \frac{\epsilon}{3}$$
+                Therefore $$d(x,f(x))\leq d(x,x_N)+d(x_N,f(x_N))+d(f(x_N),f(x))<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{\epsilon}{3}=\epsilon$$
+                \par Thus, for all $\epsilon>0$, we have that $d(x,f(x))<\epsilon$. Thus, $d(x,f(x)) \leq 0$, and hence $d(x,f(x))=0$. Consequently, $f(x)=x$, and so $f$ is not a fixed-point-free map.
+                \end{proof}
+                
+            \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,...,0)$ removed does not exhibit the fixed point property: 
+                \begin{proof} Let $p=(1,...,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
+                \par Let ${\Ocal}$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}({\Ocal})$. Then $f(x) \in {\Ocal}$, and since ${\Ocal}$ is open there exists an $r>0$ such that $B_r(f(x))\subset {\Ocal}$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
+                $$|f(x)-f(y)|=|\frac{x+p}{2}-\frac{y+p}{2}|=\frac{1}{2}|x-y|<r$$
+                Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}({\Ocal})$. Thus, $B_{2r}(x)\subset f^{-1}({\Ocal})$. Therefore, $f^{-1}({\Ocal})$ is open and $f$ is continuous.
+                \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
+                \end{proof}
+                
+            \item We show that the one-point union of $X$ and $Y$, $X \vee Y$, has the fixed-point property if, and only if, both $X$ and $Y$ have it:
+                \begin{proof} 
+                $ $\newline
+                    \begin{itemize}
+                        \item[] ($\implies$): Suppose that the one point union $X\vee Y$ has the fixed-point-property. Let $f:X\rightarrow X$ be a map, and let $p$ be the point glued together in the one point union. Then, define $g:X\vee Y\rightarrow X\vee Y$, as $g(x)=f(x)$, if $x\in X$, and $g(x)=f(p)$, if $x \in Y$. By the gluing lemma, $g$ is a continuous map and so, by hypothesis, has a fixed point $x_0$. Note that $g$ is a map into $X$. Thus the fixed point must be in $X$. Hence, by construction, $x_0=g(x_0)=f(x_0)$, so that $f$ has a fixed point. Similarly, any continuous function from $Y$ to itself has a fixed point.
+                        \item[] ($\impliedby$): Suppose $X$ and $Y$ have the fixed point property and let $f:X\vee Y\rightarrow X\vee Y$ be a map. Then, suppose $f(p)\in X$, and define a map $g:X\rightarrow X$ such that $g(x)=f(x)$, if $f(x)\in X$, and $g(x)=p$, if $f(x)\notin X$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $x = g(x) = f(x)$. Thus, $f$ has a fixed point. Next, suppose $f(p)\in Y$, and define a map $g:Y\rightarrow Y$ such that $g(y)=f(y)$, if $f(y)\in Y$, and $g(y)=p$, if $f(y)\notin Y$. Then, since $g$ is continuous, it has a fixed point. By construction, the fixed point must be one $y=g(y)=f(y)$. Consequently, $f$ has a fixed point.
+                    \end{itemize}
+                \end{proof}
+            
+            \item How does changing 'continuous function' to 'homeomorphism' in the definition of the fixed-point property affect problem $33$, $37$?
+                \begin{proof} We first examine problem $33$: 
+                    \begin{itemize}
+                        \item[] $S^2$: This topological space would not exhibit the fixed point property. We know that the antipodal map is a homeomorphism which leaves no points fixed. 
+                        \item[] $S^1 \times S^1$: Likewise, the antipodal map on each component, $S^1$, provides another counter example.
+                        \item[] $\Int{D}$: Neither does this space have the homeomorphic fixed point property. To see this, we note that $\Int{D} \simeq \E$, and the map $g: \E \rightarrow \E$, given by $g(x) = x+1$ is a homeomorphism which leaves no points fixed.
+                        \item[] $X \bigvee Y$: First, consider the map $E_1: X \bigvee Y \rightarrow X \bigvee Y$, given by $E_1(x) = x$, if $x \in X -\{p\}$. And, $E_2(y) = e^{yi\nicefrac{\pi}{2}}$. Then, $E_1$ is a homeomorphism, which leaves $X$ fixed, except for $p$. Similarly, define $E_2$ for $Y$. Then, it follows that $E_2 \circ E_1:X \bigvee Y \rightarrow X \bigvee Y$ is a homeomorphism that leaves no points of $X \bigvee Y$ fixed. Thus, $X \bigvee Y$ does not exhibit the fixed point property\footnote{We make use of the previous proof; that is $X \bigvee Y$ has the fixed point propert iff $X$ and $Y$ both have it.}. 
+                    \end{itemize}
+                    \par Now, we examine problem $37$:
+                    \par This shape does not exhibit the homeomorphic fixed point property. Consider $\partial B^n = S^{n-1}$, and let $p = (1,0,...,0)$. Then, $B^n - \{p\} = \Int{B^n} \cup S^{n-1} - \{p\}$. Furthermore, without loss of generality, $S^{n-1} -\{p\} \simeq \{-p\}$.\footnote{See previous exercises.} It follows that $\Int{B^n} \cup S^{n-1} - \{p\} \simeq \Int{B^n} \cup \{-p\}$. To conclude, we exhibit a homeomorphism on $\Int{B^n} \cup \{-p\}$  which does not have a fixed point: 
+                    \par Consider $f: \Int{B^n} \cup \{-p\} \rightarrow \Int{B^n} \cup \{-p\}$ defined by 
+                    \[ f(x) = 
+                        \begin{cases}
+                        -x & x \notin \{-p, 0\} \\
+                        0 & x = -p \\
+                        -p & x = 0 
+                        \end{cases}\]
+                    The fact that $f$ is 1-1 and onto is clear by construction. Further, $f$ is continuous, by the Gluing Lemma\footnote{Armstrong, pg. $69$.}. It follows that $f$ is a homeomorphism, as $f^{-1} \equiv -f$. However, $f$ clearly leaves no points fixed. 
+                \end{proof}
+                
+        \end{enumerate}
+    
+    \section{Separation of the Plane}
+    Most of the exercises in the section are too advanced for an undergraduate course in algebraic topology. As a result, we refer to well-known sources, which prov e the results. 
+        \begin{enumerate}[(1)]
+            \item Let $A$ be a compact subset of $\E^n$. We show that $\E^n - A$ has exactly one unbounded component: 
+                \begin{proof} As $A$ is compact, it is closed and bounded. Further, we identify $\E^n$ with $S^n - \{p\}$ under stereographic projection, $\pi$. Then, $A$ is a compact set in $S^n$ such that $\{p\} \not\subset A \cap S^n$. The  remainder of this proof is an extension of lemma ($61.1$), Munkers' \textit{Topology}\footnote{cite this}. 
+                \end{proof}
+                
+            \item Let $J$ be a polygonal Jordan curve in the plane. Let $p$ be a point in the unbounded component of $\E^2 - J$ which does not lie on any of the lines produced by extending each of the segments of $J$ in both directions. Given a point $x$ of $\E^2 - J$, say that $x$ is inside (outside) $J$ if the straight line joining $p$ to $x$ cuts across $J$ an odd (even) number of times. We show that the complement of $J$ has exactly two components, namely the set of inside points and the set of outside points: 
+                \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
+                \end{proof}
+                
+            \item Let $J$ be a polygonal Jordan curve in the plane, and let $X$ denote the closure of the bounded component of $J$. We show that $X$ is homeomorphic to a disc: 
+                \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
+                \end{proof}
+                
+            \item We prove Sch\"onflies theorem for polygonal Jordan curves: 
+                \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
+                \end{proof}
+            
+            \item If $J$ is a Jordan curve in the plane, we use theorem ($5.12$) to show that the frontier of any component of $\E^2 - J$ is $J$: 
+                \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
+                \end{proof}
+            
+            \item We give an example of a subspace of the plane which has the homotopy type of a circle, which separates the plane into two components, but which is not the frontier of both these components: 
+                \begin{proof} Consider the standard annulus in the plane, 
+                \[A = \{(x,y) : x^2 + y^2 = r \land 1 \leq r \leq 2 \}\]
+                Then, as we have previously shown, $A$ deformation retracts onto $S^1 \subset A$, and so $A$ has the homotopy type of a circle. Further, 
+                \[\Int A = \{(x,y) : x^2 + y^2 < 1\},\]
+                with $\partial \Int A = S^1 \neq A$. In addition, 
+                \[\Out A = \{(x,y) : x^2 +y^2 > 2\},\]
+                and $\partial \Out A = 2S^1 \neq A$. 
+                \end{proof}
+                
+            \item We give example of simple closed curves which separate, and fail to separate
+                \begin{itemize}
+                    \item the torus: 
+                        \begin{proof} Considering the torus as the identification space of $[0,1]^2$, the circle of radius $1/4$ centered at $(1/2,1/2)$, separates $T$, while the line $x = 1/2$ does not. 
+                        \end{proof}
+                    
+                    \item $\RP^2$: 
+                        \begin{proof} Note that $\RP^2$ is given by the equivalence relation 
+                        $x ~ \lambda x$, $\lambda\neq 0$. Thus, a curve in $\RP^2$ is a set of equivalence classes. Thus, a circle of radius $1/4$ centered at $(1/2,1/2)$, which is equivalent to an arc on the first quadrant of $S^1$ separates $\RP^2$. And, $S^1$ does not separate $\RP^2$. 
+                        \end{proof}
+                        
+                \end{itemize}
+            
+            \item Let $X$ be the subspace of the plane which is homeomorphic to a disc. We generalize the argument of theorem ($5.21$) to show that $X$ cannot separate the plane: 
+                \begin{proof} See \textit{The Jordan-Sch\'onflies Theorem and the Classification of Surfaces}, by Carsten Thomassen. 
+                \end{proof}
+                
+            \item Suppose that $X$ is both connected and locally path-connected. We show that a map $f: X \rightarrow S^1$ lifts to a map $f': X \rightarrow \R$ if, and only, if the induced homomorphism $f_*: \pi_1(X) \rightarrow \pi_1 (S^1)$ is the zero homomorphism: 
+                \begin{proof} See the accompanying solution\footnote{http://stanford.edu/class/math215b/Sol3.pdf}. 
+                \end{proof}
+                
+        \end{enumerate}
+        
+    \section{The Boundary of a Surface}
+        \begin{enumerate}[(1)]
+            \item We use an argument similar to that of theorem ($5.23$) to prove that $\E^2$ and $\E^3$ are not homeomorphic: 
+                \begin{proof} We have previously show that $\pi_1(\E^m)$ is trivial for $m \geq 3$, while $\pi_1(\E^2)$ is not. The result follows. 
+                \end{proof}
+                
+            \item We use the material of this section to show that the spaces $X$, and $Y$ illustrated in problem twenty-four of chapter one are not homeomorphic: 
+                \begin{proof} Suppose, to the contrary, that $X$ and $Y$ were homeomorphic. Then, by corollary ($5.25$), they have homeomorphic boundaries. Further, it follows from the proof of theorem ($5.24$), that the outer boundaries, $\Out X$, of $X$ and $\Out Y$ of $Y$ must be homeomorphic, as well as the inner boundaries. However, we have previously shown that they are not homeomorphic, as one is separable by removing a point, and the other is not. 
+                \end{proof} 
+                
+        \end{enumerate}
+        
+\chapter{Triangulations}
+    \section{Triangulating Spaces}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Barycentric Subdivision}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Simplicial Approximation}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
 
+    \section{The Edge Group of a Complex}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Triangulating Orbit Spaces}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Infinite Complexes}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+\chapter{Surfaces}
+    \section{Classification}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Triangulation and Orientation}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Euler Charachteristics}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Surgery}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Surface Symbols}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+\chapter{Simplicial Homology}
+    \section{Cycles and Boundaries}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Homology Groups}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+    
+    \section{Examples}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Simplicial Maps}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Stellar Subdivision}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
+        
+    \section{Invarience}
+        \begin{enumerate}[(1)]
+            \item 
+        \end{enumerate}
 \end{document}

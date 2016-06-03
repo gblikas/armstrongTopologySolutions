@@ -51,6 +51,11 @@
 
 \begin{document}
 
+%creates title and the empty page style allows 
+%for the format of the blank page after
+%maketitle to actually be blank (w/o numbering).
+\maketitle
+\thispagestyle{empty} 
 \tableofcontents
 
 \chapter{Preliminaries}
@@ -2198,7 +2203,7 @@
             \item 
         \end{enumerate}
         
-    \section{Euler Charachteristics}
+    \section{Euler Characteristics}
         \begin{enumerate}[(1)]
             \item 
         \end{enumerate}
@@ -2239,8 +2244,10 @@
             \item 
         \end{enumerate}
         
-    \section{Invarience}
+    \section{Invariance}
         \begin{enumerate}[(1)]
             \item 
         \end{enumerate}
+        
+        
 \end{document}

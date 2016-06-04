@@ -2317,7 +2317,76 @@
         
     \section{Infinite Complexes}
         \begin{enumerate}[(1)]
-            \item 
+            \item We find the triangulations of the following spaces from the crystallographic groups shown in fig. $4.5$, page eighty-four;  
+                \begin{itemize}
+                    \item the sphere: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item the torus: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item the Klein bottle: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We check that the construction illustrated in fig. $6.21$ really can be carried out to produce a realization of $T$ in $\E^2$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the following collection of simplexes in $\E^2$ is not a simplicial complex: For each $n \in \N$, we have a vertical $1$-simplex joining $(1/n,0)$ to $(1/n,1)$ and a sloping $1$-simplex with vertexes $(1/n,0)$, $(1/n+1,1)$. In addition, we have a $1$-simplex on the $y$ axis joining $(0,0)$ to $(1,1)$.
+                \begin{proof}
+                \par We now consider the case of removing the $1$-simplex on the $y$ axis: 
+                \end{proof}
+                
+            \item We determine whether the comb space, or the space illustrated in figure $3.4$, page sixty-three, can be triangulated by an infinite simplicial complex: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the free group on a countable number of generators is a subgroup of $\Z \otimes \Z$, and deduce that any subgroup of this group must be free: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show 
+                \begin{itemize}
+                    \item if $X$ is the polyhedron of a finite complex, and if $h$ is simplicial, the pointwise periodic implies periodic: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item a connected infinite complex $K$ and a simplicial homeomorphism of $|K|$ which is pointwise periodic but not periodic: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We determine whether or not a pointwise periodic homeomorphism of a compact space need be periodic: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $G$ be a group of homeomorphisms of the space $X$. We show 
+                \begin{itemize}
+                    \item that if $N \trianglelefteq G$, $G/N$ acts in a natural way on $X/N$ and that $X/G$ is homeomorphic to $(X/N)/(G/N)$: 
+                        \begin{proof}
+                        \end{proof}
+                    
+                    \item if $F$ is the smallest normal subgroup of $G$ which contains all the elements that have fixed points, then $G/F$ acts freely on $X/F$ in the sense that only the identity element has fixed points: 
+                        \begin{proof}
+                    \end{proof}
+                \end{itemize}
+                
+            \item Suppose that in addition to the conditions in the previous problem that $X$ is a simply connected polyhedron, $G$ acts simplicially, and $X/G$ is triangulated so that the projection $p: X \rightarrow X/G$ is simplicial. Choose a vertex $v$ of $X$ as a base point and define $\phi: G \rightarrow \pi_1(X/G, p(v))$ as follows: given $g \in G$, foin $v$ to $g(v)$ by an edge path $E$ in $X$; then $\phi(g)$ is the homotopy class of the edge loop $p(E)$. 
+            \par We show that $\phi$ is a homomorphism, and that each element of $F$ goes to the identity under $\phi$, and $\phi$ is onto: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We the assumptions of the previous problem, we show that $X/F$ is simply connected, and that the action of $G/F$ on $X/F$ satisfies the hypothesis of theorem ($5.13$): 
+                \begin{proof}
+                \end{proof}
+                
+            \item We deduce theorem ($6.18$): 
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
 \chapter{Surfaces}

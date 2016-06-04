@@ -829,13 +829,13 @@
                 \par Let $C$ be the closed interval. Suppose that such an infinite subset, $A$, of $C$ does not have any limit points. Then, for each $x \in C$, there is an open set ${\Ocal}_x$ in $C$, such that $x \in {\Ocal}_x$ and ${\Ocal}_x \cap (A - \{x\}) = \emptyset$. In addition, 
                 \[C \subset \bigcup_{x \in C} {\Ocal}_x \]
                 So, $\bigcup_{x \in C} {\Ocal}_x$ is an open cover of $C$, and consequently, has a finite subcover: 
-                \[\mathcal{F} = \bigcup_{\substack{x_i  \\ i \in \{1,2, ..., N\}}} {\Ocal}_{x_i}\]
+                \[\mathcal{F} = \bigcup_{\substack{x_i  \\ i \in \{1,2, \dots, N\}}} {\Ocal}_{x_i}\]
                 Then, $A \subset \mathcal{F}$ and ${\Ocal}_{x_i} \cap A = x_i$ for each $i$. Thus, 
-                \[A = \mathcal{F} \cap A = \{x_1, x_2, ..., x_N\}\]
+                \[A = \mathcal{F} \cap A = \{x_1, x_2, \dots, x_N\}\]
                 A contradiction. 
                 \end{proof}
                 
-            \item We rephrase the definition of compactness in terms of closed sets:\footnote{Definition; The finite intersection propert (FIP): Let $\mathcal{F}$ be a collection of sets. Then, $\mathcal{F}$ has the finite intersection property if whenever $F_1, F_2, ..., F_n \in \mathcal{F}$, $F_1 \cap F_2 \cap ... \cap F_n \neq \emptyset$.} 
+            \item We rephrase the definition of compactness in terms of closed sets:\footnote{Definition; The finite intersection propert (FIP): Let $\mathcal{F}$ be a collection of sets. Then, $\mathcal{F}$ has the finite intersection property if whenever $F_1, F_2, \dots, F_n \in \mathcal{F}$, $F_1 \cap F_2 \cap \dots \cap F_n \neq \emptyset$.} 
                 \begin{proof} We claim that $X$ is compact if, and only if, for every collection $\{C_i\}_{i \in I}$ of closed sets in $X$ with the FIP, $\bigcap_i C_i \neq \emptyset$. 
                 Indeed:
                     \begin{itemize}
@@ -843,17 +843,17 @@
                         \par Then, by De-Morgan's Laws, as $C_i^c$ is open, 
                         \[\bigcup_i C_i^c = \Big( \bigcap_i C_i \Big)^c = \emptyset^c = X\]
                         Thus, there exists a finite subcover, 
-                        \[\{C_{i_1}^c, C_{i_2}^c, ..., C_{i_n}^c\},\]
+                        \[\{C_{i_1}^c, C_{i_2}^c, \dots, C_{i_n}^c\},\]
                         with $X = \bigcup_k C_{i_k}^c$. And, so, 
                         \[X^c = \emptyset = \Big(\bigcup_k C_{i_k}^c\Big)^c = \bigcap_k C_{i_k} \neq \emptyset\]
                         However, this is clearly a contradiction. Thus, $\bigcap_i C_i \neq \emptyset$. 
                         
                         \item[] ($\impliedby$) Let $\mathcal{F} = \{ {\Ocal}_i\}_{i \in I}$ be an open cover of $X$. Then, $\{{\Ocal}_i^c\}_{i \in I}$ is a collection of closed sets, such that 
                         \[\bigcap_i {{\Ocal}}_i^c = \Big( \bigcup_i {\Ocal}_i \Big)^c = X^c = \emptyset\]
-                        Thus, there exists a finite set $\{{\Ocal}_1^c, {\Ocal}_2^c, ..., {\Ocal}_n^c\}$, such that 
-                        $$\bigcap_{k = 1,2, ... , n} {\Ocal}_k^c = \emptyset $$ 
+                        Thus, there exists a finite set $\{{\Ocal}_1^c, {\Ocal}_2^c, \dots, {\Ocal}_n^c\}$, such that 
+                        $$\bigcap_{k = 1,2, \dots , n} {\Ocal}_k^c = \emptyset $$ 
                         \par But then, 
-                        \[\Big(\bigcap_{k = 1,2, ... , n} {\Ocal}_k^c\Big)^c = \bigcup_{k = 1,2, ... , n} {\Ocal}_k = (X^c)^c = X\]
+                        \[\Big(\bigcap_{k = 1,2, \dots , n} {\Ocal}_k^c\Big)^c = \bigcup_{k = 1,2, \dots , n} {\Ocal}_k = (X^c)^c = X\]
                         So, $\mathcal{F}$ contains a finite subcover. 
                     \end{itemize}
                 \end{proof}
@@ -872,7 +872,7 @@
                 \end{proof}
                 
             \item \textit{Lindel{\"o}f's Theorem}: We show that if $X$ has a countable base for its topology, $\tau$, then any open cover of $X$ contains a countable subcover: 
-                \begin{proof} Suppose that $\F$ is a countable base for the topology on $(X, \tau)$. Then, $\F = \{F_1, F_2, ..., F_n, ... \}$. Let $\{\Ocal_\alpha \}_\alpha$ be an open cover of $X$. Then, as $\F$ is a base for $\tau$, 
+                \begin{proof} Suppose that $\F$ is a countable base for the topology on $(X, \tau)$. Then, $\F = \{F_1, F_2, \dots, F_n, \dots \}$. Let $\{\Ocal_\alpha \}_\alpha$ be an open cover of $X$. Then, as $\F$ is a base for $\tau$, 
                 \[\bigcup_\alpha \Ocal_\alpha = \bigcup_{i \in I} F_i\]
                 In addition, for each $x \in X$ there exists $n \in I$, and $\alpha_0$, such that 
                 \[x \in F_n \subset \Ocal_{\alpha_0}\]
@@ -1053,7 +1053,7 @@
                     \begin{proof} If $U_i = \emptyset$, for any $i$, then
                     \[\prod X_i = \emptyset\]
                     And, so the only sets of the form 
-                    \[U_1 \times U_2 \times ... \]
+                    \[U_1 \times U_2 \times \dots \]
                     which are non-empty, are those which have $U_i = X_i$ for all but finitely many $i$. 
                     \end{proof}
             \end{itemize}
@@ -1089,9 +1089,9 @@
                 \begin{itemize}
                     \item $\E^n$ is locally connected: 
                         \begin{proof} As has been shown, 
-                        \[ \{I_1 \times I_2 \times ... \times I_n : I_i \in \tau_{\E} \}\]
+                        \[ \{I_1 \times I_2 \times \dots \times I_n : I_i \in \tau_{\E} \}\]
                         is a base for the topology in $\E^n$. Thus, if $x \in \Ocal_x$ for some open neighbourhood $\Ocal_x$ in $\E^n$, there exists 
-                        \[I = I_1 \times I_2 \times ... \times I_n \subset \Ocal_x\]
+                        \[I = I_1 \times I_2 \times \dots \times I_n \subset \Ocal_x\]
                         And, as each $I_i$ is connected, it follows by exercise 3.20, that $I$ is connected. 
                         \end{proof}
                         
@@ -1151,7 +1151,7 @@
                 \begin{proof} As any function on an indiscreet space is continuous, the result follows. 
                 \end{proof}
                 
-            \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, ... \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
+            \item We determine whether or not the space shown in fig. 3.4, page sixty-three, is locally path-connected, and covert $X = \{0\} \cup \{ 1/n : n = 1,2, \dots \}$ into a subspace off $\E^2$ which is path-connected but not locally path-connected:
                 \begin{proof} It is not the case that fig. 3.4 is locally path-connect. To see this, we note that any path at the origin must contain points from $Y$ and $Z$. As the comments on page sixty-two point out, the result follows.  
                 \par For the second part of the proof, let 
                 \[X_0 = \{(0,y) : y \in [0,1] \}, \quad X_n = \{(1/n, y) : y \in [0,1]\}\]
@@ -2042,9 +2042,9 @@
                 
             \item Let $f$ be a fixed-point-free map from a compact metric space $(X,d)$ to itself. We prove there is a positive number $\epsilon$ such that $d(x,f(x)) > \epsilon$, $\forall x\in X$: 
                 \begin{proof} We show the contrapositive; Suppose that for all $\epsilon>0$ there exists an element $x \in X$ such that $d(x,f(x)) \leq \epsilon$. Pick $x_1\in X$ such that $d(x_1,f(x)) \leq \frac{1}{2} < 1$.
-                \par It follows that there exists a set, $\{x_1,...,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
+                \par It follows that there exists a set, $\{x_1,\dots,x_n\}\subset X$ such that $d(x_i,f(x_i)) <d(x_k,f(x_k))$, where $i<k$ and $d(x_k,f(x_k))<\dfrac{1}{k}$, for all $1\leq k\leq n$.
                 \par Now, let 
-                $$\epsilon_0 = \dfrac{1}{2}\min \Big\{d(x_1,f(x_1)),...,d(x_n,f(x_n),\frac{1}{n+1}\Big\}$$
+                $$\epsilon_0 = \dfrac{1}{2}\min \Big\{d(x_1,f(x_1)),\dots,d(x_n,f(x_n),\frac{1}{n+1}\Big\}$$
                 Then there exists an element $x\in X$ such that $d(x,f(x))\leq\epsilon_0$. Pick $x\in X$ that satisfies this property, and call this $x_{n+1}$. Note here that $d(x_n,f(x_n)) < d(x_{n+1},f(x_{n+1}))$ by construction. So that for all $i<n+1$, $d(x_i,f(x_i))\leq d(x_n,f(x_n))< d(x_{n+1},f(x_{n+1}))$. Thus by induction, we have created an infinite sequence $\{x_n\}_{n = 1}^\infty$ of distinct points such that $d(x_k,f(x_k))<\nicefrac{1}{k}$ for each positive integer $k$. And, $\{d(x_n,f(x_n))\}_n$ is a monotone decreasing sequence.
                 \par Since $X$ is compact, every infinite subset has a limit point. Therefore $\{x_n\}_{n=1}^\infty $ has a limit point $x \in X$. 
                 \par Let $\epsilon > 0$ be given. Since $f$ is continuous at $x$, then there exists a $\delta >0$ such that $d(x,a)<\delta\implies d(f(x),f(a)<\nicefrac{\epsilon}{3}$ for all $a\in X$. By the Archimedian Property, we can find a positive integer $k$, such that 
@@ -2054,12 +2054,12 @@
                 \par Thus, for all $\epsilon>0$, we have that $d(x,f(x))<\epsilon$. Thus, $d(x,f(x)) \leq 0$, and hence $d(x,f(x))=0$. Consequently, $f(x)=x$, and so $f$ is not a fixed-point-free map.
                 \end{proof}
                 
-            \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,...,0)$ removed does not exhibit the fixed point property: 
-                \begin{proof} Let $p=(1,...,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
+            \item We show that the unit ball, $B^n$, in $\E^n$, with $(1,0,\dots,0)$ removed does not exhibit the fixed point property: 
+                \begin{proof} Let $p=(1,\dots,0)$. Consider the function $f:B^n\setminus \{p\} \rightarrow B^n\setminus \{p\}$, defined by $f(x) = \frac{x+p}{2}$. We show that $f$ is continuous: 
                 \par Let ${\Ocal}$ be an open set in $B^n\{p\}$. Let $x \in f^{-1}({\Ocal})$. Then $f(x) \in {\Ocal}$, and since ${\Ocal}$ is open there exists an $r>0$ such that $B_r(f(x))\subset {\Ocal}$. Let $y\in B_{2r}(x)$. Then $|x-y|<2r$. Then, 
                 $$|f(x)-f(y)|=|\frac{x+p}{2}-\frac{y+p}{2}|=\frac{1}{2}|x-y|<r$$
                 Thus, $y\in B_r(f(x))$. Hence, $y\in f^{-1}({\Ocal})$. Thus, $B_{2r}(x)\subset f^{-1}({\Ocal})$. Therefore, $f^{-1}({\Ocal})$ is open and $f$ is continuous.
-                \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,..., x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
+                \par Further, $f$ does not have the fixed-point property; If $f(x) = x = (x_1,\dots, x_n)$, then we have $2x = x+p$. Implying that $x_i = 2x_i$, $2 \leq i \leq n$. Thus, $x_i = 0$. However, then the only solution to $x_1 + 1 = 2x_1$ is $x_1 = 1$. This is a contradiction since we must have $x = p \notin B^n\setminus\{p\}$. 
                 \end{proof}
                 
             \item We show that the one-point union of $X$ and $Y$, $X \vee Y$, has the fixed-point property if, and only if, both $X$ and $Y$ have it:
@@ -2080,7 +2080,7 @@
                         \item[] $X \bigvee Y$: First, consider the map $E_1: X \bigvee Y \rightarrow X \bigvee Y$, given by $E_1(x) = x$, if $x \in X -\{p\}$. And, $E_2(y) = e^{yi\nicefrac{\pi}{2}}$. Then, $E_1$ is a homeomorphism, which leaves $X$ fixed, except for $p$. Similarly, define $E_2$ for $Y$. Then, it follows that $E_2 \circ E_1:X \bigvee Y \rightarrow X \bigvee Y$ is a homeomorphism that leaves no points of $X \bigvee Y$ fixed. Thus, $X \bigvee Y$ does not exhibit the fixed point property\footnote{We make use of the previous proof; that is $X \bigvee Y$ has the fixed point propert iff $X$ and $Y$ both have it.}. 
                     \end{itemize}
                     \par Now, we examine problem $37$:
-                    \par This shape does not exhibit the homeomorphic fixed point property. Consider $\partial B^n = S^{n-1}$, and let $p = (1,0,...,0)$. Then, $B^n - \{p\} = \Int{B^n} \cup S^{n-1} - \{p\}$. Furthermore, without loss of generality, $S^{n-1} -\{p\} \simeq \{-p\}$.\footnote{See previous exercises.} It follows that $\Int{B^n} \cup S^{n-1} - \{p\} \simeq \Int{B^n} \cup \{-p\}$. To conclude, we exhibit a homeomorphism on $\Int{B^n} \cup \{-p\}$  which does not have a fixed point: 
+                    \par This shape does not exhibit the homeomorphic fixed point property. Consider $\partial B^n = S^{n-1}$, and let $p = (1,0,\dots,0)$. Then, $B^n - \{p\} = \Int{B^n} \cup S^{n-1} - \{p\}$. Furthermore, without loss of generality, $S^{n-1} -\{p\} \simeq \{-p\}$.\footnote{See previous exercises.} It follows that $\Int{B^n} \cup S^{n-1} - \{p\} \simeq \Int{B^n} \cup \{-p\}$. To conclude, we exhibit a homeomorphism on $\Int{B^n} \cup \{-p\}$  which does not have a fixed point: 
                     \par Consider $f: \Int{B^n} \cup \{-p\} \rightarrow \Int{B^n} \cup \{-p\}$ defined by 
                     \[ f(x) = 
                         \begin{cases}
@@ -2263,12 +2263,56 @@
 
     \section{The Edge Group of a Complex}
         \begin{enumerate}[(1)]
-            \item 
+            \item We use van Kampen's theorem to calculate the fundamental group of the double torus by dividing the surface into two halves (each of which is a punctured torus). And then, we do the calculation again, but this time splitting the surface into a disc and the closure of the complement of the disc: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the edge paths $E_1$ and $E_2$ introduced in the proof of theorem ($6.10$) are equivalent: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove that the 'dunce hat' is simply connected, using can Kampen's theorem:    
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $X$ be a path-connected triangulable space. We examine how attaching a disc to $X$ affects the fundamental group of $X$:  
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $G$ be a finitely presented group. We construct a compact triangulable space which has fundamental group $G$:
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Triangulating Orbit Spaces}
         \begin{enumerate}[(1)]
-            \item 
+            \item Suppose $\{V,S\}$ satisfies the hypotheses of the realization theorem, and label the elements of $V$ as $v_1, \dots, v_k$. Suppose that $x_i$ denotes the point 
+            \[(i, i^2, \dots, i^{2m+1}) \in \E^{2m+1}\]
+            We show that any $2m +2$ of the points $x_1, \dots, x_k$ are in general position, and so that the correspondence $v_i \leftrightarrow x_i$ can be used to realize $\{V,S\}$ in $\E^{2m+1}$:   
+                \begin{proof}
+                \end{proof}
+                
+            \item By the previous problem the vertex scheme of any one-dimensional complex can be realized in $\E^3$. We find a one-dimensional complex whose vertex scheme cannot be realized in $\E^2$:   
+                \begin{proof}
+                \end{proof}
+                
+            \item Consider the antipodal action on $S^2$ and the triangulation shown in fig. $6.17$. We show that the map $\psi: |K|/G \rightarrow |K^1/G|$ is a homeomorphism, and draw the resulting triangulation of the projective plane:     
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the map $\psi : |K|/G \rightarrow |K/G|$ is a homeomorphism iff the action of $G$ on $|K|$ satisfies:
+                \begin{itemize}
+                    \item The vertexes of a $1$-simplex of $K$ never lie in the same orbit:
+                        \begin{proof}
+                        \end{proof}
+                    \item If the sets of vertexes of $v_0, \dots, v_k, a$ and $v_0, \dots, v_k, b$ span simplexes of $K$, and if $a,b$ lie in the same orbit, then there exists $g \in G$ such that $g(v_i) = v_i$ for $0 \leq i \leq k$ and $g(a) = b$. 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We check that the previous conditions are always satisfied if we replace $K$ by its second barycentric subdivision: 
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Infinite Complexes}

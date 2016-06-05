@@ -30,6 +30,8 @@
 \DeclareMathOperator*{\Z}{\mathbb{Z}}
 \DeclareMathOperator*{\Orb}{\text{Orb}}
 \DeclareMathOperator*{\Stab}{\text{stab}}
+\DeclareMathOperator*{\card}{\text{card}}
+\DeclareMathOperator*{\Star}{\text{star}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -2392,27 +2394,189 @@
 \chapter{Surfaces}
     \section{Classification}
         \begin{enumerate}[(1)]
-            \item 
+            \item We show that punching a disc out of the sphere and ading a cross cap in its place gives a representation of $\RP^2$ as a surface in $\E^3$ with self-intersections:  
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $X$ consist of $S^2$ plus one extra point $p$. The neighbourhoods of the points of $S^2$ are the usual ones, and those of $p$ are sets of the form $[U - \{(0,0,1)\}] \cup \{p\}$ where $U$ is a neighbourhood of $(0,0,1)$ in $S^2$. We show that $X$ is not Hausdorff, but is locally homeomorphic to the plane: 
+                \begin{proof}
+                \par We now consider whether or not it seems reasonable to call $X$ a surface: 
+                \end{proof}
+                
+            \item We show that the connected sum of a torus with itself is a sphere with two handles, and the connect sum of a porjective plane with itself is a Klein bottle: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We determine what the connect sum of a torus and a projective plane is: 
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Triangulation and Orientation}
         \begin{enumerate}[(1)]
-            \item 
+            \item Suppose we want to triangulate a surface which has a boundary. We examine how the definition of a combinatorial surface needs to be adjusted: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $K$ be a combinatorial surface. We  
+                \begin{itemize}
+                    \item show that the triangles of $K$ can be labelled $T_1, \dots, T_s$ in such a wa that $T_i$ always has an edge in common with at least one of $T_1, \dots, T_{i-1}$: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item build a model for the surface of $|K|$ in the form of a regular polygon in the plane, which has an even number of side, and whose sides have to be identified in pairs in some way: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item We show that if $h: |K| \rightarrow S$ is a triangulation of a closed surface, then $K$ must be a combinatorial surface: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $G$ be a finite group which acts as a group of homeomorphisms of a closed surface $S$ in such a way that the only element with any fixed points is the identity. We show 
+                \begin{itemize}
+                    \item that the orbit space $S/G$ is a closed surface: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item $S$ may be orientable, yet $S/G$ non-orientable: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item that if $S/G$ is orientable, then $S$ does not have to be: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+                
+            \item Let $K$ be an orientable combinatorial surface, orient all its triangles in a compatible manner, and suppose that $h: |K| \rightarrow |K|$ is a simplicial homeomorphism. Suppose, further, that there is a triangle $A$, oriented by the ordering $(uvw)$ whose image $h(A)$ occurs with the orientation $(h(u)h(v)h(w))$ induced by $h$. We prove that the same must hold for any other triangle of $K$: 
+                \begin{proof}
+                \par We give an example of an orientable combinatorial surface and a simplicial homeomorphism which is not orientation-preserving:
+                \end{proof}
+                
+            \item Let $K$ be an orientable combinatorial surface. Suppose that $G$ acts simplicially on $|K|$. We show that if the action is fixed-point free and each element of $G$ is orientation-preserving that the complex $K^2/G$ is an orientable combinatorial surface:
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Euler Characteristics}
         \begin{enumerate}[(1)]
-            \item 
+            \item We prove lemma ($7.8$): 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove lemma ($7.9$): 
+                \begin{proof}
+                \end{proof}
+                
+            \item We prove from the previous problem that the Euler characteristic of a graph $\Gamma$ is a topological invariant of $|\Gamma|$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $K$ be a finite complex. Suppose that $G$ acts simplicially on $|K|$, and that the action is fixed-point free. We show that 
+            \[\chi(K) = |G| \chi(K^2/G)\]
+            where $|G| = \card G$:
+                \begin{proof}
+                \end{proof}
+                
+            \item Let $K$ be a combinatorial surface such that $|K|$ is in the plane as in problem $6$, and let $J$ denote the boundary curve of the resulting regular polygon. We show that 
+            \[\chi(K) = \chi(\Gamma) + 1\]
+            and deduce lemma($.6$) from lemma ($7.5$): 
+                \begin{proof}
+                \end{proof}
+                
+            \item Continuing from the previous problem, suppose that $\Gamma$ has an edge, one end of which is not joined to any other edges. We show that $\chi(K) = 2$ implies 
+            \[|K| \cong S^2:\]
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Surgery}
         \begin{enumerate}[(1)]
-            \item 
+            \item We thicken each curve in fig. $7.16$ and decide whether the result is a cylinder or a M\"obius strip and describe the effect of doing surgery along the curve: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that the surface illustrated in fig. $7.17$ is homeomorphic to one of the standard ones using the procedure of theorem ($7.14$): 
+                \begin{proof}
+                \end{proof} 
+                
+            \item Let $Z \subset Y \subset Z$ be three concentric discs in the plane. We find a homeomorphism from $X$ to itself which is the identity on the boundary circle of $X$ and which throws $Y$ onto $Z$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Suppose that we have two discs in the plane, both of which are bounded by polygonal curves, and one which lies in the interior of the other. We prove that the region between them is homeomorphic to an annulus: 
+                \begin{proof}
+                \end{proof}
+                
+            \item with the notation of lemma ($7.13$) and problem $19$, we find a homeomorphism $h: D^1 \rightarrow X$ such that $h(D) = Y$ and 
+            \[h(\overline{\Star} (\hat{A}, K^2)) = Z\]
+            and prove lemma ($7.13$): 
+                \begin{proof}
+                \end{proof}
         \end{enumerate}
         
     \section{Surface Symbols}
         \begin{enumerate}[(1)]
-            \item 
+            \item We show that the two surfaces shown in fig. $7.22$ are not homeomorphic: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We determine what happens if we remove the interiors of two disjoint discs from a closed surface, then glue the two resulting boundary circles together: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We use the classification theorem to show that the operation of connected sum is well-defined: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Assume that every compact surface can be triangulated. We show that if the boundary component of a surface is non-empty, then it consists of a finite number of disjoint circles: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show that nay compact connect surface is homeomorphic to a closed surface from which the interiors of a finite number of disjoint discs have been removed: 
+                \begin{proof}
+                \end{proof}
+            
+            \item We determine the fundamental group of the space obtained by punching $k$ holes in the sphere: 
+                \begin{proof}
+                \end{proof}
+                
+            \item Write $H(p,r)$ for $H(p)$ with the interiors of $r$ disjoint discs removed, and write $M(q,s)$ for $M(q)$ with $s$ discs similarly removed. We show that $H(p,r)$ can be obtained from a $(4p + 3r)$-sided polygonal region in the plane by gluing up its edges according to the surface symbol 
+            \[a_1 b_1 a^{-1}_1 b^{-1}_1 \dots a_p b_p a^{-1}_p b^{-1}_p x_1 y_1 x_1^{-1} \dots x_r y_r x^{-1}_r:\]
+                \begin{proof}
+                \end{proof}
+                
+            \item We find a surface symbol for $M(q,s)$, as defined in the previous problem: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We calculate the fundamental groups of $H(p,r)$ and $M(q,s)$: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We show
+                \begin{itemize}
+                    \item that $H(p,r) \cong H(p',r')$ implies $p = p'$ and $r = r'$: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item that $M(q,s) \cong M(q',s')$ implies $q = q'$ and $s = s'$: 
+                        \begin{proof}
+                        \end{proof}
+                        
+                    \item that there are no values of $p,q,r,s$ for which $M(p,r) \cong H(q,s)$: 
+                        \begin{proof}
+                        \end{proof}
+                \end{itemize}
+            
+            \item Define the genus of a compact connect surface to be the genus of the closed surface obtained by capping off each boundary circle with a disc. We show that a compact connect surface is completely determined by wheter or not it is orientable, together with its genus and its number of boundary circles: 
+                \begin{proof}
+                \end{proof}
+                
+            \item We posit a general result from the two picture in fig. $7.24$: 
+                \begin{proof}
+                \end{proof}
+            
         \end{enumerate}
         
 \chapter{Simplicial Homology}

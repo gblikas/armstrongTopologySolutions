@@ -464,7 +464,7 @@
                 \end{itemize}
             \end{proof}
             
-        \item This is left to the reader as an exercise.
+        \item This is left to the reader as an exercise. 
         
         \item This is left to the reader as an exercise.
         
@@ -643,7 +643,9 @@
             \end{proof}
             
             
-        \item This is left to the reader as an exercise.
+        \item We prove that if $Y$ is subspace of $X$, and $Z$ is a subspace of $Y$, that $Z$ is a subspace of $X$: 
+            \begin{proof} The open sets in $Y$ are exactly the sets $\Ocal \cap Y$ where $O$ is open in $X$.  The open sets in $A$ as a subspace of $Y$ are therefore sets of the form $A\cap(Y\cap \Ocal)$ where $O$ is open in $X$.  But $A\subseteq Y$, so $A\cap(Y\cap \Ocal)=A\cap \Ocal$.  Therefore the open sets in $A$ as a subspace of $X$ are exactly the same as the open sets of $A$ as a subspace of $Y$.
+            \end{proof}
         
         \item Suppose that $Y$ is a subspace of $(X, \tau)$. We show that a subset $A$ of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. Further, we show that we get the same result if we take the closer in $Y$ or $X$: 
             \begin{proof} If $A \subset Y$ is closed in $Y$, then $Y - A$ is open in $Y$. But then, by the definition of subspace topology, $Y - A = Y \cap {\Ocal}_y$, for some open ${\Ocal}_y \in X$. Consequently, we have 
@@ -665,7 +667,9 @@
             \par An example when they might not be equal is in the following case: Let $X = \R$, $Y = \mathbb{Z}$, and $A = \{0\}$. Then, $A_x^\circ = \emptyset$. But, every point of $\mathbb{Z}$ is open in the subspace topology, and so $A_y^\circ = \{ 0\}$. 
             \end{proof}
             
-        \item This is left to the reader as an exercise. However, here is a counter example to this exercise: 
+        \item Let $Y$ be a subspace of $X$. We show that if $A$ is open (closed) in $Y$, and if $Y$ is open (closed) in $X$, that $A$ is open (closed) in $X$: 
+            \begin{proof} Suppose $A\subset Y\subset X$ and $A$ open in $Y$.  Then $A=Y\cap U$ where $U$ is open in $X$.  The intersection of two open sets is open, so if $Y$ is open in $X$ then $A$ is open in $X$.  Similarly, if $A\subset Y\subset X$ and $A$ closed in $Y$, then $A=Y\cap C$ where $C$ is closed in $X$ (by exercise $7$).  The intersection of two closed sets is closed, so if $Y$ is closed in $X$ then $A$ is closed in $X$
+            \end{proof}
         
         \item We show that the frontier of a set always contains the frontier of its interior, and describe the relationship between $\Ft (A \cup B)$ and $\Ft A$, $\Ft B$: 
             \begin{proof} Let $(X, \tau)$ be a topological space, and let $A \subset X$. We want to show that $\Ft A^\circ \subset \Ft A$. 
@@ -699,7 +703,21 @@
                 \begin{proof} Define $f_0(x) = f(x) - x$. The rest is left to the reader. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item We show that the function $h(x) = \frac{e^x}{1+e^x}$ is a homeomorphism from the real line to the open interval $(0,1)$: 
+                \begin{proof} Let 
+                \[f(x)=\frac{e^x}{1+e^x}, \quad y\in(0,1), \quad x=\ln\left(\frac{y}{1-y}\right)\]
+                \par We show that $f$ is onto and 1-1: 
+                    \begin{itemize}
+                        \item As $f(x)=y$, $f$ is onto.
+                        
+                        \item Suppose $f(x)=f(y)$. Then, 
+                        \[\frac{e^x}{1+e^x}=\frac{e^y}{1+e^y} \text{ implies } e^x+e^{x+y}=e^y+e^{x+y} \]
+                        Therefore $e^x=e^y$ and $f$ is 1-1. 
+                    \end{itemize}
+                For $a,b\in\mathbb R$, 
+                \[f^{-1}((a,b))=\left(\ln\frac{a}{1-a},\ln\frac{b}{1-b}\right), \]
+                which is open.  Since the intervals $(a,b)$ are a basis, it follows from Theorem ($2.9 (b)$) that $f$ is continuous.  And $f((a,b)) = (f(a),f(b))$, so $f$ takes open sets in the base to open sets.  Therefore $f^{-1}$ is continuous, and so, $f$ is a homeomorphism.
+                \end{proof}
             
             \item Let $f: \E \rightarrow \R$ be a map and define $\Gamma_f: \E \rightarrow \E^2$ by $\Gamma_f (x) = (x, f(x))$. Whe show that $\Gamma _f$ is continuous and that its image, with the induced topology, is homeomorphic to $\E$: 
                 \begin{proof} We show that $\Gamma_f$ is continuous. To do this, we use the sequential criterion for continuity in $\E^n$. Let $\{x_n\}_n$ be a sequence in $\E$, such that $x_n \rightarrow x \in \E$. Then $\Gamma_f$ is clearly continuous by the fact that $f$ is, and component wise comparison.  That is, 
@@ -715,14 +733,33 @@
                 This proves the result.\footnote{A similar argument applies to $\E^n$.} 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: Show that the discrete topology is the smallest topology on $X$ for which this is the case. 
+            \item We determine what topology on $X$ implies that every real-valued function definied on $X$ is continuous: 
+                \begin{proof} $X$ must have the discrete topology, where every subset is open. To show this, it suffices to show points in $X$ are open. 
+                \par Indeed; Fix $x\in X$ and define $f: X\rightarrow \mathbb R$ by
+                    \[f(x) =
+                            \begin{cases}
+                            f(x) = 0 & \\
+                            f(y) = 1 & y \neq x 
+                            \end{cases}
+                            \]
+                Then,
+                \[f^{-1}((-1/2,1/2))=\{x\}\] and thus $f$ is continuous, since $(-1/2,1/2)$ is open and $\{x\}$ is open.
+                \end{proof}
             
             \item Consider $X = \R$ with the co-finite topology, $(\R, CO)$. We show that $f: \E \rightarrow  X$ defined by $f(x) = x$ is a map, but not a homeomorphism: 
                 \begin{proof} To see that $f$ is continuous, let ${\Ocal} \in CO$. Then, $X - {\Ocal} = \R - {\Ocal}$ is finite. But then, $f^{-1}[{\Ocal}] = {\Ocal}$, and ${\Ocal}^c$ is finite in $\E$. This implies that ${\Ocal} = \overline{{\Ocal}}$. Thus, ${\Ocal}^c = {\Ocal}$ is open in $\E$. The fact that $f$ is 1-1 is clear. 
                 \par Consider the inverse function of $f$. Note that $(a,b)$, $a < b$ is open in $\E$. But, $f^{-1}[(a,b)] = (a,b) = f[(a,b)]$, which is not open in $X$. Thus, $f^{-1}$ is not continuous.
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item Suppose $X=A_1\cup A_2 \cup\dots$, where $A_n\subseteq\overset{\circ}{A}_{n+1}$ for each $n$.  We show that if $f:X\rightarrow Y$ is a function such that, for each $n$, $f|A_n:A_n\rightarrow Y$ is continuous with respect to the induced topology on $A_n$, then $f$ is itself continuous:
+                \begin{proof} Let $x\in X$.  Then $x\in A_n$ for some $n$ and $A_n\subseteq \overset{\circ}{A}_{n+1}$.  Thus $x\in\overset{\circ}{A}_{n+1}$, and $X=\cup \overset{\circ}{A}_n$.
+                \par Now, let $U$ be open in $Y$. Since $f$ is continuous on $A_n$, by theorem ($2.8$), $f$ is continuous on $\overset{\circ}{A}_n$. Consequently, 
+                \[f^{-1}(U)\cap\overset{\circ}{A}_n=f|_{\overset{\circ}{A}_n}^{-1}(U)\] 
+                is open in $\overset{\circ}{A}_n$. So, there exists open sets $V_n$ such that  \[V_n\cap\overset{\circ}{A}_n=f^{-1}(U)\cap\overset{\circ}{A}_n\]
+                And so, 
+                \[f^{-1}(U) =f^{-1}(U)\cap \bigcup_n(\overset{\circ}{A}_n)=\bigcup_n(f^{-1}(U)\cap \overset{\circ}{A}_n)=\bigcup_n(V_n\cap \overset{\circ}{A}_n),\]
+                which is a union of open sets and so is open.
+                \end{proof}
             
             \item Let $(X, \tau)$ be a topological space, $A \subset X$, and $\chi_A$ its characteristic function. We describe the frontier of $A$ in terms of $\chi$: 
                 \begin{proof} We note that if $\overline{(X -A)} \cap \overline{A} \neq \emptyset$, then there exists $a \in \overline{(X -A)}$, $a \in \overline{A}$. With this in mind, we claim that $\chi_A$ is continuous at $a \in X$ if, and only if, $a \notin \Ft A$. 
@@ -733,9 +770,32 @@
                     \end{itemize}
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item We determine which of the following maps are open or closed: 
+                \begin{itemize}
+                    \item $x \mapsto e^x$, on $\R$: 
+                        \begin{proof} Open: Let $C=f(\R)$.  Since $f(A\cup B)=f(A)\cup f(B)$, it suffices to check that $f$ is open on a base of open sets.  Let $B$ be an open interval in $\R$.  If $B$ has length greater than $2\pi$ then $f(B)$ is all of $C$.  So $f(B)$ is open in $C$.  Otherwise $f(B)$ is an open arc of the circle.  Also open.  Thus in all cases $f$ maps $B$ to an open set.  Since open balls are a base $f$ must be an open map.
+                        \par Not Closed: To show $f$ is not closed, for each $n\in \mathbb N$ let $E_n=[2n\pi+1/n,(2n+1)\pi-1/n]$.  Let $E=\cup_nE_n$.  Suppose $x$ is a limit point of $E$.  Then $(x-1/2,x+1/2)$ intersects at most one $E_n$.  Thus $x$ is a limit point of $E_n$.  Thus $x\in E_n$ since $E_n$ is closed.  Thus $E$ is closed.  But $f(E)$ is equal to $C$ intersected with the upper half plane $\text{im}(z)>0$.   This is an open set in $C$, and not closed since $z=1$ is a limit point of $f(E)$ not in $f(E)$. Thus $f(E)$ is not closed.
+                        \end{proof}
+                        
+                    \item $f: \E^2 \rightarrow \E^2$, $f(x,y) = (x, |y|)$:  
+                        \begin{proof} Not Open: To see $f$ is not open, let $D$ be the open unit disc.  Let $H^+=\{(x,y)\mid y\geq 0\}$ and $H^-=\{(x,y)\mid y\leq 0\}$.  Then $f(D)=D\cap H^+$.  Therefore $z=0\in f(D)$ and every open ball containing $z$ intersects ${H^+}^c\subset f(D)^c$.  Thus $f(D)$ is not open.
+                        \par Closed: Now, suppose $E$ is closed in $\mathbb E^2$.  Let $E'=E\cap H^-$ and let $E''$ be $E'$ reflected about the $x$-axis. Then $f^{-1}(E)= (E\cap H^+)\cup(E'')$.  Now $E$ and $H^+$ are closed so $E\cap H^+$ is closed.  And $E''$ is closed because $H^-$ is closed, so $E'$ is closed, and reflection is a homeomorphism.  Thus $f^{-1}(E)$ is closed.
+                        \end{proof}
+                    
+                    \item $z \mapsto z^3$ on $\C$: 
+                        \begin{proof} Open: We first show it is open.  Let $A_{\theta_1,\theta_2,r_1,r_2}=\{re^{i\theta}\in \mathbb C\mid \theta_1,\theta_2,r_1,r_2\in[0,\infty)\text{ and } \theta_1<\theta<\theta_2, r_1<r<r_2\}$.  Then the set $\beta=\{A_{\theta_1,\theta_2,r_1,r_2}\mid\theta_2-\theta_1<2\pi$ and $0\leq r_1<r_2\}$ form a base for the usual topology on $\mathbb C$.  The sets are clearly open and the intersection of any two of them is another one.  Also for any $z\in A_{\theta_1,\theta_2,r_1,r_2}$ there is an open disc $D$ s.t.\ $z\in D\in A_{\theta_1,\theta_2,r_1,r_2}$ and for any open disc $D$ with $z\in D$ we can find ${\theta_1,\theta_2,r_1,r_2}$ s.t.\ $z\in A_{\theta_1,\theta_2,r_1,r_2}\in D$.   Now consider what happens to $A_{\theta_1,\theta_2,r_1,r_2}$ under the function $f$.  If $\theta_2-\theta_1>2\pi/3$ then $f(A_{\theta_1,\theta_2,r_1,r_2})$ is a full open annulus.  Otherwise $f(A_{\theta_1,\theta_2,r_1,r_2})=A_{3\theta_1,3\theta_2,r_1,r_2}$ which is open.  Thus $f$ takes basic open sets in $\beta$ to open sets.  Since $f(A\cup B)=f(A)\cup f(B)$ for any sets $A$ and $B$, it suffices to check open-ness on the base $\beta$. Thus $f$ is an open map.
+                        \par Closed: We now show $f$ is a closed map.  Let $E$ be any closed set in $\mathbb C$.  Let $Q_1$ be the first quadrant $\{x+iy\mid x,y\geq 0\}$.  Let $Q_2,Q_3,Q_4$ be the other (closed) quadrants.  Then $Q_1$ is closed, so $E\cap Q_1$ is closed.  The map $f$ restricted to $Q_1$ is a homeomorphism from $Q_1$ to its image $f|_{Q_1}:Q_1\rightarrow f(Q_1)=Q_1\cup Q_2\cup Q_3$ because its inverse $re^{i\theta}\mapsto re^{i\theta/3}$ is continuous.  Thus $f(E\cap Q_1)$ is closed in $Q_1$.  Likewise $f(E\cap Q_i)$ is closed for all $i=1,2,3,4$.  Functions respect unions, thus since $E=\cup_i(E\cap Q_i)$ it follows that $f(E)=\cup_i f(E\cap Q_i)$.  But each $f(E\cap Q_i)$ is closed.  Thus $f(E)$ is closed.
+                        \end{proof}
+                \end{itemize}
             
-            \item See section section 1. 
+            \item We show that the {\it unit ball}\/ in $\mathbb E^n$ (the set of points whose coordinates satisfy $x_1^2+\cdots+x_n^2\leq1$) and the {\it unit cube} (points whose coordinates satisfy $|x_i|\leq1$, $1\leq i\leq n$) are homeomorphic if they are both given the subspace topology from $\mathbb E^n$: 
+                \begin{proof} Note that nowhere in the proof of lemma ($2.10$) is it used that we are in two dimensions.  The proof goes through basically without change to any finite dimension where we replace "disc" with "ball".
+                Now, let 
+                \[f:\mathbb E^n-{0}\rightarrow\mathbb E^n-{0}\]
+                be given by 
+                \[f({\bf v})=\frac{1}{||{\bf v}||}{\bf v}\]
+                Then $f$ is continuous and the image of $f$ is the unit sphere.  Let $g$ be $f$ restricted to {\it the surface} of the unit cube.  Then $g$ is one-to-one continuous.  The intersection of an open ball with the surface of the cube maps to the intersection of an open ball with the sphere.  Thus $g$ is an open map.  Therefore the inverse of $g$ must be continuous. Therefore $g$ is a homeomorphism.  By the generalization of lemma ($2.10$), $g$ may be extended from the boundaries to a homeomorphism from the whole cube to the whole ball.
+                \end{proof}
             
         \end{enumerate}
         
@@ -760,11 +820,15 @@
                 Thus, $g \circ h$, where $h$ is the triangle space-filling curve, is the desired function.
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: Use the fact that $[0,1]$ is compact. 
+            \item We determine whether or no a space-filling curve can fill out the plane: 
+                \begin{proof} Note, $[0,1]$ is compact, while $\E^2$ is not. 
+                \end{proof}
             
-            \item This is left to the reader as an exercise. Hint: Use component wise definitions. 
+            \item We determine whether or not a space filling curve ca fill out all of the unit cube in $\E^3$: 
+                \begin{proof} Let $I=[0,1]$.  Let $f:I\rightarrow I\times I$ be a space filling curve.  Let $g:I\times I\rightarrow I\times I\times I\times I$ be the map $(x,y)\mapsto (f(x),f(y))$ with the natural identifications $(I\times I)\times(I\times I)$ with $I\times I\times I\times I$. Let $p$ be projection onto the first three coordinates of $I\times I\times I\times I$.  Then $p\circ g\circ f$ is a continuous function from $I$ onto $I^3$.
+                \end{proof}
             
-            \item To proved a rigorous proof of this, at this point, is out of the question. However, via theorems 3.3, and 3.7, it is not true. 
+            \item To proved a rigorous proof of this, at this point, is out of the question. However, via theorems ($3.3$), and ($3.7$), it is not true. 
             
         \end{enumerate}
     
@@ -786,7 +850,15 @@
                 \begin{proof} By lemma $2.13$, there exists a continuous function $f: X \rightarrow [-1,1]$, such that $f[A] \equiv 1$, and $f[B] \equiv -1$. Let $O_1 = [-1,0]$, and $O_2 = [0,1]$. Then, $O_1, O_2$ are open in $[-1,1]$. Thus, $f^{-1}[O_i]$ is open, as $f$ is continuous. Further, $f^{-1}[O_1] \cap f^{-1}[O_2] = \emptyset$, and $A \subset f^{-1}[O_1]$, $B \subset f^{-1}[O_2]$. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item We consider what topology the discrete metric gives a space: 
+                \begin{proof} We first show $d$ is a metric.  It is real-valued. And clearly 
+                \[ d(x,y)\geq 0 \text{ iff } x=y\]
+                Also clearly $d(x,y)=d(y,x)$.  Finally, the only way we could have 
+                \[d(x,y)+d(y,z)<d(x,z)\]
+                is if the left-hand-side is $0$. But then $x=y=z$ and so the right-hand-side is also zero.  Thus $d$ is a metric.  \par Since 
+                \[\{x\}=\{y\mid d(x,y)<1/2\},\] 
+                the sets $\{x\}$ are open. Since every set is a union of its points, every set is open. Thus this metric gives the discrete topology.
+                \end{proof}
                 
             \item We show that every closed subset of a metric space is the intersection of a countable number of open sets: 
                 \begin{proof} Let $A$ be a closed subset of $X$. Define 
@@ -801,19 +873,45 @@
                 \par This concludes the proof. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item  If $A,B$ are subsets of a metric space, their {\it distance apart} $d(A,B)$ is the infinum of the numbers $d(x,y)$ where $x\in A$ and $y\in B$.  We find two disjoint closed subsets of the plane which are zero distance apart and check that both of the closed sets which you have just found have infinite diameter: 
+                \begin{proof} Let  $A$ be the $x$-axis and $B$ be the set 
+                \[\{(x,1/x)\mid x>0\}\] 
+                The functions $x\mapsto 0$ and $x\mapsto\frac{1}{x}$ are continuous on $(0,\infty)$ so $A$ and $B$ are closed by chapter $2$, problem $15$.  
+                \par Now, let 
+                \[\{a_n\}_{n=1}^\infty := (n,0), \quad \{b_n\}_{n=1}^\infty : = (n,1/n)\]  
+                Then $a_n\in A$ and $b_n\in B$ and $d(a_n,b_n)=\frac{1}{n}$ and thusly, 
+                \[ d(A,B)<\frac{1}{n}, \quad \forall n\]
+                Consequently, $d(A,B)=0$.  Both sets clearly have infinite diameter.
+                \end{proof}
             
             \item We show that if $A$ is a closed subset of $X$, then any map $f: A \rightarrow \E^n$ can be extended over $X$: 
                 \begin{proof} The is the Tietze extension theorem applied component-wise. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. 
+            \item We find a map from $\mathbb E^1 - \{0\}$ to $\mathbb E^1$ which cannot be extended over $\mathbb E^1$:
+                \begin{proof}  Let $f(x)=1/x$.  Then $f$ is continuous on $\mathbb E^1-\{0\}$ by Theorem 2.9 (b) because $f^{-1}$ of an open interval is an open interval, or the union of two open intervals.  Now suppose $g$ extends $f$ to all of $\mathbb E$.  Let $a_n=\frac1n$.  Then $a_n\rightarrow 0$.  Thus $g(a_n)\rightarrow g(0)$.  But $g(a_n)=f(a_n)=n\rightarrow\infty$.  Thus no such $g$ can exist.
+                \end{proof}
             
             \item This is left to the reader as an exercise.
             
-            \item This is left to the reader as an exercise.
+            \item Given a map $f:X\rightarrow \mathbb E^{n+1}-\{0\}$ we find a map $g:X\rightarrow S^n$ which agrees with $f$ on the set $f^{-1}(S^n)$: 
+                \begin{proof}  Let $h:\mathbb E^{n+1}-\{0\}\rightarrow S^n$ be given by 
+                \[\mathbf v\mapsto\frac{1}{||\mathbf v||}\mathbf v\]  
+                Then $h$ is continuous and $h$ is the identity on $S^n$.  Let $g=h\circ f$.  Then $g$ is continuous and agrees with $f$ on $f^{-1}(S^n)$.
+                \end{proof}
             
-            \item This is left to the reader as an exercise.
+            \item  If $X$ is a metric space and $A$ closed in $X$, we show that a map $f:A\rightarrow S^n$ can always be extended over a {\it neighborhood of} $A$, in other words over a subset of $X$ which is a neighborhood of each point of $A$.  (Think of $S^n$ as a subspace of $\mathbb E^{n+1}$ and extend $f$ to a map of $X$ into $\mathbb E^{n+1}$.  now use Problem 35.):
+                \begin{proof} Following the hint we think of $S^n$ as a subspace of $\mathbb E^{n+1}$.  Then $f=(f_1,\dots,f_n)$ and  \[f_i \equiv p_i\circ f,\]
+                where $p_i$ is the $i$-th projection. The solution to problem $32$ shows $p_i$ is continuous, so that each $f_i$ is continuous.  
+                \par By theorem ($2.15$), each component $f_i$ can be extended to a function $g_i$ on all of $X$ such that  $g_i$ agrees with $f_i$ on $A$.  Then $g=(g_1,\dots,g_n)$ extends $f$ on $A$ to a map from $X$ to $\mathbb E^{n+1}$.
+                \par The same argument as in problem $32$ shows $g$ is continuous.   Note that 
+                \[g^{-1}(0)\cap A=\emptyset\]
+                because $f$ maps $A$ into $S^n$.  And $g^{-1}(0)$ is a closed set in $X$ (theorem ($2.9 (e)$)).  
+                \par Thus by problem $28$ we can find {\it disjoint} open sets $U$ and $V$ in $X$ such that 
+                \[A\subseteq U, \quad g^{-1}(0)\subseteq V\]  
+                Let $h$ be the map from problem $35$.  Then $h\circ g$ is well-defined as long as $g(x)\neq0$.  Thus $h\circ g$ is well-defined on $U$.  And 
+                \[h\circ g|_U\] agrees with $f$ on $A$, since $h$ is the identity on $S^n$.
+                \end{proof}
         \end{enumerate}
     
 

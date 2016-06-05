@@ -9,7 +9,8 @@
 \graphicspath{ {images/} }
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{tikz}
+\usepackage{standalone}
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
@@ -2164,20 +2165,39 @@
         \end{enumerate}
         
 \chapter{Triangulations}
+Unfortunately, this is the point in Armstrong when the definitions presented are even less clear. For this reason, the reader is referred to \href{https://www.cs.duke.edu/courses/fall06/cps296.1/Lectures/sec-III-1.pdf}{this short paper} which provides an excellent introduction to simplicial complexes and triangulations; the definitions presented are inline with those in Armstrong.  
     \section{Triangulating Spaces}
         \begin{enumerate}[(1)]
             \item We construct triangulations for
                 \begin{itemize}
-                    \item the cylinder: 
-                        \begin{proof}
+                    \item the cylinder:
+                        \begin{proof} Please see figure \hyperref[fig:tikz:triCyl]{\ref{fig:tikz:triCyl}}, with the usual identifications. 
+                            \begin{figure}[p]
+                                \centering
+                                \includestandalone[width=\textwidth]{cylinder}
+                                \caption{Triangulation of the cylinder.}
+                                \label{fig:tikz:triCyl}
+                            \end{figure}
                         \end{proof}
                         
                     \item the Klein Bottle: 
-                        \begin{proof}
+                        \begin{proof} Please see figure \hyperref[fig:tikz:triKlein]{\ref{fig:tikz:triKlein}}, with the usual identifications.
+                            \begin{figure}[p]
+                                \centering
+                                \includestandalone[width=\textwidth]{klein}
+                                \caption{Triangulation of Klein bottle.}
+                                \label{fig:tikz:triKlein}
+                            \end{figure}
                         \end{proof}
                     
                     \item the double Torus: 
-                        \begin{proof}
+                        \begin{proof} Please see figure \hyperref[fig:tikz:triDoubleTorus]{\ref{fig:tikz:triDoubleTorus}}, with the usual identifications. 
+                            \begin{figure}[p]
+                                \centering
+                                \includestandalone[width=\textwidth]{doubleTorus}
+                                \caption{Triangulation of the double torus.}
+                                \label{fig:tikz:triDoubleTorus}
+                            \end{figure}
                         \end{proof}
                 \end{itemize}
                 

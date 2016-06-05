@@ -10,6 +10,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
 \usepackage{standalone}
 
 %defined functions and such
@@ -2215,11 +2216,15 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item We check that $|CK|$ and $C|K|$ are homeomorphic spaces: 
-                \begin{proof}
+                \begin{proof} Let $K$ be a complex in $\E^n$. Then, $CK$ consists of the simplices of $K$ and the join of each of them to some vertex, $v$ via $1$-simplices and the $0$-simplex $v$ itself. So, $|CK|$ is the geometric cone on $|K|$. By lemma ($4.5$), page sixty-eight, 
+                \[ |CK| \simeq C|K|\]
                 \end{proof}
                 
             \item We show that if $X$ and $Y$ are triangulable spaces, then $X \times Y$ is triangulable: 
-                \begin{proof}
+                \begin{proof} Let $\kappa: |K| \rightarrow X$, and $\lambda: |L| \rightarrow Y$ be the triangulations of $X$, and $Y$. We claim that the function 
+                \[\phi: |K| \times |L| \rightarrow X \times Y, \quad \phi(k,l) = (\kappa(k), \lambda(l))\]
+                is the desired triangulation. 
+                \par As $\kappa$, $\lambda$ are homeomorphisms, the result follows. 
                 \end{proof}
                 
             \item We show that if $K$ and $L$ are complexes in $\E^n$, that $|K| \cap |L|$ is a polyhedron: 
@@ -2227,11 +2232,37 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item We show that $S^n$ and $P^n$ are both triangulable: 
-                \begin{proof}
+                \begin{proof} We give a triangulation of $S^n$ and use the antipodal map to establish a triangulation for $P^n$: 
+                \par Let $(S^n)^+$ denote the northern hemisphere of $S^n$ and consider $S^n \subset \E^n$ and the canonical basis
+                \[\{e_1, e_2, \dots, e_n\}, \quad e_i = (0, \dots, 0, 1_i, 0, \dots , 0)\]
+                We claim that the set $X$ of $1$-simplices given by 
+                \[\sigma_i = e_ie_{i+1}, \quad 2 \leq i \leq n, \quad n+1 \sim 2,\]
+                along with the set of $1$-simplices defined by 
+                \[\sigma_{Ni} = Ne_i, \quad N = (1, \dots, 0), \quad 2 \leq i \leq n \]
+                along with the $2$-simplexes $\sigma_i$, $\sigma_{Ni}$ bound, and all their vertexes is a triangulation of the norther hemisphere of $S^n$: 
+                \par Indeed; The fact that $X$ is a simplicial complex is clear from construction and the definition of $S^n$ and by radial projection, $\pi$, we have 
+                \[\pi: |X| \rightarrow (S^n)^+ \]
+                is a homeomorphism, and so $\pi$ is a triangulation of $(S^n)^+$. Further by considering the simplexes 
+                \[\sigma_{Si} = Se_i, \quad S = (0, \dots, 1), \quad 2 \leq i \leq n \]
+                we extend $\pi$ to a map 
+                \[\Pi: |X \cup Y| \bij S^n\] 
+                It follows that $S^n$ is triangulated by $\Pi$. 
+                \par To show that $\RP^n$ is triangulable, we note that the antipodal map 
+                \[i_{-1}: S^n \rightarrow S^n\]
+                is a homeomorphism and that $\RP^n$ is defined as the identification map induced by $i_{-1}$, call it $\phi$. 
+                \par Consequently, 
+                \[  \phi\Pi : |X \cup Y| \rightarrow \RP^n \]
+                is a homeomorphism, and so a triangulation. 
+  %                  \begin{figure}
+  %                      \centering
+  %                      \includestandalone[width=\textwidth]{triangulationSphere}
+  %                      \caption{Triangulation of $S^2$.}
+  %                      \label{fig:tikz:triSphere}
+  %                  \end{figure}
                 \end{proof}
                 
             \item We show that the 'dunce hat' is triangulable, but the 'comb space' is not: 
-                \begin{proof}
+                \begin{proof} 
                 \end{proof}
             
         \end{enumerate}

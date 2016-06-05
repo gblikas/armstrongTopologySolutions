@@ -2605,21 +2605,32 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
     \section{Barycentric Subdivision}
         \begin{enumerate}[(1)]
             \item We present a visualization of the first barycentric subdivision of a $3$-Simplex: 
-                \begin{proof}
+                \begin{proof} Please see figure \hyperref[fig:baryTetra]{\ref{fig:baryTetra}}. 
+                    \begin{figure}[p]
+                        \centering
+                        \includegraphics[width = \textwidth]{baryTetra(1).jpg}
+                        \caption{The first barycentric subdivision of the standard $3$-simplex.}
+                        \label{fig:baryTetra}
+                    \end{figure}
                 \end{proof}
                 
             \item Let $\mathcal{F}$ be an open cover of $|K|$, we show the existence of a barycentric subdivision $K^r$, with the propert that given a vertex $v$ of $K^r$, there is an open set $U \in \mathcal{F}$ which contain all the simplexes of $K^r$ that have $v$ as a vertex: 
-                \begin{proof}
+                \begin{proof} This is an application of Lebesgue's lemma. 
                 \end{proof}
                 
             \item Let $L$ be a subcomplex of $K$, and let $N$ be the following collection of simplexes of $K^2$: a simplex $B$ lies in $N$ if we can find a simplex $C$ in $L^2$ such that the vertexes of $B$ and $C$ together determine a simplex of $K^2$. We show that
                 \begin{itemize}
                     \item $N$ is a subcomplex of $K^2$: 
-                        \begin{proof}
+                        \begin{proof} Let $v$ be a vertex in $N$. Since $B \subset N$, there exists a simplex 
+                        \[C \in L^2\]
+                        such that the vertexis of $B$ and $C$ together will determine a simplex of $K^2$. Then, $V$ and $C$ will determine a sub-simplex of the above simplex, $v \in N$. 
+                        \par Now, let $B'$ be  a sub-simplex of $B$. Then, $B'$ and $C$ determine a sub-simplex of the simplex determined by $B$ and $C$ in $K^2$, which implies that 
+                        \[B' \in N\]
+                        So, $N$ is a sub-complex. 
                         \end{proof}
                     
                     \item $|N|$ is a neighbourhood of $|L|$ in $|K|$: 
-                        \begin{proof}
+                        \begin{proof} Let $y \in |L|$ and let $V$ be the union of simplices in $K^2$ which contain $y$. Then, $V$ contains a neighbourhood of $y$. Since every simplex in $V$ is contained in $|N|$, $|N|$ is a neighbourhood of $|L|$ in $|K|$.   
                         \end{proof}
                 \end{itemize}
                 
@@ -2631,11 +2642,23 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
     \section{Simplicial Approximation}
         \begin{enumerate}[(1)]
             \item We use the simplicial approximation theorem to show that the $n$-sphere is simply connected for $n \geq 2$: 
-                \begin{proof}
+                \begin{proof} This is a special case of the next problem; consider 
+                \[S^1 = [0,1]/\{0,1\}\] 
                 \end{proof}
             
             \item We show that if $k < m,n$ that any map from $S^k$ to $S^m$ is null homotopic, and that the same is true of any map from $S^k$ to $S^m \times S^n$:   
-                \begin{proof}
+                \begin{proof} Let 
+                \[h: |K| \rightarrow S^k \quad g:|L| \rightarrow S^m\] be triangulations of $S^k$ and $S^m$, $k<m$. Suppose that 
+                \[f: S^k \rightarrow S^m\] is a map. Then, we have a map of complexes, 
+                \[g^{-1}\circ f \circ h : |K| \rightarrow |L|\]
+                which has a simplicial approximation 
+                \[s: |K| \rightarrow |L| \]
+                Since 
+                \[ \dim |K| < \dim |L|,\] $s$ is not onto. Further, since for any point (we think of vertexes) $p \in S^m$,
+                \[|L| - p \cong S^m - p \cong \R^m\]  
+                it follows that $s$ is null homotopic ($\R^m$ is convex). 
+                \par But, since $s \simeq g^{-1}\circ f \circ h \simeq f$ (as $g$ and $h$ are homeomorphisms), we must have $f$ is null-homotopic. 
+                \par For the second part of the proof, stereographic projection proves the result.
                 \end{proof}
                 
             \item We show that a simplicial map from $|K|$ to $|L|$ induces a simplicial from $|K^m|$ to $|L^m|$ for any $m$: 

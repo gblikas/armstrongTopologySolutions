@@ -5,7 +5,7 @@
 I will be posting the pdf for the entire solution set upon completion.
 
 To do: 
-* Update the solutions manual from Greg's tex file. 
+* ~~Update the solutions manual from Greg's tex file.~~ 
 * Breakup code into chapter sections. 
 * Fix typos
 

@@ -2262,7 +2262,13 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item We show that the 'dunce hat' is triangulable, but the 'comb space' is not: 
-                \begin{proof} 
+                \begin{proof} Please see figure \hyperref[fig:tikz:dunceHatTri]{\ref{fig:tikz:dunceHatTri}}, with the usual identifications. 
+                    \begin{figure}[p]
+                        \centering
+                        \includestandalone[width=\textwidth]{dunceHat}
+                        \caption{The second barycentric subdivision of the 'dunce cap' yeilds a triangulation.}
+                        \label{fig:tikz:dunceHatTri}
+                    \end{figure}
                 \end{proof}
             
         \end{enumerate}

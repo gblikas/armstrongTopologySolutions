@@ -2202,11 +2202,16 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{itemize}
                 
             \item We finish off the proof of lemma ($6.3$):
-                \begin{proof} There is really nothing left to finish off. We have previously show that a connect and locally path-connect space is path-connected. 
+                \begin{proof} To do this, we mimic the proof theorem ($3.30$) and show that $|K|$ is path-connected; 
+                \par Let 
+                \[Z = \bigcup_{0 < \delta < \epsilon} (B(x,\delta) \cap |K|) = \Big(\bigcup_{0 < \delta < \epsilon}\Big) \cap |K| \]
+                We claim that $|K| = Z$. Since $B(x,\delta)$ is open in $\E^n$ for each $\delta$, and $|K|$ has the subspace topology, $Z$ is open. Further, 
+                \[|K| - Z = |L| = \bigcup_{y \in |L|} B(y, \delta_y)\]
+                where $\delta_y = d(x,y) - \epsilon$. So, $|K| - Z$ is open. And, since $|K|$ is connected, $Z \neq \emptyset$, theorem ($3.20$) (page fifty-seven), implies $Z = |K|$. 
                 \end{proof}
                 
             \item If $|K|$ is a connected space, we show that nay two vertexes of $K$ can be connected by a path whose image is a collection of vertexes and edges of $K$:   
-                \begin{proof}
+                \begin{proof} 
                 \end{proof}
                 
             \item We check that $|CK|$ and $C|K|$ are homeomorphic spaces: 

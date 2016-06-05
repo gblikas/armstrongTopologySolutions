@@ -50,7 +50,7 @@
 \setcounter{chapter}{-1}
 
 \title{Armstrong Topology Solutions}
-\author{George Blikas}
+\author{George Blikas \\ Gregory Grant \\ David Hong \\ Kristy Ong \\ Grant Baker }
 \date{April 2016}
 
 
@@ -925,7 +925,10 @@
         \begin{enumerate}[(1)]
             \item This is left to the reader as an exercise.
             
-            \item This is left to the reader as an exercise.
+            \item Let $S\supseteq S_1\supseteq S_2\supseteq \cdots$ be a nested sequence of squares in the plane whose diameters tend to zero as we proceed along the sequence. We prove that the intersection of all these squares consists of exactly one point: 
+                \begin{proof} Each $S_n$ is a square so is of the form $I_n\times J_n$ for closed one-dimensional intervals.  And $S_n\supset S_{n+1}$ means $I_n\supset I_{n+1}$ and $J_n\supset J_{n+1}$.  Thus we can apply the one-dimensional argument given above to the $I_n$'s and $J_n$'s.  We get a sequence of points $x_n$ converging to $p$ and $y_n$ converging to $q$. So $(x_n,y_n)\in S_n$ therefore converges to $(p,q)$ which must be in $S_n$ for all $n$ since $S_n$ is closed, so $(p,q)\in\bigcap_{n=1}^\infty S_n$. Similarly the one-dimensional argument shows there can be only a unique $x$ and $y$ coordinate of anything in  $\bigcap_{n=1}^\infty S_n$.  Thus,  
+                \[\bigcap_{n=1}^\infty S_n=\{(p,q)\}\]
+                \end{proof}
             
             \item We use the Heine-Borel theorem to show that an infinite subset of a closed interval must have a limit point: 
                 \begin{proof} By 'infinite', we assume that the author means that the cardinality of the set is non-finite and countable. We proceed by contradiction: 
@@ -964,9 +967,32 @@
     
     \section{Properties of Compact Spaces}
         \begin{enumerate}[(1)]
-            \item This is left to the reader as an exercise.
+            \item We determine which of the following are compact: 
+                \begin{itemize}
+                    \item $\Q \subset \E$: 
+                        \begin{proof} By theorem ($3.9$), a compact subset of $\E$ is closed and bounded, $\Q$ is neither.
+                        \end{proof}
+                        
+                    \item $S^n$ with a finite number of points removed: 
+                        \begin{proof} $S^n-\{p_1,\dots p_n\}$ is not compact; by theorem ($3.9$), a compact subset of $\mathbb R^{n+1}$ is closed and bounded.  Since $S^n$ lives in $\mathbb R^{n+1}$, the theorem applies.  $S^n$ is bounded, but $S^n-\{p_1,\dots, p_n\}$ is not closed, because one can find a sequence in $S^n$ that converges to any of the removed points.
+                        \end{proof}
+                        
+                    \item the torus with an open disc removed: 
+                        \begin{proof} Yes, the torus with an open disc removed is compact.  The torus can be embedded in $\mathbb R^3$ as a bounded subset.  And since we are removing an open disc, what remains is a closed subset of the torus and therefore (by chapter $2$, problem $7$, page $31$) is a closed subset of $\mathbb R^3$. Therefore, by theorem ($3.9$), it is compact.
+                        \end{proof}
+                        
+                    \item the Klein Bottle: 
+                        \begin{proof} The Klein bottle is compact.  It is the continuous image of a closed finite rectangle.  By theorem ($3.9$) a closed finite rectangle is compact. So by theorem ($3.4$) the Klein bottle is compact.    Alternatively, the Klein bottle can be embedded into $\mathbb R^4$ as a closed and bounded set.  Therefore, it is compact. 
+                        \end{proof}
+                        
+                    \item the M\"obius strip with its boundary circles removed: 
+                        \begin{proof} The M\"obius strip with its boundary circle removed is not compact.  Think of the strip as a subset of $\mathbb R^3$.  Then one can find a sequence of points in the strip that converge to a point on the boundary, which has been removed.  Since compact sets must be closed in $\mathbb R^3$, the M\"obius with boundary removed cannot be compact.
+                        \end{proof}
+                \end{itemize}
             
-            \item This is left to the reader as an exercise. Hint: Consider the identity map on $\R$, and $\R$, with the discrete and indiscreet topologies, respectively.  
+            \item We show that the Hausdorff condition cannot be relaxed in theorem ($3.7$): 
+                \begin{proof} Let $X=\{a,b\}$ a set with two points.  Let $X_1$ be $X$ with the discrete topology (so every subset is open).  Let $X_2$ be $X$ with the indiscreet topology (in other words the only open sets are $X$ and $\emptyset$.  Then $X_2$ is not Hausdorff.  The function $f:X_1\rightarrow X_2$ given by $f(a)=a$, $f(b)=b$ is one-to-one, onto and continuous.  But $f^{-1}$ is not continuous, so $f$ is not a homeomorphism.
+                \end{proof}
             
             \item We show that Lebesgue's Lemma fails for $\E^2$: 
                 \begin{proof}Let $B(0,1)$ be the open ball of radius one, centered around the origin. And, for each $p \neq 0$ in $\E^2$, let $B(p, \nicefrac{1}{||p||_2})$ be the open ball centered at $p$ and radius $\nicefrac{1}{||p||_2}$. Now, let $\delta > 0$, and let $n \in \mathbb{N}$ be such that 
@@ -1013,7 +1039,10 @@
                 \begin{proof} Consider $\R = X$, and $\tau = \{\R, \emptyset, (-a,a) : a > 0\}$. Then, $\{0\}$ is clearly compact in $X$, and it is closed. But, $\overline{\{0\}} = \R$ as each $(-a, a)^c = (-\infty, -a] \cup [a, \infty)$ and $0 \notin (-\infty, -a] \cup [a, \infty)$. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item We show that the real numbers with the finite complement topology are compact, and that the reals with the half-open topology is not compact: 
+                \begin{proof} FC: The real numbers with finite-complement topology is compact.  Let $\beta=\{U_\alpha\}$ be an open cover.  Then let $U_{\alpha_0}$ be an element of $\beta$.  Then there are only a finite number $n$ of points that are not in $U_{\alpha_0}$.  We only need $n$ more elements of $\beta$ to cover everything.
+                \par HO: The real numbers with the half-open interval topology is not compact.  Let $\beta$ be the open cover $\{[n,n+1)\mid n\in\mathbb Z\}$.  Then $\beta$ clearly does not have a finite subcover.
+                \end{proof}
             
             \item Let $f: X \rightarrow Y$ be a closed map such that $f^{-1}(y)$, $y \in Y$ is a compact subset of $X$. We show that $f^{-1}[K]$ is compact whenever $K$ is compact in $Y$: 
                 \begin{proof} This follows from the fact that 
@@ -1053,7 +1082,33 @@
                 \begin{proof} Let $\Ocal$ be as given. Then, since $X$ is locally compact, there exists a compact neighbourhood $V$, such that $x \in V$. By the subspace topology, it follows that $x \in V \cap \Ocal$ and $\Ocal \cap V$ is open in $V$. Further, as $V$ is compact, it is closed, by theorem 3.6. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise.
+            \item Let $X$ be a locally compact Hausdorff space which is not compact.  Form a new space by adding one extra point, usually denoted by $\infty$, to $X$ and taking the open sets of $X\cup\{\infty\}$ to be those of $X$ together with sets of the form $\{X-K\}\cup\{\infty\}$, where $K$ is a compact subset of $x$.  We check the axioms for a topology, and show that $X\cup\{\infty\}$ is a compact Hausdorff space which contains $X$ as a dense subset: 
+                \begin{proof}  Let $\beta$ be the topology on $X$.  Define 
+                \[\beta'=\beta\cup\{U\cup\{\infty\}\mid U\subseteq X\text{ and }U^c\text{ is compact }\}\]
+                Clearly, $\emptyset\in\beta'$ and since $\emptyset$ is compact, 
+                \[ X \cup \{\infty\}\in\beta'\]
+                It remains to show $\beta'$ is closed with respect to arbitrary unions and finite intersection: 
+                    \begin{itemize}
+                        \item Arbitrary Unions: Let 
+                        \[ \{U_\alpha\}_{\alpha\in A}\subseteq\beta' \subset \beta'\] 
+                        We must show $\cup_{\alpha\in A}U_\alpha\in \beta'$;
+                        Write 
+                            \begin{align*}
+                                A & = A_1\cup A_2 \\
+                                \alpha\in A_1 & \Rightarrow \infty\not\in U_\alpha \\ 
+                                \alpha\in A_2 & \Rightarrow \infty\in U_\alpha
+                            \end{align*}  
+                        Then, 
+                        \[\{U_\alpha\}_{\alpha\in A}=\{U_\alpha\}_{\alpha\in A_1}\cup\{U_\alpha\}_{\alpha\in A_2}\]
+                        If $A_2=\emptyset$, then 
+                        \[\cup_{\alpha\in A} U_\alpha=\cup_{\alpha\in A_1} U_\alpha\in\beta\subseteq\beta'\]  
+                        If $A_2\not=\emptyset$, then we must show that 
+                        \[\left(\cup_{\alpha\in A} U_\alpha\right)^c\] is compact.  
+                        \par For $\alpha\in A_2$, $U_{\alpha}^c$ is compact: Since $X$ is Hausdorff $U_{\alpha}^c$ is closed (theorem ($3.6$). Thus 
+                        \[\cap_{\alpha\in A_2}U_\alpha^c\] is closed.  Now, fix any $\alpha'\in A_2$.  Then $\cap_{\alpha\in A_2}U_\alpha^c$ is a closed subset of $U_{\alpha'}^c$ and so is compact (theorem $3.5$).  Thus \[\left(\cup_{\alpha\in A_2}U_\alpha\right)^c\] is compact.  Thus,
+                        \[\left(\cup_{\alpha\in A}U_\alpha\right)^c=\left((\cup_{\alpha\in A_1} U_\alpha) \cup (\cup_{\alpha\in A_2}U_\alpha)\right)^c=\left(\cup_{\alpha\in A_1} U_\alpha\right)^c\cap\left(\cup_{\alpha\in A_2} U_\alpha\right)^c=\left(\cap_{\alpha\in A_1} U_\alpha^c\right)\cap\left(\cap_{\alpha\in A_2} U_\alpha^c\right)\], which is a closed subset of the compact set $\cap_{\alpha\in A_2} U_\alpha^c$ and therefore is compact.
+                    \end{itemize}
+                \end{proof}
             
             \item We prove that $\E^n \cup \{\infty \}$ is homeomorphic to $S^n$:
                 \begin{proof} As before \footnote{reference this}, there exists a homeomorphism 

@@ -2239,11 +2239,11 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 Then, as the intersection of convex sets is convex, we have 
                 \[|K| \cap |L| = \bigcup_{\substack{\sigma \in |K| \\ \sigma' \in |L|}} (\sigma \cap \sigma')\]
                 is convex and each $\sigma \cap \sigma'$ is convex. 
-                \par Now, as $\dim K,  \dim L < N < \infty$, by the well-ordering principle, we start with the smallest dimensional intersection of simplices, say $n \in \N$. Pick any such (non-empty) intersection and label it $\kappa^n_1$. Problem $3$, shows that $\kappa^n_1$ is edge connected and further, as each simplex is completely determined by its vertexes, $\kappa^n_1$ as some maximally connected tree and connectivity of $|\kappa^n_1|$ follows.  
-                \par Then, let $L^m$ be the $m$-dimensional subcomplex of $L$. We proceed by induction on $m$ and show that $|K| \cap |L^m|$ is a polyhedron, $n \leq m \leq N$:
-                \par But this is clear, as for each $m$, 
-                \[L^m = \bigcup_{\substack{\sigma \in |L| \\ \dim \sigma \leq m}} \sigma\]
-                and $K \cap L^{m+1}$ has a simplicial decomposition that agrees with the give one on $K \cap L^m$. 
+                \par Now, as $\dim K,  \dim L < N < \infty$, by the well-ordering principle, we start with the smallest dimensional intersection of simplices, say $n \in \N$. Pick any such (non-empty) intersection and label it $\kappa^n_1$. Problem $3$, shows that $\kappa^n_1$ is edge connected and further, as each simplex is completely determined by its vertexes, $\kappa^n_1$ determines some maximally connected, convex, compact subset of $\E^n$.   
+                %\par Then, let $L^m$ be the $m$-dimensional subcomplex of $L$. We proceed by induction on $m$ and show that $|K| \cap %|L^m|$ is a polyhedron, $n \leq m \leq N$:
+                %\par But this is clear, as for each $m$, 
+                %\[L^m = \bigcup_{\substack{\sigma \in |L| \\ \dim \sigma \leq m}} \sigma\]
+                %and $K \cap L^{m+1}$ has a simplicial decomposition that agrees with the give one on $K \cap L^m$. 
                 \par To conclude the proof, we extend this process to some other intersections 
                 \[\kappa^n_1, \kappa^n_2, \kappa^n_2, \dots, \kappa^n_q, \quad \dim \kappa^n_i = \dim \kappa^n_j = n\]
                 This method can be extended to the next higher' dimension $n+1$ to show that 

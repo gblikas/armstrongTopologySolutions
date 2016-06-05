@@ -35,6 +35,7 @@
 \DeclareMathOperator*{\Stab}{\text{stab}}
 \DeclareMathOperator*{\card}{\text{card}}
 \DeclareMathOperator*{\Star}{\text{star}}
+\DeclareMathOperator*{\car}{\text{carrier}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -2662,15 +2663,24 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item We show that a simplicial map from $|K|$ to $|L|$ induces a simplicial from $|K^m|$ to $|L^m|$ for any $m$: 
-                \begin{proof}
+                \begin{proof} Let $s: |K| \rightarrow |L|$ be the simplicial map. Then, for $K^1$, $L^1$, the barycenter of each simplex of $K$ and each simplex of $L$ can be associated via $s$; since the vertexes of $K$ are mapped to vertexes of $L$ and extended linearly, each simplex of $K$ is associated with a simplex in $L$. So, each barycentre living in a simplex of $K$ can be mapped to a barycenter of the associated simplex of $L$, via $s$ and extended linearly. Then, this new function, $s^1: |K^1| \rightarrow |L^1|$ is continuous. 
+                \par Far any iteration, we repeat this process, extending each barycentre linearly. To obtain a simplicial map, 
+                \[s^m: |K^m| \rightarrow |L^m|\]
                 \end{proof}
             
             \item Suppose that $s: |K^m| \rightarrow |L|$ simplicially approximates $f: |K^m| \rightarrow |L|$, and $t: |L^n| \rightarrow |M|$ simplicially approximates $g: |L^n| \rightarrow M$. We determine if $ts: |K^{m+n}| \rightarrow |M|$ is always a simplicial approximation for $gf: |K^{m+n}| \rightarrow |M|$:   
-                \begin{proof}
+                \begin{proof} This is essentially the statement that the composition of simplicial maps is simplicial. We claim that the answer is yes:
+                \par A small induction argument, using lemma ($6.4$) page one-hundered-twenty-six, shows that for $m \geq 0$, $|K^{m+n}| = |K|$. Now, let $x \in |K^{m+n}| = |K|$. Then, 
+                \[(g \circ f)(x) = g(f(x)) \]
+                and, by definition, we have that $s(x) \in \car f(x)$. This implies that $t(s(x)) \in \car g(f(x))$, as $t$ is simplicial. However, by definition we then have $g(f(x)) \in t(A)$, for some simplex $A$ of $L^n$. But then, by definition we have that $ts$ simplicially approximates $gf$. 
                 \end{proof}
                 
             \item We use the simplicial approximation theorem to show that the set of homotopy classes of maps from one polyhedron to another is always countable: 
-                \begin{proof}
+                \begin{proof} By the simplicial approximation theorem, we know that any map 
+                \[f: |K| \rightarrow |L|\]
+                is homotopic to a simplicial map, 
+                \[s: |K^m| \rightarrow |L|\]
+                But, by definition, there are only a finite number of such choices for $s$, yet $m \in \N$, and the result follows. 
                 \end{proof}
                 
             \item This is left to the reader as an exercise. 

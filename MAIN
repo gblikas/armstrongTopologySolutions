@@ -45,12 +45,18 @@
 \newcommand\inner[2]{\langle #1, #2 \rangle}
 \newcommand\innerone[1]{\langle #1 \rangle}
 
+%NEW ENVIRONMENTS
+\newenvironment{acknowledgements}%
+    {\cleardoublepage\thispagestyle{empty}\null\vfill\begin{center}%
+    \bfseries Acknowledgements\end{center}}%
+    {\vfill\null}
+    
 %counters and reformating: 
 \setcounter{section}{-1}
 \setcounter{chapter}{-1}
 
 \title{Armstrong Topology Solutions}
-\author{George Blikas \\ Gregory Grant \\ David Hong \\ Kristy Ong \\ Grant Baker }
+\author{George Blikas \\ Gregory Grant \\ David Hong \\ Grant Baker \\ Kristy Ong  }
 \date{April 2016}
 
 
@@ -62,6 +68,10 @@
 \maketitle
 \thispagestyle{empty} 
 \tableofcontents
+
+\begin{acknowledgements}
+George B: Much thanks to all the contributors of this book. Special thanks goes to Gregory Grant, and particularly in helping establish chapter \hyperref[chapter:intro]{\ref{chapter:intro}}, section \hyperref[sec:productspaces]{\ref{sec:productspaces}}, and problems $10$, $11$, and $12$ of section $4.2$, all of which greatly sped-up the processes of this project. 
+\end{acknowledgements}
 
 \chapter{Preliminaries}
 \section{Definitions}
@@ -210,7 +220,7 @@
         \end{enumerate}
     
     
-    \subsection{Topological Groups}
+    \subsection{Topological Groups} \label{chap:sec:sub:topologicalgroups}
         \begin{enumerate}[(1)]
         
             \item Suppose that $(G, \tau, *)$ is a topological group. Fixing $x \in G$, we show that $x{\Ocal}\in \tau$ if, and only if, ${\Ocal} \in \tau$: 
@@ -292,7 +302,7 @@
         \end{enumerate}
 
 \clearpage
-\chapter{Introduction}
+\chapter{Introduction} \label{chapter:intro}
     \section{Euler's Theorem}
     There are no exercises listed for this section.
     \section{Topological Equivalence}
@@ -1101,13 +1111,32 @@
                         Then, 
                         \[\{U_\alpha\}_{\alpha\in A}=\{U_\alpha\}_{\alpha\in A_1}\cup\{U_\alpha\}_{\alpha\in A_2}\]
                         If $A_2=\emptyset$, then 
-                        \[\cup_{\alpha\in A} U_\alpha=\cup_{\alpha\in A_1} U_\alpha\in\beta\subseteq\beta'\]  
+                        \[\bigcup_{\alpha\in A} U_\alpha=\bigcup_{\alpha\in A_1} U_\alpha\in\beta\subseteq\beta'\]  
                         If $A_2\not=\emptyset$, then we must show that 
-                        \[\left(\cup_{\alpha\in A} U_\alpha\right)^c\] is compact.  
+                        \[\left(\bigcup_{\alpha\in A} U_\alpha\right)^c\] is compact.  
                         \par For $\alpha\in A_2$, $U_{\alpha}^c$ is compact: Since $X$ is Hausdorff $U_{\alpha}^c$ is closed (theorem ($3.6$). Thus 
-                        \[\cap_{\alpha\in A_2}U_\alpha^c\] is closed.  Now, fix any $\alpha'\in A_2$.  Then $\cap_{\alpha\in A_2}U_\alpha^c$ is a closed subset of $U_{\alpha'}^c$ and so is compact (theorem $3.5$).  Thus \[\left(\cup_{\alpha\in A_2}U_\alpha\right)^c\] is compact.  Thus,
-                        \[\left(\cup_{\alpha\in A}U_\alpha\right)^c=\left((\cup_{\alpha\in A_1} U_\alpha) \cup (\cup_{\alpha\in A_2}U_\alpha)\right)^c=\left(\cup_{\alpha\in A_1} U_\alpha\right)^c\cap\left(\cup_{\alpha\in A_2} U_\alpha\right)^c=\left(\cap_{\alpha\in A_1} U_\alpha^c\right)\cap\left(\cap_{\alpha\in A_2} U_\alpha^c\right)\], which is a closed subset of the compact set $\cap_{\alpha\in A_2} U_\alpha^c$ and therefore is compact.
+                        \[\bigcap_{\alpha\in A_2}U_\alpha^c\] is closed.  Now, fix any $\alpha'\in A_2$.  Then $\cap_{\alpha\in A_2}U_\alpha^c$ is a closed subset of $U_{\alpha'}^c$ and so is compact (theorem $3.5$).  Thus \[\left(\bigcup_{\alpha\in A_2}U_\alpha\right)^c\] is compact.  Thus,
+                        \[\left(\bigcup_{\alpha\in A}U_\alpha\right)^c = \left(\bigcap_{\alpha\in A_1} =  U_\alpha^c\right)\bigcap\left(\bigcap_{\alpha\in A_2} U_\alpha^c\right)\], which is a closed subset of the compact set $\cap_{\alpha\in A_2} U_\alpha^c$ and therefore is compact.
+                        
+                        \item Finite intersections: Now, let 
+                        \[\{U_\alpha\}_{\alpha\in A}\subseteq\beta'\] be a finite subset of $\beta'$. As above, decompose $A$ into $A_1\cup A_2$.  If $A_1 \neq \emptyset$, then 
+                        \[\infty\in\left(\bigcap_{\alpha\in A}U_\alpha\right)\] And, 
+                        \[\left(\bigcap_{\alpha\in A} U_\alpha\right)^c=\left(\bigcap_{\alpha\in A_2}U_\alpha\right)^c=\bigcup_{\alpha\in A_2}U_\alpha^c\] is a finite union of compact sets and therefore compact.  
+                        \par If $A_1 \neq \emptyset$, then 
+                        \[ \infty\not\in\left(\bigcap_{\alpha\in A}U_\alpha\right)\]  and 
+                        \[\left(\bigcap_{\alpha\in A}U_\alpha\right)^c = \left(\bigcup_{\alpha\in A_1} U_\alpha^c\right) \cup \left(\bigcup_{\alpha\in A_2}U_\alpha^c\right)\]
+                        \par These are all finite unions, thus this last expression is the union of a closed and a compact and is therefore closed.  Thus $\left(\bigcap_{\alpha\in A}U_\alpha\right)^c$ is closed.  Thus $\left(\bigcap_{\alpha\in A}U_\alpha\right)$ is open.
                     \end{itemize}
+                    
+                \par $X \cup \{\infty\}$ is compact: Let $\{U_\alpha\}$ be an open cover of $X$.  Then $\exists$ $\alpha_0$ such that $\infty\in U_{\alpha_0}$.  Since $U_{\alpha_0}^c$ is compact, and $\{U_\alpha\}$ is an open cover of $U_{\alpha_0}^c$, there are $U_{\alpha_1},\dots,U_{\alpha_n}$ such that 
+                \[U_{\alpha_0}^c\subseteq U_{\alpha_1}\cup\dots\cup U_{\alpha_n}\]
+                 But, then 
+                \[U_{\alpha_0},U_{\alpha_1},\dots,U_{\alpha_n}\] 
+                is an open cover of $X\cup\{\infty\}$ and so we have found a finite subcover.
+                
+                \par  We now show $X\cup\{\infty\}$ is Hausdorff.  Let $x,y\in X\cup\{\infty\}$.  If $x,y\in X$ then since $X$ itself is Hausdorff we know there are open sets that separate them.  So suppose without loss of generality that $y=\infty$.  Since $X$ is locally compact there is an open set $U\subseteq X$ and a compact set $K\subseteq X$ with $x\in U\subseteq K$.  Then $\infty\in K^c$ is an open set in $X\cup\{\infty\}$ and $K^c\cap U=\emptyset$.
+                
+                \par  It remains to show $X$ is dense in $X\cup\{\infty\}$.  The only way this is not true is if $\{\infty\}$ is an open set.  But $\{\infty\}^c=X$ which was assumed to be {\it not} compact.
                 \end{proof}
             
             \item We prove that $\E^n \cup \{\infty \}$ is homeomorphic to $S^n$:
@@ -1124,11 +1153,13 @@
                 \[X_1 = [0,1) \cup (1/2, 1] \quad X_2 = [0,1) \]
                 and the result follows. 
                 \end{proof}
+                
+            
     
         \end{enumerate}
         
     
-    \section{Product Spaces}
+    \section{Product Spaces} \label{sec:productspaces}
     \begin{enumerate}[(1)]
         \item This is left to the reader as an exercise.
         
@@ -1177,7 +1208,11 @@
             \[ [0,1) \times [0,1) \simeq_{h} D_1^2 \simeq D_2^2 \simeq_{h} [0,1] \times [0,1) \]
             \end{proof}
             
-        \item This is left to the reader as an exercise.
+        \item Let $x_0\in X$ and $y_0\in Y$.  We prove that the functions $f:X\rightarrow X\times Y$, $g:Y\rightarrow X\times Y$ defined by $f(x)=(x,y_0)$, $g(y)=(x_0,y)$ are embeddings (as defined in problem $14$): 
+            \begin{proof} By theorem ($3.13$), $f$ is an continuous iff $p_1\circ f$ and $p_2\circ f$ are continuous.  Thus, since $p_1 \circ f(x)=x$ (the identity function) and $p_2\circ f(x)=y_0$ (a constant function), it follows that $f$ is continuous.  Now $f$ is clearly one-to-one and onto its image 
+            \[ f(X)\subseteq X\times Y\]
+            Note that $p_1|_{f(X)}$ is the inverse of $f$ on $f(X)$.  Since $p_1$ is continuous, it follows that $p_1|_{f(X)}$ is continuous on $f(X)$.  Thus $f$ is a homeomorphism.  The proof that $g$ is a homeomorphism is basically identical.
+            \end{proof}
         
         \item The first part is trivial. So, we show that $X$ is Hausdorff if, and only if, $\Delta(\{X\})$ is closed in $X \times X$: 
             \begin{proof} 
@@ -1198,7 +1233,17 @@
         
         \item This is left to the reader as an exercise. Hint: Consider $f: \R^+ \rightarrow \R$, given by $f(x) = \frac{1}{x}$ and use the sequential criterion for closure. 
         
-        \item This is left to the reader as an exercise. Hint: This is the obvious topology. 
+        \item Given a countable number of spaces $X_1, X_2,\dots$, a typical point of the product $\Pi X_i$ will be written $x=(x_1,x_2,\dots)$.  The {\it product topology} on $\Pi X_i$ is the smallest topology for which all of the projections $p_i:\Pi X_i\rightarrow X_i$, $p_i(x)=x_i$, are continuous. We construct a base for this topology from the open sets of the spaces $X_1, X_2,\dots$: 
+            \begin{proof} Define the base $\beta$ for a topology on $\Pi X_i$ by 
+            \[ \beta=\{\emptyset\}\cup\{U_1\times U_2\times \cdots \mid U_i\in X_i\} \] is open, and $U_i=X_i$ for all but finitely many $i\}$.  Clearly, 
+            \[\emptyset\in\beta \quad \Pi X_i\in\beta\]
+            It is also obvious that $\beta$ is closed under finite intersection since 
+            \[ \bigcap_\alpha(A_\alpha\times B)=(\bigcap_\alpha A_\alpha)\times B\]
+            \par Now let $U\subseteq X_i$. Then, 
+            \[ p_i^{-1}(U)=X_1\times\cdots\times X_{i-1}\times U\times X_{i+1}\times X_{i+2}\times\cdots\in\beta\] 
+            Thus, $p_i$ is continuous.
+            \par Now, suppose $B$ is the smallest topology for which $p_i$ is continuous.  Then for $U\subseteq X_i$, \[p_i^{-1}(U)=X_1\times\cdots\times X_{i-1}\times U\times X_{i+1}\times X_{i+2}\times\cdots\] must be in $B$. Since any element of $\beta$ is a finite intersection of such sets, it follows that $\beta\subseteq B$.  Since $B$ is the smallest topology for which $p_i$ is continuous for all $i$, and the topology generated by $\beta$ is contained in $B$, it must be that the topology generated by $\beta$ equals $B$.
+            \end{proof}
         
         \item This is left to the reader as an exercise. Hint: Consider the function $f: \R^+ \rightarrow \R$ given by $f(x) = \frac{x}{1+x}$.
         
@@ -1235,9 +1280,20 @@
                 is connected. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: Use exercise eleven, chapter two, page thirty two. 
+            \item Give the real numbers the finite-complement topology. We determine the connected components of the resulting space, and answer the same question for the half-open interval topology: 
+                \begin{proof} $ $\newline
+                    \begin{itemize}
+                        \item FC: The entire space is connected, since no set can be both open and closed.
+                        
+                        \item HO: The space is totally disconnected.  Let $x<y$.  Then by chapter $2$, problem $11$ every set $[a,b)$ is both open and closed. Thus, $[x,y)$ contains $x$ and not $y$, and $[x,y)$ and $[x,y)^c$ are both open.  Thus, $x$ and $y$ are not in the same connected component. Since $x$ and $y$ are arbitrary, connected components cannot contain more than one point.
+                    \end{itemize}
+                \end{proof}
             
-            \item This is left to the reader as an exercise. Hint: Use theorem ($3.27$), page sixty. 
+            \item If $X$ has only a finite number of components, we show that each component is both open and closed and find a space none of whose components are open sets: 
+                \begin{proof} $X = C_1\cup\cdots\cup C_n$ a disjoint union of connected components.  By thereom ($3.27$), each $C_i$ is closed.  Since a finite union of closed sets is closed, $X - C_i=\cup_{j\not=i}C_j$ is closed.  Thus, 
+                \[C_i= \left(\bigcup_{j\not=i}C_j\right)^c\] is open.  
+                \par The space $\mathbb Q$ with the natural metric topology is totally disconnected, but points in $\mathbb Q$ are not open sets.
+                \end{proof}
             
             \item (Intermediate Value Theorem) We show that if $f: [a,b] \rightarrow \E$ is a map such that $f(a) < 0$ and $f(b) > 0$, then there exists some $c \in [a,b]$ for which $f(c) = 0$: 
                 \begin{proof} By theorem ($3.21$), page fifty-eight, $f([a,b]) \subset \E$ is connected. By theorem ($3.19$), page fifty-seven, $f([a,b])$ is an interval. In particular, $f([a,b]) = [f(a'), f(b')]$, where $f(a')$, $f(b')$, are the minimum and maximum of $f$ on $[a,b]$. Thus, $[f(a), f(b)] \subset [f(a'), f(b')] $, and $0 \in [f(a), f(b)]$. Thus, there exists $c \in [a,b]$, $f(c) = 0$. 
@@ -1340,9 +1396,16 @@
                 \par To see that (b) and (c) are equivalent, let $i: S^n \rightarrow B^n$ be the natural embedding, and $g$ is quotient map given in (c). Then, again, by corollary ($4.4$), $g \circ i$ is an identification map. Thus, (b) and (c) are equivalent. 
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: It is $\RP^2$. 
+            \item We determine which space do we obtain if we take a M\"obius strip and identify its boundary circle to a point: 
+                \begin{proof} We obtain the projective plane $\RP^2$.  To see this, let $R$ be a rectangle as in Fig.\ 4.1 (page 66).  Instead of first identifying the right and left edges to get a M\"obius and then collapsing the boundary circle, we first collapse the top and bottom borders to two points $a$ and $b$, then identify the (image of) the right and left edges as they would have been identified to form a M\"obius from $R$.  This operation identifies the two points $a$ and $b$.  So after these two identifications we end up with the same space.  So by this argument we can do the identifications in the opposite order.   Proceeding in this way, we first collapse the top horizontal border to one point and the bottom border to another point.  From this identification we get a space homeomorphic to a disc $D$.  The identification map $f:R\rightarrow D$ can be seen as taking the left border of $R$ to the left semi-circle of the boundary of $D$ and the right border to the right semi-circle of the boundary of $D$.  Then we follow $f$ with the identification map from $D$ to $\RP^2$ given in Problem 1 above.  The result is an identification map from $D$ to $\RP^2$ that (since it identifies antipodal points on the boundary) identifies the same two points on the two boundary semicircles that came from two points in $R$ that would be identified if we formed the M\"obius first.  Thus the identification space is homeomorphic to the image $\RP^2$.
+                \end{proof}
             
-            \item This is left to the reader as an exercise. Hint: Consider the canonical map from $[0,1]$ to $S^1$, and $[0,1) \subset [0,1]$. 
+            \item Let $f:X\rightarrow Y$ be an identification map, let $A$ be a subspace of $X$ and give $f(A)$ the induced topology from $Y$. We show that the restriction $f|_A:A\rightarrow f(A)$ need not be an identification map: 
+                \begin{proof} Let $X=[0,1]$ and $Y=S^1\subset \mathbb C$ and let $f:X\rightarrow Y$ be given by 
+                \[ x\mapsto e^{2\pi i x}\]
+                Then, by corollary ($4.4$), $f$ is an identification map because $X$ is compact and $Y$ is Hausdorff.  
+                \par Let $A=[0,1)$. Then, $f|_A(A)=Y$, but $f|_A$ does not identify any points.  Thus, if $f|_A$ were an identification map it would (by theorem ($4.2$)) induce a homeomorphism from $A$ to $Y$. But we know $f$ is not a homeomorphism\footnote{See section $1.4$, example $3$, page $14$}.
+                \end{proof}
             
             \item With the terminology from the previous problem, we show that if $A$ is open in $X$, and if $f$ is an open map then $f|_A : A \rightarrow f(A)$ is an identification map: 
                 \begin{proof} This is theorem ($4.3$), page sixty-seven. 
@@ -1421,11 +1484,91 @@
                 Thus, by definition of identification map, $f'(\Ocal)$ is open in $Y'$. This concludes the proof.
                 \end{proof}
                 
-            \item This is left to the reader as an exercise. Hint: See attached solution. 
+            \item Let $S^2$ be the unit sphere in $\mathbb E^3$ and define $f:S^2\rightarrow \mathbb E^4$ by $f(x,y,z)=(x^2-y^2,xy,xz,yz)$. We show that $f$ induces an embedding of the projective plane in $\mathbb E^4$: 
+                \begin{proof}  Let $X=\text{im}(f)\subseteq\mathbb E^4$.  Since $\mathbb E^4$ is Hausdorff and a subspace of a Hausdorff space is Hausdorff, $X$ is Hausdorff.  And $S^2$ is compact.  Thus by Corollary 4.4 $f:S^2\rightarrow X$ is an identification map.  By the example ``Projective spaces (a)" on page 71, $\mathbb P^2$ is $S^2$ with antipodal points identified.  Thus by Theorem 4.2 (a) we will be done if we show $f$ identifies antipodal points (and no others).  It clearly does identify antipodal points, $f(x,y,z)=f(-x,-y,-z)$.  So suppose $f(x_1,y_1,z_1)=f(x_2,y_2,z_2)$.  We must show $(x_1,y_1,z_1)=(x_2,y_2,z_2)$ or $(x_1,y_1,z_1)=(-x_2,-y_2,-z_2)$.  We have
+                    \begin{equation}
+                        x_1^2-y_1^2=x_2^2-y_2^2
+                    \end{equation}
+                    \begin{equation}
+                        x_1y_1=x_2y_2
+                    \end{equation}
+                    \begin{equation}
+                        x_1z_1=x_2z_2
+                    \end{equation}
+                    \begin{equation}
+                        y_1z_1=y_2z_2
+                    \end{equation}
+                From (3) and (4) it follows that
+                    \begin{equation}
+                        (x_1^2-y_1^2)z_1^2=(x_2^2-y_2^2)z_2^2
+                    \end{equation}
+                    
+                \par\underline{case 1}: $x_1^2-y_1^2 \neq 0$.
+                
+                \par Combining (1) and (5) we get $z_1^2=z_2^2$.  Thus $z_1=\pm z_2$.  If $z_1=z_2$, then
+                
+                {\it case a:} $z_1\not=0$.  Then (3) and (4) imply $x_1=x_2$ and $y_1=y_2$.  If $z_1=-z_2$ then (3) and (4) imply $x_1=-x_2$ and $y_1=-y_2$.  Thus either $(x_1,y_1,z_1)=(x_2,y_2,z_2)$ or $(x_1,y_1,z_1)=(-x_1,-y_1,-z_1)$.\\
+                
+                {\it case b:} $z_1=0$.  Then $x_1^2+y_1^2=1$.  So one of $x_1$ or $y_1$ must be different from zero.  Assume wlog that $x_1\not=0$.   
+                Now $x_1^2+y_1^2=1=x_2^2+y_2^2$ together with (1) implies $2x_1^2=2x_2^2$.  Thus $x_1=\pm x_2$.  If $x_1=x_2$ then (2) implies $y_1=y_2$, thus $(x_1,y_1,z_1)=(x_2,y_2,z_2)$.  If $x_1=-x_2$ then (2) implies $y_1=-y_2$, thus $(x_1,y_1,z_1)=(-x_2,-y_2,-z_2)$.  
+                \\
+                
+                \par\underline{case 2}: $x_1^2-y_1^2=0$.\\
+                
+                \par Suppose $x_1=0$.  Then $y_1=0$, and combining (1) and (2) it follows that $x_2=0$ and $y_2=0$.  Now if $x_1=y_1=0$ then necessarily $z_1=\pm 1$.  Likewise $z_2=\pm1$.  Thus in this case either $(x_1,y_1,z_1)=(x_2,y_2,z_2)$ or $(x_1,y_1,z_1)=(-x_1,-y_1,-z_1)$.  By symmetry, the same thing happens if $y_1=0$, $x_2=0$ or $y_2=0$.\\
+                
+                \par Therefore we have reduced to the case that none of $x_1,x_2,y_1,y_2$ are zero.  By assumption $x_1=\pm y_1$ and from (1) it follows that $x_2=\pm y_2$. It then follows from (2) that $x_1=\pm x_2$.\\
+                
+                {\it case a:}  $x_1=x_2$.  Then (2) implies $y_1=y_2$ and (4) implies $z_1=z_2$.  Thus $(x_1,y_1,z_1)=(x_2,y_2,z_2)$.\\
+                
+                {\it case b:}  $x_1=-x_2$.   Then (2) implies $y_1=-y_2$ and (4) implies $z_1=-z_2$.  Thus $(x_1,y_1,z_1)=(-x_2,-y_2,-z_2)$.
+                \end{proof}
             
-            \item This is left to the reader as an exercise. See attached solution. 
+            \item We show that the function $f:[0,2\pi]\times[0,\pi]\rightarrow\mathbb E^5$ defined by $f(x,y)=(\cos x, \cos 2y, \sin 2y, \sin x \cos y, \sin x \sin y)$ induces an embedding of the Klein bottle in $\mathbb E^5$: 
+                \begin{proof} Let $Y=[0,2\pi]\times[0,\pi]$.
+                Let $X=\text{im}(f)\subseteq\mathbb E^5$.  Since $\mathbb E^5$ is Hausdorff and a subspace of a Hausdorff space is Hausdorff, $X$ is Hausdorff.  And $[0,2\pi]\times[0,\pi]$ is compact.  Thus by Corollary 4.4 $f:Y\rightarrow X$ is an identification map. We know the Klein bottle can be obtained from $Y$ by identifying two opposite edges in the same orientation and the other two in the opposite orientation (see Figure 1.12, page 10).
+                
+                \par First note that $f$ identifies all four corners of $Y$ together.  So in what follows we will examine what happens to all of the other points.
+                
+                \par Suppose $f(x_1,y_1)=f(x_2,y_2)$.  First suppose $y_1\not=y_2$ and assume $y_1,y_2\in(0,\pi)$. Inspection of the graph of $\sin(x)$ tells us that if $\sin 2y_1 = \sin 2y_2$ then one of two  cases hold: (i) $0<2y_1,2y_2<\pi$ and $2y_1=\pi-2y_2$ or (ii) $\pi<2y_1,2y_2<2\pi$ and $2y_1=3\pi-2y_2$.  Now $\cos(2y_1)=\cos(2y_2)$ implies $2y_1=2\pi-2y_2$, or equivalently $y_1=\pi-y_2$.  But this is incompatible with both (i) and (ii).  Thus if we continue to assume $y_1\not=y_2$, it must be that at least one of $y_1$ or $y_2$ equals zero or $\pi$.  Since $y_1=\pi-y_2$, if $y_1=0$ then $y_2=\pi$ and conversely.  Thus we have shown that if  $f(x_1,y_1)=f(x_2,y_2)$ and $y_1\not=y_2$ then one of $(x_1,y_1)$ or $(x_2,y_2)$ must be on the top side and the other on the bottom side.
+                In other words $\{y_1,y_2\}$ equals $\{0,\pi\}$.  We need to examine what happens to the $x$-coordinate of such points.
+                
+                \par So suppose $f(a,0)=f(b,\pi)$.  And suppose $0<a,b<2\pi$.  We have $\cos a=\cos b$ and $\sin a = -\sin b$ (from the first and fourth coordinates of $f$). From $\cos a=\cos b$ we know that either $a=b$ or $a=2\pi-b$.  From $\sin a=-\sin b$ we know that the only one of these that is possible is $a=2\pi-b$ (keep in mind we are assuming here that $a$ and $b$ are strictly between 0 and $2\pi$).
+                \par Thus the points where $f(x_1,y_1)=f(x_2,y_2)$ with $y_1\not=y_2$ and $x_1,x_2\in(0,2\pi)$ are exactly the points of the form $((x_1,y_1),(x_2,y_2))=((x,0),(2\pi-x,\pi))$ for some $x\in(0,2\pi)$.  The only other points on the top or bottom sides are the corner points which we have already handled.
+                
+                \par Suppose now that $y_1=y_2$, and assume $x_1\not=x_2$.  Assume $y_1,y_2\in(0,\pi)$.  We know from the first coordinate of $f(x_1,y_1)=f(x_2,y_2)$ that $\cos x_1=\cos x_2$.  Since $x_1\not=x_2$, this holds only if $x_1=2\pi-x_2$.  
+                Now from the fifth coordinate of $f(x_1,y_1)=f(x_2,y_2)$ we also know $\sin x_1=\sin x_2$ (substitute $y_2=y_1$ and then we can cancel $\sin y_1$ from both sides since we are assuming $y_1\in(0,\pi)$), which together with $x_1=2\pi-x_2$ implies $-\sin x_2=\sin x_2$, which implies $\sin x_2=0$.  Thus $x_2=0$ or $x_2=\pi$.
+                We do not need to further evaluate the $y$-coordinates of such points since in this case we have assumed $y_1=y_2$.  Thus $f$ identifies points on the opposite vertical sides at the same vertical height to each other. The only other points on the left or right sides are the corner points which we have already handled.
+                
+                \par In summary we have shown that any points that $f$ identifies to each other must lie on the boundary of the square; and that $f$ identifies the four corners of the square to one point; and $f$ identifies points on the top and bottom sides in pairs, where the point with $x$-coordinate $x$ on the top is identified with the point with $x$-coordinate $2\pi-x$ on the bottom; and finally $f$ identifies points on the left and right sides in pairs, where points with the same $y$-coordinate are identified to each other.
+                
+                \par It follows that the identification space is the Klein bottle.
+                \end{proof}
             
-            \item This is left to the reader as an exercise. See attached solution. 
+            \item With the notation of problem $11$, show that if $(2+\cos x)\cos 2y=(2+\cos x')\cos 2y'$ and $(2+\cos x)\sin 2y=(2+\cos x')\sin 2y'$, then $\cos x=\cos x'$, $\cos 2y=\cos 2y'$, and $\sin 2y=\sin 2y'$.  Deduce that the function $g:[0,2\pi]\times[0,\pi]\rightarrow \mathbb E^4$ given by $g(x,y)=((2+\cos x)\cos 2y, (2+\cos x)\sin 2y, \sin x\cos y, \sin x\sin y)$ induces an embedding of the Klein bottle in $\mathbb E^4$: 
+                \begin{proof} Suppose that\setcounter{equation}{0}
+                    \begin{equation}
+                        (2+\cos x)\cos 2y=(2+\cos x')\cos 2y'
+                    \end{equation}
+                    \begin{equation}
+                        (2+\cos x)\sin 2y=(2+\cos x')\sin 2y'
+                    \end{equation}
+                We want to show
+                    \begin{equation}
+                        \cos x=\cos x'
+                    \end{equation}
+                    \begin{equation}
+                        \cos 2y=\cos 2y'
+                    \end{equation}
+                    \begin{equation}
+                        \sin 2y=\sin 2y'
+                    \end{equation}
+                {\it case 1:} $\{y,y'\}\cap\{\pi/4,3\pi/4\}=\emptyset$.  Then $\cos 2y\not=0$ and $\cos 2y'\not=0$.  Thus we can divide (2) by (1) to get $\tan 2y=\tan 2y'$.  Since $y,y'\in[0,\pi]$, the only way this is possible is if $y=y'$ or (wlog) $2y=2y'+\pi$.  If $y=y'+\pi/2$ then $\cos(2y)=-\cos(2y')$.  But then (1) canont hold (remember $\{y,y'\}\cap\{\pi/4,3\pi/4\}=\emptyset$). Thus $y=y'$, from which (4) and (5) obviously hold and it follows immediately from (1) or (2) that (3) holds.
+                
+                \par {\it case 2:} $\{y,y'\}\cap\{\pi/4,3\pi/4\}\not=\emptyset$.  If $y=\pi/4$, then (1) implies $y'=\pi/4$ or $y'=3\pi/4$.  But if $y'=3\pi/4$ then (2) does not hold.  So it must be $y=y'=\pi/4$.  Then (4) and (5) hold and (2) implies (3).  If on the other hand $y=3\pi/4$, then as before (1) implies $y'=\pi/4$ or $y'=3\pi/4$.  But if $y'=\pi/4$ then (2) does not hold.  So it must be that $y=y'=3\pi/4$.  Then (4) and (5) hold and (2) implies (3).
+                
+                \par  Now let $f$ be the function defined in Problem 11.  Then $g$ is an identification map for the same reasons $f$ is.  And it follows from what we just proved above that $g(x_1,y_1)=g(x_2,y_2)$ $\Leftrightarrow$ $f(x_1,y_1)=f(x_2,y_2)$.  Thus the identification space for $g$ is the same as the identification space for $f$.  Thus the image of $g$ is homeomorphic to the Klein bottle.
+                \end{proof}
         \end{enumerate}
         
     \section{Topological Groups}
@@ -1687,7 +1830,10 @@
                 \end{proof}
                 
             \item We show that $L(2,1)$ is homeomorphic to $\RP^3$ and that if $p$ divides $q-q'$, that $L(p,q)$ is homeomorphic to $L(p,q')$: 
-                \begin{proof}
+                \begin{proof} Using the definition of $L(2,1)$ on page eighty-two, $L(2,1)$ is an identification space of $S^3$, the orbit space under the action of $\mathbb Z_2$.  The action of the generator of $\mathbb Z_2$ is the homeomorphism $(z_0,z_1)\mapsto(e^{\pi i}z_0,e^{\pi i}z_1)=(-z_0,-z_1)$.  And $(-z_0,-z_1)$ is the antipodal point to $(z_0,z_1)$.  Thus, by example $2$ on page eighty, the identification space is exactly $\mathbb P^3$.
+                \par Now suppose $p|(q-q')$.  Then $q=q'+np$ for some $n\in\mathbb N$.  Thus,
+                \[e^{2\pi qi/p}=e^{2\pi (q'+np)i/p}=e^{2\pi q'i/p+2\pi npi/p}=e^{2\pi q'i/p}e^{2\pi ni}=e^{2\pi q'i/p}\]
+                And, so, the action of $\mathbb Z_p$ is identical in both cases; the resulting orbit spaces are identical (and therefore homeomorphic).
                 \end{proof}
            
         \end{enumerate}

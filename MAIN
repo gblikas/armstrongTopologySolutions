@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \usepackage{standalone}
+\usepackage[numbers]{natbib}
 
 %defined functions and such
 \DeclareMathOperator*{\Rcal}{\mathcal{R}}
@@ -2212,7 +2213,10 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item If $|K|$ is a connected space, we show that nay two vertexes of $K$ can be connected by a path whose image is a collection of vertexes and edges of $K$:   
-                \begin{proof} 
+                \begin{proof} Let $v$ be a $0$-simplex in $K$ and let $\mathcal{P}_v$ be the subcomplex of $K$ consisting of all edge path starting with $v$, along with the edge paths they span. 
+                \par Now, if $\sigma$ is a simplex of $K$ that has a vertex, call it $w$ in $\mathcal{P}_v$, then ever vertex $w'$ of $\sigma$ is in $\mathcal{P}_v$ (by definition). Thus, $\sigma \in \mathcal{P}_v$.
+                \par To conclude the proof, we show that $|\mathcal{P}_v|$ is clopen in $|K|$: The fact that $|\mathcal{P}_v|$ is closed follows from the fact that each $1$-simplex is closed and there are only finitely many. Likewise, $|\mathcal{P}_v|$ is open, as each $1$-simplex is closed. 
+                \par Thus, as $v \in \mathcal{P}_v \neq \emptyset$, we have by theorem ($3.20$) that $\mathcal{P}_v = K$ and the result follows. 
                 \end{proof}
                 
             \item We check that $|CK|$ and $C|K|$ are homeomorphic spaces: 
@@ -2228,7 +2232,23 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item We show that if $K$ and $L$ are complexes in $\E^n$, that $|K| \cap |L|$ is a polyhedron: 
-                \begin{proof}
+                \begin{proof} Unfortunately, this is another ill-posed question; what Armstrong neglects to say is that $X$ is a polyhedron iff $X$ can be triangulated (this is the canonical definition given elsewhere). Further, this question is really beyond the scope of this chapter. As such, we give a proof which assumes that every convex, compact, connected subset of $\E^n$ can be triangulated; we actually show that $|K| \cap |L|$ is the union of such subsets of $\E^n$, where connected implies a maximally connected component (we note that it need not be the case that $|K| \cap |L|$ is connected. Consider figure ):  
+                \par Let 
+                \[|K| = \bigcup_{\sigma \in |K|} \sigma, \quad |L| = \bigcup_{\sigma \in |L|} \sigma \]
+                be the simplicial decompositions of $|K|$ and $|L|$. 
+                Then, as the intersection of convex sets is convex, we have 
+                \[|K| \cap |L| = \bigcup_{\substack{\sigma \in |K| \\ \sigma' \in |L|}} (\sigma \cap \sigma')\]
+                is convex and each $\sigma \cap \sigma'$ is convex. 
+                \par Now, as $\dim K,  \dim L < N < \infty$, by the well-ordering principle, we start with the smallest dimensional intersection of simplices, say $n \in \N$. Pick any such (non-empty) intersection and label it $\kappa^n_1$. Problem $3$, shows that $\kappa^n_1$ is edge connected and further, as each simplex is completely determined by its vertexes, $\kappa^n_1$ as some maximally connected tree and connectivity of $|\kappa^n_1|$ follows.  
+                \par Then, let $L^m$ be the $m$-dimensional subcomplex of $L$. We proceed by induction on $m$ and show that $|K| \cap |L^m|$ is a polyhedron, $n \leq m \leq N$:
+                \par But this is clear, as for each $m$, 
+                \[L^m = \bigcup_{\substack{\sigma \in |L| \\ \dim \sigma \leq m}} \sigma\]
+                and $K \cap L^{m+1}$ has a simplicial decomposition that agrees with the give one on $K \cap L^m$. 
+                \par To conclude the proof, we extend this process to some other intersections 
+                \[\kappa^n_1, \kappa^n_2, \kappa^n_2, \dots, \kappa^n_q, \quad \dim \kappa^n_i = \dim \kappa^n_j = n\]
+                This method can be extended to the next higher' dimension $n+1$ to show that 
+                \[|K| \cap |L| = \bigcup_{\substack{n \leq i \leq N \\ j}} |\kappa^i_j| \]
+                which is indeed triangulable, and so a polyhedron. 
                 \end{proof}
                 
             \item We show that $S^n$ and $P^n$ are both triangulable: 
@@ -2269,6 +2289,16 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                         \caption{The second barycentric subdivision of the 'dunce cap' yeilds a triangulation.}
                         \label{fig:tikz:dunceHatTri}
                     \end{figure}
+                \par To show that the comb space $X$ is not triangulable, we first prove that it is not locally connected: 
+                    \begin{Lemma}
+                    If $X$ were locally connected we could find a connected open neighbourhood $\Ocal$ for each each neighbourhood of $p$. But, each open neighbourhood $\Ocal$ contains infinitely many terms of the sequence 
+                    \[\Big\{\Big( \frac{1}{n}, \frac{1}{2} \Big)\Big\}_{n=1}^{\infty}\]
+                    As 
+                    \[ \Big\{(\frac{1}{n},\frac{1}{2}) : n \geq n_0  \Big\}\]
+                    is clearly disconnected, it follows that $X$ is not locally connected. 
+                    \end{Lemma}
+                
+                \par From lemma ($6.3$), it follows that $|K|$ is locally connected (this is shown in \cite{hatcher2002algebraic}). Now, since local connectedness is a topological property, if $X$ were triangulable then it must be locally connected. However, we have just shown that $X$ is not locally connected.  
                 \end{proof}
             
         \end{enumerate}
@@ -2672,5 +2702,9 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
             \item 
         \end{enumerate}
         
+\clearpage
+\nocite{*}
+\bibliographystyle{apa}
+\bibliography{references}
         
 \end{document}

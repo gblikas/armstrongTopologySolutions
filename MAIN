@@ -36,6 +36,8 @@
 \DeclareMathOperator*{\card}{\text{card}}
 \DeclareMathOperator*{\Star}{\text{star}}
 \DeclareMathOperator*{\car}{\text{carrier}}
+\DeclareMathOperator*{\KB}{\text{KB}}
+\DeclareMathOperator*{\MB}{\text{MB}}
 
 %new commands
 \newenvironment{Lemma}[1][Lemma]
@@ -2766,11 +2768,18 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
             \item Suppose $\{V,S\}$ satisfies the hypotheses of the realization theorem, and label the elements of $V$ as $v_1, \dots, v_k$. Suppose that $x_i$ denotes the point 
             \[(i, i^2, \dots, i^{2m+1}) \in \E^{2m+1}\]
             We show that any $2m +2$ of the points $x_1, \dots, x_k$ are in general position, and so that the correspondence $v_i \leftrightarrow x_i$ can be used to realize $\{V,S\}$ in $\E^{2m+1}$:   
-                \begin{proof}
+                \begin{proof} 
                 \end{proof}
                 
             \item By the previous problem the vertex scheme of any one-dimensional complex can be realized in $\E^3$. We find a one-dimensional complex whose vertex scheme cannot be realized in $\E^2$:   
-                \begin{proof}
+                \begin{proof} Consider the complete graph on four points, figure \hyperref[fig:tikz:K4]{\ref{fig:tikz:K4}}. 
+                    \begin{figure}
+                        \centering
+                        \includestandalone[width = \textwidth]{K4}
+                        \caption{The complete graph on four vertexes.}
+                        \label{fig:tikz:K4}
+                    \end{figure}
+                \par Any attempt to realize this in $\E^2$ will result in a self-intersection. Note, the cross of the $1$-simplices is not a simplex, by definition of the vertex scheme. 
                 \end{proof}
                 
             \item Consider the antipodal action on $S^2$ and the triangulation shown in fig. $6.17$. We show that the map $\psi: |K|/G \rightarrow |K^1/G|$ is a homeomorphism, and draw the resulting triangulation of the projective plane:     
@@ -2870,42 +2879,78 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
     \section{Classification}
         \begin{enumerate}[(1)]
             \item We show that punching a disc out of the sphere and ading a cross cap in its place gives a representation of $\RP^2$ as a surface in $\E^3$ with self-intersections:  
-                \begin{proof}
+                \begin{proof} Again, this is problem which cannot be proved rigorously at this stage in the text. For a proof of this question, please see \cite{classificaionSurfaces}, \cite{classificationArticle}.
                 \end{proof}
                 
             \item Let $X$ consist of $S^2$ plus one extra point $p$. The neighbourhoods of the points of $S^2$ are the usual ones, and those of $p$ are sets of the form $[U - \{(0,0,1)\}] \cup \{p\}$ where $U$ is a neighbourhood of $(0,0,1)$ in $S^2$. We show that $X$ is not Hausdorff, but is locally homeomorphic to the plane: 
-                \begin{proof}
-                \par We now consider whether or not it seems reasonable to call $X$ a surface: 
+                \begin{proof} Let $V$ be an open neighbourhood of $(0,0,1)$ and let $W$ be an open neighbourhood of $\{p\}$. Then, 
+                \[W = V - (\{(0,0,1)\} \cup \{p\})\]
+                Now, as $V$ is a neighbourhood of $(0,0,1)$, $V \cap W$ must intersect, since each contain a disc or radius $\epsilon$ about $(0,0,1)$, for $\epsilon$ small enough. Clear, $X$ is not Hausdorff.  
+                \par To show that $X$ is locally homeomorphic to the plane, let $W$, $V$ be as above and define 
+                \[h: W \rightarrow \E^2\]
+                as $h(1) = 0$, and stereographicly otherwise. Then, $h$ is a homeomorphism between $W$ and an open disc in $\E^2$.
+                \par We now consider whether or not it seems reasonable to call $X$ a surface: It is not, as it will undermine the classification theorem. 
                 \end{proof}
                 
             \item We show that the connected sum of a torus with itself is a sphere with two handles, and the connect sum of a porjective plane with itself is a Klein bottle: 
-                \begin{proof}
+                \begin{proof} Giving an explicit construction for the homeomorphism between $T \# T$ and the sphere with two handles added is tedious. Instead, we note that $T \# T$ has genus $2$. 
+                \par To show that 
+                \[\RP^2 \# \RP^2 \cong \KB,\]
+                we note that 
+                \[\RP^2 - D \cong \MB\]
+                by definition. The result follows; see figure \hyperref[fig:tikz:KB]{\ref{fig:tikz:KB}}.
+                    \begin{figure}
+                        \centering
+                        \includestandalone[width=\textwidth]{KB}
+                        \caption{The Klein bottle ($\KB$) as the typical identification space.}
+                        \label{fig:tikz:KB}
+                    \end{figure}
                 \end{proof}
                 
-            \item We determine what the connect sum of a torus and a projective plane is: 
-                \begin{proof}
+            \item We determine what the connected sum of a torus and a projective plane is: 
+                \begin{proof} To rigorusly show this is beyond this section in the text. But, 
+                \[\RP^2 \# T \cong \RP^2 \# \RP^2 \# \RP^2 \cong \RP^2 \# \KB \]
                 \end{proof}
         \end{enumerate}
         
     \section{Triangulation and Orientation}
+    I think that on page $154$, in the definition of a combinatorial surface, it should say that each vertex lies in at least \textit{two} triangles, not "three". In addition, Armstrong must have meant that any vertex which \textit{happens to} lie in three triangles fits together as in fig. $7.8$. 
         \begin{enumerate}[(1)]
             \item Suppose we want to triangulate a surface which has a boundary. We examine how the definition of a combinatorial surface needs to be adjusted: 
-                \begin{proof}
+                \begin{proof} We require that the $1$-complex contains the boundary. 
                 \end{proof}
                 
             \item Let $K$ be a combinatorial surface. We  
                 \begin{itemize}
                     \item show that the triangles of $K$ can be labelled $T_1, \dots, T_s$ in such a wa that $T_i$ always has an edge in common with at least one of $T_1, \dots, T_{i-1}$: 
-                        \begin{proof}
+                        \begin{proof} We proceed by induction on $i$: 
+                            \begin{itemize}
+                                \item Base case: Let $i = 2$. Consider the triangle $T_1$, then pick an edge from $T_1$, call it $e$. And, as $K$ is combinatorial, let $T_2$ be a triangle that shares $e$ with $T_1$. The proves the base case.
+                                
+                                \item Hypothesis: Suppose that this is true for $i \geq n$ for some $n \leq \dim K$. Then, if $T_1, \dots, T_i$ does not have an edge in common with $T_{i+1}$, then we have contradicted the fact that $K$ is connected.
+                            \end{itemize}
+                        This proves the result. 
                         \end{proof}
                         
                     \item build a model for the surface of $|K|$ in the form of a regular polygon in the plane, which has an even number of side, and whose sides have to be identified in pairs in some way: 
-                        \begin{proof}
+                        \begin{proof} Note quite sure what this means. Perhaps as statement that a square can be subdivided as previously suffices. 
                         \end{proof}
                 \end{itemize}
                 
             \item We show that if $h: |K| \rightarrow S$ is a triangulation of a closed surface, then $K$ must be a combinatorial surface: 
-                \begin{proof}
+                \begin{proof} We first show that that $K$ cannot have dimension $1$:
+                    \begin{Lemma}
+                    As $h$ is a triangulation of a closed surface, we have that for every $s \in S$, there exists an open neighbourhood $\Ocal \subset S$ and a homeomorphism $\phi$ such that 
+                    \[\phi: \Ocal \bij U, \quad U \subset \tau_{\E^2}\]
+                    But then, if $K$ has dimension one, then this is a contradiction to invariance of domain (as it is preserved under homeomorphism). Thus, $\dim K \neq 1$.  
+                    \end{Lemma}
+                By a similar argument as above, it follows that the inverse mapping
+                \[h^{-1}\phi^{-1}: U \bij |K|\] 
+                implies $\dim K < 3$. As $K$ has dimension $2$ and is a surface, it is connected. Let $\Gamma$ be its edge graph. Further, for each $x \in \Int(\gamma) \subset \Gamma$, there exists an open neighbourhood $\Ocal_x$ which is homeomorphic (by extension) to $\E^2$; an argument as theorem ($5.23$), page one-hundred-sixteen, shows that $\gamma$ must border two $2$-simplexes. Thus, 
+                $\deg v \geq 2$ for each vertex $v \in \Gamma \subset |K|$.
+                \par To conclude, we show that if a vertex $v$ of $K$ is in at least three triangles, then it forms a vertex for a cone, as in figure $7.8$; But, considering the open start of $v$, this is clear; the $1$ skeleton of the open star defines a tree, and consequently, 
+                \[\overline{\Star}(v, K) - \Star(v,k)\]
+                is a simple closed polygonal curve by induction on the edge set. 
                 \end{proof}
                 
             \item Let $G$ be a finite group which acts as a group of homeomorphisms of a closed surface $S$ in such a way that the only element with any fixed points is the identity. We show 
@@ -3085,9 +3130,9 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
             \item 
         \end{enumerate}
         
-\clearpage
+        
 \nocite{*}
 \bibliographystyle{apa}
-\bibliography{references}
+\bibliography{bib}
         
 \end{document}

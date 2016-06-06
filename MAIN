@@ -94,7 +94,8 @@ George B: Much thanks to all the contributors of this book. Special thanks goes 
 
     \subsection{Group Theory \& Abstract Algebra}
     \begin{enumerate}[(1)]
-        \item Split Exact Sequence: Given an exact sequence of abeilean groups and homomorphisms, 
+        \item Split Exact Sequence: \label{sec:splitexact}
+        Given an exact sequence of abeilean groups and homomorphisms, 
         \[0 \xrightarrow[]{} G \xrightarrow{\theta} H \xrightarrow{\phi} K \xrightarrow[]{} 0, \]
         and a homomorphism $\psi: K \rightarrow H$, such that $\phi\psi \equiv 1_K$, we have $H \cong G \oplus K$. 
             \begin{proof}
@@ -2989,51 +2990,84 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
     \section{Euler Characteristics}
         \begin{enumerate}[(1)]
             \item We prove lemma ($7.8$): 
-                \begin{proof}
+                \begin{proof} This is an application of \hyperref[sec:splitexact]{\ref{sec:splitexact}}. This was inspired by \cite{eulerChar}, \cite{maunder}: 
+                \par Consider the split exact sequence (as $\chi$ is addative) 
+                \[0 \rightarrow \mathcal{F}_{K\cup L} \rightarrow \mathcal{F}_{K} \oplus \mathcal{F}_{L} \rightarrow \mathcal{F}_{K\cap L} \rightarrow 0\]
+                via maps $a \mapsto (a,a)$ and $(a,b) \mapsto a -b$. Then by  \hyperref[sec:splitexact]{\ref{sec:splitexact}}, the result follows. 
                 \end{proof}
                 
             \item We prove lemma ($7.9$): 
-                \begin{proof}
+                \begin{proof} As each barycentric subdivision of some simplex $\sigma_k$ adds one more vertex, namely 
+                \[\hat{A} =  \frac{1}{k+1} (v_0 + \dots + v_k)\]
+                the result follows. 
                 \end{proof}
                 
             \item We prove from the previous problem that the Euler characteristic of a graph $\Gamma$ is a topological invariant of $|\Gamma|$: 
-                \begin{proof}
+                \begin{proof} Please see \cite{kinsey}, page one-hundered-five, theorem ($5.13$). 
                 \end{proof}
                 
             \item Let $K$ be a finite complex. Suppose that $G$ acts simplicially on $|K|$, and that the action is fixed-point free. We show that 
             \[\chi(K) = |G| \chi(K^2/G)\]
             where $|G| = \card G$:
-                \begin{proof}
+                \begin{proof} Suppose that $K$ if finite. Then, it follows from a previous exercise that 
+                \[K/G \simeq K^2/G\]
+                Thus, for every simplex $\sigma$ in $K^2/G$, there corresponds $|G| \sigma$  simplexes in $K^2$. Thus, 
+                \[\chi(K^2) = |G| (|\sigma_0| - |\sigma_1| + \dots + (-1)^d|\sigma_d| ) = |G| \cdot \chi(K^2/G)\]
+                But, as $\chi$ is topological invariant, and $|K| = |K^2|$, we have 
+                \[\chi(K ) = \chi(K^2) = |G|\chi(K^2/G)\]
                 \end{proof}
                 
             \item Let $K$ be a combinatorial surface such that $|K|$ is in the plane as in problem $6$, and let $J$ denote the boundary curve of the resulting regular polygon. We show that 
-            \[\chi(K) = \chi(\Gamma) + 1\]
-            and deduce lemma($.6$) from lemma ($7.5$): 
-                \begin{proof}
+            \[\chi(K) = \chi(\Gamma) + 1\]: 
+                \begin{proof} As $K$ is combinatorial, theorem ($7.7$) implies that $\chi(K) = 2$. In otherwords, we show that 
+                \[\chi(\Gamma) = 1\]
+                But, as $\Gamma$ is a tree, lemma ($7.5$) says that 
+                \[\chi(\Gamma) = 1\]
+                The result follows. 
                 \end{proof}
                 
             \item Continuing from the previous problem, suppose that $\Gamma$ has an edge, one end of which is not joined to any other edges. We show that $\chi(K) = 2$ implies 
             \[|K| \cong S^2:\]
-                \begin{proof}
+                \begin{proof} We omit this proof. 
                 \end{proof}
         \end{enumerate}
         
     \section{Surgery}
         \begin{enumerate}[(1)]
             \item We thicken each curve in fig. $7.16$ and decide whether the result is a cylinder or a M\"obius strip and describe the effect of doing surgery along the curve: 
-                \begin{proof}
+                \begin{proof} This is left to the reader as an exercise. 
                 \end{proof}
                 
             \item We show that the surface illustrated in fig. $7.17$ is homeomorphic to one of the standard ones using the procedure of theorem ($7.14$): 
-                \begin{proof}
+                \begin{proof} As 
+                \[T \# T\]
+                is a sphere with two handles attached, we have that figure $7.17$ is 
+                \[\KB \# S_3^2,\]
+                where $S_3^2$ denotes a sphere with three handles added. By a previous exercise, we have that figure $7.17$ is 
+                \[\RP^2 \# \RP^2 \# S_3^2\]
+                and the result follows. 
+                
                 \end{proof} 
                 
             \item Let $Z \subset Y \subset Z$ be three concentric discs in the plane. We find a homeomorphism from $X$ to itself which is the identity on the boundary circle of $X$ and which throws $Y$ onto $Z$: 
-                \begin{proof}
+                \begin{proof} Suppose, without loss of generality, that 
+                \[Z \subsetneq Y \subsetneq X\]
+                As such, there exists a retraction $r: Y \hookrightarrow Z$, $r|_Z \equiv 1_Z$. Now, we extend $r$ to some $R: X \rightarrow X$, so that
+                \[ R(x) =     
+                    \begin{cases}
+                    x & x \in X - Y \\
+                    r(x) & x \in Y 
+                    \end{cases}
+                    \]
+                Then, clearly $R = 1_{\partial X}$, and $R: Y \hookrightarrow Z$. It is left to show that $R$ is continuous. Without loss of generality, let $\Ocal \subset \Image R$ be open, such that 
+                \[\Ocal \cap (X - Z) \cap Z \neq \emptyset\]
+                Then, 
+                \[R^{-1}(\Ocal) = R^{-1}(\Out Z \cap \Ocal) \cup R^{-1}(\overline{\Int} Z \cap \Ocal)\]
+                by the Jordan curve separation theorem(s), which is clearly open $X$. A similar argument show that $R^{-1}$ is continuous. The result follows. 
                 \end{proof}
                 
             \item Suppose that we have two discs in the plane, both of which are bounded by polygonal curves, and one which lies in the interior of the other. We prove that the region between them is homeomorphic to an annulus: 
-                \begin{proof}
+                \begin{proof} Please see \cite{jordanCurve}. The classification of surfaces implies that the two are equivalent. 
                 \end{proof}
                 
             \item with the notation of lemma ($7.13$) and problem $19$, we find a homeomorphism $h: D^1 \rightarrow X$ such that $h(D) = Y$ and 

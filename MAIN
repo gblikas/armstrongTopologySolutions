@@ -2956,15 +2956,17 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
             \item Let $G$ be a finite group which acts as a group of homeomorphisms of a closed surface $S$ in such a way that the only element with any fixed points is the identity. We show 
                 \begin{itemize}
                     \item that the orbit space $S/G$ is a closed surface: 
-                        \begin{proof}
+                        \begin{proof} The following proof is credited to \cite{groupActions}: 
+                        \par Since the group acts freely, for any point $x \in S$, the elements $g \cdot x$ are pairwise distinct for $g \in G$. Because $S$ is Hausdorff, this means that for every $g$, there are neighborhoods $U_g$ and $V_g$ respectively of $x$ and $g \cdot x$ that are disjoint. Now $G$ is finite so $\bigcap_{g \in G} U_g$ is still a neighborhood of $x$. $G$ acts by homeomorphism, so if you restrict the neighborhoods you can then prove that the quotient map is a local homeomorphism. Thus $S/G$ is locally homeomorphic to a plane, just like $S$.
+                        \par Similarly if $x$ and $y$ have different orbits, then $g \cdot x \neq h \cdot y$ for all $g,h \in G$ and so you can find neighborhoods $U_g$, $V_h$ that don't intersect. The intersections $\bigcap_g U_g$ and $\bigcap_h V_h$ are still neighborhoods because $G$ is finite, and map to neighborhoods of $[x]$ and $[y]$ that don't intersect in $S/G$. So $S/G$ is Hausdorff too.
                         \end{proof}
                         
                     \item $S$ may be orientable, yet $S/G$ non-orientable: 
-                        \begin{proof}
+                        \begin{proof} We know that the canonical group action of $\Z_2$ on $S^2$ yeilds the M\"obius strip, which is non-orientable. 
                         \end{proof}
                         
                     \item that if $S/G$ is orientable, then $S$ does not have to be: 
-                        \begin{proof}
+                        \begin{proof} The example above works, by considering the group action of $\Z_2$ on $\RP^2$ to give $S^2$ back, as $\RP^2/\Z_2$.
                         \end{proof}
                 \end{itemize}
                 
@@ -2974,7 +2976,13 @@ Unfortunately, this is the point in Armstrong when the definitions presented are
                 \end{proof}
                 
             \item Let $K$ be an orientable combinatorial surface. Suppose that $G$ acts simplicially on $|K|$. We show that if the action is fixed-point free and each element of $G$ is orientation-preserving that the complex $K^2/G$ is an orientable combinatorial surface:
-                \begin{proof}
+                \begin{proof} Pick an orientation on $K$. Then, every triangle $T \in K^2$ has an orientation, since $G$ is orientation preserving. Thus, 
+                \[\bigcup_{g \in G} gT\]
+                has consistent orientation. But this implies that 
+                \[[T] - \bigcup_{g \in G} gT = T/G\]
+                has well-defined orientation and hence 
+                \[K^2/G\]
+                is an orientable combinatorial surface. 
                 \end{proof}
         \end{enumerate}
         

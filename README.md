@@ -1,12 +1,5 @@
-# Armstrong Topology Solutions
-##Contains Latex document: Chapters 1 - 8 solutions to M.A. Armstrong's "Basic Topology". 
-### This project is **not** complete.
-
-I will be posting the pdf for the entire solution set upon completion.
-
-To do: 
-* ~~Update the solutions manual from Greg's tex file.~~ 
-* Breakup code into chapter sections. 
-* Fix typos
-
-PLEASE let me know about typos. I am sure there are many, at the moment. 
+⚠️IMPORTANT ⚠️
+> This repository is no longer maintained, and is archived. Please checkout 
+> - 🔗 https://github.com/gblikas/set-theory-solutions-manual 
+> 
+> for new solutions and to ask questions to the commmunity. 
